@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "# #",
+        "   ",
+        "# #"
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:oak_log"
+        }
+    },
+    "result": {
+        "item": "moreblocksmod:chopped_oak_log",
+        "count": 16
+    }
+}

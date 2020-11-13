@@ -1,0 +1,8 @@
+﻿{
+    "parent": "block/slab_top",
+    "textures": {
+        "bottom": "moreblocksmod:block/pink_terracotta_bricks",
+        "top": "moreblocksmod:block/pink_terracotta_bricks",
+        "side": "moreblocksmod:block/pink_terracotta_bricks"
+    }
+}

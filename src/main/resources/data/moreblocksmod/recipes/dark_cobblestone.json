@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "###",
+        "#b#",
+        "###"
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:cobblestone"
+        },
+        "b": {
+            "item": "minecraft:black_dye"
+        }
+    },
+    "result": {
+        "item": "moreblocksmod:dark_cobblestone",
+        "count": 8
+    }
+}

@@ -1,0 +1,6 @@
+{
+    "parent": "block/cube_all",
+    "textures": {
+      "all": "moreblocksmod:block/sand_chiseled_stone_brick_mix"
+    }
+  }

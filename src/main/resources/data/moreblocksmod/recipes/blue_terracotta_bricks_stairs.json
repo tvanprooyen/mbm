@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "#  ",
+        "## ",
+        "###"
+    ],
+    "key": {
+        "#": {
+            "item": "moreblocksmod:blue_terracotta_bricks"
+        }
+    },
+    "result": {
+        "item": "moreblocksmod:blue_terracotta_bricks_stairs",
+        "count": 4
+    }
+}

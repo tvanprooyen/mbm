@@ -1,0 +1,7 @@
+{
+  "variants": {
+      "axis=y":  { "model": "moreblocksmod:block/leather_block" },
+      "axis=z":   { "model": "moreblocksmod:block/leather_block", "x": 90 },
+      "axis=x":   { "model": "moreblocksmod:block/leather_block", "x": 90, "y": 90 }
+  }
+}

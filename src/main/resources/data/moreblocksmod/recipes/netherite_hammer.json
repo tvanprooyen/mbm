@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+      "NIN",
+      "ISI",
+      " S "
+  ],
+  "key": {
+      "S": {
+          "item": "minecraft:stick"
+      },
+      "I": {
+        "item": "minecraft:iron_ingot"
+    },
+    "N": {
+        "item": "minecraft:netherite_ingot"
+    }
+  },
+  "result": {
+      "item": "moreblocksmod:netherite_hammer",
+      "count": 1
+  }
+}

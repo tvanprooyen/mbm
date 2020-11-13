@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "moreblocksmod:birch_bark_fragment"
+        },
+        {
+            "item": "moreblocksmod:birch_bark_fragment"
+        },
+        {
+            "item": "moreblocksmod:birch_bark_fragment"
+        },
+        {
+            "item": "moreblocksmod:birch_bark_fragment"
+        }
+    ],
+    "result": {
+        "item": "minecraft:birch_wood"
+    }
+}

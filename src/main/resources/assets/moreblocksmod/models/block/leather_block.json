@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "end": "moreblocksmod:block/leather_blocktop",
+        "side": "moreblocksmod:block/leather_block"
+    }
+}

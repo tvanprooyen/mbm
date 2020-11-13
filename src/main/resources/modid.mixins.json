@@ -1,0 +1,17 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.tylervp.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "LeavesBlockMixin",
+    "MelonBlockMixin",
+    "CauldronBlockMixin",
+    "LanternBlockMixin"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

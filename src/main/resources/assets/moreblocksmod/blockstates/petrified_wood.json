@@ -1,0 +1,19 @@
+﻿{
+  "variants": {
+      "axis=y,breakstate=0":  { "model": "moreblocksmod:block/petrified_wood_0" },
+      "axis=z,breakstate=0":   { "model": "moreblocksmod:block/petrified_wood_0", "x": 90 },
+      "axis=x,breakstate=0":   { "model": "moreblocksmod:block/petrified_wood_0", "x": 90, "y": 90 },
+      "axis=y,breakstate=1":  { "model": "moreblocksmod:block/petrified_wood_0" },
+      "axis=z,breakstate=1":   { "model": "moreblocksmod:block/petrified_wood_0", "x": 90 },
+      "axis=x,breakstate=1":   { "model": "moreblocksmod:block/petrified_wood_0", "x": 90, "y": 90 },
+      "axis=y,breakstate=2":  { "model": "moreblocksmod:block/petrified_wood_1" },
+      "axis=z,breakstate=2":   { "model": "moreblocksmod:block/petrified_wood_1", "x": 90 },
+      "axis=x,breakstate=2":   { "model": "moreblocksmod:block/petrified_wood_1", "x": 90, "y": 90 },
+      "axis=y,breakstate=3":  { "model": "moreblocksmod:block/petrified_wood_2" },
+      "axis=z,breakstate=3":   { "model": "moreblocksmod:block/petrified_wood_2", "x": 90 },
+      "axis=x,breakstate=3":   { "model": "moreblocksmod:block/petrified_wood_2", "x": 90, "y": 90 },
+      "axis=y,breakstate=4":  { "model": "moreblocksmod:block/petrified_wood_3" },
+      "axis=z,breakstate=4":   { "model": "moreblocksmod:block/petrified_wood_3", "x": 90 },
+      "axis=x,breakstate=4":   { "model": "moreblocksmod:block/petrified_wood_3", "x": 90, "y": 90 }
+  }
+}

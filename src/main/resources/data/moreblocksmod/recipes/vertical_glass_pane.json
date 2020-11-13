@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "## ",
+      "## ",
+      "## "
+    ],
+    "key": {
+      "#": {
+        "item": "minecraft:glass"
+      }
+    },
+    "result": {
+      "item": "moreblocksmod:vertical_glass_pane",
+      "count": 16
+    }
+  }

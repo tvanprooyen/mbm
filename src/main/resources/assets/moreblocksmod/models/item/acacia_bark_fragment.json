@@ -1,0 +1,6 @@
+{
+    "parent": "minecraft:item/generated",
+    "textures": {
+      "layer0": "moreblocksmod:item/acacia_bark_fragment"
+    }
+  }

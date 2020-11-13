@@ -1,0 +1,8 @@
+﻿{
+    "parent": "block/stairs",
+    "textures": {
+        "bottom": "moreblocksmod:block/newname",
+        "top": "moreblocksmod:block/newname",
+        "side": "moreblocksmod:block/newname"
+    }
+}

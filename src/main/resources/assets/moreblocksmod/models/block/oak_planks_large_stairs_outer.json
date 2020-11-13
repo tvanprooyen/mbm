@@ -1,0 +1,8 @@
+﻿{
+    "parent": "block/outer_stairs",
+    "textures": {
+        "bottom": "moreblocksmod:block/oak_planks_large",
+        "top": "moreblocksmod:block/oak_planks_large",
+        "side": "moreblocksmod:block/oak_planks_large"
+    }
+}

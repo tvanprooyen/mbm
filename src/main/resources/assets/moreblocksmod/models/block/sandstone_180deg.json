@@ -1,0 +1,7 @@
+{
+	"parent": "moreblocksmod:block/sideblock180degtop",
+	"textures": {
+		"side":"block/sandstone",
+		"top":"block/sandstone_top"
+	}
+}

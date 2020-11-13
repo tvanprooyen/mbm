@@ -1,0 +1,7 @@
+﻿{
+  "variants": {
+      "type=bottom": { "model": "moreblocksmod:block/magenta_terracotta_bricks_slab" },
+      "type=top": { "model": "moreblocksmod:block/magenta_terracotta_bricks_slab_top" },
+      "type=double": { "model": "moreblocksmod:block/magenta_terracotta_bricks"}
+  }
+}

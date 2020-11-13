@@ -1,0 +1,9 @@
+{
+  "variants": {
+    "facing=north,half=true": { "model": "moreblocksmod:block/white_terracotta_brick_window" },
+    "facing=east,half=true":  { "model": "moreblocksmod:block/white_terracotta_brick_window", "y": 90 },
+    "facing=south,half=true": { "model": "moreblocksmod:block/white_terracotta_brick_window", "y": 180 },
+    "facing=west,half=true":  { "model": "moreblocksmod:block/white_terracotta_brick_window", "y": 270 },
+    "half=false": { "model": "moreblocksmod:block/white_terracotta_brick_window" }
+  }
+}

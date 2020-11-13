@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        " # ",
+        "###",
+        " # "
+    ],
+    "key": {
+        "#": {
+            "item": "moreblocksmod:dark_stone"
+        }
+    },
+    "result": {
+        "item": "moreblocksmod:emblemed_dark_stone",
+        "count": 5
+    }
+}

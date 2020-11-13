@@ -1,0 +1,9 @@
+{
+  "variants": {
+    "facing=north,half=true": { "model": "moreblocksmod:block/spruce_planks_0deg" },
+    "facing=east,half=true":  { "model": "moreblocksmod:block/spruce_planks_90deg", "y": 90 },
+    "facing=south,half=true": { "model": "moreblocksmod:block/spruce_planks_180deg", "y": 180 },
+    "facing=west,half=true":  { "model": "moreblocksmod:block/spruce_planks_270deg", "y": 270 },
+    "half=false": { "model": "block/spruce_planks" }
+  }
+}

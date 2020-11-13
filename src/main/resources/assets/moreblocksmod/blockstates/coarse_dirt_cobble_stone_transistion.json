@@ -1,0 +1,8 @@
+{
+"variants": {
+    "facing=north": { "model": "moreblocksmod:block/coarse_dirt_cobble_stone_transistion" },
+    "facing=east":  { "model": "moreblocksmod:block/coarse_dirt_cobble_stone_transistion", "y":  90},
+    "facing=south": { "model": "moreblocksmod:block/coarse_dirt_cobble_stone_transistion", "y": 180 },
+    "facing=west":  { "model": "moreblocksmod:block/coarse_dirt_cobble_stone_transistion", "y": 270 }
+}
+}

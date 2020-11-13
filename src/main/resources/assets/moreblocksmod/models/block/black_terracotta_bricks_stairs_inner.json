@@ -1,0 +1,8 @@
+﻿{
+    "parent": "block/inner_stairs",
+    "textures": {
+        "bottom": "moreblocksmod:block/black_terracotta_bricks",
+        "top": "moreblocksmod:block/black_terracotta_bricks",
+        "side": "moreblocksmod:block/black_terracotta_bricks"
+    }
+}

@@ -1,0 +1,8 @@
+﻿{
+    "parent": "block/stairs",
+    "textures": {
+        "bottom": "moreblocksmod:block/stone_brick_tiles",
+        "top": "moreblocksmod:block/stone_brick_tiles",
+        "side": "moreblocksmod:block/stone_brick_tiles"
+    }
+}

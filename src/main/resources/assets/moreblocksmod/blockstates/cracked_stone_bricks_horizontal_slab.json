@@ -1,0 +1,9 @@
+{
+  "variants": {
+    "facing=north,half=true": { "model": "moreblocksmod:block/cracked_stone_bricks_0deg" },
+    "facing=east,half=true":  { "model": "moreblocksmod:block/cracked_stone_bricks_90deg", "y": 90 },
+    "facing=south,half=true": { "model": "moreblocksmod:block/cracked_stone_bricks_180deg", "y": 180 },
+    "facing=west,half=true":  { "model": "moreblocksmod:block/cracked_stone_bricks_270deg", "y": 270 },
+    "half=false": { "model": "block/cracked_stone_bricks" }
+  }
+}

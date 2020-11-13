@@ -1,0 +1,7 @@
+{
+	"parent": "moreblocksmod:block/sideblock0degtop",
+	"textures": {
+		"side":"block/red_sandstone",
+		"top":"block/red_sandstone_top"
+	}
+}

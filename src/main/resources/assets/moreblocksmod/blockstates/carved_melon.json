@@ -1,0 +1,19 @@
+{
+    "variants": {
+      "facing=east": {
+        "model": "moreblocksmod:block/carved_melon",
+        "y": 90
+      },
+      "facing=north": {
+        "model": "moreblocksmod:block/carved_melon"
+      },
+      "facing=south": {
+        "model": "moreblocksmod:block/carved_melon",
+        "y": 180
+      },
+      "facing=west": {
+        "model": "moreblocksmod:block/carved_melon",
+        "y": 270
+      }
+    }
+  }

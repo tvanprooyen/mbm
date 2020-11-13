@@ -1,0 +1,19 @@
+﻿{
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "moreblocksmod:carved_melon"
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:survives_explosion"
+          }
+        ]
+      }
+    ]
+  }

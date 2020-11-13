@@ -1,0 +1,8 @@
+{
+    "parent": "minecraft:block/inner_stairs",
+    "textures": {
+        "top":    "moreblocksmod:block/dark_stone",
+        "side":   "moreblocksmod:block/dark_stone",
+        "bottom": "moreblocksmod:block/dark_stone"
+    }
+}

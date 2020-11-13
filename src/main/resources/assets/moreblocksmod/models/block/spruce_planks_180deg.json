@@ -1,0 +1,6 @@
+{
+	"parent": "moreblocksmod:block/sideblock180deg",
+	"textures": {
+		"side":"block/spruce_planks"
+	}
+}

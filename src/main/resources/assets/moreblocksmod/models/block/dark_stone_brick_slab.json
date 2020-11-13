@@ -1,0 +1,8 @@
+{
+    "parent": "minecraft:block/slab",
+    "textures": {
+        "top":    "moreblocksmod:block/dark_stone_bricks",
+        "side":   "moreblocksmod:block/dark_stone_bricks",
+        "bottom": "moreblocksmod:block/dark_stone_bricks"
+    }
+}

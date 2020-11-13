@@ -1,0 +1,7 @@
+﻿{
+  "variants": {
+      "type=bottom": { "model": "moreblocksmod:block/cyan_terracotta_bricks.png_slab" },
+      "type=top": { "model": "moreblocksmod:block/cyan_terracotta_bricks.png_slab_top" },
+      "type=double": { "model": "moreblocksmod:block/cyan_terracotta_bricks.png"}
+  }
+}

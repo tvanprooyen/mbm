@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "moreblocksmod:jungle_bark_fragment"
+        },
+        {
+            "item": "moreblocksmod:jungle_bark_fragment"
+        },
+        {
+            "item": "moreblocksmod:jungle_bark_fragment"
+        },
+        {
+            "item": "moreblocksmod:jungle_bark_fragment"
+        }
+    ],
+    "result": {
+        "item": "minecraft:jungle_wood"
+    }
+}

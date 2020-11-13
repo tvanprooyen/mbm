@@ -1,0 +1,7 @@
+﻿{
+    "parent": "block/cube_column",
+    "textures": {
+        "end": "moreblocksmod:block/burnt_log_top",
+        "side": "moreblocksmod:block/burnt_log"
+    }
+}

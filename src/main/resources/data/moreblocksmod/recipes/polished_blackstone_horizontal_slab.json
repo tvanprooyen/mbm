@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+      " # ",
+      " # ",
+      " # "
+  ],
+  "key": {
+      "#": {
+          "item": "minecraft:polished_blackstone"
+      }
+  },
+  "result": {
+      "item": "moreblocksmod:polished_blackstone_horizontal_slab",
+      "count": 6
+  }
+}

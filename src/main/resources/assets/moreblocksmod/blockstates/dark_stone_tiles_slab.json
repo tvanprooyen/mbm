@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "type=bottom": { "model": "moreblocksmod:block/dark_stone_tiles_slab" },
+        "type=top": { "model":    "moreblocksmod:block/dark_stone_tiles_slab_top" },
+        "type=double": { "model": "moreblocksmod:block/dark_stone_tiles" }
+    }
+}

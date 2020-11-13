@@ -1,0 +1,6 @@
+{
+  "parent": "moreblocksmod:block/template_hanging_lantern_rope",
+  "textures": {
+    "lantern": "moreblocksmod:block/lantern_rope"
+  }
+}

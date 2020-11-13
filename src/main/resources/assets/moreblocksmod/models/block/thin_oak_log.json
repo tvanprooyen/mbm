@@ -1,0 +1,26 @@
+{	"parent": "block/block",
+	"credit": "Made with Blockbench",
+	"textures": {
+		"5": "moreblocksmod:block/thin_oak_log_top",
+		"6": "moreblocksmod:block/thin_oak_log_side",
+		"7": "block/oak_leaves",
+		"8": "moreblocksmod:block/oak_leaves_top",
+		"particle": "moreblocksmod:block/thin_oak_log_side"
+	},
+	"elements": [
+		{
+			"name": "main",
+			"from": [4, 0, 4],
+			"to": [12, 16, 12],
+			"rotation": {"angle": 0, "axis": "y", "origin": [12, 8, 12]},
+			"faces": {
+				"north": {"uv": [4, 0, 12, 16], "texture": "#6"},
+				"east": {"uv": [4, 0, 12, 16], "texture": "#6"},
+				"south": {"uv": [4, 0, 12, 16], "texture": "#6"},
+				"west": {"uv": [4, 0, 12, 16], "texture": "#6"},
+				"up": {"uv": [4, 4, 12, 12], "texture": "#5"},
+				"down": {"uv": [4, 4, 12, 12], "texture": "#5"}
+			}
+		}
+	]
+}

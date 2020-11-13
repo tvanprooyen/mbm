@@ -1,0 +1,6 @@
+{
+	"parent": "moreblocksmod:block/chimney",
+	"textures": {
+		"0":"block/bricks"
+	}
+}

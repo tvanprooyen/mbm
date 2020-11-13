@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+      " # ",
+      " # ",
+      " # "
+  ],
+  "key": {
+      "#": {
+          "item": "minecraft:purpur_block"
+      }
+  },
+  "result": {
+      "item": "moreblocksmod:purpur_block_horizontal_slab",
+      "count": 6
+  }
+}

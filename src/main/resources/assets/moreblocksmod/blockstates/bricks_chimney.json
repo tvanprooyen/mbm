@@ -1,0 +1,7 @@
+﻿{
+    "variants": {
+      "axis=y": { "model": "moreblocksmod:block/bricks_chimney" },
+      "axis=z": { "model": "moreblocksmod:block/bricks_chimney", "x": 90  },
+      "axis=x": { "model": "moreblocksmod:block/bricks_chimney", "x": 90, "y": 90  }
+    }
+  }

@@ -1,0 +1,21 @@
+{	"parent": "block/block",
+	"textures": {
+		"end": "block/smooth_stone",
+		"side": "block/smooth_stone_slab_side",
+		"particle": "#side"
+	},
+	"elements": [
+		{
+			"from": [0, 0, 0],
+			"to": [16, 16, 16],
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#end"},
+				"east": {"uv": [0, 0, 16, 16], "rotation": 90, "texture": "#side"},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#end"},
+				"west": {"uv": [0, 0, 16, 16], "rotation": 90, "texture": "#side"},
+				"up": {"uv": [0, 0, 16, 16], "texture": "#side"},
+				"down": {"uv": [0, 0, 16, 16], "texture": "#side"}
+			}
+		}
+	]
+}

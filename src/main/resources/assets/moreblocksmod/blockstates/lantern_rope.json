@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "hanging=false": {
+      "model": "minecraft:block/lantern"
+    },
+    "hanging=true": {
+      "model": "moreblocksmod:block/lantern_hanging_rope"
+    }
+  }
+}

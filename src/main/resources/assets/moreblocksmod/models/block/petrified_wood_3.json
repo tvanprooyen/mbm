@@ -1,0 +1,7 @@
+﻿{
+    "parent": "block/cube_column",
+    "textures": {
+        "side": "moreblocksmod:block/petrified_log_3",
+        "end": "moreblocksmod:block/petrified_log_top_3"
+    }
+}

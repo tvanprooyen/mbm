@@ -1,0 +1,7 @@
+﻿{
+  "variants": {
+      "axis=y":  { "model": "moreblocksmod:block/burnt_log" },
+      "axis=z":   { "model": "moreblocksmod:block/burnt_log", "x": 90 },
+      "axis=x":   { "model": "moreblocksmod:block/burnt_log", "x": 90, "y": 90 }
+  }
+}

@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "#  ",
+        "## ",
+        "###"
+    ],
+    "key": {
+        "#": {
+            "item": "moreblocksmod:dark_stone_bricks"
+        }
+    },
+    "result": {
+        "item": "moreblocksmod:dark_stone_brick_stairs",
+        "count": 4
+    }
+}

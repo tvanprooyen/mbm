@@ -1,0 +1,6 @@
+{
+	"parent": "moreblocksmod:block/sideblock90deg",
+	"textures": {
+		"side":"block/polished_granite"
+	}
+}

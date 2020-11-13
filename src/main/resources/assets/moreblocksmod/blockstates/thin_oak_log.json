@@ -1,0 +1,35 @@
+﻿{
+  "variants": {
+      "axis=y,leaves=false,chain=false,rope=false":  { "model": "moreblocksmod:block/thin_oak_log" },
+      "axis=z,leaves=false,chain=false,rope=false":   { "model": "moreblocksmod:block/thin_oak_log", "x": 90 },
+      "axis=x,leaves=false,chain=false,rope=false":   { "model": "moreblocksmod:block/thin_oak_log", "x": 90, "y": 90 },
+
+      "axis=y,leaves=false,chain=true,rope=true":  { "model": "moreblocksmod:block/thin_oak_log" },
+      "axis=z,leaves=false,chain=true,rope=true":   { "model": "moreblocksmod:block/thin_oak_log", "x": 90 },
+      "axis=x,leaves=false,chain=true,rope=true":   { "model": "moreblocksmod:block/thin_oak_log", "x": 90, "y": 90 },
+
+      "axis=y,leaves=true,chain=false,rope=false":  { "model": "moreblocksmod:block/thin_oak_log_leaves" },
+      "axis=z,leaves=true,chain=false,rope=false":   { "model": "moreblocksmod:block/thin_oak_log_leaves", "x": 90 },
+      "axis=x,leaves=true,chain=false,rope=false":   { "model": "moreblocksmod:block/thin_oak_log_leaves", "x": 90, "y": 90 },
+
+      "axis=y,leaves=true,chain=false,rope=true":  { "model": "moreblocksmod:block/thin_oak_log_leaves" },
+      "axis=z,leaves=true,chain=false,rope=true":   { "model": "moreblocksmod:block/thin_oak_log_leaves", "x": 90 },
+      "axis=x,leaves=true,chain=false,rope=true":   { "model": "moreblocksmod:block/thin_oak_log_leaves", "x": 90, "y": 90 },
+
+      "axis=y,leaves=true,chain=true,rope=false":  { "model": "moreblocksmod:block/thin_oak_log_leaves" },
+      "axis=z,leaves=true,chain=true,rope=false":   { "model": "moreblocksmod:block/thin_oak_log_leaves", "x": 90 },
+      "axis=x,leaves=true,chain=true,rope=false":   { "model": "moreblocksmod:block/thin_oak_log_leaves", "x": 90, "y": 90 },
+
+      "axis=y,leaves=true,chain=true,rope=true":  { "model": "moreblocksmod:block/thin_oak_log_leaves" },
+      "axis=z,leaves=true,chain=true,rope=true":   { "model": "moreblocksmod:block/thin_oak_log_leaves", "x": 90 },
+      "axis=x,leaves=true,chain=true,rope=true":   { "model": "moreblocksmod:block/thin_oak_log_leaves", "x": 90, "y": 90 },
+
+      "axis=y,leaves=false,chain=true,rope=false":  { "model": "moreblocksmod:block/thin_oak_log_chains" },
+      "axis=z,leaves=false,chain=true,rope=false":   { "model": "moreblocksmod:block/thin_oak_log_chains", "x": 90 },
+      "axis=x,leaves=false,chain=true,rope=false":   { "model": "moreblocksmod:block/thin_oak_log_chains_opp", "x": 90, "y": 90 },
+      
+      "axis=y,leaves=false,chain=false,rope=true":  { "model": "moreblocksmod:block/thin_oak_log_rope" },
+      "axis=z,leaves=false,chain=false,rope=true":   { "model": "moreblocksmod:block/thin_oak_log_rope", "x": 90 },
+      "axis=x,leaves=false,chain=false,rope=true":   { "model": "moreblocksmod:block/thin_oak_log_rope", "x": 90, "y": 90 }
+  }
+}

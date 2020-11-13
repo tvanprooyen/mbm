@@ -1,0 +1,11 @@
+{
+    "variants": {
+        "snowy=false": [
+            { "model": "moreblocksmod:block/dead_grass_block" },
+            { "model": "moreblocksmod:block/dead_grass_block", "y": 90 },
+            { "model": "moreblocksmod:block/dead_grass_block", "y": 180 },
+            { "model": "moreblocksmod:block/dead_grass_block", "y": 270 }
+        ],
+        "snowy=true":  { "model": "moreblocksmod:block/dead_grass_block" }
+    }
+}

@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "#  ",
+        "## ",
+        "###"
+    ],
+    "key": {
+        "#": {
+            "item": "moreblocksmod:dark_cobblestone"
+        }
+    },
+    "result": {
+        "item": "moreblocksmod:dark_cobblestone_stairs",
+        "count": 4
+    }
+}

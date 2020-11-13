@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "type=bottom": { "model": "moreblocksmod:block/dark_cobblestone_slab" },
+        "type=top": { "model":    "moreblocksmod:block/dark_cobblestone_slab_top" },
+        "type=double": { "model": "moreblocksmod:block/dark_cobblestone" }
+    }
+}

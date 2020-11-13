@@ -1,0 +1,19 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      " D ",
+      "I I",
+      " I "
+    ],
+    "key": {
+      "I": {
+        "item": "minecraft:iron_ingot"
+      },
+      "D": {
+        "item": "minecraft:dirt"
+      }
+    },
+    "result": {
+      "item": "moreblocksmod:mud_bucket"
+    }
+  }

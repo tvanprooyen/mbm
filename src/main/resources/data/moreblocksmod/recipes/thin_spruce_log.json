@@ -1,0 +1,16 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "#",
+        "#"
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:spruce_log"
+        }
+    },
+    "result": {
+        "item": "moreblocksmod:thin_spruce_log",
+        "count": 8
+    }
+}

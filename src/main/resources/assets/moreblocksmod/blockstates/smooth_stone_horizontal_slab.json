@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "facing=north,half=true": { "model": "moreblocksmod:block/smooth_stone_side" },
+    "facing=east,half=true":  { "model": "moreblocksmod:block/smooth_stone_side", "y": 90 },
+    "facing=south,half=true": { "model": "moreblocksmod:block/smooth_stone_side", "y": 180 },
+    "facing=west,half=true":  { "model": "moreblocksmod:block/smooth_stone_side", "y": 270 },
+    "facing=north,half=false": { "model": "moreblocksmod:block/smooth_stone_side_double" },
+    "facing=east,half=false":  { "model": "moreblocksmod:block/smooth_stone_side_double", "y": 90 },
+    "facing=south,half=false": { "model": "moreblocksmod:block/smooth_stone_side_double", "y": 180 },
+    "facing=west,half=false":  { "model": "moreblocksmod:block/smooth_stone_side_double", "y": 270 }
+  }
+}
