@@ -114,17 +114,15 @@
     "block.moreblocksmod.bricks_chimney": "Bricks Chimney",
     "block.moreblocksmod.vertical_glass_pane": "Vertical Glass Pane",
     "item.moreblocksmod.netherite_hammer": "Netherite Hammer",
-
-
     "block.moreblocksmod.acacia_planks_horizontal_slab": "Acacia Planks Horizontal Slab",
     "block.moreblocksmod.andesite_horizontal_slab": "Andesite Horizontal Slab",
     "block.moreblocksmod.birch_planks_horizontal_slab": "Birch Planks Horizontal Slab",
     "block.moreblocksmod.black_terracotta_horizontal_slab": "Black Terracotta Horizontal Slab",
     "block.moreblocksmod.blackstone_horizontal_slab": "Blackstone Horizontal Slab",
+    "block.moreblocksmod.blackstone_bricks_horizontal_slab": "Blackstone Bricks Horizontal Slab",
     "block.moreblocksmod.blue_terracotta_horizontal_slab": "Blue Terracotta Horizontal Slab",
     "block.moreblocksmod.bricks_horizontal_slab": "Bricks Horizontal Slab",
     "block.moreblocksmod.brown_terracotta_horizontal_slab": "Brown Terracotta Horizontal Slab",
-
     "block.moreblocksmod.cobblestone_horizontal_slab": "Cobblestone Horizontal Slab",
     "block.moreblocksmod.cracked_nether_bricks_horizontal_slab": "Cracked Nether Bricks Horizontal Slab",
     "block.moreblocksmod.cracked_stone_bricks_horizontal_slab": "Cracked Stone Bricks Horizontal Slab",
@@ -171,5 +169,18 @@
     "block.moreblocksmod.terracotta_horizontal_slab": "Terracotta Horizontal Slab",
     "block.moreblocksmod.warped_planks_horizontal_slab": "Warped Planks Horizontal Slab",
     "block.moreblocksmod.white_terracotta_horizontal_slab": "White Terracotta Horizontal Slab",
-    "block.moreblocksmod.yellow_terracotta_horizontal_slab": "Yellow Terracotta Horizontal Slab"
+    "block.moreblocksmod.yellow_terracotta_horizontal_slab": "Yellow Terracotta Horizontal Slab",
+    "block.moreblocksmod.chopped_acacia_log": "Chopped Acacia Log",
+    "block.moreblocksmod.chopped_stripped_acacia_log": "Chopped Stripped Acacia Log",
+    "block.moreblocksmod.chopped_birch_log": "Chopped Birch Log",
+    "block.moreblocksmod.chopped_stripped_birch_log": "Chopped Stripped Birch Log",
+    "block.moreblocksmod.chopped_dark_oak_log": "Chopped Dark Oak Log",
+    "block.moreblocksmod.chopped_stripped_dark_oak_log": "Chopped Stripped Dark Oak Log",
+    "block.moreblocksmod.chopped_jungle_log": "Chopped Jungle Log",
+    "block.moreblocksmod.chopped_stripped_jungle_log": "Chopped Stripped Jungle Log",
+    "block.moreblocksmod.chopped_oak_log": "Chopped oak Log",
+    "block.moreblocksmod.chopped_stripped_oak_log": "Chopped Stripped Oak Log",
+    "block.moreblocksmod.chopped_spruce_log": "Chopped Spruce Log",
+    "block.moreblocksmod.chopped_stripped_spruce_log": "Chopped Stripped Spruce Log"
+
 }

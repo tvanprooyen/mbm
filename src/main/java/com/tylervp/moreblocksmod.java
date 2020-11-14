@@ -96,6 +96,7 @@ public class moreblocksmod implements ModInitializer {
         public static final SideSlab BIRCH_HORIZONTAL_SLAB = new SideSlab(PLANKS_SETTINGS);
         public static final SideSlab BLACK_TERRACOTTA_HORIZONTAL_SLAB = new SideSlab(TERRACOTTA_SETTINGS.materialColor(MaterialColor.BLACK_TERRACOTTA));
         public static final SideSlab BLACKSTONE_HORIZONTAL_SLAB = new SideSlab(STONE_SETTINGS);
+        public static final SideSlab BLACKSTONE_BRICKS_HORIZONTAL_SLAB = new SideSlab(STONE_SETTINGS);
         public static final SideSlab BLUE_TERRACOTTA_HORIZONTAL_SLAB = new SideSlab(TERRACOTTA_SETTINGS.materialColor(MaterialColor.BLUE_TERRACOTTA));
         public static final SideSlab BRICKS_HORIZONTAL_SLAB = new SideSlab(STONE_SETTINGS);
         public static final SideSlab BROWN_TERRACOTTA_HORIZONTAL_SLAB = new SideSlab(TERRACOTTA_SETTINGS.materialColor(MaterialColor.BROWN_TERRACOTTA));
@@ -331,6 +332,10 @@ public class moreblocksmod implements ModInitializer {
         //Minecraft Stairs and Slabs
         public static final SlabBlock DIRT_SLAB = new SlabBlock(FabricBlockSettings.of(Material.SOIL).sounds(BlockSoundGroup.STONE).breakByTool(FabricToolTags.SHOVELS).breakByHand(true).hardness(0.5f).resistance(0.5f));
         public static final SlabBlock COARSE_DIRT_SLAB = new SlabBlock(FabricBlockSettings.of(Material.SOIL).sounds(BlockSoundGroup.STONE).breakByTool(FabricToolTags.SHOVELS).breakByHand(true).hardness(0.5f).resistance(0.5f));  
+        //public static final SlabBlock GRASS_SLAB = new SlabBlock(FabricBlockSettings.of(Material.SOIL).sounds(BlockSoundGroup.STONE).breakByTool(FabricToolTags.SHOVELS).breakByHand(true).hardness(0.5f).resistance(0.5f));  
+        //public static final SlabBlock CRACKED_STONE_BRICK_SLAB = new SlabBlock(FabricBlockSettings.of(Material.SOIL).sounds(BlockSoundGroup.STONE).breakByTool(FabricToolTags.SHOVELS).breakByHand(true).hardness(0.5f).resistance(0.5f));  
+        //public static final SlabBlock CRACKED_NETHER_BRICK_SLAB = new SlabBlock(FabricBlockSettings.of(Material.SOIL).sounds(BlockSoundGroup.STONE).breakByTool(FabricToolTags.SHOVELS).breakByHand(true).hardness(0.5f).resistance(0.5f));  
+
 
         //public static MBMBlocks BLOCKS = new MBMBlocks();
 
@@ -526,6 +531,7 @@ public class moreblocksmod implements ModInitializer {
                 Registry.register(Registry.BLOCK, new Identifier("moreblocksmod", "birch_planks_horizontal_slab"), BIRCH_HORIZONTAL_SLAB);
                 Registry.register(Registry.BLOCK, new Identifier("moreblocksmod", "black_terracotta_horizontal_slab"), BLACK_TERRACOTTA_HORIZONTAL_SLAB);
                 Registry.register(Registry.BLOCK, new Identifier("moreblocksmod", "blackstone_horizontal_slab"), BLACKSTONE_HORIZONTAL_SLAB);
+                Registry.register(Registry.BLOCK, new Identifier("moreblocksmod", "blackstone_bricks_horizontal_slab"), BLACKSTONE_BRICKS_HORIZONTAL_SLAB);
                 Registry.register(Registry.BLOCK, new Identifier("moreblocksmod", "blue_terracotta_horizontal_slab"), BLUE_TERRACOTTA_HORIZONTAL_SLAB);
                 Registry.register(Registry.BLOCK, new Identifier("moreblocksmod", "bricks_horizontal_slab"), BRICKS_HORIZONTAL_SLAB);
                 Registry.register(Registry.BLOCK, new Identifier("moreblocksmod", "brown_terracotta_horizontal_slab"), BROWN_TERRACOTTA_HORIZONTAL_SLAB);
@@ -880,6 +886,7 @@ public class moreblocksmod implements ModInitializer {
         Registry.register(Registry.ITEM, new Identifier("moreblocksmod", "birch_planks_horizontal_slab"), new BlockItem(BIRCH_HORIZONTAL_SLAB, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
         Registry.register(Registry.ITEM, new Identifier("moreblocksmod", "black_terracotta_horizontal_slab"), new BlockItem(BLACK_TERRACOTTA_HORIZONTAL_SLAB, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
         Registry.register(Registry.ITEM, new Identifier("moreblocksmod", "blackstone_horizontal_slab"), new BlockItem(BLACKSTONE_HORIZONTAL_SLAB, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
+        Registry.register(Registry.ITEM, new Identifier("moreblocksmod", "blackstone_bricks_horizontal_slab"), new BlockItem(BLACKSTONE_BRICKS_HORIZONTAL_SLAB, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
         Registry.register(Registry.ITEM, new Identifier("moreblocksmod", "blue_terracotta_horizontal_slab"), new BlockItem(BLUE_TERRACOTTA_HORIZONTAL_SLAB, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
         Registry.register(Registry.ITEM, new Identifier("moreblocksmod", "bricks_horizontal_slab"), new BlockItem(BRICKS_HORIZONTAL_SLAB, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
         Registry.register(Registry.ITEM, new Identifier("moreblocksmod", "brown_terracotta_horizontal_slab"), new BlockItem(BROWN_TERRACOTTA_HORIZONTAL_SLAB, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
@@ -953,6 +960,9 @@ public class moreblocksmod implements ModInitializer {
         //Minecraft Slabs and Stairs
         Registry.register(Registry.ITEM, new Identifier("moreblocksmod", "dirt_slab"), new BlockItem(DIRT_SLAB, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
         Registry.register(Registry.ITEM, new Identifier("moreblocksmod", "coarse_dirt_slab"), new BlockItem(COARSE_DIRT_SLAB, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
+        //Registry.register(Registry.ITEM, new Identifier("moreblocksmod", "grass_block_slab"), new BlockItem(COARSE_DIRT_SLAB, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
+        //Registry.register(Registry.ITEM, new Identifier("moreblocksmod", "cracked_stone_bricks_slab"), new BlockItem(COARSE_DIRT_SLAB, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
+        //Registry.register(Registry.ITEM, new Identifier("moreblocksmod", "cracked_nether_bricks_slab"), new BlockItem(COARSE_DIRT_SLAB, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));
 
         //Chimney
         Registry.register(Registry.ITEM, new Identifier("moreblocksmod", "cobblestone_chimney"), new BlockItem(COBBLESTONE_CHIMNEY, new Item.Settings().group(ItemGroup.BUILDING_BLOCKS)));

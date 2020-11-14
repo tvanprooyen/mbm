@@ -1,0 +1,190 @@
+{
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 1.0,
+        "entries": [
+          {
+            "type": "minecraft:alternatives",
+            "children": [
+              {
+                "type": "minecraft:alternatives",
+                "conditions": [
+                  {
+                    "condition": "minecraft:inverted",
+                    "term": {
+                      "condition": "minecraft:match_tool",
+                      "predicate": {
+                        "enchantments": [
+                          {
+                            "enchantment": "minecraft:silk_touch",
+                            "levels": {
+                              "min": 1
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  }
+                ],
+                "children": [
+                  {
+                    "type": "minecraft:item",
+                    "conditions": [
+                      {
+                        "condition": "minecraft:block_state_property",
+                        "block": "moreblocksmod:chopped_jungle_log",
+                        "properties": {
+                          "chopstate": "1"
+                        }
+                      }
+                    ],
+                    "name": "moreblocksmod:chopped_jungle_log"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "conditions": [
+                      {
+                        "condition": "minecraft:block_state_property",
+                        "block": "moreblocksmod:chopped_jungle_log",
+                        "properties": {
+                          "chopstate": "2"
+                        }
+                      }
+                    ],
+                    "functions": [
+                      {
+                        "function": "minecraft:set_count",
+                        "count": 2
+                      }
+                    ],
+                    "name": "moreblocksmod:chopped_jungle_log"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "conditions": [
+                      {
+                        "condition": "minecraft:block_state_property",
+                        "block": "moreblocksmod:chopped_jungle_log",
+                        "properties": {
+                          "chopstate": "3"
+                        }
+                      }
+                    ],
+                    "functions": [
+                      {
+                        "function": "minecraft:set_count",
+                        "count": 3
+                      }
+                    ],
+                    "name": "moreblocksmod:chopped_jungle_log"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "conditions": [
+                      {
+                        "condition": "minecraft:block_state_property",
+                        "block": "moreblocksmod:chopped_jungle_log",
+                        "properties": {
+                          "chopstate": "4"
+                        }
+                      }
+                    ],
+                    "functions": [
+                      {
+                        "function": "minecraft:set_count",
+                        "count": 1
+                      }
+                    ],
+                    "name": "minecraft:jungle_log"
+                  }
+                ]
+              },
+              {
+                "type": "minecraft:alternatives",
+                "children": [
+                  {
+                    "type": "minecraft:item",
+                    "conditions": [
+                      {
+                        "condition": "minecraft:block_state_property",
+                        "block": "moreblocksmod:chopped_jungle_log",
+                        "properties": {
+                          "chopstate": "1"
+                        }
+                      }
+                    ],
+                    "name": "moreblocksmod:chopped_jungle_log"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "conditions": [
+                      {
+                        "condition": "minecraft:block_state_property",
+                        "block": "moreblocksmod:chopped_jungle_log",
+                        "properties": {
+                          "chopstate": "2"
+                        }
+                      }
+                    ],
+                    "functions": [
+                      {
+                        "function": "minecraft:set_count",
+                        "count": 2
+                      }
+                    ],
+                    "name": "moreblocksmod:chopped_jungle_log"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "conditions": [
+                      {
+                        "condition": "minecraft:block_state_property",
+                        "block": "moreblocksmod:chopped_jungle_log",
+                        "properties": {
+                          "chopstate": "3"
+                        }
+                      }
+                    ],
+                    "functions": [
+                      {
+                        "function": "minecraft:set_count",
+                        "count": 3
+                      }
+                    ],
+                    "name": "moreblocksmod:chopped_jungle_log"
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "conditions": [
+                      {
+                        "condition": "minecraft:block_state_property",
+                        "block": "moreblocksmod:chopped_jungle_log",
+                        "properties": {
+                          "chopstate": "4"
+                        }
+                      }
+                    ],
+                    "functions": [
+                      {
+                        "function": "minecraft:set_count",
+                        "count": 4
+                      }
+                    ],
+                    "name": "moreblocksmod:chopped_jungle_log"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "conditions": [
+          {
+            "condition": "minecraft:entity_properties",
+            "predicate": {},
+            "entity": "this"
+          }
+        ]
+      }
+    ]
+  }

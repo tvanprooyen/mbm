@@ -1,6 +1,7 @@
 {
-	"parent": "moreblocksmod:block/sideblock0deg",
+	"parent": "moreblocksmod:block/sideblock0degtop",
 	"textures": {
-		"side":"block/cut_red_sandstone"
+		"side":"block/cut_red_sandstone",
+		"top":"block/red_sandstone_top"
 	}
 }

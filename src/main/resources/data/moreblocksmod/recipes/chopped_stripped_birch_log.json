@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "# #",
+        "   ",
+        "# #"
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:birch_stripped_log"
+        }
+    },
+    "result": {
+        "item": "moreblocksmod:chopped_stripped_birch_log",
+        "count": 16
+    }
+}

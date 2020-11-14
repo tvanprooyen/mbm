@@ -1,0 +1,77 @@
+{
+  "variants": {
+    "facing=north,down=true,up=false,chopstate=1": { "model": "moreblocksmod:block/chopped_jungle_log_stage_1", "x": 270 },
+    "facing=north,down=true,up=false,chopstate=2":  { "model": "moreblocksmod:block/chopped_jungle_log_stage_2", "x": 270 },
+    "facing=north,down=true,up=false,chopstate=3": { "model": "moreblocksmod:block/chopped_jungle_log_stage_3", "x": 270 },
+
+    "facing=east,down=true,up=false,chopstate=1": { "model": "moreblocksmod:block/chopped_jungle_log_stage_1", "x": 270, "y": 90  },
+    "facing=east,down=true,up=false,chopstate=2":  { "model": "moreblocksmod:block/chopped_jungle_log_stage_2", "x": 270, "y": 90  },
+    "facing=east,down=true,up=false,chopstate=3": { "model": "moreblocksmod:block/chopped_jungle_log_stage_3", "x": 270, "y": 90  },
+
+    "facing=south,down=true,up=false,chopstate=1": { "model": "moreblocksmod:block/chopped_jungle_log_stage_1", "x": 270, "y": 180  },
+    "facing=south,down=true,up=false,chopstate=2":  { "model": "moreblocksmod:block/chopped_jungle_log_stage_2", "x": 270, "y": 180  },
+    "facing=south,down=true,up=false,chopstate=3": { "model": "moreblocksmod:block/chopped_jungle_log_stage_3", "x": 270, "y": 180  },
+
+    "facing=west,down=true,up=false,chopstate=1": { "model": "moreblocksmod:block/chopped_jungle_log_stage_1", "x": 270, "y": 270  },
+    "facing=west,down=true,up=false,chopstate=2":  { "model": "moreblocksmod:block/chopped_jungle_log_stage_2", "x": 270, "y": 270  },
+    "facing=west,down=true,up=false,chopstate=3": { "model": "moreblocksmod:block/chopped_jungle_log_stage_3", "x": 270, "y": 270  },
+
+
+    "facing=north,down=false,up=true,chopstate=1": { "model": "moreblocksmod:block/chopped_jungle_log_stage_1", "x": 90 },
+    "facing=north,down=false,up=true,chopstate=2":  { "model": "moreblocksmod:block/chopped_jungle_log_stage_2", "x": 90 },
+    "facing=north,down=false,up=true,chopstate=3": { "model": "moreblocksmod:block/chopped_jungle_log_stage_3", "x": 90 },
+
+    "facing=east,down=false,up=true,chopstate=1": { "model": "moreblocksmod:block/chopped_jungle_log_stage_1", "x": 90, "y": 90  },
+    "facing=east,down=false,up=true,chopstate=2":  { "model": "moreblocksmod:block/chopped_jungle_log_stage_2", "x": 90, "y": 90  },
+    "facing=east,down=false,up=true,chopstate=3": { "model": "moreblocksmod:block/chopped_jungle_log_stage_3", "x": 90, "y": 90  },
+
+    "facing=south,down=false,up=true,chopstate=1": { "model": "moreblocksmod:block/chopped_jungle_log_stage_1", "x": 90, "y": 180  },
+    "facing=south,down=false,up=true,chopstate=2":  { "model": "moreblocksmod:block/chopped_jungle_log_stage_2", "x": 90, "y": 180  },
+    "facing=south,down=false,up=true,chopstate=3": { "model": "moreblocksmod:block/chopped_jungle_log_stage_3", "x": 90, "y": 180  },
+
+    "facing=west,down=false,up=true,chopstate=1": { "model": "moreblocksmod:block/chopped_jungle_log_stage_1", "x": 90, "y": 270  },
+    "facing=west,down=false,up=true,chopstate=2":  { "model": "moreblocksmod:block/chopped_jungle_log_stage_2", "x": 90, "y": 270  },
+    "facing=west,down=false,up=true,chopstate=3": { "model": "moreblocksmod:block/chopped_jungle_log_stage_3", "x": 90, "y": 270  },
+
+
+    "facing=north,down=false,up=false,chopstate=1": { "model": "moreblocksmod:block/chopped_jungle_log_stage_1" },
+    "facing=north,down=false,up=false,chopstate=2":  { "model": "moreblocksmod:block/chopped_jungle_log_stage_2" },
+    "facing=north,down=false,up=false,chopstate=3": { "model": "moreblocksmod:block/chopped_jungle_log_stage_3" },
+
+    "facing=east,down=false,up=false,chopstate=1": { "model": "moreblocksmod:block/chopped_jungle_log_stage_1", "y": 90 },
+    "facing=east,down=false,up=false,chopstate=2":  { "model": "moreblocksmod:block/chopped_jungle_log_stage_2", "y": 90  },
+    "facing=east,down=false,up=false,chopstate=3": { "model": "moreblocksmod:block/chopped_jungle_log_stage_3", "y": 90  },
+
+    "facing=south,down=false,up=false,chopstate=1": { "model": "moreblocksmod:block/chopped_jungle_log_stage_1", "y": 180 },
+    "facing=south,down=false,up=false,chopstate=2":  { "model": "moreblocksmod:block/chopped_jungle_log_stage_2", "y": 180 },
+    "facing=south,down=false,up=false,chopstate=3": { "model": "moreblocksmod:block/chopped_jungle_log_stage_3", "y": 180 },
+
+    "facing=west,down=false,up=false,chopstate=1": { "model": "moreblocksmod:block/chopped_jungle_log_stage_1", "y": 270 },
+    "facing=west,down=false,up=false,chopstate=2":  { "model": "moreblocksmod:block/chopped_jungle_log_stage_2", "y": 270 },
+    "facing=west,down=false,up=false,chopstate=3": { "model": "moreblocksmod:block/chopped_jungle_log_stage_3", "y": 270 },
+
+
+    "facing=north,down=true,up=false,chopstate=4": { "model": "block/jungle_log", "x": 270 },
+    "facing=east,down=true,up=false,chopstate=4": { "model": "block/jungle_log", "x": 270, "y": 90 },
+    "facing=south,down=true,up=false,chopstate=4": { "model": "block/jungle_log", "x": 270, "y": 180 },
+    "facing=west,down=true,up=false,chopstate=4": { "model": "block/jungle_log", "x": 270, "y": 270 },
+
+
+    "facing=north,down=false,up=true,chopstate=4": { "model": "block/jungle_log", "x": 90 },
+    "facing=east,down=false,up=true,chopstate=4": { "model": "block/jungle_log", "x": 90, "y": 90 },
+    "facing=south,down=false,up=true,chopstate=4": { "model": "block/jungle_log", "x": 90, "y": 180 },
+    "facing=west,down=false,up=true,chopstate=4": { "model": "block/jungle_log", "x": 90, "y": 270 },
+
+
+    "facing=north,down=false,up=false,chopstate=4": { "model": "block/jungle_log" },
+    "facing=east,down=false,up=false,chopstate=4": { "model": "block/jungle_log", "y": 90 },
+    "facing=south,down=false,up=false,chopstate=4": { "model": "block/jungle_log", "y": 180 },
+    "facing=west,down=false,up=false,chopstate=4": { "model": "block/jungle_log", "y": 270 },
+
+    "down=true,up=true,chopstate=1": { "model": "block/jungle_log"},
+    "down=true,up=true,chopstate=2": { "model": "block/jungle_log"},
+    "down=true,up=true,chopstate=3": { "model": "block/jungle_log"},
+    "down=true,up=true,chopstate=4": { "model": "block/jungle_log"}
+    
+  }
+}

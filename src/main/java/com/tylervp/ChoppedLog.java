@@ -7,6 +7,7 @@ import net.minecraft.block.ShapeContext;
 import net.minecraft.entity.ai.pathing.NavigationType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.fluid.FluidState;
+import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -67,16 +68,33 @@ public class ChoppedLog extends Block {
         if(state.isOf(this)) {
             ItemStack playerItem = player.getStackInHand(hand);
 
-            if(!(state.isOf(moreblocksmod.CHOPPED_STRIPPED_OAK_LOG))) {
+            if(!(state.isOf(moreblocksmod.CHOPPED_STRIPPED_ACACIA_LOG) || state.isOf(moreblocksmod.CHOPPED_STRIPPED_BIRCH_LOG) || state.isOf(moreblocksmod.CHOPPED_STRIPPED_DARK_OAK_LOG)  || state.isOf(moreblocksmod.CHOPPED_STRIPPED_JUNGLE_LOG)  || state.isOf(moreblocksmod.CHOPPED_STRIPPED_OAK_LOG)  || state.isOf(moreblocksmod.CHOPPED_STRIPPED_SPRUCE_LOG))) {
                 if ((playerItem.getItem() == Items.WOODEN_AXE || playerItem.getItem() == Items.STONE_AXE || playerItem.getItem() == Items.GOLDEN_AXE || playerItem.getItem() == Items.IRON_AXE || playerItem.getItem() == Items.DIAMOND_AXE || playerItem.getItem() == Items.NETHERITE_AXE)){
                     
                     BlockState ChangeState = state;
+                    ItemConvertible bark_item = this.asItem();
 
-                    if(state.isOf(moreblocksmod.CHOPPED_OAK_LOG)) {
+                    if(state.isOf(moreblocksmod.CHOPPED_ACACIA_LOG)) {
+                        ChangeState = moreblocksmod.CHOPPED_STRIPPED_ACACIA_LOG.getDefaultState();
+                        bark_item = moreblocksmod.ACACIA_BARK_FRAGMENT.asItem();
+                    } else if(state.isOf(moreblocksmod.CHOPPED_BIRCH_LOG)) {
+                        ChangeState = moreblocksmod.CHOPPED_STRIPPED_BIRCH_LOG.getDefaultState();
+                        bark_item = moreblocksmod.BIRCH_BARK_FRAGMENT.asItem();
+                    } else if(state.isOf(moreblocksmod.CHOPPED_DARK_OAK_LOG)) {
+                        ChangeState = moreblocksmod.CHOPPED_STRIPPED_DARK_OAK_LOG.getDefaultState();
+                        bark_item = moreblocksmod.DARK_OAK_BARK_FRAGMENT.asItem();
+                    } else if(state.isOf(moreblocksmod.CHOPPED_JUNGLE_LOG)) {
+                        ChangeState = moreblocksmod.CHOPPED_STRIPPED_JUNGLE_LOG.getDefaultState();
+                        bark_item = moreblocksmod.JUNGLE_BARK_FRAGMENT.asItem();
+                    } else if(state.isOf(moreblocksmod.CHOPPED_OAK_LOG)) {
                         ChangeState = moreblocksmod.CHOPPED_STRIPPED_OAK_LOG.getDefaultState();
-                        Block.dropStack(world, pos, new ItemStack(moreblocksmod.OAK_BARK_FRAGMENT.asItem(), state.get(ChoppedLog.CHOPPEDSTATE)));
+                        bark_item = moreblocksmod.OAK_BARK_FRAGMENT.asItem();
+                    } else if(state.isOf(moreblocksmod.CHOPPED_SPRUCE_LOG)) {
+                        ChangeState = moreblocksmod.CHOPPED_STRIPPED_SPRUCE_LOG.getDefaultState();
+                        bark_item = moreblocksmod.SPRUCE_BARK_FRAGMENT.asItem();
                     }
-                    
+
+                    Block.dropStack(world, pos, new ItemStack(bark_item, state.get(ChoppedLog.CHOPPEDSTATE)));
                     world.setBlockState(pos, ChangeState.with(ChoppedLog.CHOPPEDSTATE, state.get(ChoppedLog.CHOPPEDSTATE)).with(ChoppedLog.DOWN_FACING, state.get(ChoppedLog.DOWN_FACING)).with(ChoppedLog.UP_FACING, state.get(ChoppedLog.UP_FACING)).with(ChoppedLog.FACING, state.get(ChoppedLog.FACING)));
                     
                     world.playSound(player, player.getX(), player.getY(), player.getZ(), SoundEvents.ITEM_AXE_STRIP, SoundCategory.NEUTRAL, 1.0f, 1.0f);

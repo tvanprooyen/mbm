@@ -1,6 +1,7 @@
 {
-	"parent": "moreblocksmod:block/sideblock90deg",
+	"parent": "moreblocksmod:block/sideblock90degtop",
 	"textures": {
-		"side":"block/blackstone"
+		"side":"block/blackstone",
+		"top":"block/blackstone_top"
 	}
 }
