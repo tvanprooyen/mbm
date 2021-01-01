@@ -1,4 +1,4 @@
-# Fabric Example Mod
+# More Blocks Mod (MBM)
 
 ## Setup
 
