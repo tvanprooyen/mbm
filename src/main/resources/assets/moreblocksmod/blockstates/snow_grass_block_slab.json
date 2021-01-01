@@ -1,0 +1,7 @@
+﻿{
+  "variants": {
+      "type=bottom": { "model": "moreblocksmod:block/snow_grass_block_slab" },
+      "type=top": { "model": "moreblocksmod:block/snow_grass_block_slab_top" },
+      "type=double": { "model": "moreblocksmod:block/snow_grass_block"}
+  }
+}

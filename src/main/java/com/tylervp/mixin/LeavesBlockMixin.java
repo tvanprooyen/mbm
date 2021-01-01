@@ -11,7 +11,8 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
 
-import com.tylervp.moreblocksmod;
+import com.tylervp.block.MBMBlocks;
+import com.tylervp.block.ThinPillarBlock;
 
 import org.spongepowered.asm.mixin.Mixin;
 
@@ -36,30 +37,29 @@ public abstract class LeavesBlockMixin extends Block {
         BlockPos pos = ctx.getBlockPos();
         World world = ctx.getWorld();
         BlockState state = world.getBlockState(pos);
-        
 
-        if(state.isOf(moreblocksmod.THIN_OAK_LOG)){
-            return (BlockState)moreblocksmod.THIN_OAK_LOG.getDefaultState().with(moreblocksmod.THIN_OAK_LOG.LEAVES, true).with(moreblocksmod.THIN_OAK_LOG.PRESISTANT, true).with(moreblocksmod.THIN_OAK_LOG.AXIS, state.get(moreblocksmod.THIN_OAK_LOG.AXIS));
+        if(state.isOf(MBMBlocks.THIN_OAK_LOG)){
+            return (BlockState)MBMBlocks.THIN_OAK_LOG.getDefaultState().with(ThinPillarBlock.LEAVES, true).with(ThinPillarBlock.PRESISTANT, true).with(ThinPillarBlock.AXIS, state.get(ThinPillarBlock.AXIS)).with(ThinPillarBlock.CHAIN, state.get(ThinPillarBlock.CHAIN)).with(ThinPillarBlock.ROPE, state.get(ThinPillarBlock.ROPE));
         }
 
-        if(state.isOf(moreblocksmod.THIN_SPRUCE_LOG)){
-            return (BlockState)moreblocksmod.THIN_SPRUCE_LOG.getDefaultState().with(moreblocksmod.THIN_SPRUCE_LOG.LEAVES, true).with(moreblocksmod.THIN_SPRUCE_LOG.PRESISTANT, true).with(moreblocksmod.THIN_SPRUCE_LOG.AXIS, state.get(moreblocksmod.THIN_SPRUCE_LOG.AXIS));
+        if(state.isOf(MBMBlocks.THIN_SPRUCE_LOG)){
+            return (BlockState)MBMBlocks.THIN_SPRUCE_LOG.getDefaultState().with(ThinPillarBlock.LEAVES, true).with(ThinPillarBlock.PRESISTANT, true).with(ThinPillarBlock.AXIS, state.get(ThinPillarBlock.AXIS)).with(ThinPillarBlock.CHAIN, state.get(ThinPillarBlock.CHAIN)).with(ThinPillarBlock.ROPE, state.get(ThinPillarBlock.ROPE));
         }
 
-        if(state.isOf(moreblocksmod.THIN_ACACIA_LOG)){
-            return (BlockState)moreblocksmod.THIN_ACACIA_LOG.getDefaultState().with(moreblocksmod.THIN_ACACIA_LOG.LEAVES, true).with(moreblocksmod.THIN_ACACIA_LOG.PRESISTANT, true).with(moreblocksmod.THIN_ACACIA_LOG.AXIS, state.get(moreblocksmod.THIN_ACACIA_LOG.AXIS));
+        if(state.isOf(MBMBlocks.THIN_ACACIA_LOG)){
+            return (BlockState)MBMBlocks.THIN_ACACIA_LOG.getDefaultState().with(ThinPillarBlock.LEAVES, true).with(ThinPillarBlock.PRESISTANT, true).with(ThinPillarBlock.AXIS, state.get(ThinPillarBlock.AXIS)).with(ThinPillarBlock.CHAIN, state.get(ThinPillarBlock.CHAIN)).with(ThinPillarBlock.ROPE, state.get(ThinPillarBlock.ROPE));
         }
 
-        if(state.isOf(moreblocksmod.THIN_BIRCH_LOG)){
-            return (BlockState)moreblocksmod.THIN_BIRCH_LOG.getDefaultState().with(moreblocksmod.THIN_BIRCH_LOG.LEAVES, true).with(moreblocksmod.THIN_BIRCH_LOG.PRESISTANT, true).with(moreblocksmod.THIN_BIRCH_LOG.AXIS, state.get(moreblocksmod.THIN_BIRCH_LOG.AXIS));
+        if(state.isOf(MBMBlocks.THIN_BIRCH_LOG)){
+            return (BlockState)MBMBlocks.THIN_BIRCH_LOG.getDefaultState().with(ThinPillarBlock.LEAVES, true).with(ThinPillarBlock.PRESISTANT, true).with(ThinPillarBlock.AXIS, state.get(ThinPillarBlock.AXIS)).with(ThinPillarBlock.CHAIN, state.get(ThinPillarBlock.CHAIN)).with(ThinPillarBlock.ROPE, state.get(ThinPillarBlock.ROPE));
         }
 
-        if(state.isOf(moreblocksmod.THIN_DARK_OAK_LOG)){
-            return (BlockState)moreblocksmod.THIN_DARK_OAK_LOG.getDefaultState().with(moreblocksmod.THIN_DARK_OAK_LOG.LEAVES, true).with(moreblocksmod.THIN_DARK_OAK_LOG.PRESISTANT, true).with(moreblocksmod.THIN_DARK_OAK_LOG.AXIS, state.get(moreblocksmod.THIN_DARK_OAK_LOG.AXIS));
+        if(state.isOf(MBMBlocks.THIN_DARK_OAK_LOG)){
+            return (BlockState)MBMBlocks.THIN_DARK_OAK_LOG.getDefaultState().with(ThinPillarBlock.LEAVES, true).with(ThinPillarBlock.PRESISTANT, true).with(ThinPillarBlock.AXIS, state.get(ThinPillarBlock.AXIS)).with(ThinPillarBlock.CHAIN, state.get(ThinPillarBlock.CHAIN)).with(ThinPillarBlock.ROPE, state.get(ThinPillarBlock.ROPE));
         }
 
-        if(state.isOf(moreblocksmod.THIN_JUNGLE_LOG)){
-            return (BlockState)moreblocksmod.THIN_JUNGLE_LOG.getDefaultState().with(moreblocksmod.THIN_JUNGLE_LOG.LEAVES, true).with(moreblocksmod.THIN_JUNGLE_LOG.PRESISTANT, true).with(moreblocksmod.THIN_JUNGLE_LOG.AXIS, state.get(moreblocksmod.THIN_JUNGLE_LOG.AXIS));
+        if(state.isOf(MBMBlocks.THIN_JUNGLE_LOG)){
+            return (BlockState)MBMBlocks.THIN_JUNGLE_LOG.getDefaultState().with(ThinPillarBlock.LEAVES, true).with(ThinPillarBlock.PRESISTANT, true).with(ThinPillarBlock.AXIS, state.get(ThinPillarBlock.AXIS)).with(ThinPillarBlock.CHAIN, state.get(ThinPillarBlock.CHAIN)).with(ThinPillarBlock.ROPE, state.get(ThinPillarBlock.ROPE));
         }
         
         return updateDistanceFromLogs(((BlockState)this.getDefaultState()).with(LeavesBlock.PERSISTENT, true), ctx.getWorld(), ctx.getBlockPos());

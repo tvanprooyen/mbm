@@ -1,0 +1,23 @@
+{
+	"parent": "block/block",
+	"textures": {
+		"3": "block/dirt",
+		"4": "block/snow",
+		"5": "block/grass_block_snow",
+		"particle": "block/grass_block_side"
+	},
+	"elements": [
+		{
+			"from": [0, 0, 0],
+			"to": [16, 8, 16],
+			"faces": {
+				"north": {"uv": [0, 0, 16, 8], "texture": "#5"},
+				"east": {"uv": [0, 0, 16, 8], "texture": "#5"},
+				"south": {"uv": [0, 0, 16, 8], "texture": "#5"},
+				"west": {"uv": [0, 0, 16, 8], "texture": "#5"},
+				"up": {"uv": [0, 0, 16, 16], "texture": "#4"},
+				"down": {"uv": [0, 0, 16, 16], "texture": "#3"}
+			}
+		}
+	]
+}

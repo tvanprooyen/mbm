@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "moreblocksmod:block/rice_stage4_flip"
+  }
+}

@@ -13,7 +13,7 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldView;
 
-import com.tylervp.moreblocksmod;
+import com.tylervp.block.MBMBlocks;
 
 import org.spongepowered.asm.mixin.Mixin;
 
@@ -30,7 +30,7 @@ public abstract class LanternBlockMixin extends Block {
         Direction attachedDirection = state.<Boolean>get(LanternBlock.HANGING) ? Direction.DOWN : Direction.UP;
 
         Direction direction5 = attachedDirection.getOpposite();
-        return (Block.sideCoversSmallSquare(world, pos.offset(direction5), direction5.getOpposite()) || (world.getBlockState(pos.up()).isOf(moreblocksmod.THIN_OAK_LOG) || world.getBlockState(pos.up()).isOf(moreblocksmod.THIN_ACACIA_LOG)) || world.getBlockState(pos.up()).isOf(moreblocksmod.THIN_BIRCH_LOG) || world.getBlockState(pos.up()).isOf(moreblocksmod.THIN_DARK_OAK_LOG) || world.getBlockState(pos.up()).isOf(moreblocksmod.THIN_JUNGLE_LOG) || world.getBlockState(pos.up()).isOf(moreblocksmod.THIN_SPRUCE_LOG) || world.getBlockState(pos.up()).isOf(moreblocksmod.THIN_STRIPPED_ACACIA_LOG) || world.getBlockState(pos.up()).isOf(moreblocksmod.THIN_STRIPPED_BIRCH_LOG)  || world.getBlockState(pos.up()).isOf(moreblocksmod.THIN_STRIPPED_DARK_OAK_LOG) || world.getBlockState(pos.up()).isOf(moreblocksmod.THIN_STRIPPED_JUNGLE_LOG) || world.getBlockState(pos.up()).isOf(moreblocksmod.THIN_STRIPPED_OAK_LOG) || world.getBlockState(pos.up()).isOf(moreblocksmod.THIN_STRIPPED_SPRUCE_LOG) || world.getBlockState(pos.up()).isOf(moreblocksmod.ROPE)  || world.getBlockState(pos.up()).isOf(moreblocksmod.ROPEMID));
+        return (Block.sideCoversSmallSquare(world, pos.offset(direction5), direction5.getOpposite()) || (world.getBlockState(pos.up()).isOf(MBMBlocks.THIN_OAK_LOG) || world.getBlockState(pos.up()).isOf(MBMBlocks.THIN_ACACIA_LOG)) || world.getBlockState(pos.up()).isOf(MBMBlocks.THIN_BIRCH_LOG) || world.getBlockState(pos.up()).isOf(MBMBlocks.THIN_DARK_OAK_LOG) || world.getBlockState(pos.up()).isOf(MBMBlocks.THIN_JUNGLE_LOG) || world.getBlockState(pos.up()).isOf(MBMBlocks.THIN_SPRUCE_LOG) || world.getBlockState(pos.up()).isOf(MBMBlocks.THIN_STRIPPED_ACACIA_LOG) || world.getBlockState(pos.up()).isOf(MBMBlocks.THIN_STRIPPED_BIRCH_LOG)  || world.getBlockState(pos.up()).isOf(MBMBlocks.THIN_STRIPPED_DARK_OAK_LOG) || world.getBlockState(pos.up()).isOf(MBMBlocks.THIN_STRIPPED_JUNGLE_LOG) || world.getBlockState(pos.up()).isOf(MBMBlocks.THIN_STRIPPED_OAK_LOG) || world.getBlockState(pos.up()).isOf(MBMBlocks.THIN_STRIPPED_SPRUCE_LOG) || world.getBlockState(pos.up()).isOf(MBMBlocks.ROPE)  || world.getBlockState(pos.up()).isOf(MBMBlocks.ROPEMID));
     }
 
     
@@ -40,9 +40,9 @@ public abstract class LanternBlockMixin extends Block {
         for (final Direction lv2 : ctx.getPlacementDirections()) {
             if (lv2.getAxis() == Direction.Axis.Y) {
                 BlockState blockState8 = (BlockState)this.getDefaultState().with(LanternBlock.HANGING, lv2 == Direction.UP);
-                if((ctx.getWorld().getBlockState(ctx.getBlockPos().up()).isOf(moreblocksmod.ROPEMID) || ctx.getWorld().getBlockState(ctx.getBlockPos().up()).isOf(moreblocksmod.ROPE)) && lv2 == Direction.UP){
-                    ctx.getWorld().setBlockState(ctx.getBlockPos().up(), moreblocksmod.ROPEMID.getDefaultState());
-                    blockState8 = (BlockState)moreblocksmod.LANTERN_ROPE.getDefaultState().with(LanternBlock.HANGING, lv2 == Direction.UP);
+                if((ctx.getWorld().getBlockState(ctx.getBlockPos().up()).isOf(MBMBlocks.ROPEMID) || ctx.getWorld().getBlockState(ctx.getBlockPos().up()).isOf(MBMBlocks.ROPE)) && lv2 == Direction.UP){
+                    ctx.getWorld().setBlockState(ctx.getBlockPos().up(), MBMBlocks.ROPEMID.getDefaultState());
+                    blockState8 = (BlockState)MBMBlocks.LANTERN_ROPE.getDefaultState().with(LanternBlock.HANGING, lv2 == Direction.UP);
                 }
                 if (blockState8.canPlaceAt(ctx.getWorld(), ctx.getBlockPos())) {
                     return (BlockState)blockState8.with(LanternBlock.field_26441, fluidState3.getFluid() == Fluids.WATER);
@@ -54,8 +54,8 @@ public abstract class LanternBlockMixin extends Block {
 
     @Override
     public void onBreak(World world, BlockPos pos, BlockState state, PlayerEntity player) {
-        if(world.getBlockState(pos.up()).isOf(moreblocksmod.ROPEMID) || world.getBlockState(pos.up()).isOf(moreblocksmod.ROPE)){
-            world.setBlockState(pos.up(), moreblocksmod.ROPE.getDefaultState());
+        if(world.getBlockState(pos.up()).isOf(MBMBlocks.ROPEMID) || world.getBlockState(pos.up()).isOf(MBMBlocks.ROPE)){
+            world.setBlockState(pos.up(), MBMBlocks.ROPE.getDefaultState());
         }
         super.onBreak(world, pos, state, player);
     }

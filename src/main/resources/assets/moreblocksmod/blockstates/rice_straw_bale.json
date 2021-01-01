@@ -1,0 +1,7 @@
+{
+  "variants": {
+      "axis=y":  { "model": "moreblocksmod:block/rice_straw_bale" },
+      "axis=z":   { "model": "moreblocksmod:block/rice_straw_bale", "x": 90 },
+      "axis=x":   { "model": "moreblocksmod:block/rice_straw_bale", "x": 90, "y": 90 }
+  }
+}

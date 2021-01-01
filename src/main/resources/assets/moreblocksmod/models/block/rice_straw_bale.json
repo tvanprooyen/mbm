@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "end": "moreblocksmod:block/rice_straw_bale_top",
+        "side": "moreblocksmod:block/rice_straw_bale_side"
+    }
+}

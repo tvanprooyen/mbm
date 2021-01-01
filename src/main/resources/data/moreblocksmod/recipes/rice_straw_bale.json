@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "###",
+        "###",
+        "###"
+    ],
+    "key": {
+        "#": {
+            "item": "moreblocksmod:rice_leaf_sheath"
+        }
+    },
+    "result": {
+        "item": "moreblocksmod:rice_straw_bale",
+        "count": 1
+    }
+}

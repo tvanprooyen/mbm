@@ -6,7 +6,7 @@
         "entries": [
           {
             "type": "minecraft:item",
-            "name": "moreblocksmod:red_terracotta_bricks_stairs"
+            "name": "moreblocksmod:red_terracotta_stairs"
           }
         ],
         "conditions": [

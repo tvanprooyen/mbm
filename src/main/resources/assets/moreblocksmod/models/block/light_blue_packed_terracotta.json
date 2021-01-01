@@ -1,0 +1,6 @@
+﻿{
+    "parent": "block/cube_all",
+    "textures": {
+      "all": "moreblocksmod:block/light_blue_packed_terracotta"
+    }
+  }

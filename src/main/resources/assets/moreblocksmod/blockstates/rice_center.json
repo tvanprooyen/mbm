@@ -1,0 +1,53 @@
+{
+  "variants": {
+    "age=0,flip=false": {
+      "model": "moreblocksmod:block/rice_stage0"
+    },
+    "age=1,flip=false": {
+      "model": "moreblocksmod:block/rice_stage1"
+    },
+    "age=2,flip=false": {
+      "model": "moreblocksmod:block/rice_stage2"
+    },
+    "age=3,flip=false": {
+      "model": "moreblocksmod:block/rice_stage3"
+    },
+    "age=4,flip=false": {
+      "model": "moreblocksmod:block/rice_stage4"
+    },
+    "age=5,flip=false": {
+      "model": "moreblocksmod:block/rice_stage5"
+    },
+    "age=6,flip=false": {
+      "model": "moreblocksmod:block/rice_stage6"
+    },
+    "age=7,flip=false": {
+      "model": "moreblocksmod:block/rice_stage7"
+    },
+
+      "age=0,flip=true": {
+        "model": "moreblocksmod:block/rice_stage0_flip"
+      },
+      "age=1,flip=true": {
+        "model": "moreblocksmod:block/rice_stage1_flip"
+      },
+      "age=2,flip=true": {
+        "model": "moreblocksmod:block/rice_stage2_flip"
+      },
+      "age=3,flip=true": {
+        "model": "moreblocksmod:block/rice_stage3_flip"
+      },
+      "age=4,flip=true": {
+        "model": "moreblocksmod:block/rice_stage4_flip"
+      },
+      "age=5,flip=true": {
+        "model": "moreblocksmod:block/rice_stage5_flip"
+      },
+      "age=6,flip=true": {
+        "model": "moreblocksmod:block/rice_stage6_flip"
+      },
+      "age=7,flip=true": {
+        "model": "moreblocksmod:block/rice_stage7_flip"
+      }
+  }
+}
