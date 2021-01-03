@@ -6,7 +6,7 @@ import com.tylervp.block.MBMBlocks;
 import com.tylervp.item.MBMItems;
 
 public class moreblocksmod implements ModInitializer {   
-        private static final String ModName = "moreblocksmod";  
+        private static final String ModName = "moreblocksmod";
 
          @Override
         public void onInitialize() {

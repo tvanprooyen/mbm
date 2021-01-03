@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "moreblocksmod",
-  "version": "${version}",
+  "version": "0.1.2.0",
 
   "name": "More Blocks Mod",
   "description": "This Mod adds blocks that should be in vanilla minecraft",
@@ -9,12 +9,12 @@
     "Tyler VanProoyen"
   ],
   "contact": {
-    "homepage": "http://tylervp.com/MoreBlocksMod",
-    "sources": "http://tylervp.com/MoreBlocksMod"
+    "homepage": "http://tylervp.com/mbm",
+    "sources": "http://tylervp.com/mbm"
   },
 
   "license": "CC0-1.0",
-  "icon": "assets/modid/icon.png",
+  "icon": "assets/moreblocksmod/icon.png",
 
   "environment": "*",
   "entrypoints": {
@@ -22,11 +22,11 @@
       "com.tylervp.moreblocksmod"
     ],
     "client": [
-      "com.tylervp.client.MoreBlocksModClientIni"
+      "com.tylervp.client.ClientInit"
     ]
   },
   "mixins": [
-    "modid.mixins.json"
+    "moreblocksmod.mixins.json"
   ],
 
   "depends": {

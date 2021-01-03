@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+      "sss",
+      "ggg"
+  ],
+  "key": {
+      "s": {
+          "item": "minecraft:snow"
+      },
+      "g": {
+        "item": "moreblocksmod:grass_block_slab"
+    }
+  },
+  "result": {
+      "item": "moreblocksmod:snow_grass_block_slab",
+      "count": 3
+  }
+}

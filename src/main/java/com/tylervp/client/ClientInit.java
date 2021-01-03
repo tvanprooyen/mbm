@@ -27,7 +27,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.BlockRenderView;
 
-public class MoreBlocksModClientIni implements ClientModInitializer
+public class ClientInit implements ClientModInitializer
 {
     // ...
     

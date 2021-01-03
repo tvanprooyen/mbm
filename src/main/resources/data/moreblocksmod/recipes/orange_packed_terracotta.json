@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+      "###",
+      "###",
+      "###"
+  ],
+  "key": {
+      "#": {
+          "item": "minecraft:orange_terracotta"
+      }
+  },
+  "result": {
+      "item": "moreblocksmod:orange_packed_terracotta",
+      "count": 9
+  }
+}

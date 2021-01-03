@@ -209,8 +209,8 @@ public class MBMItems extends moreblocksmod {
 
 
         //Terracotta Slabs and Stairs
-        Registry.register(Registry.ITEM, new Identifier(ModName, "white_terracotta_slab"), new BlockItem(MBMBlocks.WHITE_TERRACOTTA_SLAB, BUILDING_BLOCKS));
         Registry.register(Registry.ITEM, new Identifier(ModName, "white_terracotta_stairs"), new BlockItem(MBMBlocks.WHITE_TERRACOTTA_STAIRS, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "white_terracotta_slab"), new BlockItem(MBMBlocks.WHITE_TERRACOTTA_SLAB, BUILDING_BLOCKS));
 
         Registry.register(Registry.ITEM, new Identifier(ModName, "red_terracotta_stairs"), new BlockItem(MBMBlocks.RED_TERRACOTTA_STAIRS, BUILDING_BLOCKS));
         Registry.register(Registry.ITEM, new Identifier(ModName, "red_terracotta_slab"), new BlockItem(MBMBlocks.RED_TERRACOTTA_SLAB, BUILDING_BLOCKS));
@@ -260,20 +260,6 @@ public class MBMItems extends moreblocksmod {
         Registry.register(Registry.ITEM, new Identifier(ModName, "terracotta_slab"), new BlockItem(MBMBlocks.TERRACOTTA_SLAB, BUILDING_BLOCKS));
         Registry.register(Registry.ITEM, new Identifier(ModName, "terracotta_stairs"), new BlockItem(MBMBlocks.TERRACOTTA_STAIRS, BUILDING_BLOCKS));
 
-/* black_terracotta
-brown_terracotta
-blue_terracotta
-light_blue_terracotta
-gray_terracotta
-green_terracotta
-lime_terracotta
-light_gray_terracotta
-magenta_terracotta
-orange_terracotta
-pink_terracotta
-purple_terracotta
-yellow_terracotta
-terracotta */
 
         //Dark Stone
         Registry.register(Registry.ITEM, new Identifier(ModName, "dark_stone"), new BlockItem(MBMBlocks.DARK_STONE, BUILDING_BLOCKS));
