@@ -123,7 +123,7 @@ This is an example of how to list things you need to use the software and how to
 1. Download <a href="https://fabricmc.net/" target="_blank">FabricMC</a>
 2. Download <a href="https://www.curseforge.com/minecraft/mc-mods/fabric-api" target="_blank">FabricMC API</a> (Required to run)
 3. Download <a href="https://www.curseforge.com/minecraft/mc-mods/mbm-more-blocks-mod" target="_blank">More Blocks Mod</a>
-4. Place MOD and API in "Mod" folder located "C:\Users\ *Username* \AppData\Roaming\.minecraft\mods" or type %appdata%\.minecraft\mods in file explorer
+4. Place MOD and API in "Mod" folder located: <br /> "C:\Users\ *Username* \AppData\Roaming\.minecraft\mods"<br /> or <br />type %appdata%\.minecraft\mods in file explorer
 
 
 
