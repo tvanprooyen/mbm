@@ -20,6 +20,7 @@
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
 [![MINECRAFT VER][minecraft-ver-shield]][minecraft-ver-url]
+[![GITHUB VER][github-ver-shield]][githubt-ver-url]
 
 <!-- PROJECT LOGO -->
 <br />
@@ -186,5 +187,7 @@ Contributions are what make the open source community such an amazing place to b
 [license-shield]: https://img.shields.io/badge/LICENSE-CC--BY--NC--4.0-green?style=for-the-badge
 [license-url]: https://github.com/tvanprooyen/mbm/blob/master/LICENS
 [minecraft-ver-shield]: https://img.shields.io/badge/Minecraft-1.16.5-orange?style=for-the-badge
-[minecraft-ver-url]: https://linkedin.com/in/othneildrew
+[minecraft-ver-url]: https://minecraft.gamepedia.com/Java_Edition_1.16.5
+[git-ver-shield]: https://img.shields.io/github/v/release/tvanprooyen/mbm?include_prereleases?style=for-the-badge
+[git-ver-url]: https://github.com/tvanprooyen/mbm/releases
 [product-screenshot]: images/screenshot.png
