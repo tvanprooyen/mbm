@@ -31,19 +31,25 @@
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">Best-README-Template</h3>
+  <h3 align="center">More Blocks Mod</h3>
 
   <p align="center">
-    An awesome README template to jumpstart your projects!
+    More Blocks Mod adds vanilla like blocks to give builders a better experience. This has a few additions like terracotta brick blocks, petrified wood, and select variations     of slabs and stairs that are already in game.<br />
+<br />
+The main point of this mod is give more blocks to the community and will always be a work in progress.
+<br />
+ 
+
+This mod is for FabricMC and requires Fabric API to be located in the Mod folder. Look on how to install Fabric from this website : https://fabricmc.net/. 
     <br />
     <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
+    <a href="https://github.com/tvanprooyen/mbm/archive/main.zip">Download</a>
     ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Report Bug</a>
+    <a href="https://github.com/tvanprooyen/mbm/issues">Report Bug</a>
     ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Request Feature</a>
+    <a href="https://github.com/tvanprooyen/mbm/issues">Request Feature</a>
   </p>
 </p>
 
