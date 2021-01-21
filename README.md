@@ -19,8 +19,7 @@
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
-
-
+[![MINECRAFT VER][minecraft-ver-shield]][minecraft-ver-url]
 
 <!-- PROJECT LOGO -->
 <br />
@@ -53,7 +52,7 @@ This mod is for FabricMC and requires Fabric API to be located in the Mod folder
 
 
 
-<!-- TABLE OF CONTENTS -->
+<!-- TABLE OF CONTENTS
 <details open="open">
   <summary>Table of Contents</summary>
   <ol>
@@ -78,10 +77,10 @@ This mod is for FabricMC and requires Fabric API to be located in the Mod folder
     <li><a href="#acknowledgements">Acknowledgements</a></li>
   </ol>
 </details>
+ -->
 
 
-
-<!-- ABOUT THE PROJECT -->
+<!-- ABOUT THE PROJECT
 ## About The Project
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
@@ -103,10 +102,10 @@ This section should list any major frameworks that you built your project using.
 * [Bootstrap](https://getbootstrap.com)
 * [JQuery](https://jquery.com)
 * [Laravel](https://laravel.com)
+ -->
 
 
-
-<!-- GETTING STARTED -->
+<!-- GETTING STARTED
 ## Getting Started
 
 This is an example of how you may give instructions on setting up your project locally.
@@ -119,7 +118,7 @@ This is an example of how to list things you need to use the software and how to
   ```sh
   npm install npm@latest -g
   ```
-
+ -->
 ### Installation
 
 1. Get a free API Key at [https://example.com](https://example.com)
@@ -170,34 +169,7 @@ Contributions are what make the open source community such an amazing place to b
 <!-- LICENSE -->
 ## License
 
-Distributed under the MIT License. See `LICENSE` for more information.
-
-
-
-<!-- CONTACT -->
-## Contact
-
-Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
-
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
-
-
-
-<!-- ACKNOWLEDGEMENTS -->
-## Acknowledgements
-* [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
-* [Img Shields](https://shields.io)
-* [Choose an Open Source License](https://choosealicense.com)
-* [GitHub Pages](https://pages.github.com)
-* [Animate.css](https://daneden.github.io/animate.css)
-* [Loaders.css](https://connoratherton.com/loaders)
-* [Slick Carousel](https://kenwheeler.github.io/slick)
-* [Smooth Scroll](https://github.com/cferdinandi/smooth-scroll)
-* [Sticky Kit](http://leafo.net/sticky-kit)
-* [JVectorMap](http://jvectormap.com)
-* [Font Awesome](https://fontawesome.com)
-
-
+<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">More Blocks Mod</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://tylervp.com/mbm" property="cc:attributionName" rel="cc:attributionURL">Tyler VanProoyen</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.<br />Based on a work at <a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/tvanprooyen/mbm" rel="dct:source">https://github.com/tvanprooyen/mbm</a>.
 
 
 
@@ -211,8 +183,8 @@ Project Link: [https://github.com/your_username/repo_name](https://github.com/yo
 [stars-url]: https://github.com/tvanprooyen/mbm/stargazers
 [issues-shield]: https://img.shields.io/github/issues/tvanprooyen/mbm?style=for-the-badge
 [issues-url]: https://github.com/tvanprooyen/mbm/issues
-[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
-[license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/othneildrew
+[license-shield]: https://img.shields.io/badge/LICENSE-CC--BY--NC--4.0-green
+[license-url]: https://github.com/tvanprooyen/mbm/blob/master/LICENS
+[minecraft-ver-shield]: https://img.shields.io/badge/Minecraft-1.16.5-orange?style=for-the-badge
+[minecraft-ver-url]: https://linkedin.com/in/othneildrew
 [product-screenshot]: images/screenshot.png
