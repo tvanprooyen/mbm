@@ -1,0 +1,8 @@
+﻿{
+	"parent": "moreblocksmod:block/layerheight10",
+	"textures": {
+		"particle": "block/cyan_concrete_powder",
+        	"texture": "block/cyan_concrete_powder"
+	}
+}
+

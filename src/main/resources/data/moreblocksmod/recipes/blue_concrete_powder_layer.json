@@ -1,0 +1,12 @@
+﻿{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:blue_concrete_powder"
+        }
+    ],
+    "result": {
+        "item": "moreblocksmod:blue_concrete_powder_layer",
+        "count": 8
+    }
+}

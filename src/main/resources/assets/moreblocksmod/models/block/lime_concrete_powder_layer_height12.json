@@ -1,0 +1,7 @@
+﻿{
+	"parent": "moreblocksmod:block/layerheight12",
+	"textures": {
+		"particle": "block/lime_concrete_powder",
+        	"texture": "block/lime_concrete_powder"
+	}
+}

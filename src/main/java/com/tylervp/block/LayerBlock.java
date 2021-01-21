@@ -33,6 +33,7 @@ public class LayerBlock extends FallingBlock implements Waterloggable {
     protected static final VoxelShape[] LAYERS_TO_SHAPE;
     public static final BooleanProperty WATERLOGGED;
     
+    
     protected LayerBlock(AbstractBlock.Settings settings) {
         super(settings);
         this.setDefaultState(this.stateManager.getDefaultState().with(Properties.LAYERS, 1).with(Properties.WATERLOGGED, false));

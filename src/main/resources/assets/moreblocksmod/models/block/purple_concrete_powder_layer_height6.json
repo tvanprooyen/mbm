@@ -1,0 +1,7 @@
+﻿{
+	"parent": "moreblocksmod:block/layerheight6",
+	"textures": {
+		"particle": "block/purple_concrete_powder",
+        	"texture": "block/purple_concrete_powder"
+	}
+}

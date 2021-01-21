@@ -1,0 +1,13 @@
+﻿{
+    "variants": {
+        "layers=1":  { "model": "moreblocksmod:block/black_concrete_powder_layer_height2" },
+        "layers=2":  { "model": "moreblocksmod:block/black_concrete_powder_layer_height4" },
+        "layers=3":  { "model": "moreblocksmod:block/black_concrete_powder_layer_height6" },
+        "layers=4":  { "model": "moreblocksmod:block/black_concrete_powder_layer_height8" },
+        "layers=5":  { "model": "moreblocksmod:block/black_concrete_powder_layer_height10" },
+        "layers=6":  { "model": "moreblocksmod:block/black_concrete_powder_layer_height12" },
+        "layers=7":  { "model": "moreblocksmod:block/black_concrete_powder_layer_height14" },
+        "layers=8":  { "model": "block/black_concrete_powder" }
+    }
+}
+

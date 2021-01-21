@@ -1,0 +1,17 @@
+﻿{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "#  ",
+        "## ",
+        "###"
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:brown_concrete"
+        }
+    },
+    "result": {
+        "item": "moreblocksmod:brown_concrete_stairs",
+        "count": 4
+    }
+}

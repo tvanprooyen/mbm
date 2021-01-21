@@ -371,6 +371,26 @@ public class MBMItems extends moreblocksmod {
         Registry.register(Registry.ITEM, new Identifier(ModName, "sand_layer"), new BlockItem(MBMBlocks.SAND_LAYER, BUILDING_BLOCKS));
         Registry.register(Registry.ITEM, new Identifier(ModName, "red_sand_layer"), new BlockItem(MBMBlocks.RED_SAND_LAYER, BUILDING_BLOCKS));
         Registry.register(Registry.ITEM, new Identifier(ModName, "gravel_layer"), new BlockItem(MBMBlocks.GRAVEL_LAYER, BUILDING_BLOCKS));
+
+
+        Registry.register(Registry.ITEM, new Identifier(ModName, "black_concrete_powder_layer"), new BlockItem(MBMBlocks.BLACK_CONCRETE_POWDER_LAYER, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "red_concrete_powder_layer"), new BlockItem(MBMBlocks.RED_CONCRETE_POWDER_LAYER, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "green_concrete_powder_layer"), new BlockItem(MBMBlocks.GREEN_CONCRETE_POWDER_LAYER, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "brown_concrete_powder_layer"), new BlockItem(MBMBlocks.BROWN_CONCRETE_POWDER_LAYER, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "blue_concrete_powder_layer"), new BlockItem(MBMBlocks.BLUE_CONCRETE_POWDER_LAYER, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "purple_concrete_powder_layer"), new BlockItem(MBMBlocks.PURPLE_CONCRETE_POWDER_LAYER, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "light_gray_concrete_powder_layer"), new BlockItem(MBMBlocks.LIGHT_GRAY_CONCRETE_POWDER_LAYER, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "cyan_concrete_powder_layer"), new BlockItem(MBMBlocks.CYAN_CONCRETE_POWDER_LAYER, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "gray_concrete_powder_layer"), new BlockItem(MBMBlocks.GRAY_CONCRETE_POWDER_LAYER, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "pink_concrete_powder_layer"), new BlockItem(MBMBlocks.PINK_CONCRETE_POWDER_LAYER, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "lime_concrete_powder_layer"), new BlockItem(MBMBlocks.LIME_CONCRETE_POWDER_LAYER, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "yellow_concrete_powder_layer"), new BlockItem(MBMBlocks.YELLOW_CONCRETE_POWDER_LAYER, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "light_blue_concrete_powder_layer"), new BlockItem(MBMBlocks.LIGHT_BLUE_CONCRETE_POWDER_LAYER, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "magenta_concrete_powder_layer"), new BlockItem(MBMBlocks.MAGENTA_CONCRETE_POWDER_LAYER, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "orange_concrete_powder_layer"), new BlockItem(MBMBlocks.ORANGE_CONCRETE_POWDER_LAYER, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "white_concrete_powder_layer"), new BlockItem(MBMBlocks.WHITE_CONCRETE_POWDER_LAYER, BUILDING_BLOCKS));
+
+
         
         //Stone Variants
         Registry.register(Registry.ITEM, new Identifier(ModName, "stone_brick_tiles"), new BlockItem(MBMBlocks.STONE_BRICK_SQUARE, BUILDING_BLOCKS));
@@ -402,6 +422,64 @@ public class MBMItems extends moreblocksmod {
         compostRegistry.add(RICE_SEEDS, 0.3f);
         compostRegistry.add(RICE_LEAF_SHEATH, 0.65f);
         compostRegistry.add(MBMBlocks.RICE_STRAW_BALE.asItem(), 0.85f);
+
+
+        //Registry.register(Registry.ITEM, new Identifier(ModName, "pib"), new BlockItem(MBMBlocks.PIB, MISC));
+
+
+        Registry.register(Registry.ITEM, new Identifier(ModName, "black_concrete_slab"), new BlockItem(MBMBlocks.BLACK_CONCRETE_SLAB, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "red_concrete_slab"), new BlockItem(MBMBlocks.RED_CONCRETE_SLAB, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "green_concrete_slab"), new BlockItem(MBMBlocks.GREEN_CONCRETE_SLAB, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "brown_concrete_slab"), new BlockItem(MBMBlocks.BROWN_CONCRETE_SLAB, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "blue_concrete_slab"), new BlockItem(MBMBlocks.BLUE_CONCRETE_SLAB, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "purple_concrete_slab"), new BlockItem(MBMBlocks.PURPLE_CONCRETE_SLAB, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "light_gray_concrete_slab"), new BlockItem(MBMBlocks.LIGHT_GRAY_CONCRETE_SLAB, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "gray_concrete_slab"), new BlockItem(MBMBlocks.GRAY_CONCRETE_SLAB, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "pink_concrete_slab"), new BlockItem(MBMBlocks.PINK_CONCRETE_SLAB, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "lime_concrete_slab"), new BlockItem(MBMBlocks.LIME_CONCRETE_SLAB, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "yellow_concrete_slab"), new BlockItem(MBMBlocks.YELLOW_CONCRETE_SLAB, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "light_blue_concrete_slab"), new BlockItem(MBMBlocks.LIGHT_BLUE_CONCRETE_SLAB, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "magenta_concrete_slab"), new BlockItem(MBMBlocks.MAGENTA_CONCRETE_SLAB, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "orange_concrete_slab"), new BlockItem(MBMBlocks.ORANGE_CONCRETE_SLAB, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "white_concrete_slab"), new BlockItem(MBMBlocks.WHITE_CONCRETE_SLAB, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "cyan_concrete_slab"), new BlockItem(MBMBlocks.CYAN_CONCRETE_SLAB, BUILDING_BLOCKS));
+
+
+        Registry.register(Registry.ITEM, new Identifier(ModName, "black_concrete_vertical_slab"), new BlockItem(MBMBlocks.BLACK_CONCRETE_VERTICAL_SLAB, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "red_concrete_vertical_slab"), new BlockItem(MBMBlocks.RED_CONCRETE_VERTICAL_SLAB, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "green_concrete_vertical_slab"), new BlockItem(MBMBlocks.GREEN_CONCRETE_VERTICAL_SLAB, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "brown_concrete_vertical_slab"), new BlockItem(MBMBlocks.BROWN_CONCRETE_VERTICAL_SLAB, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "blue_concrete_vertical_slab"), new BlockItem(MBMBlocks.BLUE_CONCRETE_VERTICAL_SLAB, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "purple_concrete_vertical_slab"), new BlockItem(MBMBlocks.PURPLE_CONCRETE_VERTICAL_SLAB, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "light_gray_concrete_vertical_slab"), new BlockItem(MBMBlocks.LIGHT_GRAY_CONCRETE_VERTICAL_SLAB, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "gray_concrete_vertical_slab"), new BlockItem(MBMBlocks.GRAY_CONCRETE_VERTICAL_SLAB, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "pink_concrete_vertical_slab"), new BlockItem(MBMBlocks.PINK_CONCRETE_VERTICAL_SLAB, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "lime_concrete_vertical_slab"), new BlockItem(MBMBlocks.LIME_CONCRETE_VERTICAL_SLAB, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "yellow_concrete_vertical_slab"), new BlockItem(MBMBlocks.YELLOW_CONCRETE_VERTICAL_SLAB, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "light_blue_concrete_vertical_slab"), new BlockItem(MBMBlocks.LIGHT_BLUE_CONCRETE_VERTICAL_SLAB, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "magenta_concrete_vertical_slab"), new BlockItem(MBMBlocks.MAGENTA_CONCRETE_VERTICAL_SLAB, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "orange_concrete_vertical_slab"), new BlockItem(MBMBlocks.ORANGE_CONCRETE_VERTICAL_SLAB, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "white_concrete_vertical_slab"), new BlockItem(MBMBlocks.WHITE_CONCRETE_VERTICAL_SLAB, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "cyan_concrete_vertical_slab"), new BlockItem(MBMBlocks.CYAN_CONCRETE_VERTICAL_SLAB, BUILDING_BLOCKS));
+
+
+        Registry.register(Registry.ITEM, new Identifier(ModName, "black_concrete_stairs"), new BlockItem(MBMBlocks.BLACK_CONCRETE_STAIRS, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "red_concrete_stairs"), new BlockItem(MBMBlocks.RED_CONCRETE_STAIRS, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "green_concrete_stairs"), new BlockItem(MBMBlocks.GREEN_CONCRETE_STAIRS, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "brown_concrete_stairs"), new BlockItem(MBMBlocks.BROWN_CONCRETE_STAIRS, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "blue_concrete_stairs"), new BlockItem(MBMBlocks.BLUE_CONCRETE_STAIRS, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "purple_concrete_stairs"), new BlockItem(MBMBlocks.PURPLE_CONCRETE_STAIRS, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "light_gray_concrete_stairs"), new BlockItem(MBMBlocks.LIGHT_GRAY_CONCRETE_STAIRS, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "gray_concrete_stairs"), new BlockItem(MBMBlocks.GRAY_CONCRETE_STAIRS, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "pink_concrete_stairs"), new BlockItem(MBMBlocks.PINK_CONCRETE_STAIRS, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "lime_concrete_stairs"), new BlockItem(MBMBlocks.LIME_CONCRETE_STAIRS, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "yellow_concrete_stairs"), new BlockItem(MBMBlocks.YELLOW_CONCRETE_STAIRS, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "light_blue_concrete_stairs"), new BlockItem(MBMBlocks.LIGHT_BLUE_CONCRETE_STAIRS, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "magenta_concrete_stairs"), new BlockItem(MBMBlocks.MAGENTA_CONCRETE_STAIRS, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "orange_concrete_stairs"), new BlockItem(MBMBlocks.ORANGE_CONCRETE_STAIRS, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "white_concrete_stairs"), new BlockItem(MBMBlocks.WHITE_CONCRETE_STAIRS, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "cyan_concrete_stairs"), new BlockItem(MBMBlocks.CYAN_CONCRETE_STAIRS, BUILDING_BLOCKS));
+
 
     }
 

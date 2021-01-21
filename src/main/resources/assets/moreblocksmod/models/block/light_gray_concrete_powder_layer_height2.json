@@ -1,0 +1,7 @@
+﻿{
+	"parent": "moreblocksmod:block/layerheight2",
+	"textures": {
+		"particle": "block/light_gray_concrete_powder",
+        	"texture": "block/light_gray_concrete_powder"
+	}
+}

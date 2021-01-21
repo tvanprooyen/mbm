@@ -8,7 +8,8 @@
     "MelonBlockMixin",
     "CauldronBlockMixin",
     "LanternBlockMixin",
-    "DeadBushMixin"
+    "DeadBushMixin",
+    "AxeItemMixin"
   ],
   "client": [
   ],

@@ -1,0 +1,17 @@
+﻿{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+      " # ",
+      " # ",
+      " # "
+  ],
+  "key": {
+      "#": {
+          "item": "minecraft:cyan_concrete"
+      }
+  },
+  "result": {
+      "item": "moreblocksmod:cyan_concrete_vertical_slab",
+      "count": 6
+  }
+}

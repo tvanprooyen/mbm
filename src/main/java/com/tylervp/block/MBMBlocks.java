@@ -23,6 +23,8 @@ import com.tylervp.fluid.MudFluid;
 public class MBMBlocks {
 
     //Quick Settings
+    private static final FabricBlockSettings CONCRETE_POWDER_SETTINGS = FabricBlockSettings.of(Material.AGGREGATE).requiresTool().breakByHand(false).breakByTool(FabricToolTags.SHOVELS).resistance(0.5f).hardness(0.5f).sounds(BlockSoundGroup.SAND);
+    private static final FabricBlockSettings CONCRETE_SETTINGS = FabricBlockSettings.of(Material.STONE).requiresTool().breakByHand(false).breakByTool(FabricToolTags.PICKAXES).resistance(1.8f).hardness(1.8f).sounds(BlockSoundGroup.STONE);
     private static final FabricBlockSettings TERRACOTTA_SETTINGS = FabricBlockSettings.of(Material.STONE).requiresTool().breakByHand(false).breakByTool(FabricToolTags.PICKAXES).resistance(4.2f).hardness(1.25f).sounds(BlockSoundGroup.STONE);
     private static final FabricBlockSettings STONE_SETTINGS = FabricBlockSettings.of(Material.STONE).requiresTool().breakByHand(false).breakByTool(FabricToolTags.PICKAXES).resistance(6f).hardness(1.5f).sounds(BlockSoundGroup.STONE);
     private static final FabricBlockSettings THIN_LOG_SETTINGS = FabricBlockSettings.of(Material.WOOD).breakByTool(FabricToolTags.AXES).breakByHand(true).sounds(BlockSoundGroup.WOOD).resistance(2).hardness(2).ticksRandomly();
@@ -199,7 +201,7 @@ public class MBMBlocks {
     public static final Block SD_CSB_LIGHT = new Block(STONE_SETTINGS);
 
     //Dead Blocks
-    public static final GrassBlock DEAD_GRASS_BLOCK = new GrassBlock(FabricBlockSettings.of(Material.SOIL).sounds(BlockSoundGroup.GRASS));
+    public static final GrassBlock DEAD_GRASS_BLOCK = new GrassBlock(FabricBlockSettings.of(Material.SOIL).sounds(BlockSoundGroup.GRASS).breakByHand(true).hardness(0.6f).resistance(0.6f));
     
     public static final PillarBlock BURNT_LOG = new PillarBlock(FabricBlockSettings.of(Material.WOOD).sounds(BlockSoundGroup.WOOD).breakByTool(FabricToolTags.AXES).breakByHand(true).hardness(2f).resistance(2f));
 
@@ -207,11 +209,28 @@ public class MBMBlocks {
     public static final SlabBlock BURNT_PLANKS_SLAB = new SlabBlock(FabricBlockSettings.of(Material.WOOD).sounds(BlockSoundGroup.WOOD).breakByTool(FabricToolTags.AXES).breakByHand(true).hardness(2f).resistance(3f));
     public static final StairsBlockExtend BURNT_PLANKS_STAIRS = new StairsBlockExtend(BURNT_PLANKS.getDefaultState(), FabricBlockSettings.of(Material.WOOD).sounds(BlockSoundGroup.WOOD).breakByTool(FabricToolTags.AXES).breakByHand(true).hardness(2f).resistance(3f));
 
-
     //LayerBlock
     public static final LayerBlock SAND_LAYER = new LayerBlock(FabricBlockSettings.of(Material.AGGREGATE).sounds(BlockSoundGroup.SAND).hardness(0.5f).resistance(0.5f));
     public static final LayerBlock RED_SAND_LAYER = new LayerBlock(FabricBlockSettings.of(Material.AGGREGATE).sounds(BlockSoundGroup.SAND).hardness(0.5f).resistance(0.5f));
     public static final LayerBlock GRAVEL_LAYER = new LayerBlock(FabricBlockSettings.of(Material.AGGREGATE).sounds(BlockSoundGroup.GRAVEL).hardness(0.5f).resistance(0.5f));
+
+    //LayerBlockPowder
+    public static final LayerBlockPowder BLACK_CONCRETE_POWDER_LAYER = new LayerBlockPowder(Blocks.BLACK_CONCRETE,CONCRETE_POWDER_SETTINGS.materialColor(MaterialColor.BLACK));
+    public static final LayerBlockPowder RED_CONCRETE_POWDER_LAYER = new LayerBlockPowder(Blocks.RED_CONCRETE,CONCRETE_POWDER_SETTINGS.materialColor(MaterialColor.RED));
+    public static final LayerBlockPowder GREEN_CONCRETE_POWDER_LAYER = new LayerBlockPowder(Blocks.GREEN_CONCRETE,CONCRETE_POWDER_SETTINGS.materialColor(MaterialColor.GREEN));
+    public static final LayerBlockPowder BROWN_CONCRETE_POWDER_LAYER = new LayerBlockPowder(Blocks.BROWN_CONCRETE,CONCRETE_POWDER_SETTINGS.materialColor(MaterialColor.BROWN));
+    public static final LayerBlockPowder BLUE_CONCRETE_POWDER_LAYER = new LayerBlockPowder(Blocks.BLUE_CONCRETE,CONCRETE_POWDER_SETTINGS.materialColor(MaterialColor.BLUE));
+    public static final LayerBlockPowder PURPLE_CONCRETE_POWDER_LAYER = new LayerBlockPowder(Blocks.PURPLE_CONCRETE,CONCRETE_POWDER_SETTINGS.materialColor(MaterialColor.PURPLE));
+    public static final LayerBlockPowder LIGHT_GRAY_CONCRETE_POWDER_LAYER = new LayerBlockPowder(Blocks.LIGHT_GRAY_CONCRETE,CONCRETE_POWDER_SETTINGS.materialColor(MaterialColor.LIGHT_GRAY));
+    public static final LayerBlockPowder CYAN_CONCRETE_POWDER_LAYER = new LayerBlockPowder(Blocks.CYAN_CONCRETE,CONCRETE_POWDER_SETTINGS.materialColor(MaterialColor.CYAN));
+    public static final LayerBlockPowder GRAY_CONCRETE_POWDER_LAYER = new LayerBlockPowder(Blocks.GRAY_CONCRETE,CONCRETE_POWDER_SETTINGS.materialColor(MaterialColor.GRAY));
+    public static final LayerBlockPowder PINK_CONCRETE_POWDER_LAYER = new LayerBlockPowder(Blocks.PINK_CONCRETE,CONCRETE_POWDER_SETTINGS.materialColor(MaterialColor.PINK));
+    public static final LayerBlockPowder LIME_CONCRETE_POWDER_LAYER = new LayerBlockPowder(Blocks.LIME_CONCRETE,CONCRETE_POWDER_SETTINGS.materialColor(MaterialColor.LIME));
+    public static final LayerBlockPowder YELLOW_CONCRETE_POWDER_LAYER = new LayerBlockPowder(Blocks.YELLOW_CONCRETE,CONCRETE_POWDER_SETTINGS.materialColor(MaterialColor.YELLOW));
+    public static final LayerBlockPowder LIGHT_BLUE_CONCRETE_POWDER_LAYER = new LayerBlockPowder(Blocks.LIGHT_BLUE_CONCRETE,CONCRETE_POWDER_SETTINGS.materialColor(MaterialColor.LIGHT_BLUE));
+    public static final LayerBlockPowder MAGENTA_CONCRETE_POWDER_LAYER = new LayerBlockPowder(Blocks.MAGENTA_CONCRETE,CONCRETE_POWDER_SETTINGS.materialColor(MaterialColor.MAGENTA));
+    public static final LayerBlockPowder ORANGE_CONCRETE_POWDER_LAYER = new LayerBlockPowder(Blocks.ORANGE_CONCRETE,CONCRETE_POWDER_SETTINGS.materialColor(MaterialColor.ORANGE));
+    public static final LayerBlockPowder WHITE_CONCRETE_POWDER_LAYER = new LayerBlockPowder(Blocks.WHITE_CONCRETE,CONCRETE_POWDER_SETTINGS.materialColor(MaterialColor.WHITE));
 
     //Terracotta Stairs and Slabs
     public static final SlabBlock WHITE_TERRACOTTA_SLAB = new SlabBlock(TERRACOTTA_SETTINGS);
@@ -366,6 +385,63 @@ public class MBMBlocks {
     //public static final SlabBlock CRACKED_STONE_BRICK_SLAB = new SlabBlock(FabricBlockSettings.of(Material.SOIL).sounds(BlockSoundGroup.STONE).breakByTool(FabricToolTags.SHOVELS).breakByHand(true).hardness(0.5f).resistance(0.5f));  
     //public static final SlabBlock CRACKED_NETHER_BRICK_SLAB = new SlabBlock(FabricBlockSettings.of(Material.SOIL).sounds(BlockSoundGroup.STONE).breakByTool(FabricToolTags.SHOVELS).breakByHand(true).hardness(0.5f).resistance(0.5f));  
 
+
+    public static final SlabBlock BLACK_CONCRETE_SLAB = new SlabBlock(CONCRETE_SETTINGS.materialColor(MaterialColor.BLACK));
+    public static final SlabBlock RED_CONCRETE_SLAB = new SlabBlock(CONCRETE_SETTINGS.materialColor(MaterialColor.RED));
+    public static final SlabBlock GREEN_CONCRETE_SLAB = new SlabBlock(CONCRETE_SETTINGS.materialColor(MaterialColor.GREEN));
+    public static final SlabBlock BROWN_CONCRETE_SLAB = new SlabBlock(CONCRETE_SETTINGS.materialColor(MaterialColor.BROWN));
+    public static final SlabBlock BLUE_CONCRETE_SLAB = new SlabBlock(CONCRETE_SETTINGS.materialColor(MaterialColor.BLUE));
+    public static final SlabBlock PURPLE_CONCRETE_SLAB = new SlabBlock(CONCRETE_SETTINGS.materialColor(MaterialColor.PURPLE));
+    public static final SlabBlock LIGHT_GRAY_CONCRETE_SLAB = new SlabBlock(CONCRETE_SETTINGS.materialColor(MaterialColor.LIGHT_GRAY));
+    public static final SlabBlock GRAY_CONCRETE_SLAB = new SlabBlock(CONCRETE_SETTINGS.materialColor(MaterialColor.GRAY));
+    public static final SlabBlock PINK_CONCRETE_SLAB = new SlabBlock(CONCRETE_SETTINGS.materialColor(MaterialColor.PINK));
+    public static final SlabBlock LIME_CONCRETE_SLAB = new SlabBlock(CONCRETE_SETTINGS.materialColor(MaterialColor.LIME));
+    public static final SlabBlock YELLOW_CONCRETE_SLAB = new SlabBlock(CONCRETE_SETTINGS.materialColor(MaterialColor.YELLOW));
+    public static final SlabBlock LIGHT_BLUE_CONCRETE_SLAB = new SlabBlock(CONCRETE_SETTINGS.materialColor(MaterialColor.LIGHT_BLUE));
+    public static final SlabBlock MAGENTA_CONCRETE_SLAB = new SlabBlock(CONCRETE_SETTINGS.materialColor(MaterialColor.MAGENTA));
+    public static final SlabBlock ORANGE_CONCRETE_SLAB = new SlabBlock(CONCRETE_SETTINGS.materialColor(MaterialColor.ORANGE));
+    public static final SlabBlock WHITE_CONCRETE_SLAB = new SlabBlock(CONCRETE_SETTINGS.materialColor(MaterialColor.WHITE));
+    public static final SlabBlock CYAN_CONCRETE_SLAB = new SlabBlock(CONCRETE_SETTINGS.materialColor(MaterialColor.CYAN));
+
+    public static final SideSlab BLACK_CONCRETE_VERTICAL_SLAB = new SideSlab(CONCRETE_SETTINGS.materialColor(MaterialColor.BLACK));
+    public static final SideSlab RED_CONCRETE_VERTICAL_SLAB = new SideSlab(CONCRETE_SETTINGS.materialColor(MaterialColor.RED));
+    public static final SideSlab GREEN_CONCRETE_VERTICAL_SLAB = new SideSlab(CONCRETE_SETTINGS.materialColor(MaterialColor.GREEN));
+    public static final SideSlab BROWN_CONCRETE_VERTICAL_SLAB = new SideSlab(CONCRETE_SETTINGS.materialColor(MaterialColor.BROWN));
+    public static final SideSlab BLUE_CONCRETE_VERTICAL_SLAB = new SideSlab(CONCRETE_SETTINGS.materialColor(MaterialColor.BLUE));
+    public static final SideSlab PURPLE_CONCRETE_VERTICAL_SLAB = new SideSlab(CONCRETE_SETTINGS.materialColor(MaterialColor.PURPLE));
+    public static final SideSlab LIGHT_GRAY_CONCRETE_VERTICAL_SLAB = new SideSlab(CONCRETE_SETTINGS.materialColor(MaterialColor.LIGHT_GRAY));
+    public static final SideSlab GRAY_CONCRETE_VERTICAL_SLAB = new SideSlab(CONCRETE_SETTINGS.materialColor(MaterialColor.GRAY));
+    public static final SideSlab PINK_CONCRETE_VERTICAL_SLAB = new SideSlab(CONCRETE_SETTINGS.materialColor(MaterialColor.PINK));
+    public static final SideSlab LIME_CONCRETE_VERTICAL_SLAB = new SideSlab(CONCRETE_SETTINGS.materialColor(MaterialColor.LIME));
+    public static final SideSlab YELLOW_CONCRETE_VERTICAL_SLAB = new SideSlab(CONCRETE_SETTINGS.materialColor(MaterialColor.YELLOW));
+    public static final SideSlab LIGHT_BLUE_CONCRETE_VERTICAL_SLAB = new SideSlab(CONCRETE_SETTINGS.materialColor(MaterialColor.LIGHT_BLUE));
+    public static final SideSlab MAGENTA_CONCRETE_VERTICAL_SLAB = new SideSlab(CONCRETE_SETTINGS.materialColor(MaterialColor.MAGENTA));
+    public static final SideSlab ORANGE_CONCRETE_VERTICAL_SLAB = new SideSlab(CONCRETE_SETTINGS.materialColor(MaterialColor.ORANGE));
+    public static final SideSlab WHITE_CONCRETE_VERTICAL_SLAB = new SideSlab(CONCRETE_SETTINGS.materialColor(MaterialColor.WHITE));
+    public static final SideSlab CYAN_CONCRETE_VERTICAL_SLAB = new SideSlab(CONCRETE_SETTINGS.materialColor(MaterialColor.CYAN));
+
+    public static final StairsBlockExtend BLACK_CONCRETE_STAIRS = new StairsBlockExtend(Blocks.BLACK_CONCRETE.getDefaultState(), CONCRETE_SETTINGS.materialColor(MaterialColor.BLACK));
+    public static final StairsBlockExtend RED_CONCRETE_STAIRS = new StairsBlockExtend(Blocks.RED_CONCRETE.getDefaultState(), CONCRETE_SETTINGS.materialColor(MaterialColor.RED));
+    public static final StairsBlockExtend GREEN_CONCRETE_STAIRS = new StairsBlockExtend(Blocks.GREEN_CONCRETE.getDefaultState(), CONCRETE_SETTINGS.materialColor(MaterialColor.GREEN));
+    public static final StairsBlockExtend BROWN_CONCRETE_STAIRS = new StairsBlockExtend(Blocks.BROWN_CONCRETE.getDefaultState(), CONCRETE_SETTINGS.materialColor(MaterialColor.BROWN));
+    public static final StairsBlockExtend BLUE_CONCRETE_STAIRS = new StairsBlockExtend(Blocks.BLUE_CONCRETE.getDefaultState(), CONCRETE_SETTINGS.materialColor(MaterialColor.BLUE));
+    public static final StairsBlockExtend PURPLE_CONCRETE_STAIRS = new StairsBlockExtend(Blocks.PURPLE_CONCRETE.getDefaultState(), CONCRETE_SETTINGS.materialColor(MaterialColor.PURPLE));
+    public static final StairsBlockExtend LIGHT_GRAY_CONCRETE_STAIRS = new StairsBlockExtend(Blocks.LIGHT_GRAY_CONCRETE.getDefaultState(), CONCRETE_SETTINGS.materialColor(MaterialColor.LIGHT_GRAY));
+    public static final StairsBlockExtend GRAY_CONCRETE_STAIRS = new StairsBlockExtend(Blocks.GRAY_CONCRETE.getDefaultState(), CONCRETE_SETTINGS.materialColor(MaterialColor.GRAY));
+    public static final StairsBlockExtend PINK_CONCRETE_STAIRS = new StairsBlockExtend(Blocks.PINK_CONCRETE.getDefaultState(), CONCRETE_SETTINGS.materialColor(MaterialColor.PINK));
+    public static final StairsBlockExtend LIME_CONCRETE_STAIRS = new StairsBlockExtend(Blocks.LIME_CONCRETE.getDefaultState(), CONCRETE_SETTINGS.materialColor(MaterialColor.LIME));
+    public static final StairsBlockExtend YELLOW_CONCRETE_STAIRS = new StairsBlockExtend(Blocks.YELLOW_CONCRETE.getDefaultState(), CONCRETE_SETTINGS.materialColor(MaterialColor.YELLOW));
+    public static final StairsBlockExtend LIGHT_BLUE_CONCRETE_STAIRS = new StairsBlockExtend(Blocks.LIGHT_BLUE_CONCRETE.getDefaultState(), CONCRETE_SETTINGS.materialColor(MaterialColor.LIGHT_BLUE));
+    public static final StairsBlockExtend MAGENTA_CONCRETE_STAIRS = new StairsBlockExtend(Blocks.MAGENTA_CONCRETE.getDefaultState(), CONCRETE_SETTINGS.materialColor(MaterialColor.MAGENTA));
+    public static final StairsBlockExtend ORANGE_CONCRETE_STAIRS = new StairsBlockExtend(Blocks.ORANGE_CONCRETE.getDefaultState(), CONCRETE_SETTINGS.materialColor(MaterialColor.ORANGE));
+    public static final StairsBlockExtend WHITE_CONCRETE_STAIRS = new StairsBlockExtend(Blocks.WHITE_CONCRETE.getDefaultState(), CONCRETE_SETTINGS.materialColor(MaterialColor.WHITE));
+    public static final StairsBlockExtend CYAN_CONCRETE_STAIRS = new StairsBlockExtend(Blocks.CYAN_CONCRETE.getDefaultState(), CONCRETE_SETTINGS.materialColor(MaterialColor.CYAN));
+
+
+
+    //PotionInfusedBlocks
+    //public static final PotionInfusedBlock PIB = new PotionInfusedBlock(STONE_SETTINGS);
+    
     //Block Entity
     public static BlockEntityType<VaseBlockEntity> TERRACOTTA_VASE_BLOCK_ENTITY/* , BLACK_TERRACOTTA_VASE_BLOCK_ENTITY */;
 
@@ -629,6 +705,25 @@ public class MBMBlocks {
                 Registry.register(Registry.BLOCK, new Identifier(ModName, "sand_layer"), SAND_LAYER);
                 Registry.register(Registry.BLOCK, new Identifier(ModName, "red_sand_layer"), RED_SAND_LAYER);
                 Registry.register(Registry.BLOCK, new Identifier(ModName, "gravel_layer"), GRAVEL_LAYER);
+
+                Registry.register(Registry.BLOCK, new Identifier(ModName, "black_concrete_powder_layer"), BLACK_CONCRETE_POWDER_LAYER);
+                Registry.register(Registry.BLOCK, new Identifier(ModName, "red_concrete_powder_layer"), RED_CONCRETE_POWDER_LAYER);
+                Registry.register(Registry.BLOCK, new Identifier(ModName, "green_concrete_powder_layer"), GREEN_CONCRETE_POWDER_LAYER);
+                Registry.register(Registry.BLOCK, new Identifier(ModName, "brown_concrete_powder_layer"), BROWN_CONCRETE_POWDER_LAYER);
+                Registry.register(Registry.BLOCK, new Identifier(ModName, "blue_concrete_powder_layer"), BLUE_CONCRETE_POWDER_LAYER);
+                Registry.register(Registry.BLOCK, new Identifier(ModName, "purple_concrete_powder_layer"), PURPLE_CONCRETE_POWDER_LAYER);
+                Registry.register(Registry.BLOCK, new Identifier(ModName, "light_gray_concrete_powder_layer"), LIGHT_GRAY_CONCRETE_POWDER_LAYER);
+                Registry.register(Registry.BLOCK, new Identifier(ModName, "cyan_concrete_powder_layer"), CYAN_CONCRETE_POWDER_LAYER);
+                Registry.register(Registry.BLOCK, new Identifier(ModName, "gray_concrete_powder_layer"), GRAY_CONCRETE_POWDER_LAYER);
+                Registry.register(Registry.BLOCK, new Identifier(ModName, "pink_concrete_powder_layer"), PINK_CONCRETE_POWDER_LAYER);
+                Registry.register(Registry.BLOCK, new Identifier(ModName, "lime_concrete_powder_layer"), LIME_CONCRETE_POWDER_LAYER);
+                Registry.register(Registry.BLOCK, new Identifier(ModName, "yellow_concrete_powder_layer"), YELLOW_CONCRETE_POWDER_LAYER);
+                Registry.register(Registry.BLOCK, new Identifier(ModName, "light_blue_concrete_powder_layer"), LIGHT_BLUE_CONCRETE_POWDER_LAYER);
+                Registry.register(Registry.BLOCK, new Identifier(ModName, "magenta_concrete_powder_layer"), MAGENTA_CONCRETE_POWDER_LAYER);
+                Registry.register(Registry.BLOCK, new Identifier(ModName, "orange_concrete_powder_layer"), ORANGE_CONCRETE_POWDER_LAYER);
+                Registry.register(Registry.BLOCK, new Identifier(ModName, "white_concrete_powder_layer"), WHITE_CONCRETE_POWDER_LAYER);
+
+
                 
                 Registry.register(Registry.BLOCK, new Identifier(ModName, "coarse_dirt_cobble_stone_mix_light"), CD_CS_LIGHT);
                 Registry.register(Registry.BLOCK, new Identifier(ModName, "coarse_dirt_cobble_stone_mix_heavy"), CD_CS_HEAVY);
@@ -710,6 +805,63 @@ public class MBMBlocks {
 
                 //Lantern
                 Registry.register(Registry.BLOCK, new Identifier(ModName, "lantern_rope"), LANTERN_ROPE);
+
+                //Registry.register(Registry.BLOCK, new Identifier(ModName, "pib"), PIB);
+
+
+                Registry.register(Registry.BLOCK, new Identifier(ModName, "black_concrete_slab"), BLACK_CONCRETE_SLAB);
+                Registry.register(Registry.BLOCK, new Identifier(ModName, "red_concrete_slab"), RED_CONCRETE_SLAB);
+                Registry.register(Registry.BLOCK, new Identifier(ModName, "green_concrete_slab"), GREEN_CONCRETE_SLAB);
+                Registry.register(Registry.BLOCK, new Identifier(ModName, "brown_concrete_slab"), BROWN_CONCRETE_SLAB);
+                Registry.register(Registry.BLOCK, new Identifier(ModName, "blue_concrete_slab"), BLUE_CONCRETE_SLAB);
+                Registry.register(Registry.BLOCK, new Identifier(ModName, "purple_concrete_slab"), PURPLE_CONCRETE_SLAB);
+                Registry.register(Registry.BLOCK, new Identifier(ModName, "light_gray_concrete_slab"), LIGHT_GRAY_CONCRETE_SLAB);
+                Registry.register(Registry.BLOCK, new Identifier(ModName, "gray_concrete_slab"), GRAY_CONCRETE_SLAB);
+                Registry.register(Registry.BLOCK, new Identifier(ModName, "pink_concrete_slab"), PINK_CONCRETE_SLAB);
+                Registry.register(Registry.BLOCK, new Identifier(ModName, "lime_concrete_slab"), LIME_CONCRETE_SLAB);
+                Registry.register(Registry.BLOCK, new Identifier(ModName, "yellow_concrete_slab"), YELLOW_CONCRETE_SLAB);
+                Registry.register(Registry.BLOCK, new Identifier(ModName, "light_blue_concrete_slab"), LIGHT_BLUE_CONCRETE_SLAB);
+                Registry.register(Registry.BLOCK, new Identifier(ModName, "magenta_concrete_slab"), MAGENTA_CONCRETE_SLAB);
+                Registry.register(Registry.BLOCK, new Identifier(ModName, "orange_concrete_slab"), ORANGE_CONCRETE_SLAB);
+                Registry.register(Registry.BLOCK, new Identifier(ModName, "white_concrete_slab"), WHITE_CONCRETE_SLAB);
+                Registry.register(Registry.BLOCK, new Identifier(ModName, "cyan_concrete_slab"), CYAN_CONCRETE_SLAB);
+
+
+
+                Registry.register(Registry.BLOCK, new Identifier(ModName, "black_concrete_vertical_slab"), BLACK_CONCRETE_VERTICAL_SLAB);
+                Registry.register(Registry.BLOCK, new Identifier(ModName, "red_concrete_vertical_slab"), RED_CONCRETE_VERTICAL_SLAB);
+                Registry.register(Registry.BLOCK, new Identifier(ModName, "green_concrete_vertical_slab"), GREEN_CONCRETE_VERTICAL_SLAB);
+                Registry.register(Registry.BLOCK, new Identifier(ModName, "brown_concrete_vertical_slab"), BROWN_CONCRETE_VERTICAL_SLAB);
+                Registry.register(Registry.BLOCK, new Identifier(ModName, "blue_concrete_vertical_slab"), BLUE_CONCRETE_VERTICAL_SLAB);
+                Registry.register(Registry.BLOCK, new Identifier(ModName, "purple_concrete_vertical_slab"), PURPLE_CONCRETE_VERTICAL_SLAB);
+                Registry.register(Registry.BLOCK, new Identifier(ModName, "light_gray_concrete_vertical_slab"), LIGHT_GRAY_CONCRETE_VERTICAL_SLAB);
+                Registry.register(Registry.BLOCK, new Identifier(ModName, "gray_concrete_vertical_slab"), GRAY_CONCRETE_VERTICAL_SLAB);
+                Registry.register(Registry.BLOCK, new Identifier(ModName, "pink_concrete_vertical_slab"), PINK_CONCRETE_VERTICAL_SLAB);
+                Registry.register(Registry.BLOCK, new Identifier(ModName, "lime_concrete_vertical_slab"), LIME_CONCRETE_VERTICAL_SLAB);
+                Registry.register(Registry.BLOCK, new Identifier(ModName, "yellow_concrete_vertical_slab"), YELLOW_CONCRETE_VERTICAL_SLAB);
+                Registry.register(Registry.BLOCK, new Identifier(ModName, "light_blue_concrete_vertical_slab"), LIGHT_BLUE_CONCRETE_VERTICAL_SLAB);
+                Registry.register(Registry.BLOCK, new Identifier(ModName, "magenta_concrete_vertical_slab"), MAGENTA_CONCRETE_VERTICAL_SLAB);
+                Registry.register(Registry.BLOCK, new Identifier(ModName, "orange_concrete_vertical_slab"), ORANGE_CONCRETE_VERTICAL_SLAB);
+                Registry.register(Registry.BLOCK, new Identifier(ModName, "white_concrete_vertical_slab"), WHITE_CONCRETE_VERTICAL_SLAB);
+                Registry.register(Registry.BLOCK, new Identifier(ModName, "cyan_concrete_vertical_slab"), CYAN_CONCRETE_VERTICAL_SLAB);
+
+
+                Registry.register(Registry.BLOCK, new Identifier(ModName, "black_concrete_stairs"), BLACK_CONCRETE_STAIRS);
+                Registry.register(Registry.BLOCK, new Identifier(ModName, "red_concrete_stairs"), RED_CONCRETE_STAIRS);
+                Registry.register(Registry.BLOCK, new Identifier(ModName, "green_concrete_stairs"), GREEN_CONCRETE_STAIRS);
+                Registry.register(Registry.BLOCK, new Identifier(ModName, "brown_concrete_stairs"), BROWN_CONCRETE_STAIRS);
+                Registry.register(Registry.BLOCK, new Identifier(ModName, "blue_concrete_stairs"), BLUE_CONCRETE_STAIRS);
+                Registry.register(Registry.BLOCK, new Identifier(ModName, "purple_concrete_stairs"), PURPLE_CONCRETE_STAIRS);
+                Registry.register(Registry.BLOCK, new Identifier(ModName, "light_gray_concrete_stairs"), LIGHT_GRAY_CONCRETE_STAIRS);
+                Registry.register(Registry.BLOCK, new Identifier(ModName, "gray_concrete_stairs"), GRAY_CONCRETE_STAIRS);
+                Registry.register(Registry.BLOCK, new Identifier(ModName, "pink_concrete_stairs"), PINK_CONCRETE_STAIRS);
+                Registry.register(Registry.BLOCK, new Identifier(ModName, "lime_concrete_stairs"), LIME_CONCRETE_STAIRS);
+                Registry.register(Registry.BLOCK, new Identifier(ModName, "yellow_concrete_stairs"), YELLOW_CONCRETE_STAIRS);
+                Registry.register(Registry.BLOCK, new Identifier(ModName, "light_blue_concrete_stairs"), LIGHT_BLUE_CONCRETE_STAIRS);
+                Registry.register(Registry.BLOCK, new Identifier(ModName, "magenta_concrete_stairs"), MAGENTA_CONCRETE_STAIRS);
+                Registry.register(Registry.BLOCK, new Identifier(ModName, "orange_concrete_stairs"), ORANGE_CONCRETE_STAIRS);
+                Registry.register(Registry.BLOCK, new Identifier(ModName, "white_concrete_stairs"), WHITE_CONCRETE_STAIRS);
+                Registry.register(Registry.BLOCK, new Identifier(ModName, "cyan_concrete_stairs"), CYAN_CONCRETE_STAIRS);
     }
 
 }

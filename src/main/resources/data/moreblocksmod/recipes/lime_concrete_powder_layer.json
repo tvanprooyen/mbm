@@ -1,0 +1,12 @@
+﻿{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:lime_concrete_powder"
+        }
+    ],
+    "result": {
+        "item": "moreblocksmod:lime_concrete_powder_layer",
+        "count": 8
+    }
+}

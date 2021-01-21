@@ -1,0 +1,15 @@
+﻿{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+      "###"
+  ],
+  "key": {
+      "#": {
+          "item": "minecraft:red_concrete"
+      }
+  },
+  "result": {
+      "item": "moreblocksmod:red_concrete_slab",
+      "count": 6
+  }
+}

@@ -1,0 +1,7 @@
+﻿{
+  "variants": {
+      "type=bottom": { "model": "moreblocksmod:block/red_concrete_slab" },
+      "type=top": { "model": "moreblocksmod:block/red_concrete_slab_top" },
+      "type=double": { "model": "block/red_concrete"}
+  }
+}

@@ -1,0 +1,6 @@
+﻿{
+	"parent": "moreblocksmod:block/sideblock0deg",
+	"textures": {
+		"side":"block/cyan_concrete"
+	}
+}
