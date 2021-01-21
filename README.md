@@ -20,7 +20,7 @@
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
 [![MINECRAFT VER][minecraft-ver-shield]][minecraft-ver-url]
-[![GITHUB VER][github-ver-shield]][githubt-ver-url]
+[![GITHUB VER][git-ver-shield]][git-ver-url]
 
 <!-- PROJECT LOGO -->
 <br />
