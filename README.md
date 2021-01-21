@@ -39,8 +39,6 @@ The main point of this mod is give more blocks to the community and will always 
   <span align="center">
     This mod is for FabricMC and requires Fabric API to be located in the Mod folder. Look on how to install Fabric from this website : https://fabricmc.net/. 
      <br />
-     <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
-     <br />
      <br />
      <a href="https://github.com/tvanprooyen/mbm/archive/main.zip">Download</a>
      ·
