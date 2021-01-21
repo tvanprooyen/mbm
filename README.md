@@ -188,6 +188,6 @@ Contributions are what make the open source community such an amazing place to b
 [license-url]: https://github.com/tvanprooyen/mbm/blob/master/LICENS
 [minecraft-ver-shield]: https://img.shields.io/badge/Minecraft-1.16.5-orange?style=for-the-badge
 [minecraft-ver-url]: https://minecraft.gamepedia.com/Java_Edition_1.16.5
-[git-ver-shield]: https://img.shields.io/github/v/release/tvanprooyen/mbm?include_prereleases?style=for-the-badge
+[git-ver-shield]: https://img.shields.io/github/v/release/tvanprooyen/mbm?include_prereleases&style=for-the-badge
 [git-ver-url]: https://github.com/tvanprooyen/mbm/releases
 [product-screenshot]: images/screenshot.png
