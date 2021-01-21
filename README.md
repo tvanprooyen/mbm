@@ -183,7 +183,7 @@ Contributions are what make the open source community such an amazing place to b
 [stars-url]: https://github.com/tvanprooyen/mbm/stargazers
 [issues-shield]: https://img.shields.io/github/issues/tvanprooyen/mbm?style=for-the-badge
 [issues-url]: https://github.com/tvanprooyen/mbm/issues
-[license-shield]: https://img.shields.io/badge/LICENSE-CC--BY--NC--4.0-green
+[license-shield]: https://img.shields.io/badge/LICENSE-CC--BY--NC--4.0-green?style=for-the-badge
 [license-url]: https://github.com/tvanprooyen/mbm/blob/master/LICENS
 [minecraft-ver-shield]: https://img.shields.io/badge/Minecraft-1.16.5-orange?style=for-the-badge
 [minecraft-ver-url]: https://linkedin.com/in/othneildrew
