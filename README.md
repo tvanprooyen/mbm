@@ -39,7 +39,7 @@ The main point of this mod is give more blocks to the community and will always 
   <span align="center">
      <br />
      <br />
-     <a href="https://github.com/tvanprooyen/mbm/archive/main.zip" target="_blank">Download</a>
+     <a href="https://www.curseforge.com/minecraft/mc-mods/mbm-more-blocks-mod" target="_blank">Download</a>
      ·
      <a href="https://github.com/tvanprooyen/mbm/issues">Report Bug</a>
       ·
@@ -122,7 +122,7 @@ This is an example of how to list things you need to use the software and how to
 1. Download <a href="https://fabricmc.net/" target="_blank">FabricMC</a>
 2. Download <a href="https://www.curseforge.com/minecraft/mc-mods/fabric-api" target="_blank">FabricMC API</a> (Required to run)
 3. Download <a href="https://www.curseforge.com/minecraft/mc-mods/mbm-more-blocks-mod" target="_blank">More Blocks Mod</a>
-4. Place MOD and API in "Mod" folder located: <br /> "C:\Users\ #Username# \AppData\Roaming\.minecraft\mods"<br /> or <br />Type" %appdata%\.minecraft\mods" in file explorer
+4. Place MOD and API in "Mod" folder located: <br /> "C:\Users\ #Username# \AppData\Roaming\.minecraft\mods"<br /> or <br />Type" %appdata%\\.minecraft\mods" in file explorer
 
 
 
