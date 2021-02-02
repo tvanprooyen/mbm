@@ -1,0 +1,15 @@
+﻿{
+  "variants": {
+      "infusedstate=0":  { "model": "moreblocksmod:block/pib0" },
+      "infusedstate=1":  { "model": "moreblocksmod:block/pib10" },
+      "infusedstate=2":  { "model": "moreblocksmod:block/pib20" },
+      "infusedstate=3":  { "model": "moreblocksmod:block/pib30" },
+      "infusedstate=4":  { "model": "moreblocksmod:block/pib40" },
+      "infusedstate=5":  { "model": "moreblocksmod:block/pib50" },
+      "infusedstate=6":  { "model": "moreblocksmod:block/pib60" },
+      "infusedstate=7":  { "model": "moreblocksmod:block/pib70" },
+      "infusedstate=8":  { "model": "moreblocksmod:block/pib80" },
+      "infusedstate=9":  { "model": "moreblocksmod:block/pib90" },
+      "infusedstate=10":  { "model": "moreblocksmod:block/pib100" }
+  }
+}

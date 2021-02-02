@@ -47,7 +47,7 @@ public abstract class CauldronBlockMixin extends Block {
             //if (random.nextInt(5) == 0) {
                     Random random5 = world.getRandom();
                     //DefaultParticleType defaultParticleType6 = ParticleTypes.CLOUD;
-                    DustParticleEffect SteamPartical = new DustParticleEffect(0.5f, 0.5f, 0.6f, 2.0f);
+                    DustParticleEffect SteamPartical = new DustParticleEffect(1f, 1f, 1f, 2.0F);
                     world.addImportantParticle(SteamPartical, true, pos.getX() + 0.5 + random5.nextDouble() / 3.0 * (random5.nextBoolean() ? 1 : -1), (pos.getY()) + random5.nextDouble() + random5.nextDouble(), pos.getZ() + 0.5 + random5.nextDouble() / 3.0 * (random5.nextBoolean() ? 1 : -1), 0.0, 0.09, 0.0);
             //}
         }

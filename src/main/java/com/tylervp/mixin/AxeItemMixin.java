@@ -56,25 +56,33 @@ public class AxeItemMixin extends MiningToolItem {
                 //world3.setBlockState(blockPos4, ((BlockState)block6.getDefaultState()).<Direction.Axis>with(PillarBlock.AXIS, (Comparable)blockState5.<V>get((Property<V>)PillarBlock.AXIS)), 11);
 
                 ItemConvertible bark_item = this.asItem();
+                Boolean pass = false;
 
-                    if(blockState5.isOf(Blocks.ACACIA_LOG)) {
-                        bark_item = MBMItems.ACACIA_BARK_FRAGMENT.asItem();
-                    } else if(blockState5.isOf(Blocks.BIRCH_LOG)) {
-                        bark_item = MBMItems.BIRCH_BARK_FRAGMENT.asItem();
-                    } else if(blockState5.isOf(Blocks.DARK_OAK_LOG)) {
-                        bark_item = MBMItems.DARK_OAK_BARK_FRAGMENT.asItem();
-                    } else if(blockState5.isOf(Blocks.JUNGLE_LOG)) {
-                        bark_item = MBMItems.JUNGLE_BARK_FRAGMENT.asItem();
-                    } else if(blockState5.isOf(Blocks.OAK_LOG)) {
-                        bark_item = MBMItems.OAK_BARK_FRAGMENT.asItem();
-                    } else if(blockState5.isOf(Blocks.SPRUCE_LOG)) {
-                        bark_item = MBMItems.SPRUCE_BARK_FRAGMENT.asItem();
+                if(blockState5.isOf(Blocks.ACACIA_LOG)) {
+                    bark_item = MBMItems.ACACIA_BARK_FRAGMENT.asItem();
+                    pass = true;
+                } else if(blockState5.isOf(Blocks.BIRCH_LOG)) {
+                    bark_item = MBMItems.BIRCH_BARK_FRAGMENT.asItem();
+                    pass = true;
+                } else if(blockState5.isOf(Blocks.DARK_OAK_LOG)) {
+                    bark_item = MBMItems.DARK_OAK_BARK_FRAGMENT.asItem();
+                    pass = true;
+                } else if(blockState5.isOf(Blocks.JUNGLE_LOG)) {
+                    bark_item = MBMItems.JUNGLE_BARK_FRAGMENT.asItem();
+                    pass = true;
+                } else if(blockState5.isOf(Blocks.OAK_LOG)) {
+                    bark_item = MBMItems.OAK_BARK_FRAGMENT.asItem();
+                    pass = true;
+                } else if(blockState5.isOf(Blocks.SPRUCE_LOG)) {
+                    bark_item = MBMItems.SPRUCE_BARK_FRAGMENT.asItem();
+                    pass = true;
+                }
+
+                if(pass){
+                    Block.dropStack(context.getWorld(), blockPos4, new ItemStack(bark_item, 4));
+                    if (playerEntity7 != null) {
+                        context.getStack().<PlayerEntity>damage(1, playerEntity7, p -> p.sendToolBreakStatus(context.getHand()));
                     }
-                
-                
-                Block.dropStack(context.getWorld(), blockPos4, new ItemStack(bark_item, 4));
-                if (playerEntity7 != null) {
-                    context.getStack().<PlayerEntity>damage(1, playerEntity7, p -> p.sendToolBreakStatus(context.getHand()));
                 }
             }
             return ActionResult.success(world3.isClient);

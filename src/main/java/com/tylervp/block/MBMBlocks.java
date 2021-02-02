@@ -3,6 +3,7 @@ package com.tylervp.block;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.GrassBlock;
 import net.minecraft.block.HayBlock;
@@ -14,13 +15,22 @@ import net.minecraft.block.MaterialColor;
 import net.minecraft.block.PillarBlock;
 import net.minecraft.block.SlabBlock;
 import net.minecraft.block.entity.BlockEntityType;
+import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.fluid.FlowableFluid;
 import net.minecraft.sound.BlockSoundGroup;
+import net.minecraft.state.property.Properties;
+import net.minecraft.state.property.Property;
+
+import java.util.function.ToIntFunction;
 
 import com.tylervp.block.entity.VaseBlockEntity;
 import com.tylervp.fluid.MudFluid;
 
 public class MBMBlocks {
+
+    private static ToIntFunction<BlockState> createLightLevelFromBlockState(int litLevel) {
+        return blockState -> blockState.<Boolean>get((Property<Boolean>)Properties.LIT) ? litLevel : 0;
+    }
 
     //Quick Settings
     private static final FabricBlockSettings CONCRETE_POWDER_SETTINGS = FabricBlockSettings.of(Material.AGGREGATE).requiresTool().breakByHand(false).breakByTool(FabricToolTags.SHOVELS).resistance(0.5f).hardness(0.5f).sounds(BlockSoundGroup.SAND);
@@ -440,7 +450,7 @@ public class MBMBlocks {
 
 
     //PotionInfusedBlocks
-    //public static final PotionInfusedBlock PIB = new PotionInfusedBlock(STONE_SETTINGS);
+    //public static final PotionInfusedBlock PIB = new PotionInfusedBlock(StatusEffects.JUMP_BOOST,STONE_SETTINGS.luminance(createLightLevelFromBlockState(12)));
     
     //Block Entity
     public static BlockEntityType<VaseBlockEntity> TERRACOTTA_VASE_BLOCK_ENTITY/* , BLACK_TERRACOTTA_VASE_BLOCK_ENTITY */;
