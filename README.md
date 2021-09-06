@@ -44,6 +44,8 @@ The main point of this mod is give more blocks to the community and will always 
      <a href="https://github.com/tvanprooyen/mbm/issues">Report Bug</a>
       ·
       <a href="https://github.com/tvanprooyen/mbm/issues">Request Feature</a>
+      ·
+      <a href="https://www.facebook.com/groups/306211714346367/">Facebook</a>
    </span>
   </p>
 </p>
