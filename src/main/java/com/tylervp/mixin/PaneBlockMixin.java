@@ -18,6 +18,6 @@ public class PaneBlockMixin {
     @Inject(method = "connectsTo(Lnet/minecraft/block/BlockState;Z)Z", at = @At("HEAD"), cancellable = true)
     void connectsTo(BlockState state, boolean boolean3, CallbackInfoReturnable<Boolean> ci) {
         Block block4 = state.getBlock();
-        ci.setReturnValue((!Block.cannotConnect(block4) && boolean3) || block4 instanceof PaneBlock || block4 instanceof HorizontalPaneBlock || block4.isIn(BlockTags.WALLS));
+        ci.setReturnValue((!Block.cannotConnect(state) && boolean3) || block4 instanceof PaneBlock || block4 instanceof HorizontalPaneBlock || state.isIn(BlockTags.WALLS));
     }
 }

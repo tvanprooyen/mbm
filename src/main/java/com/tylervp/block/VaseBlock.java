@@ -40,9 +40,10 @@ public class VaseBlock extends BlockWithEntity {
     }
 //ShulkerBoxBlock  BarrelBlock
 
-    public BlockEntity createBlockEntity(BlockView world) {
-        return new VaseBlockEntity();
-    }
+    @Override
+   public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
+      return new VaseBlockEntity(pos, state);
+   }
 
     public BlockRenderType getRenderType(BlockState state) {
         return BlockRenderType.MODEL;

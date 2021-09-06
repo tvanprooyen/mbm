@@ -5,6 +5,7 @@ import net.minecraft.block.BlockRenderType;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 import java.util.Random;
 
 import com.google.common.collect.Lists;
@@ -20,9 +21,7 @@ import net.minecraft.entity.ItemEntity;
 import net.minecraft.entity.ai.pathing.NavigationType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.fluid.FlowableFluid;
-import net.minecraft.fluid.Fluid;
 import net.minecraft.fluid.FluidState;
-import net.minecraft.fluid.Fluids;
 import net.minecraft.item.ItemStack;
 import net.minecraft.loot.context.LootContext;
 //import net.minecraft.particle.ParticleTypes;
@@ -68,7 +67,7 @@ public class MudBlock extends Block implements FluidDrainable {
     
     @Override
     public VoxelShape getCollisionShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
-        if (context.isAbove(FluidBlock.COLLISION_SHAPE, pos, true) && state.<Integer>get((Property<Integer>)FluidBlock.LEVEL) == 0 && context.method_27866(world.getFluidState(pos.up()), this.fluid)) {
+        if (context.isAbove(FluidBlock.COLLISION_SHAPE, pos, true) && state.<Integer>get((Property<Integer>)FluidBlock.LEVEL) == 0 && context.canWalkOnFluid(world.getFluidState(pos.up()), this.fluid)) {
             return FluidBlock.COLLISION_SHAPE;
         }
         return VoxelShapes.empty();
@@ -184,17 +183,6 @@ public class MudBlock extends Block implements FluidDrainable {
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
         builder.add(FluidBlock.LEVEL);
     }
-
-    
-    
-    @Override
-    public Fluid tryDrainFluid(WorldAccess world, BlockPos pos, BlockState state) {
-        if (state.<Integer>get((Property<Integer>)FluidBlock.LEVEL) == 0) {
-            world.setBlockState(pos, Blocks.AIR.getDefaultState(), 11);
-            return this.fluid;
-        }
-        return Fluids.EMPTY;
-    }
     
     @Override
     public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
@@ -224,7 +212,7 @@ public class MudBlock extends Block implements FluidDrainable {
             return false;
         }
         double double12 = 0.0;
-        boolean boolean14 = entity.canFly();
+        boolean boolean14 = entity.isPushedByFluids();
         boolean boolean15 = false;
         Vec3d vec3d16 = Vec3d.ZERO;
         int integer17 = 0;
@@ -341,5 +329,28 @@ public class MudBlock extends Block implements FluidDrainable {
     static {
         LEVEL = Properties.LEVEL_15;
         COLLISION_SHAPE = Block.createCuboidShape(0.0, 0.0, 0.0, 16.0, 8.0, 16.0);
+    }
+
+    /* @Override
+    public Fluid tryDrainFluid(WorldAccess world, BlockPos pos, BlockState state) {
+        if (state.<Integer>get((Property<Integer>)FluidBlock.LEVEL) == 0) {
+            world.setBlockState(pos, Blocks.AIR.getDefaultState(), 11);
+            return this.fluid;
+        }
+        return Fluids.EMPTY;
+    } */
+
+    @Override
+    public ItemStack tryDrainFluid(WorldAccess world, BlockPos pos, BlockState state) {
+        if (state.<Integer>get((Property<Integer>)FluidBlock.LEVEL) == 0) {
+            world.setBlockState(pos, Blocks.AIR.getDefaultState(), 11);
+            return this.asItem().getDefaultStack();
+        }
+        return Blocks.AIR.asItem().getDefaultStack();
+    }
+
+    @Override
+    public Optional<SoundEvent> getBucketFillSound() {
+        return Optional.<SoundEvent>of(SoundEvents.ITEM_BUCKET_FILL);
     }
 }

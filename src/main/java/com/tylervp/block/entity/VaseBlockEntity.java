@@ -3,47 +3,76 @@ package com.tylervp.block.entity;
 import com.tylervp.block.MBMBlocks;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityType;
-import net.minecraft.block.entity.ChestBlockEntity;
 import net.minecraft.block.entity.LootableContainerBlockEntity;
+import net.minecraft.block.entity.ViewerCountManager;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventories;
+import net.minecraft.inventory.Inventory;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.NbtCompound;
+import net.minecraft.screen.GenericContainerScreenHandler;
 import net.minecraft.screen.HopperScreenHandler;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableText;
 import net.minecraft.util.collection.DefaultedList;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.BlockView;
+import net.minecraft.world.World;
 
 public class VaseBlockEntity extends LootableContainerBlockEntity {
    private DefaultedList<ItemStack> inventory;
+   private final ViewerCountManager stateManager;
    private int viewerCount;
 
-   public VaseBlockEntity(BlockEntityType<?> type) {
-      super(type);
-      this.inventory = DefaultedList.ofSize(5, ItemStack.EMPTY);
+   public VaseBlockEntity(BlockEntityType<?> blockEntityType, BlockPos blockPos, BlockState blockState) {
+      super(blockEntityType, blockPos, blockState);
+        this.inventory = DefaultedList.<ItemStack>ofSize(5, ItemStack.EMPTY);
+        this.stateManager = new ViewerCountManager() {
+            @Override
+            protected void onContainerOpen(World world, BlockPos pos, BlockState state) {
+            }
+            
+            @Override
+            protected void onContainerClose(World world, BlockPos pos, BlockState state) {
+            }
+            
+            @Override
+            protected void onViewerCountUpdate(World world, BlockPos pos, BlockState state, int oldViewerCount, int newViewerCount) {
+            }
+            
+            @Override
+            protected boolean isPlayerViewing(PlayerEntity player) {
+                if (player.currentScreenHandler instanceof GenericContainerScreenHandler) {
+                    Inventory inventory3 = ((GenericContainerScreenHandler)player.currentScreenHandler).getInventory();
+                    return inventory3 == VaseBlockEntity.this;
+                }
+                return false;
+            }
+        };
    }
 
-   public VaseBlockEntity() {
-         this(MBMBlocks.VASE_BLOCK_ENTITY);
+   public VaseBlockEntity(BlockPos pos, BlockState state) {
+      this(MBMBlocks.VASE_BLOCK_ENTITY, pos, state);
    }
 
-   public CompoundTag toTag(CompoundTag tag) {
-      super.toTag(tag);
+   public NbtCompound writeNbt(NbtCompound tag) {
+      super.writeNbt(tag);
       if (!this.serializeLootTable(tag)) {
-         Inventories.toTag(tag, this.inventory);
+         Inventories.writeNbt(tag, this.inventory);
       }
 
       return tag;
    }
 
-   public void fromTag(BlockState state, CompoundTag tag) {
-      super.fromTag(state, tag);
+   public void readNbt(NbtCompound nbt) {
+      super.readNbt(nbt);
       this.inventory = DefaultedList.ofSize(this.size(), ItemStack.EMPTY);
-      if (!this.deserializeLootTable(tag)) {
-         Inventories.fromTag(tag, this.inventory);
+      if (!this.deserializeLootTable(nbt)) {
+         Inventories.readNbt(nbt, this.inventory);
       }
 
    }
@@ -91,11 +120,19 @@ public class VaseBlockEntity extends LootableContainerBlockEntity {
       this.world.getBlockTickScheduler().schedule(this.getPos(), this.getCachedState().getBlock(), 5);
    }
 
+   public static int getPlayersLookingInChestCount(BlockView world, BlockPos pos) {
+      BlockState blockState = world.getBlockState(pos);
+      if (blockState.hasBlockEntity()) {
+         BlockEntity blockEntity = world.getBlockEntity(pos);
+         if (blockEntity instanceof VaseBlockEntity) {
+            return ((VaseBlockEntity)blockEntity).stateManager.getViewerCount();
+         }
+      }
+      return 0;
+   }
+
    public void tick() {
-      int i = this.pos.getX();
-      int j = this.pos.getY();
-      int k = this.pos.getZ();
-      this.viewerCount = ChestBlockEntity.countViewers(this.world, this, i, j, k);
+      this.viewerCount = VaseBlockEntity.getPlayersLookingInChestCount(this.world, this.pos);
       if (this.viewerCount > 0) {
          this.scheduleUpdate();
       } else {

@@ -31,25 +31,24 @@ public class PetrifiedPillarBlock  extends PillarBlock {
         this.setDefaultState(this.stateManager.getDefaultState().with(BREAKSTATE, 4));
         //fRegistry.add(this, 5, 5);
     }
-
     
     @Override
-    public void onSteppedOn(World world, BlockPos pos, Entity entity) {
+    public void onSteppedOn(World world, BlockPos pos, BlockState state, Entity entity) {
         if(!(entity instanceof ItemEntity)){
             tryBreakPetrifiedBlock(world, pos, entity, 100);
         }
-        super.onSteppedOn(world, pos, entity);
+        super.onSteppedOn(world, pos, state, entity);
     }
 
     @Override
-    public void onLandedUpon(World world, BlockPos pos, Entity entity, float distance) {
+    public void onLandedUpon(World world, BlockState state, BlockPos pos, Entity entity, float fallDistance) {
         if(!(entity instanceof ItemEntity)){
-            int landingMutiplyer = Math.abs((int) Math.round((100 / distance)));
+            int landingMutiplyer = Math.abs((int) Math.round((100 / fallDistance)));
             //System.out.println("landingMutiplyer: " + landingMutiplyer);
             //System.out.println("distance: " + distance);
             tryBreakPetrifiedBlock(world, pos, entity, landingMutiplyer);
         }
-        super.onLandedUpon(world, pos, entity, distance);
+        super.onLandedUpon(world, state, pos, entity, fallDistance);
     }
 
 

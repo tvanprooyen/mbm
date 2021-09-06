@@ -33,17 +33,13 @@ public class ClientInit implements ClientModInitializer
     
     @Override
     public void onInitializeClient() {
-		// ...
- 
-		/* setupFluidRendering(moreblocksmod.STILL_MUD, moreblocksmod.FLOWING_MUD, new Identifier("moreblocksmod", "mud"), -1);
-		BlockRenderLayerMap.INSTANCE.putFluids(RenderLayer.getSolid(), moreblocksmod.STILL_MUD, moreblocksmod.FLOWING_MUD); */
 
 		//Fluid
-        setupFluidRendering(MBMBlocks.STILL_MUD, MBMBlocks.FLOWING_MUD, new Identifier("moreblocksmod", "mud"), -1); //MoreBlocksModClientIni.
+        setupFluidRendering(MBMBlocks.STILL_MUD, MBMBlocks.FLOWING_MUD, new Identifier("moreblocksmod", "mud"), 0Xd9d9d9); //MoreBlocksModClientIni. 0X523422
      	BlockRenderLayerMap.INSTANCE.putFluids(RenderLayer.getSolid(), MBMBlocks.STILL_MUD, MBMBlocks.FLOWING_MUD);
-        
+		
 
-        //Cutouts
+		//Cutouts
         BlockRenderLayerMap.INSTANCE.putBlock(MBMBlocks.ROPE, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(MBMBlocks.ROPEMID, RenderLayer.getCutout());
 
@@ -98,19 +94,15 @@ public class ClientInit implements ClientModInitializer
             return 0Xffaf4d;
         }, MBMBlocks.DEAD_GRASS_BLOCK);
  
-		// ...
 	}
- 
-	// ...
- 
-	public static void setupFluidRendering(final Fluid still, final Fluid flowing, final Identifier textureFluidId, final int color)
-	{
+
+
+	public static void setupFluidRendering(final Fluid still, final Fluid flowing, final Identifier textureFluidId, final int color) {
 		final Identifier stillSpriteId = new Identifier(textureFluidId.getNamespace(), "block/" + textureFluidId.getPath() + "_still");
 		final Identifier flowingSpriteId = new Identifier(textureFluidId.getNamespace(), "block/" + textureFluidId.getPath() + "_flow");
-
+ 
 		// If they're not already present, add the sprites to the block atlas
-		ClientSpriteRegistryCallback.event(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE).register((atlasTexture, registry) ->
-		{
+		ClientSpriteRegistryCallback.event(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE).register((atlasTexture, registry) -> {
 			registry.register(stillSpriteId);
 			registry.register(flowingSpriteId);
 		});
@@ -120,11 +112,9 @@ public class ClientInit implements ClientModInitializer
  
 		final Sprite[] fluidSprites = { null, null };
  
-		ResourceManagerHelper.get(ResourceType.CLIENT_RESOURCES).registerReloadListener(new SimpleSynchronousResourceReloadListener()
-		{
+		ResourceManagerHelper.get(ResourceType.CLIENT_RESOURCES).registerReloadListener(new SimpleSynchronousResourceReloadListener() {
 			@Override
-			public Identifier getFabricId()
-			{
+			public Identifier getFabricId() {
 				return listenerId;
 			}
  
@@ -132,8 +122,7 @@ public class ClientInit implements ClientModInitializer
 			 * Get the sprites from the block atlas when resources are reloaded
 			 */
 			@Override
-			public void apply(ResourceManager resourceManager)
-			{
+			public void reload(ResourceManager resourceManager) {
 				final Function<Identifier, Sprite> atlas = MinecraftClient.getInstance().getSpriteAtlas(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE);
 				fluidSprites[0] = atlas.apply(stillSpriteId);
 				fluidSprites[1] = atlas.apply(flowingSpriteId);
@@ -144,14 +133,12 @@ public class ClientInit implements ClientModInitializer
 		final FluidRenderHandler renderHandler = new FluidRenderHandler()
 		{
 			@Override
-			public Sprite[] getFluidSprites(BlockRenderView view, BlockPos pos, FluidState state)
-			{
+			public Sprite[] getFluidSprites(BlockRenderView view, BlockPos pos, FluidState state) {
 				return fluidSprites;
 			}
  
 			@Override
-			public int getFluidColor(BlockRenderView view, BlockPos pos, FluidState state)
-			{
+			public int getFluidColor(BlockRenderView view, BlockPos pos, FluidState state) {
 				return color;
 			}
 		};
@@ -159,6 +146,4 @@ public class ClientInit implements ClientModInitializer
 		FluidRenderHandlerRegistry.INSTANCE.register(still, renderHandler);
 		FluidRenderHandlerRegistry.INSTANCE.register(flowing, renderHandler);
 	}
- 
-	// ...
 }

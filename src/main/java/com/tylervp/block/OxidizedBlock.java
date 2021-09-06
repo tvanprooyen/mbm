@@ -22,6 +22,8 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
+import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.math.Vec3f;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 //import net.minecraft.world.WorldAccess;
@@ -211,13 +213,13 @@ public class OxidizedBlock extends Block {
     } */
 
     @Override
-    public void onSteppedOn(World world, BlockPos pos, Entity entity) {
+    public void onSteppedOn(World world, BlockPos pos, BlockState state, Entity entity) {
         if(world.isClient){
             if(oxidizeState() != 0 && entity.isSprinting()){
                 spawnParticles(world, pos);
             }
         }
-        super.onSteppedOn(world, pos, entity);
+        super.onSteppedOn(world, pos, state, entity);
     }
 
     @Override
@@ -260,7 +262,7 @@ public class OxidizedBlock extends Block {
                 double double12 = (axis11 == Direction.Axis.X) ? (0.5 + 0.5625 * lv.getOffsetX()) : random5.nextFloat();
                 double double14 = (axis11 == Direction.Axis.Y) ? (0.5 + 0.5625 * lv.getOffsetY()) : random5.nextFloat();
                 double double16 = (axis11 == Direction.Axis.Z) ? (0.5 + 0.5625 * lv.getOffsetZ()) : random5.nextFloat();
-                DustParticleEffect dirtPartical = new DustParticleEffect(0.93f, 0.63f, 0.45f, 1.0f);
+                DustParticleEffect dirtPartical = new DustParticleEffect(new Vec3f(Vec3d.unpackRgb(15573363)), 1.0f);
                 world.addParticle(dirtPartical, pos.getX() + double12, pos.getY() + double14, pos.getZ() + double16, 0.0, 0.0, 0.0);
             }
         }

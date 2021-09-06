@@ -11,6 +11,7 @@ import net.minecraft.block.ShapeContext;
 import net.minecraft.block.Waterloggable;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.FallingBlockEntity;
+import net.minecraft.entity.Entity.RemovalReason;
 import net.minecraft.entity.ai.pathing.NavigationType;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.fluid.Fluids;
@@ -76,7 +77,7 @@ public class LayerBlockFalling extends FallingBlock implements Waterloggable {
     }
     
     @Override
-    public VoxelShape getVisualShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
+    public VoxelShape getCameraCollisionShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
         return LayerBlockFalling.LAYERS_TO_SHAPE[state.<Integer>get((Property<Integer>)LayerBlockFalling.LAYERS)];
     }
     
@@ -156,7 +157,7 @@ public class LayerBlockFalling extends FallingBlock implements Waterloggable {
                 }
 
                 int layersToApply = initLayers + state.get(LayerBlockFalling.LAYERS);
-                fBlockEntity.remove();
+                fBlockEntity.setRemoved(RemovalReason.DISCARDED);
                 if(layersToApply > 8) {
                     if(fBlockEntity.getBlockState().isOf(this)) {
                         if(!state.get(LayerBlockFalling.DIRTY)){

@@ -22,6 +22,6 @@ public class WallBlockMixin {
     void shouldConnectTo(BlockState state, boolean faceFullSquare, Direction side, CallbackInfoReturnable<Boolean> ci) {
         Block block5 = state.getBlock();
         boolean boolean6 = block5 instanceof FenceGateBlock && FenceGateBlock.canWallConnect(state, side);
-        ci.setReturnValue(state.isIn(BlockTags.WALLS) || (!Block.cannotConnect(block5) && faceFullSquare) || block5 instanceof PaneBlock || boolean6 || block5 instanceof HorizontalPaneBlock);
+        ci.setReturnValue(state.isIn(BlockTags.WALLS) || (!Block.cannotConnect(state) && faceFullSquare) || block5 instanceof PaneBlock || boolean6 || block5 instanceof HorizontalPaneBlock);
     }
 }

@@ -45,7 +45,7 @@ public abstract class LanternBlockMixin extends Block {
                     blockState8 = (BlockState)MBMBlocks.LANTERN_ROPE.getDefaultState().with(LanternBlock.HANGING, lv2 == Direction.UP);
                 }
                 if (blockState8.canPlaceAt(ctx.getWorld(), ctx.getBlockPos())) {
-                    return (BlockState)blockState8.with(LanternBlock.field_26441, fluidState3.getFluid() == Fluids.WATER);
+                    return (BlockState)blockState8.with(LanternBlock.HANGING, fluidState3.getFluid() == Fluids.WATER);
                 }
             }
         }

@@ -45,12 +45,12 @@ public class SpikeBlock extends Block {
     }
 
     @Override
-    public void onLandedUpon(World world, BlockPos pos, Entity entity, float distance) {
+    public void onLandedUpon(World world, BlockState state, BlockPos pos, Entity entity, float fallDistance) {
        if(!entity.isSneaking() && world.getBlockState(pos).get(SpikeBlock.DIRECTION) == Direction.UP) {
-           float landingMutiplyer = (distance * 2);
+           float landingMutiplyer = (fallDistance * 2);
             entity.damage(DamageSource.FALL, landingMutiplyer);
        } else {
-           super.onLandedUpon(world, pos, entity, distance);
+           super.onLandedUpon(world, state, pos, entity, fallDistance);
        }
     }
 

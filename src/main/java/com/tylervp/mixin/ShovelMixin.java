@@ -30,7 +30,7 @@ public class ShovelMixin {
         BlockState blockState = world.getBlockState(blockPos);
         PlayerEntity playerEntity = context.getPlayer();
         
-        Block grassblockState = new ImmutableMap.Builder<Block, Block>().put(MBMBlocks.DEAD_GRASS_BLOCK, Blocks.GRASS_PATH).build().get(blockState.getBlock());
+        Block grassblockState = new ImmutableMap.Builder<Block, Block>().put(MBMBlocks.DEAD_GRASS_BLOCK, Blocks.DIRT_PATH).build().get(blockState.getBlock());
 
         if (grassblockState != null && world.getBlockState(blockPos.up()).isAir()) {
             world.playSound(playerEntity, blockPos, SoundEvents.ITEM_SHOVEL_FLATTEN, SoundCategory.BLOCKS, 1.0f, 1.0f);

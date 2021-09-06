@@ -23,7 +23,6 @@ import net.minecraft.entity.projectile.thrown.PotionEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.particle.DustParticleEffect;
-import net.minecraft.particle.ParticleEffect;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionUtil;
 import net.minecraft.potion.Potions;
@@ -39,6 +38,8 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
+import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.math.Vec3f;
 import net.minecraft.world.World;
 
 public class PotionInfusedBlock extends Block {
@@ -77,13 +78,12 @@ public class PotionInfusedBlock extends Block {
     }
 
     @Override
-    public void onSteppedOn(World world, BlockPos pos, Entity entity) {
-        super.onSteppedOn(world, pos, entity);
+    public void onSteppedOn(World world, BlockPos pos, BlockState state, Entity entity) {
+        super.onSteppedOn(world, pos, state, entity);
 
         Random random = world.getRandom();
 
         if(random.nextInt(10) == 0){
-            BlockState state = world.getBlockState(pos);
             int infusedState = state.<Integer>get((Property<Integer>)PotionInfusedBlock.INFUSEDSTATE);
 
             List<Entity> EntityList = new ArrayList<Entity>();
@@ -243,37 +243,37 @@ public class PotionInfusedBlock extends Block {
     private static void spawnParticles(World world, BlockPos pos, StatusEffect effect) {
         //double double3 = 0.5625;
         Random random5 = world.random;
-        ParticleEffect partical;
+        Vec3f partical;
 
-        ParticleEffect RED = DustParticleEffect.RED;
-        ParticleEffect GREEN = new DustParticleEffect(0.01f, 1f, 0f, 1.0F);
-        ParticleEffect BLUE = new DustParticleEffect(0.01f, 0f, 1f, 1.0F);
-        //ParticleEffect CYAN = new DustParticleEffect(0.01f, 1f, 1f, 1.0F);
-        ParticleEffect YELLOW = new DustParticleEffect(1f, 1f, 0f, 1.0F);
-        //ParticleEffect MAGENTA = new DustParticleEffect(1f, 0f, 1f, 1.0F);
-        ParticleEffect BLACK = new DustParticleEffect(0.01f, 0f, 0f, 1.0F);
-        ParticleEffect WHITE = new DustParticleEffect(1f, 1f, 1f, 1.0F);
-        ParticleEffect AZURE = new DustParticleEffect(0.145f, 0.322f, 0.647f, 1.0F);
-        ParticleEffect KHAKI = new DustParticleEffect(0.75f,0.64f,0.3f, 1.0F);
-        //ParticleEffect DARK_GRAY = new DustParticleEffect(0.12f,0.12f,0.14f, 1.0F);
-        ParticleEffect AMBER = new DustParticleEffect(0.89f,0.6f,0.23f, 1.0F);
-        ParticleEffect OLIVE = new DustParticleEffect(0.58f,0.63f,0.38f, 1.0F);
-        ParticleEffect ORANGE = new DustParticleEffect(0.97f,0.49f,0.14f, 1.0F);
-        ParticleEffect DULL_GREEN = new DustParticleEffect(0.35f,0.46f,0.33f, 1.0F);
-        ParticleEffect LIGHT_GRAY = new DustParticleEffect(0.5f,0.51f,0.57f, 1.0F);
-        ParticleEffect SKY_BLUE = new DustParticleEffect(0.81f,1f,1f, 1.0F);
-        ParticleEffect AVOCADO_GREEN = new DustParticleEffect(0.2f,0.6f,0.01f, 1.0F);
-        ParticleEffect DARK_KHAKI = new DustParticleEffect(0.29f,0.26f,0.09f, 1.0F);
-        ParticleEffect PURPLE = new DustParticleEffect(0.33f,0.11f,0.29f, 1.0F);
-        ParticleEffect MEDIUM_BLUE = new DustParticleEffect(0.12f,0.12f,0.63f, 1.0F);
-        ParticleEffect PINK = new DustParticleEffect(0.8f,0.36f,0.67f, 1.0F);
-        ParticleEffect MAHOGANY = new DustParticleEffect(0.6f,0.27f,0.23f, 1.0F);
-        ParticleEffect GRAY_BLUE = new DustParticleEffect(0.35f,0.42f,0.51f, 1.0F);
-        ParticleEffect ELECTRIC_BLUE = new DustParticleEffect(0.49f,0.69f,0.78f, 1.0F);
-        ParticleEffect DARK_RED = new DustParticleEffect(0.58f,0.14f,0.14f, 1.0F);
-        ParticleEffect GRAY = new DustParticleEffect(0.28f,0.3f,0.28f, 1.0F);
-        ParticleEffect BISTRE = new DustParticleEffect(0.21f,0.16f,0.15f, 1.0F);
-        ParticleEffect MAROON = new DustParticleEffect(0.26f,0.04f,0.04f, 1.0F);
+        Vec3f RED = DustParticleEffect.RED;
+        Vec3f GREEN = new Vec3f(Vec3d.unpackRgb(16777215)); //(0.01f, 1f, 0f, 1.0F);
+        Vec3f BLUE = new Vec3f(Vec3d.unpackRgb(16777215)); //(0.01f, 0f, 1f, 1.0F);
+        //ParticleEffect CYAN = new Vec3f(Vec3d.unpackRgb(16777215)); //(0.01f, 1f, 1f, 1.0F);
+        Vec3f YELLOW = new Vec3f(Vec3d.unpackRgb(16777215)); //(1f, 1f, 0f, 1.0F);
+        //ParticleEffect MAGENTA = new Vec3f(Vec3d.unpackRgb(16777215)); //(1f, 0f, 1f, 1.0F);
+        Vec3f BLACK = new Vec3f(Vec3d.unpackRgb(16777215)); //(0.01f, 0f, 0f, 1.0F);
+        Vec3f WHITE = new Vec3f(Vec3d.unpackRgb(16777215)); //(1f, 1f, 1f, 1.0F);
+        Vec3f AZURE = new Vec3f(Vec3d.unpackRgb(16777215)); //(0.145f, 0.322f, 0.647f, 1.0F);
+        Vec3f KHAKI = new Vec3f(Vec3d.unpackRgb(16777215)); //(0.75f,0.64f,0.3f, 1.0F);
+        //ParticleEffect DARK_GRAY = new Vec3f(Vec3d.unpackRgb(16777215)); //(0.12f,0.12f,0.14f, 1.0F);
+        Vec3f AMBER = new Vec3f(Vec3d.unpackRgb(16777215)); //(0.89f,0.6f,0.23f, 1.0F);
+        Vec3f OLIVE = new Vec3f(Vec3d.unpackRgb(16777215)); //(0.58f,0.63f,0.38f, 1.0F);
+        Vec3f ORANGE = new Vec3f(Vec3d.unpackRgb(16777215)); //(0.97f,0.49f,0.14f, 1.0F);
+        Vec3f DULL_GREEN = new Vec3f(Vec3d.unpackRgb(16777215)); //(0.35f,0.46f,0.33f, 1.0F);
+        Vec3f LIGHT_GRAY = new Vec3f(Vec3d.unpackRgb(16777215)); //(0.5f,0.51f,0.57f, 1.0F);
+        Vec3f SKY_BLUE = new Vec3f(Vec3d.unpackRgb(16777215)); //(0.81f,1f,1f, 1.0F);
+        Vec3f AVOCADO_GREEN = new Vec3f(Vec3d.unpackRgb(16777215)); //(0.2f,0.6f,0.01f, 1.0F);
+        Vec3f DARK_KHAKI = new Vec3f(Vec3d.unpackRgb(16777215)); //(0.29f,0.26f,0.09f, 1.0F);
+        Vec3f PURPLE = new Vec3f(Vec3d.unpackRgb(16777215)); //(0.33f,0.11f,0.29f, 1.0F);
+        Vec3f MEDIUM_BLUE = new Vec3f(Vec3d.unpackRgb(16777215)); //(0.12f,0.12f,0.63f, 1.0F);
+        Vec3f PINK = new Vec3f(Vec3d.unpackRgb(16777215)); //(0.8f,0.36f,0.67f, 1.0F);
+        Vec3f MAHOGANY = new Vec3f(Vec3d.unpackRgb(16777215)); //(0.6f,0.27f,0.23f, 1.0F);
+        Vec3f GRAY_BLUE = new Vec3f(Vec3d.unpackRgb(16777215)); //(0.35f,0.42f,0.51f, 1.0F);
+        Vec3f ELECTRIC_BLUE = new Vec3f(Vec3d.unpackRgb(16777215)); //(0.49f,0.69f,0.78f, 1.0F);
+        Vec3f DARK_RED = new Vec3f(Vec3d.unpackRgb(16777215)); //(0.58f,0.14f,0.14f, 1.0F);
+        Vec3f GRAY = new Vec3f(Vec3d.unpackRgb(16777215)); //(0.28f,0.3f,0.28f, 1.0F);
+        Vec3f BISTRE = new Vec3f(Vec3d.unpackRgb(16777215)); //(0.21f,0.16f,0.15f, 1.0F);
+        Vec3f MAROON = new Vec3f(Vec3d.unpackRgb(16777215)); //(0.26f,0.04f,0.04f, 1.0F);
 
 
 
@@ -344,7 +344,7 @@ public class PotionInfusedBlock extends Block {
                     partical = WHITE;
                 }
 
-                world.addParticle(partical, pos.getX() + double12, pos.getY() + double14, pos.getZ() + double16, 0.0, 0.0, 0.0);
+                world.addParticle(new DustParticleEffect(partical, 1.f), pos.getX() + double12, pos.getY() + double14, pos.getZ() + double16, 0.0, 0.0, 0.0);
             }
         }
     }

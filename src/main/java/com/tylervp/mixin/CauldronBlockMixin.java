@@ -4,7 +4,7 @@ import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
-import net.minecraft.block.CauldronBlock;
+import net.minecraft.block.LeveledCauldronBlock;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
@@ -15,6 +15,8 @@ import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.math.Vec3f;
 import net.minecraft.world.World;
 import net.minecraft.state.property.Property;
 
@@ -22,7 +24,7 @@ import java.util.Random;
 
 import org.spongepowered.asm.mixin.Mixin;
 
-@Mixin(CauldronBlock.class)
+@Mixin(LeveledCauldronBlock.class)
 public abstract class CauldronBlockMixin extends Block {
     
 
@@ -32,32 +34,33 @@ public abstract class CauldronBlockMixin extends Block {
 
     @Override
     public void randomDisplayTick(BlockState state, World world, BlockPos pos, Random random) {
-        int waterLevel = state.<Integer>get((Property<Integer>)CauldronBlock.LEVEL);
+        if(state.isOf(Blocks.WATER_CAULDRON)) {
+            int waterLevel = state.<Integer>get((Property<Integer>)LeveledCauldronBlock.LEVEL);
 
-        if(world.getBlockState(pos.down()).isOf(Blocks.FIRE) && waterLevel > 0){
+            if(world.getBlockState(pos.down()).isOf(Blocks.FIRE) && waterLevel > 0){
 
-            float waterLevelPos = (pos.getY() + (6.0f + 3 * waterLevel) / 16.0f);
+                float waterLevelPos = (pos.getY() + (6.0f + 3 * waterLevel) / 16.0f);
 
-            world.addParticle(ParticleTypes.BUBBLE_POP, (pos.getX() + 0.3) + (random.nextDouble() -0.3),  waterLevelPos + (random.nextDouble()-(6.0f + 3 * waterLevel) / 16.0f), (pos.getZ() + 0.3) + (random.nextDouble() -0.3), 0.0, 0.05, 0.0);
+                world.addParticle(ParticleTypes.BUBBLE_POP, (pos.getX() + 0.3) + (random.nextDouble() -0.3),  waterLevelPos + (random.nextDouble()-(6.0f + 3 * waterLevel) / 16.0f), (pos.getZ() + 0.3) + (random.nextDouble() -0.3), 0.0, 0.05, 0.0);
 
 
-            if (random.nextInt(10) == 0) {
-                world.playSound(pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, SoundEvents.BLOCK_BUBBLE_COLUMN_BUBBLE_POP, SoundCategory.BLOCKS, 0.5f + random.nextFloat(), random.nextFloat() * 0.7f + 0.6f, false);
+                if (random.nextInt(10) == 0) {
+                    world.playSound(pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, SoundEvents.BLOCK_BUBBLE_COLUMN_BUBBLE_POP, SoundCategory.BLOCKS, 0.5f + random.nextFloat(), random.nextFloat() * 0.7f + 0.6f, false);
+                }
+                //if (random.nextInt(5) == 0) {
+                        Random random5 = world.getRandom();
+                        //DefaultParticleType defaultParticleType6 = ParticleTypes.CLOUD;
+                        DustParticleEffect SteamPartical = new DustParticleEffect(new Vec3f(Vec3d.unpackRgb(16777215)), 2.0F);
+                        world.addImportantParticle(SteamPartical, true, pos.getX() + 0.5 + random5.nextDouble() / 3.0 * (random5.nextBoolean() ? 1 : -1), (pos.getY()) + random5.nextDouble() + random5.nextDouble(), pos.getZ() + 0.5 + random5.nextDouble() / 3.0 * (random5.nextBoolean() ? 1 : -1), 0.0, 0.09, 0.0);
+                //}
             }
-            //if (random.nextInt(5) == 0) {
-                    Random random5 = world.getRandom();
-                    //DefaultParticleType defaultParticleType6 = ParticleTypes.CLOUD;
-                    DustParticleEffect SteamPartical = new DustParticleEffect(1f, 1f, 1f, 2.0F);
-                    world.addImportantParticle(SteamPartical, true, pos.getX() + 0.5 + random5.nextDouble() / 3.0 * (random5.nextBoolean() ? 1 : -1), (pos.getY()) + random5.nextDouble() + random5.nextDouble(), pos.getZ() + 0.5 + random5.nextDouble() / 3.0 * (random5.nextBoolean() ? 1 : -1), 0.0, 0.09, 0.0);
-            //}
         }
-        
     }
 
 
     @Override
     public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
-        int waterLevel = state.<Integer>get((Property<Integer>)CauldronBlock.LEVEL);
+        int waterLevel = state.<Integer>get((Property<Integer>)LeveledCauldronBlock.LEVEL);
         float float7 = pos.getY() + (6.0f + 3 * waterLevel) / 16.0f;
         if (!world.isClient && entity.isOnFire() && waterLevel > 0 && entity.getY() <= float7) {
             entity.extinguish();
@@ -75,7 +78,7 @@ public abstract class CauldronBlockMixin extends Block {
 
 
     public void setLevel(World world, BlockPos pos, BlockState state, int level) {
-        world.setBlockState(pos, ((BlockState)state).with(CauldronBlock.LEVEL, MathHelper.clamp(level, 0, 3)), 2);
+        world.setBlockState(pos, ((BlockState)state).with(LeveledCauldronBlock.LEVEL, MathHelper.clamp(level, 0, 3)), 2);
         world.updateComparators(pos, this);
     }
 }

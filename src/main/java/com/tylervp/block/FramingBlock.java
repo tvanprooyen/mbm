@@ -199,8 +199,8 @@ public class FramingBlock extends Block {
 
         VoxelShape Side1 = VoxelShapes.combineAndSimplify(VoxelShapes.fullCube(), Block.createCuboidShape(0.0, 0.0, 5.0, 1.0, 16.0, 11.0), BooleanBiFunction.ONLY_FIRST);
         VoxelShape Side2 = VoxelShapes.combineAndSimplify(Side1, Block.createCuboidShape(5.0, 0.0, 0.0, 11.0, 16.0, 1.0), BooleanBiFunction.ONLY_FIRST);
-        VoxelShape Side3 = VoxelShapes.combineAndSimplify(Side2, Block.createCuboidShape(11.0, 0.0, 15.0, 5.0, 16.0, 16.0), BooleanBiFunction.ONLY_FIRST);
-        VoxelShape Side4 = VoxelShapes.combineAndSimplify(Side3, Block.createCuboidShape(15.0, 0.0, 11.0, 16.0, 16.0, 5.0), BooleanBiFunction.ONLY_FIRST);
+        VoxelShape Side3 = VoxelShapes.combineAndSimplify(Side2, Block.createCuboidShape(5.0, 0.0, 15.0, 11.0, 16.0, 16.0), BooleanBiFunction.ONLY_FIRST);
+        VoxelShape Side4 = VoxelShapes.combineAndSimplify(Side3, Block.createCuboidShape(15.0, 0.0, 5.0, 16.0, 16.0, 11.0), BooleanBiFunction.ONLY_FIRST);
 
         OUTLINE_SHAPE_Y = VoxelShapes.combineAndSimplify(Side4, FramingBlock.RAY_TRACE_SHAPE_Y, BooleanBiFunction.ONLY_FIRST);
 
