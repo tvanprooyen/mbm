@@ -80,87 +80,91 @@ public class PotionInfusedBlock extends Block {
     public void onSteppedOn(World world, BlockPos pos, Entity entity) {
         super.onSteppedOn(world, pos, entity);
 
-        BlockState state = world.getBlockState(pos);
-        int infusedState = state.<Integer>get((Property<Integer>)PotionInfusedBlock.INFUSEDSTATE);
+        Random random = world.getRandom();
 
-        List<Entity> EntityList = new ArrayList<Entity>();
+        if(random.nextInt(10) == 0){
+            BlockState state = world.getBlockState(pos);
+            int infusedState = state.<Integer>get((Property<Integer>)PotionInfusedBlock.INFUSEDSTATE);
 
-        EntityList.add(entity);
+            List<Entity> EntityList = new ArrayList<Entity>();
 
-        if(entity.getType() == EntityType.ITEM || entity.getType() == EntityType.TNT_MINECART || entity.getType() == EntityType.HOPPER_MINECART || entity.getType() == EntityType.EXPERIENCE_ORB || entity.getType() == EntityType.POTION || entity.getType() == EntityType.LIGHTNING_BOLT || entity.getType() == EntityType.EXPERIENCE_BOTTLE) {
-            return;
-        } else if(entity.getType() == EntityType.BOAT || entity.getType() == EntityType.MINECART){
-            EntityList = entity.getPassengerList();
-        }
+            EntityList.add(entity);
 
-        for (Entity entities : EntityList) {
-            if(infusedState > 0){
-                int amp = 0;
-                int time = 10;
-                int breakAmount = 1;
-                
-                if(((LivingEntity)entities).hasStatusEffect(this.effect) && state.<Boolean>get((Property<Boolean>)PotionInfusedBlock.LIT)) {
-                    return;
-                }
+            if(entity.getType() == EntityType.ITEM || entity.getType() == EntityType.TNT_MINECART || entity.getType() == EntityType.HOPPER_MINECART || entity.getType() == EntityType.EXPERIENCE_ORB || entity.getType() == EntityType.POTION || entity.getType() == EntityType.LIGHTNING_BOLT || entity.getType() == EntityType.EXPERIENCE_BOTTLE) {
+                return;
+            } else if(entity.getType() == EntityType.BOAT || entity.getType() == EntityType.MINECART){
+                EntityList = entity.getPassengerList();
+            }
 
-                if(world.getBlockState(pos.down()).isOf(Blocks.GOLD_BLOCK)){
-                    amp = 1;
-                    breakAmount += 1;
-                } else if(world.getBlockState(pos.down()).isOf(Blocks.DIAMOND_BLOCK)){
-                    amp = 3;
-                    breakAmount += 2;
-                } else if(world.getBlockState(pos.down()).isOf(Blocks.NETHERITE_BLOCK)){
-                    amp = 5;
-                    breakAmount += 3;
-                }
+            for (Entity entities : EntityList) {
+                if(infusedState > 0){
+                    int amp = 0;
+                    int time = 10;
+                    int breakAmount = 1;
+                    
+                    if(((LivingEntity)entities).hasStatusEffect(this.effect) && state.<Boolean>get((Property<Boolean>)PotionInfusedBlock.LIT)) {
+                        return;
+                    }
 
-                if(world.getBlockState(pos.down(2)).isOf(Blocks.GOLD_BLOCK)){
-                    time *= 2;
-                    breakAmount += 1;
-                } else if(world.getBlockState(pos.down(2)).isOf(Blocks.DIAMOND_BLOCK)){
-                    time *= 4;
-                    breakAmount += 2;
-                } else if(world.getBlockState(pos.down(2)).isOf(Blocks.NETHERITE_BLOCK)){
-                    time *= 6;
-                    breakAmount += 3;
-                }
+                    if(world.getBlockState(pos.down()).isOf(Blocks.GOLD_BLOCK)){
+                        amp = 1;
+                        breakAmount += 1;
+                    } else if(world.getBlockState(pos.down()).isOf(Blocks.DIAMOND_BLOCK)){
+                        amp = 3;
+                        breakAmount += 2;
+                    } else if(world.getBlockState(pos.down()).isOf(Blocks.NETHERITE_BLOCK)){
+                        amp = 5;
+                        breakAmount += 3;
+                    }
 
-                if((world.getBlockState(pos.down(2)).isOf(Blocks.GOLD_BLOCK) || world.getBlockState(pos.down(2)).isOf(Blocks.DIAMOND_BLOCK) || world.getBlockState(pos.down(2)).isOf(Blocks.NETHERITE_BLOCK)) && world.getBlockState(pos.down(3)).isOf(Blocks.GOLD_BLOCK)){
-                    time *= 2;
-                    breakAmount += 2;
-                } else if((world.getBlockState(pos.down(2)).isOf(Blocks.GOLD_BLOCK) || world.getBlockState(pos.down(2)).isOf(Blocks.DIAMOND_BLOCK) || world.getBlockState(pos.down(2)).isOf(Blocks.NETHERITE_BLOCK)) && world.getBlockState(pos.down(3)).isOf(Blocks.DIAMOND_BLOCK)){
-                    time *= 4;
-                    breakAmount += 4;
-                } else if((world.getBlockState(pos.down(2)).isOf(Blocks.GOLD_BLOCK) || world.getBlockState(pos.down(2)).isOf(Blocks.DIAMOND_BLOCK) || world.getBlockState(pos.down(2)).isOf(Blocks.NETHERITE_BLOCK)) && world.getBlockState(pos.down(3)).isOf(Blocks.NETHERITE_BLOCK)){
-                    time *= 6;
-                    breakAmount += 6;
-                }
+                    if(world.getBlockState(pos.down(2)).isOf(Blocks.GOLD_BLOCK)){
+                        time *= 2;
+                        breakAmount += 1;
+                    } else if(world.getBlockState(pos.down(2)).isOf(Blocks.DIAMOND_BLOCK)){
+                        time *= 4;
+                        breakAmount += 2;
+                    } else if(world.getBlockState(pos.down(2)).isOf(Blocks.NETHERITE_BLOCK)){
+                        time *= 6;
+                        breakAmount += 3;
+                    }
 
-                if(!world.isClient){
-                    System.out.println("OnStep: " + breakAmount);
-                }
+                    if((world.getBlockState(pos.down(2)).isOf(Blocks.GOLD_BLOCK) || world.getBlockState(pos.down(2)).isOf(Blocks.DIAMOND_BLOCK) || world.getBlockState(pos.down(2)).isOf(Blocks.NETHERITE_BLOCK)) && world.getBlockState(pos.down(3)).isOf(Blocks.GOLD_BLOCK)){
+                        time *= 2;
+                        breakAmount += 2;
+                    } else if((world.getBlockState(pos.down(2)).isOf(Blocks.GOLD_BLOCK) || world.getBlockState(pos.down(2)).isOf(Blocks.DIAMOND_BLOCK) || world.getBlockState(pos.down(2)).isOf(Blocks.NETHERITE_BLOCK)) && world.getBlockState(pos.down(3)).isOf(Blocks.DIAMOND_BLOCK)){
+                        time *= 4;
+                        breakAmount += 4;
+                    } else if((world.getBlockState(pos.down(2)).isOf(Blocks.GOLD_BLOCK) || world.getBlockState(pos.down(2)).isOf(Blocks.DIAMOND_BLOCK) || world.getBlockState(pos.down(2)).isOf(Blocks.NETHERITE_BLOCK)) && world.getBlockState(pos.down(3)).isOf(Blocks.NETHERITE_BLOCK)){
+                        time *= 6;
+                        breakAmount += 6;
+                    }
 
-                StatusEffectInstance CurrEffectInstance = new StatusEffectInstance(this.effect, time * 20, amp);
-                
-                if(((LivingEntity)entities).hasStatusEffect(this.effect) && !state.<Boolean>get((Property<Boolean>)PotionInfusedBlock.LIT)){
-                    Collection<StatusEffectInstance> StatusEffectCollection = ((LivingEntity)entities).getStatusEffects();
-                    for (StatusEffectInstance StatusEffect : StatusEffectCollection) {
-                        if(StatusEffect.getEffectType() == this.effect){
-                            amp = StatusEffect.getAmplifier();
-                            time = (time * 20) + StatusEffect.getDuration();
-                            ((LivingEntity)entities).removeStatusEffect(this.effect);
-                            CurrEffectInstance = new StatusEffectInstance(this.effect, time, amp);
+                    /* if(!world.isClient){
+                        System.out.println("OnStep: " + breakAmount);
+                    } */
+
+                    StatusEffectInstance CurrEffectInstance = new StatusEffectInstance(this.effect, time * 20, amp);
+                    
+                    if(((LivingEntity)entities).hasStatusEffect(this.effect) && !state.<Boolean>get((Property<Boolean>)PotionInfusedBlock.LIT)){
+                        Collection<StatusEffectInstance> StatusEffectCollection = ((LivingEntity)entities).getStatusEffects();
+                        for (StatusEffectInstance StatusEffect : StatusEffectCollection) {
+                            if(StatusEffect.getEffectType() == this.effect){
+                                amp = StatusEffect.getAmplifier();
+                                time = (time * 20) + StatusEffect.getDuration();
+                                ((LivingEntity)entities).removeStatusEffect(this.effect);
+                                CurrEffectInstance = new StatusEffectInstance(this.effect, time, amp);
+                            }
                         }
                     }
-                }
-                
-                
-                breakBlock(world, pos, state, breakAmount);
-                ((LivingEntity)entities).addStatusEffect(CurrEffectInstance);
+                    
+                    
+                    this.breakBlock(world, pos, state, breakAmount);
+                    ((LivingEntity)entities).addStatusEffect(CurrEffectInstance);
 
-                light(state, world, pos, this.effect);
-            } else {
-                delight(state, world, pos, this.effect);
+                    light(state, world, pos, this.effect);
+                } else {
+                    delight(state, world, pos, this.effect);
+                }
             }
         }
     }
@@ -196,9 +200,9 @@ public class PotionInfusedBlock extends Block {
             integer5 = 0;
         }
 
-        if(!world.isClient){
+        /* if(!world.isClient){
             System.out.println("BreakBlock Infused State: " + integer5);
-        }
+        } */
         
         world.setBlockState(pos, (BlockState)state.with(PotionInfusedBlock.INFUSEDSTATE, integer5), 3);
         world.syncWorldEvent(2001, pos, Block.getRawIdFromState(state));

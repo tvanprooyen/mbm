@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+      "###",
+      "# #",
+      "###"
+  ],
+  "key": {
+      "#": {
+          "item": "moreblocksmod:black_terracotta_slab"
+      }
+  },
+  "result": {
+      "item": "moreblocksmod:black_terracotta_vase",
+      "count": 1
+  }
+}

@@ -13,14 +13,19 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUsageContext;
 import net.minecraft.item.MiningToolItem;
 import net.minecraft.item.ToolMaterial;
+import net.minecraft.particle.ParticleTypes;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
+
+import java.util.Random;
 
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Sets;
+import com.tylervp.block.MBMBlocks;
 import com.tylervp.item.MBMItems;
 
 import org.spongepowered.asm.mixin.Mixin;
@@ -48,7 +53,26 @@ public class AxeItemMixin extends MiningToolItem {
         BlockPos blockPos4 = context.getBlockPos();
         BlockState blockState5 = world3.getBlockState(blockPos4);
         Block block6 = new ImmutableMap.Builder<Block, Block>().put(Blocks.OAK_WOOD, Blocks.STRIPPED_OAK_WOOD).put(Blocks.OAK_LOG, Blocks.STRIPPED_OAK_LOG).put(Blocks.DARK_OAK_WOOD, Blocks.STRIPPED_DARK_OAK_WOOD).put(Blocks.DARK_OAK_LOG, Blocks.STRIPPED_DARK_OAK_LOG).put(Blocks.ACACIA_WOOD, Blocks.STRIPPED_ACACIA_WOOD).put(Blocks.ACACIA_LOG, Blocks.STRIPPED_ACACIA_LOG).put(Blocks.BIRCH_WOOD, Blocks.STRIPPED_BIRCH_WOOD).put(Blocks.BIRCH_LOG, Blocks.STRIPPED_BIRCH_LOG).put(Blocks.JUNGLE_WOOD, Blocks.STRIPPED_JUNGLE_WOOD).put(Blocks.JUNGLE_LOG, Blocks.STRIPPED_JUNGLE_LOG).put(Blocks.SPRUCE_WOOD, Blocks.STRIPPED_SPRUCE_WOOD).put(Blocks.SPRUCE_LOG, Blocks.STRIPPED_SPRUCE_LOG).put(Blocks.WARPED_STEM, Blocks.STRIPPED_WARPED_STEM).put(Blocks.WARPED_HYPHAE, Blocks.STRIPPED_WARPED_HYPHAE).put(Blocks.CRIMSON_STEM, Blocks.STRIPPED_CRIMSON_STEM).put(Blocks.CRIMSON_HYPHAE, Blocks.STRIPPED_CRIMSON_HYPHAE).build().get(blockState5.getBlock());
-        if (block6 != null) {
+        Block iron = new ImmutableMap.Builder<Block, Block>().put(Blocks.IRON_BLOCK, MBMBlocks.IRON_BLOCK).put(MBMBlocks.WAXED_EXPOSED_IRON, MBMBlocks.EXPOSED_IRON).put(MBMBlocks.WAXED_DEGRADED_IRON, MBMBlocks.DEGRADED_IRON).put(MBMBlocks.WAXED_WEATHERED_IRON, MBMBlocks.WEATHERED_IRON).put(MBMBlocks.WAXED_RUSTED_IRON, MBMBlocks.RUSTED_IRON).build().get(blockState5.getBlock());
+        Block oxidized = new ImmutableMap.Builder<Block, Block>().put(MBMBlocks.HARDENED_IRON, MBMBlocks.IRON_BLOCK).put(MBMBlocks.EXPOSED_IRON, MBMBlocks.IRON_BLOCK).put(MBMBlocks.DEGRADED_IRON, MBMBlocks.EXPOSED_IRON).put(MBMBlocks.WEATHERED_IRON, MBMBlocks.DEGRADED_IRON).put(MBMBlocks.RUSTED_IRON, MBMBlocks.WEATHERED_IRON).build().get(blockState5.getBlock());
+
+
+        if (iron != null) {
+            PlayerEntity playerEntity7 = context.getPlayer();
+            world3.playSound(playerEntity7, blockPos4, SoundEvents.ITEM_AXE_STRIP, SoundCategory.BLOCKS, 1.0f, 1.0f);
+            if (!world3.isClient) {
+                world3.setBlockState(blockPos4, ((BlockState)iron.getDefaultState()), 11);
+
+
+                if (playerEntity7 != null) {
+                    context.getStack().<PlayerEntity>damage(1, playerEntity7, p -> p.sendToolBreakStatus(context.getHand()));
+                }
+            }
+            if (world3.isClient) {
+               spawnParticlesStrip(world3, blockPos4);
+            }
+            return ActionResult.success(world3.isClient);
+        } else if (block6 != null) {
             PlayerEntity playerEntity7 = context.getPlayer();
             world3.playSound(playerEntity7, blockPos4, SoundEvents.ITEM_AXE_STRIP, SoundCategory.BLOCKS, 1.0f, 1.0f);
             if (!world3.isClient) {
@@ -86,7 +110,43 @@ public class AxeItemMixin extends MiningToolItem {
                 }
             }
             return ActionResult.success(world3.isClient);
+        } else if (oxidized != null) {
+            PlayerEntity playerEntity7 = context.getPlayer();
+            world3.playSound(playerEntity7, blockPos4, SoundEvents.ITEM_AXE_STRIP, SoundCategory.BLOCKS, 1.0f, 1.0f);
+            if (!world3.isClient) {
+                world3.setBlockState(blockPos4, ((BlockState)oxidized.getDefaultState()), 11);
+
+
+                if (playerEntity7 != null) {
+                    context.getStack().<PlayerEntity>damage(1, playerEntity7, p -> p.sendToolBreakStatus(context.getHand()));
+                }
+            }
+            if (world3.isClient) {
+               spawnParticlesStrip(world3, blockPos4);
+            }
+            return ActionResult.success(world3.isClient);
         }
         return ActionResult.PASS;
+    }
+
+
+    private static void spawnParticlesStrip(World world, BlockPos pos) {
+        //double double3 = 0.5625;
+        for (int i = 0; i < 4; i++) {
+            Random random5 = world.random;
+            for (final Direction lv : Direction.values()) {
+                BlockPos blockPos10 = pos.offset(lv);
+                if (!world.getBlockState(blockPos10).isOpaqueFullCube(world, blockPos10)) {
+                    Direction.Axis axis11 = lv.getAxis();
+                    double double12 = (axis11 == Direction.Axis.X) ? (0.5 + 0.5625 * lv.getOffsetX()) : random5.nextFloat();
+                    double double14 = (axis11 == Direction.Axis.Y) ? (0.5 + 0.5625 * lv.getOffsetY()) : random5.nextFloat();
+                    double double16 = (axis11 == Direction.Axis.Z) ? (0.5 + 0.5625 * lv.getOffsetZ()) : random5.nextFloat();
+                    //DustParticleEffect dirtPartical = new DustParticleEffect(0.93f, 0.63f, 0.45f, 1.0f);
+                    
+                    world.addParticle(ParticleTypes.CRIT, pos.getX() + double12, pos.getY() + double14, pos.getZ() + double16, 0.0, 0.0, 0.0);
+                }
+            }   
+        }
+        
     }
 }

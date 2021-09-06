@@ -5,10 +5,11 @@ import net.minecraft.item.BlockItem;
 import net.minecraft.item.BucketItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
+import net.minecraft.item.ItemStack;
 import net.minecraft.item.ToolMaterials;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
-
+import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 //import net.fabricmc.fabric.api.registry.CompostingChanceRegistry;
 import net.fabricmc.fabric.impl.content.registry.CompostingChanceRegistryImpl;
 
@@ -16,21 +17,45 @@ import com.tylervp.moreblocksmod;
 import com.tylervp.block.MBMBlocks;
 
 public class MBMItems extends moreblocksmod {
+
+    public static final ItemGroup MBM_BUILDING_BLOCKS = FabricItemGroupBuilder.build(
+		new Identifier("moreblocksmod", "general"),
+		() -> new ItemStack(MBMBlocks.TERRACOTTA_BRICKS));
+
+    public static final ItemGroup MBM_TOOLS = FabricItemGroupBuilder.build(
+        new Identifier("moreblocksmod", "tools"),
+        () -> new ItemStack(MBMItems.NETHERITE_HAMMER));
+
+    public static final ItemGroup MBM_MISC = FabricItemGroupBuilder.build(
+        new Identifier("moreblocksmod", "misc"),
+        () -> new ItemStack(MBMItems.RICE_SEEDS));
+
+    public static final ItemGroup MBM_BATA = FabricItemGroupBuilder.build(
+        new Identifier("moreblocksmod", "experimental"),
+        () -> new ItemStack(MBMBlocks.PIB.asItem()));
+
+
     //Quick Settings
-    public static final Item.Settings MISC = new Item.Settings().group(ItemGroup.MISC);
-    public static final Item.Settings BUILDING_BLOCKS = new Item.Settings().group(ItemGroup.BUILDING_BLOCKS);
+    public static final Item.Settings MISC = new Item.Settings().group(MBM_MISC);
+    public static final Item.Settings BUILDING_BLOCKS = new Item.Settings().group(MBM_BUILDING_BLOCKS);
     public static final Item.Settings MATERIALS = new Item.Settings().group(ItemGroup.MATERIALS);
     public static final Item.Settings DECORATIONS = new Item.Settings().group(ItemGroup.DECORATIONS);
+    public static final Item.Settings TOOLS = new Item.Settings().group(MBM_TOOLS);
+    public static final Item.Settings BATA = new Item.Settings().group(MBM_BATA);
 
     public static final CompostingChanceRegistryImpl compostRegistry = new CompostingChanceRegistryImpl();
 
+    //public static final FlammableBlockRegistryImpl FlammableRegistry = new FlammableBlockRegistryImpl()
+
 
     //Custom Tools
-    public static final NetheriteHammer NETHERITE_HAMMER = new NetheriteHammer(ToolMaterials.NETHERITE, new Item.Settings().group(ItemGroup.TOOLS).fireproof());
+    public static final NetheriteHammer NETHERITE_HAMMER = new NetheriteHammer(ToolMaterials.NETHERITE, TOOLS.fireproof());
 
     //Rice
-    public static final Item RICE_SEEDS = new AliasedBlockItem(MBMBlocks.RICE, MATERIALS);
+    public static final Item RICE_SEEDS = new AliasedBlockItem(MBMBlocks.RICE, MISC);
     public static final Item RICE_LEAF_SHEATH = new Item(MISC);
+
+    //public static final Item IRON_BLOCK = new AliasedBlockItem(Blocks.IRON_BLOCK, MATERIALS);
     
     //Bucket
     public static Item MUD_BUCKET;
@@ -42,8 +67,24 @@ public class MBMItems extends moreblocksmod {
     public static final Item JUNGLE_BARK_FRAGMENT = new Item(MISC);
     public static final Item OAK_BARK_FRAGMENT = new Item(MISC);
     public static final Item SPRUCE_BARK_FRAGMENT = new Item(MISC);
+ 
+	/* public static final ItemGroup OTHER_GROUP = FabricItemGroupBuilder.create(
+		new Identifier("tutorial", "other"))
+		.icon(() -> new ItemStack(Items.BOWL))
+		.appendItems(stacks -> {
+			stacks.add(new ItemStack(Blocks.BONE_BLOCK));
+			stacks.add(new ItemStack(Items.APPLE));
+			stacks.add(PotionUtil.setPotion(new ItemStack(Items.POTION), Potions.WATER));
+			stacks.add(ItemStack.EMPTY);
+			stacks.add(new ItemStack(Items.IRON_SHOVEL));
+		})
+		.build(); */
+
 
     public static final void items(String ModName){
+
+        //FlammableRegistry.add(MBMBlocks.BURNT_ACACIA_LOG, 5, 5);
+        
 
         /*
         Color Order
@@ -65,10 +106,10 @@ public class MBMItems extends moreblocksmod {
         Black 
         */
 
-
         //Items
         //Misc
-        Registry.register(Registry.ITEM, new Identifier(ModName, "rope"), new BlockItem(MBMBlocks.ROPE, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "rope"), new BlockItem(MBMBlocks.ROPE, TOOLS));
+        //Registry.register(Registry.ITEM, Registry.ITEM.getId(MBMBlocks.ROPE.asItem()), new AliasedBlockItem(MBMBlocks.ROPEMID, TOOLS));
         Registry.register(Registry.ITEM, new Identifier(ModName, "leather_block"), new BlockItem(MBMBlocks.LEATHER_BLOCK, BUILDING_BLOCKS));
         Registry.register(Registry.ITEM, new Identifier(ModName, "rice_straw_bale"), new BlockItem(MBMBlocks.RICE_STRAW_BALE, BUILDING_BLOCKS));
         MUD_BUCKET = Registry.register(Registry.ITEM, new Identifier(ModName, "mud_bucket"), new BucketItem(MBMBlocks.STILL_MUD, MISC));
@@ -186,6 +227,25 @@ public class MBMItems extends moreblocksmod {
         Registry.register(Registry.ITEM, new Identifier(ModName, "black_terracotta_bricks"), new BlockItem(MBMBlocks.BLACK_TERRACOTTA_BRICKS, BUILDING_BLOCKS));
         Registry.register(Registry.ITEM, new Identifier(ModName, "black_terracotta_bricks_slab"), new BlockItem(MBMBlocks.BLACK_TERRACOTTA_BRICKS_SLAB, BUILDING_BLOCKS));
         Registry.register(Registry.ITEM, new Identifier(ModName, "black_terracotta_bricks_stairs"), new BlockItem(MBMBlocks.BLACK_TERRACOTTA_BRICKS_STAIRS, BUILDING_BLOCKS));
+
+
+        Registry.register(Registry.ITEM, new Identifier(ModName, "terracotta_bricks_vertical_slab"), new BlockItem(MBMBlocks.TERRACOTTA_BRICKS_VERTICAL_SLAB, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "black_terracotta_bricks_vertical_slab"), new BlockItem(MBMBlocks.BLACK_TERRACOTTA_BRICKS_VERTICAL_SLAB, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "red_terracotta_bricks_vertical_slab"), new BlockItem(MBMBlocks.RED_TERRACOTTA_BRICKS_VERTICAL_SLAB, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "green_terracotta_bricks_vertical_slab"), new BlockItem(MBMBlocks.GREEN_TERRACOTTA_BRICKS_VERTICAL_SLAB, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "brown_terracotta_bricks_vertical_slab"), new BlockItem(MBMBlocks.BROWN_TERRACOTTA_BRICKS_VERTICAL_SLAB, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "blue_terracotta_bricks_vertical_slab"), new BlockItem(MBMBlocks.BLUE_TERRACOTTA_BRICKS_VERTICAL_SLAB, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "purple_terracotta_bricks_vertical_slab"), new BlockItem(MBMBlocks.PURPLE_TERRACOTTA_BRICKS_VERTICAL_SLAB, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "light_gray_terracotta_bricks_vertical_slab"), new BlockItem(MBMBlocks.LIGHT_GRAY_TERRACOTTA_BRICKS_VERTICAL_SLAB, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "cyan_terracotta_bricks_vertical_slab"), new BlockItem(MBMBlocks.CYAN_TERRACOTTA_BRICKS_VERTICAL_SLAB, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "gray_terracotta_bricks_vertical_slab"), new BlockItem(MBMBlocks.GRAY_TERRACOTTA_BRICKS_VERTICAL_SLAB, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "pink_terracotta_bricks_vertical_slab"), new BlockItem(MBMBlocks.PINK_TERRACOTTA_BRICKS_VERTICAL_SLAB, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "lime_terracotta_bricks_vertical_slab"), new BlockItem(MBMBlocks.LIME_TERRACOTTA_BRICKS_VERTICAL_SLAB, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "yellow_terracotta_bricks_vertical_slab"), new BlockItem(MBMBlocks.YELLOW_TERRACOTTA_BRICKS_VERTICAL_SLAB, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "light_blue_terracotta_bricks_vertical_slab"), new BlockItem(MBMBlocks.LIGHT_BLUE_TERRACOTTA_BRICKS_VERTICAL_SLAB, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "magenta_terracotta_bricks_vertical_slab"), new BlockItem(MBMBlocks.MAGENTA_TERRACOTTA_BRICKS_VERTICAL_SLAB, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "orange_terracotta_bricks_vertical_slab"), new BlockItem(MBMBlocks.ORANGE_TERRACOTTA_BRICKS_VERTICAL_SLAB, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "white_terracotta_bricks_vertical_slab"), new BlockItem(MBMBlocks.WHITE_TERRACOTTA_BRICKS_VERTICAL_SLAB, BUILDING_BLOCKS));
         
 
         //Packed Terracotta
@@ -276,13 +336,19 @@ public class MBMItems extends moreblocksmod {
         Registry.register(Registry.ITEM, new Identifier(ModName, "dark_cobblestone_stairs"), new BlockItem(MBMBlocks.DARK_COBBLESTONE_STAIRS, BUILDING_BLOCKS));
         Registry.register(Registry.ITEM, new Identifier(ModName, "emblemed_dark_stone"), new BlockItem(MBMBlocks.EMBLEMED_DARK_STONE, BUILDING_BLOCKS));
         
+        Registry.register(Registry.ITEM, new Identifier(ModName, "dark_stone_vertical_slab"), new BlockItem(MBMBlocks.DARK_STONE_VERTICAL_SLAB, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "dark_stone_bricks_vertical_slab"), new BlockItem(MBMBlocks.DARK_STONE_BRICKS_VERTICAL_SLAB, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "dark_stone_tiles_vertical_slab"), new BlockItem(MBMBlocks.DARK_STONE_TILES_VERTICAL_SLAB, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "dark_cobblestone_vertical_slab"), new BlockItem(MBMBlocks.DARK_COBBLESTONE_VERTICAL_SLAB, BUILDING_BLOCKS));
+
+
         //Misc
         Registry.register(Registry.ITEM, new Identifier(ModName, "carved_melon"), new BlockItem(MBMBlocks.CARVEDMELON, BUILDING_BLOCKS));
         
         //Dead Blocks
         Registry.register(Registry.ITEM, new Identifier(ModName, "dead_grass_block"), new BlockItem(MBMBlocks.DEAD_GRASS_BLOCK, BUILDING_BLOCKS));
         
-        Registry.register(Registry.ITEM, new Identifier(ModName, "burnt_log"), new BlockItem(MBMBlocks.BURNT_LOG, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "burnt_acacia_log"), new BlockItem(MBMBlocks.BURNT_ACACIA_LOG, BUILDING_BLOCKS));
 
         Registry.register(Registry.ITEM, new Identifier(ModName, "burnt_planks"), new BlockItem(MBMBlocks.BURNT_PLANKS, BUILDING_BLOCKS));
         Registry.register(Registry.ITEM, new Identifier(ModName, "burnt_planks_slab"), new BlockItem(MBMBlocks.BURNT_PLANKS_SLAB, BUILDING_BLOCKS));
@@ -294,6 +360,32 @@ public class MBMItems extends moreblocksmod {
         Registry.register(Registry.ITEM, new Identifier(ModName, "sand_stone_brick_mix_light"), new BlockItem(MBMBlocks.SD_SB_LIGHT, BUILDING_BLOCKS));
         Registry.register(Registry.ITEM, new Identifier(ModName, "coarse_dirt_cobble_stone_mix_heavy"), new BlockItem(MBMBlocks.CD_CS_HEAVY, BUILDING_BLOCKS));
         Registry.register(Registry.ITEM, new Identifier(ModName, "coarse_dirt_cobble_stone_mix_light"), new BlockItem(MBMBlocks.CD_CS_LIGHT, BUILDING_BLOCKS));
+        
+        Registry.register(Registry.ITEM, new Identifier(ModName, "coarse_dirt_dark_stone_brick_tiles_heavy"), new BlockItem(MBMBlocks.COARSE_DIRT_DARK_STONE_BRICK_TILES_HEAVY, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "coarse_dirt_dark_stone_brick_tiles_light"), new BlockItem(MBMBlocks.COARSE_DIRT_DARK_STONE_BRICK_TILES_LIGHT, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "coarse_dirt_stone_brick_tiles_heavy"), new BlockItem(MBMBlocks.COARSE_DIRT_STONE_BRICK_TILES_HEAVY, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "coarse_dirt_stone_brick_tiles_light"), new BlockItem(MBMBlocks.COARSE_DIRT_STONE_BRICK_TILES_LIGHT, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "dirt_dark_stone_brick_tiles_heavy"), new BlockItem(MBMBlocks.DIRT_DARK_STONE_BRICK_TILES_HEAVY, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "dirt_dark_stone_brick_tiles_light"), new BlockItem(MBMBlocks.DIRT_DARK_STONE_BRICK_TILES_LIGHT, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "dirt_stone_brick_tiles_heavy"), new BlockItem(MBMBlocks.DIRT_STONE_BRICK_TILES_HEAVY, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "dirt_stone_brick_tiles_light"), new BlockItem(MBMBlocks.DIRT_STONE_BRICK_TILES_LIGHT, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "packed_dirt_dark_stone_brick_tiles_heavy"), new BlockItem(MBMBlocks.PACKED_DIRT_DARK_STONE_BRICK_TILES_HEAVY, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "packed_dirt_dark_stone_brick_tiles_light"), new BlockItem(MBMBlocks.PACKED_DIRT_DARK_STONE_BRICK_TILES_LIGHT, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "packed_dirt_stone_brick_tiles_heavy"), new BlockItem(MBMBlocks.PACKED_DIRT_STONE_BRICK_TILES_HEAVY, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "packed_dirt_stone_brick_tiles_light"), new BlockItem(MBMBlocks.PACKED_DIRT_STONE_BRICK_TILES_LIGHT, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "coarse_dirt_dark_stone_bricks_heavy"), new BlockItem(MBMBlocks.COARSE_DIRT_DARK_STONE_BRICKS_HEAVY, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "coarse_dirt_dark_stone_bricks_light"), new BlockItem(MBMBlocks.COARSE_DIRT_DARK_STONE_BRICKS_LIGHT, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "coarse_dirt_stone_bricks_heavy"), new BlockItem(MBMBlocks.COARSE_DIRT_STONE_BRICKS_HEAVY, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "coarse_dirt_stone_bricks_light"), new BlockItem(MBMBlocks.COARSE_DIRT_STONE_BRICKS_LIGHT, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "dirt_dark_stone_bricks_heavy"), new BlockItem(MBMBlocks.DIRT_DARK_STONE_BRICKS_HEAVY, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "dirt_dark_stone_bricks_light"), new BlockItem(MBMBlocks.DIRT_DARK_STONE_BRICKS_LIGHT, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "dirt_stone_bricks_heavy"), new BlockItem(MBMBlocks.DIRT_STONE_BRICKS_HEAVY, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "dirt_stone_bricks_light"), new BlockItem(MBMBlocks.DIRT_STONE_BRICKS_LIGHT, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "packed_dirt_dark_stone_bricks_heavy"), new BlockItem(MBMBlocks.PACKED_DIRT_DARK_STONE_BRICKS_HEAVY, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "packed_dirt_dark_stone_bricks_light"), new BlockItem(MBMBlocks.PACKED_DIRT_DARK_STONE_BRICKS_LIGHT, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "packed_dirt_stone_bricks_heavy"), new BlockItem(MBMBlocks.PACKED_DIRT_STONE_BRICKS_HEAVY, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "packed_dirt_stone_bricks_light"), new BlockItem(MBMBlocks.PACKED_DIRT_STONE_BRICKS_LIGHT, BUILDING_BLOCKS));
+
         
         //Horizontal Slab
         Registry.register(Registry.ITEM, new Identifier(ModName, "acacia_planks_horizontal_slab"), new BlockItem(MBMBlocks.ACACIA_PLANKS_HORIZONTAL_SLAB, BUILDING_BLOCKS));
@@ -313,6 +405,7 @@ public class MBMItems extends moreblocksmod {
         Registry.register(Registry.ITEM, new Identifier(ModName, "cobblestone_horizontal_slab"), new BlockItem(MBMBlocks.COBBLESTONE_HORIZONTAL_SLAB, BUILDING_BLOCKS));
         Registry.register(Registry.ITEM, new Identifier(ModName, "cracked_nether_bricks_horizontal_slab"), new BlockItem(MBMBlocks.CRACKED_NETHER_BRICKS_HORIZONTAL_SLAB, BUILDING_BLOCKS));
         Registry.register(Registry.ITEM, new Identifier(ModName, "cracked_stone_bricks_horizontal_slab"), new BlockItem(MBMBlocks.CRACKED_STONE_BRICKS_HORIZONTAL_SLAB, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "cracked_polished_blackstone_bricks_vertical_slab"), new BlockItem(MBMBlocks.CRACKED_POLISHED_BLACKSTONE_BRICKS_VERTICAL_SLAB, BUILDING_BLOCKS));
         Registry.register(Registry.ITEM, new Identifier(ModName, "crimson_planks_horizontal_slab"), new BlockItem(MBMBlocks.CRIMSON_PLANKS_HORIZONTAL_SLAB, BUILDING_BLOCKS));
         Registry.register(Registry.ITEM, new Identifier(ModName, "cut_red_sandstone_horizontal_slab"), new BlockItem(MBMBlocks.CUT_RED_SANDSTONE_HORIZONTAL_SLAB, BUILDING_BLOCKS));
         Registry.register(Registry.ITEM, new Identifier(ModName, "cut_sandstone_horizontal_slab"), new BlockItem(MBMBlocks.CUT_SANDSTONE_HORIZONTAL_SLAB, BUILDING_BLOCKS));
@@ -358,19 +451,42 @@ public class MBMItems extends moreblocksmod {
         Registry.register(Registry.ITEM, new Identifier(ModName, "white_terracotta_horizontal_slab"), new BlockItem(MBMBlocks.WHITE_TERRACOTTA_HORIZONTAL_SLAB, BUILDING_BLOCKS));
         Registry.register(Registry.ITEM, new Identifier(ModName, "yellow_terracotta_horizontal_slab"), new BlockItem(MBMBlocks.YELLOW_TERRACOTTA_HORIZONTAL_SLAB, BUILDING_BLOCKS));
 
+        Registry.register(Registry.ITEM, new Identifier(ModName, "polished_andesite_brick_tiles_vertical_slab"), new BlockItem(MBMBlocks.POLISHED_ANDESITE_BRICK_TILES_VERTICAL_SLAB, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "polished_diorite_brick_tiles_vertical_slab"), new BlockItem(MBMBlocks.POLISHED_DIORITE_BRICK_TILES_VERTICAL_SLAB, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "polished_granite_brick_tiles_vertical_slab"), new BlockItem(MBMBlocks.POLISHED_GRANITE_BRICK_TILES_VERTICAL_SLAB, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "polished_blackstone_brick_tiles_slab"), new BlockItem(MBMBlocks.POLISHED_BLACKSTONE_BRICK_TILES_SLAB, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "polished_andesite_bricks_vertical_slab"), new BlockItem(MBMBlocks.POLISHED_ANDESITE_BRICKS_VERTICAL_SLAB, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "polished_diorite_bricks_vertical_slab"), new BlockItem(MBMBlocks.POLISHED_DIORITE_BRICKS_VERTICAL_SLAB, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "polished_granite_bricks_vertical_slab"), new BlockItem(MBMBlocks.POLISHED_GRANITE_BRICKS_VERTICAL_SLAB, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "polished_blackstone_brick_tiles_vertical_slab"), new BlockItem(MBMBlocks.POLISHED_BLACKSTONE_BRICK_TILES_VERTICAL_SLAB, BUILDING_BLOCKS));
+
+        Registry.register(Registry.ITEM, new Identifier(ModName, "polished_andesite_brick_tiles_stairs"), new BlockItem(MBMBlocks.POLISHED_ANDESITE_BRICK_TILES_STAIRS, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "polished_diorite_brick_tiles_stairs"), new BlockItem(MBMBlocks.POLISHED_DIORITE_BRICK_TILES_STAIRS, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "polished_granite_brick_tiles_stairs"), new BlockItem(MBMBlocks.POLISHED_GRANITE_BRICK_TILES_STAIRS, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "polished_blackstone_brick_tiles_stairs"), new BlockItem(MBMBlocks.POLISHED_BLACKSTONE_BRICK_TILES_STAIRS, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "polished_andesite_bricks_stairs"), new BlockItem(MBMBlocks.POLISHED_ANDESITE_BRICKS_STAIRS, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "polished_diorite_bricks_stairs"), new BlockItem(MBMBlocks.POLISHED_DIORITE_BRICKS_STAIRS, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "polished_granite_bricks_stairs"), new BlockItem(MBMBlocks.POLISHED_GRANITE_BRICKS_STAIRS, BUILDING_BLOCKS));
+
+
         //Misc
         Registry.register(Registry.ITEM, new Identifier(ModName, "petrified_wood"), new BlockItem(MBMBlocks.PETRIFIED_WOOD, BUILDING_BLOCKS));
         Registry.register(Registry.ITEM, new Identifier(ModName, "packed_mud"), new BlockItem(MBMBlocks.PACKEDMUD, BUILDING_BLOCKS));
 
         //Vase Block
         Registry.register(Registry.ITEM, new Identifier(ModName, "terracotta_vase"), new BlockItem(MBMBlocks.TERRACOTTA_VASE, BUILDING_BLOCKS));
-        //Registry.register(Registry.ITEM, new Identifier(ModName, "black_terracotta_vase"), new BlockItem(MBMBlocks.BLACK_TERRACOTTA_VASE, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "light_gray_terracotta_vase"), new BlockItem(MBMBlocks.LIGHT_GRAY_TERRACOTTA_VASE, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "black_terracotta_vase"), new BlockItem(MBMBlocks.BLACK_TERRACOTTA_VASE, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "sandstone_vase"), new BlockItem(MBMBlocks.SANDSTONE_VASE, BUILDING_BLOCKS));
 
 
-        //Layer
+        //Layer Block
         Registry.register(Registry.ITEM, new Identifier(ModName, "sand_layer"), new BlockItem(MBMBlocks.SAND_LAYER, BUILDING_BLOCKS));
         Registry.register(Registry.ITEM, new Identifier(ModName, "red_sand_layer"), new BlockItem(MBMBlocks.RED_SAND_LAYER, BUILDING_BLOCKS));
         Registry.register(Registry.ITEM, new Identifier(ModName, "gravel_layer"), new BlockItem(MBMBlocks.GRAVEL_LAYER, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "dirt_layer"), new BlockItem(MBMBlocks.DIRT_LAYER, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "coarse_dirt_layer"), new BlockItem(MBMBlocks.COARSE_DIRT_LAYER, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "packed_dirt_layer"), new BlockItem(MBMBlocks.PACKED_DIRT_LAYER, BUILDING_BLOCKS));
 
 
         Registry.register(Registry.ITEM, new Identifier(ModName, "black_concrete_powder_layer"), new BlockItem(MBMBlocks.BLACK_CONCRETE_POWDER_LAYER, BUILDING_BLOCKS));
@@ -395,8 +511,10 @@ public class MBMItems extends moreblocksmod {
         //Stone Variants
         Registry.register(Registry.ITEM, new Identifier(ModName, "stone_brick_tiles"), new BlockItem(MBMBlocks.STONE_BRICK_SQUARE, BUILDING_BLOCKS));
         Registry.register(Registry.ITEM, new Identifier(ModName, "stone_brick_tiles_slab"), new BlockItem(MBMBlocks.STONE_BRICK_SQUARE_SLAB, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "stone_brick_tiles_vertical_slab"), new BlockItem(MBMBlocks.STONE_BRICK_TILES_VERTICAL_SLAB, BUILDING_BLOCKS));
         Registry.register(Registry.ITEM, new Identifier(ModName, "stone_brick_tiles_stairs"), new BlockItem(MBMBlocks.STONE_BRICK_SQUARE_STAIRS, BUILDING_BLOCKS));
-        
+        Registry.register(Registry.ITEM, new Identifier(ModName, "large_cobblestone"), new BlockItem(MBMBlocks.LARGE_COBBLESTONE, BUILDING_BLOCKS));
+
         //Minecraft Slabs and Stairs
         Registry.register(Registry.ITEM, new Identifier(ModName, "dirt_slab"), new BlockItem(MBMBlocks.DIRT_SLAB, BUILDING_BLOCKS));
         Registry.register(Registry.ITEM, new Identifier(ModName, "coarse_dirt_slab"), new BlockItem(MBMBlocks.COARSE_DIRT_SLAB, BUILDING_BLOCKS));
@@ -424,7 +542,7 @@ public class MBMItems extends moreblocksmod {
         compostRegistry.add(MBMBlocks.RICE_STRAW_BALE.asItem(), 0.85f);
 
 
-        //Registry.register(Registry.ITEM, new Identifier(ModName, "pib"), new BlockItem(MBMBlocks.PIB, MISC));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "pib"), new BlockItem(MBMBlocks.PIB, BATA));
 
 
         Registry.register(Registry.ITEM, new Identifier(ModName, "black_concrete_slab"), new BlockItem(MBMBlocks.BLACK_CONCRETE_SLAB, BUILDING_BLOCKS));
@@ -480,7 +598,85 @@ public class MBMItems extends moreblocksmod {
         Registry.register(Registry.ITEM, new Identifier(ModName, "white_concrete_stairs"), new BlockItem(MBMBlocks.WHITE_CONCRETE_STAIRS, BUILDING_BLOCKS));
         Registry.register(Registry.ITEM, new Identifier(ModName, "cyan_concrete_stairs"), new BlockItem(MBMBlocks.CYAN_CONCRETE_STAIRS, BUILDING_BLOCKS));
 
+        Registry.register(Registry.ITEM, new Identifier(ModName, "polished_andesite_brick_tiles_slab"), new BlockItem(MBMBlocks.POLISHED_ANDESITE_BRICK_TILES_SLAB, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "polished_diorite_brick_tiles_slab"), new BlockItem(MBMBlocks.POLISHED_DIORITE_BRICK_TILES_SLAB, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "polished_granite_brick_tiles_slab"), new BlockItem(MBMBlocks.POLISHED_GRANITE_BRICK_TILES_SLAB, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "polished_andesite_bricks_slab"), new BlockItem(MBMBlocks.POLISHED_ANDESITE_BRICKS_SLAB, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "polished_diorite_bricks_slab"), new BlockItem(MBMBlocks.POLISHED_DIORITE_BRICKS_SLAB, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "polished_granite_bricks_slab"), new BlockItem(MBMBlocks.POLISHED_GRANITE_BRICKS_SLAB, BUILDING_BLOCKS));
+
+        Registry.register(Registry.ITEM, new Identifier(ModName, "polished_andesite_brick_tiles"), new BlockItem(MBMBlocks.POLISHED_ANDESITE_BRICK_TILES, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "polished_diorite_brick_tiles"), new BlockItem(MBMBlocks.POLISHED_DIORITE_BRICK_TILES, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "polished_granite_brick_tiles"), new BlockItem(MBMBlocks.POLISHED_GRANITE_BRICK_TILES, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "polished_blackstone_brick_tiles"), new BlockItem(MBMBlocks.POLISHED_BLACKSTONE_BRICK_TILES, BUILDING_BLOCKS));
+
+        Registry.register(Registry.ITEM, new Identifier(ModName, "polished_andesite_bricks"), new BlockItem(MBMBlocks.POLISHED_ANDESITE_BRICKS, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "polished_diorite_bricks"), new BlockItem(MBMBlocks.POLISHED_DIORITE_BRICKS, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "polished_granite_bricks"), new BlockItem(MBMBlocks.POLISHED_GRANITE_BRICKS, BUILDING_BLOCKS));
+
+        Registry.register(Registry.ITEM, new Identifier(ModName, "andesite_pillar"), new BlockItem(MBMBlocks.ANDESITE_PILLAR, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "diorite_pillar"), new BlockItem(MBMBlocks.DIORITE_PILLAR, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "granite_pillar"), new BlockItem(MBMBlocks.GRANITE_PILLAR, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "stone_pillar"), new BlockItem(MBMBlocks.STONE_PILLAR, BUILDING_BLOCKS));
+
+        Registry.register(Registry.ITEM, new Identifier(ModName, "thin_andesite_pillar"), new BlockItem(MBMBlocks.THIN_ANDESITE_PILLAR, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "thin_diorite_pillar"), new BlockItem(MBMBlocks.THIN_DIORITE_PILLAR, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "thin_granite_pillar"), new BlockItem(MBMBlocks.THIN_GRANITE_PILLAR, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "thin_stone_pillar"), new BlockItem(MBMBlocks.THIN_STONE_PILLAR, BUILDING_BLOCKS));
+
+        Registry.register(Registry.ITEM, new Identifier(ModName, "stripped_oak_framing"), new BlockItem(MBMBlocks.STRIPPED_OAK_FRAMING, BATA));
+        
+        //Registry.ITEM.set(Registry.ITEM.getRawId(Items.IRON_BLOCK), Registry.ITEM.getKey(Items.IRON_BLOCK), , Registry.ITEM.getLifecycle());
+
+        Registry.register(Registry.ITEM, new Identifier(ModName, "iron_block"), new BlockItem(MBMBlocks.IRON_BLOCK, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "exposed_iron"), new BlockItem(MBMBlocks.EXPOSED_IRON, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "degraded_iron"), new BlockItem(MBMBlocks.DEGRADED_IRON, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "weathered_iron"), new BlockItem(MBMBlocks.WEATHERED_IRON, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "rusted_iron"), new BlockItem(MBMBlocks.RUSTED_IRON, BUILDING_BLOCKS));
+
+        Registry.register(Registry.ITEM, new Identifier(ModName, "waxed_exposed_iron"), new BlockItem(MBMBlocks.WAXED_EXPOSED_IRON, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "waxed_degraded_iron"), new BlockItem(MBMBlocks.WAXED_DEGRADED_IRON, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "waxed_weathered_iron"), new BlockItem(MBMBlocks.WAXED_WEATHERED_IRON, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "waxed_rusted_iron"), new BlockItem(MBMBlocks.WAXED_RUSTED_IRON, BUILDING_BLOCKS));
+
+        Registry.register(Registry.ITEM, new Identifier(ModName, "heated_iron"), new BlockItem(MBMBlocks.HEATED_IRON, BUILDING_BLOCKS));
+
+        Registry.register(Registry.ITEM, new Identifier(ModName, "hardened_iron"), new BlockItem(MBMBlocks.HARDENED_IRON, BUILDING_BLOCKS));
+
+        Registry.register(Registry.ITEM, new Identifier(ModName, "ruby_block"), new BlockItem(MBMBlocks.RUBY_BLOCK, BUILDING_BLOCKS));
+
+        Registry.register(Registry.ITEM, new Identifier(ModName, "ruby_ore"), new BlockItem(MBMBlocks.RUBY_ORE, BUILDING_BLOCKS));
+
+        Registry.register(Registry.ITEM, new Identifier(ModName, "ruby"), new Item(MISC));
+        
+        Registry.register(Registry.ITEM, new Identifier(ModName, "wax_block"), new BlockItem(MBMBlocks.WAX_BLOCK, BUILDING_BLOCKS));
+
+        Registry.register(Registry.ITEM, new Identifier(ModName, "packed_dirt"), new BlockItem(MBMBlocks.PACKED_DIRT, BUILDING_BLOCKS));
+
+        Registry.register(Registry.ITEM, new Identifier(ModName, "spike"), new BlockItem(MBMBlocks.SPIKE, BUILDING_BLOCKS));
+
+
+        Registry.register(Registry.ITEM, new Identifier(ModName, "burnt_birch_log"), new BlockItem(MBMBlocks.BURNT_BIRCH_LOG, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "burnt_dark_oak_log"), new BlockItem(MBMBlocks.BURNT_DARK_OAK_LOG, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "burnt_oak_log"), new BlockItem(MBMBlocks.BURNT_OAK_LOG, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "burnt_jungle_log"), new BlockItem(MBMBlocks.BURNT_JUNGLE_LOG, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "burnt_spruce_log"), new BlockItem(MBMBlocks.BURNT_SPRUCE_LOG, BUILDING_BLOCKS));
+        
+        Registry.register(Registry.ITEM, new Identifier(ModName, "coarse_dirt_dark_stone_heavy"), new BlockItem(MBMBlocks.COARSE_DIRT_DARK_STONE_HEAVY, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "coarse_dirt_dark_stone_light"), new BlockItem(MBMBlocks.COARSE_DIRT_DARK_STONE_LIGHT, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "coarse_dirt_stone_heavy"), new BlockItem(MBMBlocks.COARSE_DIRT_STONE_HEAVY, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "coarse_dirt_stone_light"), new BlockItem(MBMBlocks.COARSE_DIRT_STONE_LIGHT, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "dirt_dark_stone_heavy"), new BlockItem(MBMBlocks.DIRT_DARK_STONE_HEAVY, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "dirt_dark_stone_light"), new BlockItem(MBMBlocks.DIRT_DARK_STONE_LIGHT, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "dirt_stone_heavy"), new BlockItem(MBMBlocks.DIRT_STONE_HEAVY, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "dirt_stone_light"), new BlockItem(MBMBlocks.DIRT_STONE_LIGHT, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "packed_dirt_dark_stone_heavy"), new BlockItem(MBMBlocks.PACKED_DIRT_DARK_STONE_HEAVY, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "packed_dirt_dark_stone_light"), new BlockItem(MBMBlocks.PACKED_DIRT_DARK_STONE_LIGHT, BUILDING_BLOCKS));
+        Registry.register(Registry.ITEM, new Identifier(ModName, "packed_dirt_stone_heavy"), new BlockItem(MBMBlocks.PACKED_DIRT_STONE_HEAVY, BUILDING_BLOCKS));
+        //Registry.register(Registry.ITEM, new Identifier(ModName, "packed_dirt_stone_light"), new BlockItem(MBMBlocks.PACKED_DIRT_STONE_LIGHT, BUILDING_BLOCKS));
+//##item##//
 
     }
-
 }
+
+

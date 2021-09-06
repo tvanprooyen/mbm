@@ -1,0 +1,18 @@
+﻿{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "#s#"
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:dirt"
+        },
+	"s": {
+            "item": "moreblocksmod:stone_brick_tiles"
+        }
+    },
+    "result": {
+        "item": "moreblocksmod:dirt_stone_brick_tiles_heavy",
+        "count": 3
+    }
+}

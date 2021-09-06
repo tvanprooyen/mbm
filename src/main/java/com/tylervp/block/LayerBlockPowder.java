@@ -16,7 +16,7 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
 
-public class LayerBlockPowder extends LayerBlock {
+public class LayerBlockPowder extends LayerBlockFalling {
     private final BlockState hardenedState;
 
     protected LayerBlockPowder(Block hardened,AbstractBlock.Settings settings) {
@@ -28,7 +28,7 @@ public class LayerBlockPowder extends LayerBlock {
 
     @Override
     public void onLanding(World world, BlockPos pos, BlockState fallingBlockState, BlockState currentStateInPos, FallingBlockEntity fallingBlockEntity) {
-        int layers = fallingBlockState.<Integer>get((Property<Integer>)LayerBlock.LAYERS);
+        int layers = fallingBlockState.<Integer>get((Property<Integer>)LayerBlockFalling.LAYERS);
         if (shouldHarden(world, pos, currentStateInPos) && layers == 8) {
             world.setBlockState(pos, this.hardenedState, 3);
         }
@@ -41,7 +41,7 @@ public class LayerBlockPowder extends LayerBlock {
         BlockState state = world.getBlockState(pos);
 
         if(state.isOf(this)){
-                int layers = state.<Integer>get((Property<Integer>)LayerBlock.LAYERS);
+                int layers = state.<Integer>get((Property<Integer>)LayerBlockFalling.LAYERS);
                 if (shouldHarden(world, pos, state) && layers > 6) {
                     return this.hardenedState;
                 }
@@ -79,11 +79,11 @@ public class LayerBlockPowder extends LayerBlock {
 
     @Override
     public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState newState, WorldAccess world, BlockPos pos, BlockPos posFrom) {
-        if (state.<Boolean>get((Property<Boolean>)LayerBlock.WATERLOGGED)) {
+        if (state.<Boolean>get((Property<Boolean>)LayerBlockFalling.WATERLOGGED)) {
             world.getFluidTickScheduler().schedule(pos, Fluids.WATER, Fluids.WATER.getTickRate(world));
         }
 
-        int layers = state.<Integer>get((Property<Integer>)LayerBlock.LAYERS);
+        int layers = state.<Integer>get((Property<Integer>)LayerBlockFalling.LAYERS);
         if (hardensOnAnySide(world, pos) && layers > 6) {
             return this.hardenedState;
         }

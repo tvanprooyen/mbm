@@ -1,0 +1,18 @@
+﻿{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "#s"
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:sand"
+        },
+	"s": {
+            "item": "minecraft:stone_bricks"
+        }
+    },
+    "result": {
+        "item": "moreblocksmod:sand_stone_brick_mix_light",
+        "count": 2
+    }
+}

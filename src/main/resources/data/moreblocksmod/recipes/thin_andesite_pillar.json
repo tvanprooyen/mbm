@@ -1,0 +1,15 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "#"
+    ],
+    "key": {
+        "#": {
+            "item": "moreblocksmod:andesite_pillar"
+        }
+    },
+    "result": {
+        "item": "moreblocksmod:thin_andesite_pillar",
+        "count": 4
+    }
+}

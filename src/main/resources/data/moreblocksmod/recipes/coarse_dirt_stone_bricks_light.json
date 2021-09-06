@@ -1,0 +1,19 @@
+﻿{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "#s"
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:coarse_dirt"
+        },
+	"s": {
+            "item": "minecraft:stone_bricks"
+        }
+    },
+    "result": {
+        "item": "moreblocksmod:coarse_dirt_stone_bricks_light",
+        "count": 2
+    }
+}
+

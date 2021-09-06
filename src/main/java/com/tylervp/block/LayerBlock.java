@@ -5,8 +5,6 @@ import java.util.Random;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.FallingBlock;
 import net.minecraft.block.ShapeContext;
 import net.minecraft.block.Waterloggable;
 import net.minecraft.entity.ai.pathing.NavigationType;
@@ -26,9 +24,8 @@ import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.WorldAccess;
-import net.minecraft.world.WorldView;
 
-public class LayerBlock extends FallingBlock implements Waterloggable {
+public class LayerBlock extends Block implements Waterloggable {
     public static final IntProperty LAYERS;
     protected static final VoxelShape[] LAYERS_TO_SHAPE;
     public static final BooleanProperty WATERLOGGED;
@@ -43,7 +40,7 @@ public class LayerBlock extends FallingBlock implements Waterloggable {
     public boolean canPathfindThrough(BlockState state, BlockView world, BlockPos pos, NavigationType type) {
         switch (type) {
             case LAND: {
-                return state.<Integer>get((Property<Integer>)LayerBlock.LAYERS) < 5;
+                return state.<Integer>get((Property<Integer>)LayerBlockFalling.LAYERS) < 5;
             }
             case WATER: {
                 return world.getFluidState(pos).isIn(FluidTags.WATER);
@@ -59,22 +56,22 @@ public class LayerBlock extends FallingBlock implements Waterloggable {
     
     @Override
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
-        return LayerBlock.LAYERS_TO_SHAPE[state.<Integer>get((Property<Integer>)LayerBlock.LAYERS)];
+        return LayerBlockFalling.LAYERS_TO_SHAPE[state.<Integer>get((Property<Integer>)LayerBlockFalling.LAYERS)];
     }
     
     @Override
     public VoxelShape getCollisionShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
-        return LayerBlock.LAYERS_TO_SHAPE[state.<Integer>get((Property<Integer>)LayerBlock.LAYERS)];
+        return LayerBlockFalling.LAYERS_TO_SHAPE[state.<Integer>get((Property<Integer>)LayerBlockFalling.LAYERS)];
     }
     
     @Override
     public VoxelShape getSidesShape(BlockState state, BlockView world, BlockPos pos) {
-        return LayerBlock.LAYERS_TO_SHAPE[state.<Integer>get((Property<Integer>)LayerBlock.LAYERS)];
+        return LayerBlockFalling.LAYERS_TO_SHAPE[state.<Integer>get((Property<Integer>)LayerBlockFalling.LAYERS)];
     }
     
     @Override
     public VoxelShape getVisualShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
-        return LayerBlock.LAYERS_TO_SHAPE[state.<Integer>get((Property<Integer>)LayerBlock.LAYERS)];
+        return LayerBlockFalling.LAYERS_TO_SHAPE[state.<Integer>get((Property<Integer>)LayerBlockFalling.LAYERS)];
     }
     
     @Override
@@ -82,15 +79,15 @@ public class LayerBlock extends FallingBlock implements Waterloggable {
         return true;
     }
     
-    @Override
+    /* @Override
     public boolean canPlaceAt(BlockState state, WorldView world, BlockPos pos) {
         BlockState blockState5 = world.getBlockState(pos.down());
-        return (blockState5.isOf(Blocks.HONEY_BLOCK) || blockState5.isOf(Blocks.SOUL_SAND) || Block.isFaceFullSquare(blockState5.getCollisionShape(world, pos.down()), Direction.UP) || (blockState5.getBlock() == this && blockState5.<Integer>get((Property<Integer>)LayerBlock.LAYERS) == 8));
-    }
+        return (blockState5.isOf(Blocks.HONEY_BLOCK) || blockState5.isOf(Blocks.SOUL_SAND) || Block.isFaceFullSquare(blockState5.getCollisionShape(world, pos.down()), Direction.UP) || (blockState5.getBlock() == this && blockState5.<Integer>get((Property<Integer>)LayerBlockFalling.LAYERS) == 8));
+    } */
     
     @Override
     public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState newState, WorldAccess world, BlockPos pos, BlockPos posFrom) {
-        if (state.<Boolean>get((Property<Boolean>)LayerBlock.WATERLOGGED)) {
+        if (state.<Boolean>get((Property<Boolean>)LayerBlockFalling.WATERLOGGED)) {
             world.getFluidTickScheduler().schedule(pos, Fluids.WATER, Fluids.WATER.getTickRate(world));
         }
         
@@ -107,7 +104,7 @@ public class LayerBlock extends FallingBlock implements Waterloggable {
     
     @Override
     public boolean canReplace(BlockState state, ItemPlacementContext context) {
-        int integer4 = state.<Integer>get((Property<Integer>)LayerBlock.LAYERS);
+        int integer4 = state.<Integer>get((Property<Integer>)LayerBlockFalling.LAYERS);
         if (context.getStack().getItem() == this.asItem() && integer4 < 8) {
             return !context.canReplaceExisting() || context.getSide() == Direction.UP;
         }
@@ -120,7 +117,7 @@ public class LayerBlock extends FallingBlock implements Waterloggable {
         BlockState blockState3 = ctx.getWorld().getBlockState(ctx.getBlockPos());
         FluidState fluidState5 = ctx.getWorld().getFluidState(blockPos3);
         if (blockState3.isOf(this)) {
-            int currentLayer = blockState3.<Integer>get((Property<Integer>)LayerBlock.LAYERS);
+            int currentLayer = blockState3.<Integer>get((Property<Integer>)LayerBlockFalling.LAYERS);
             return blockState3.with(Properties.LAYERS, Math.min(8, currentLayer + 1)).with(Properties.WATERLOGGED, fluidState5.getFluid() == Fluids.WATER);
         }
         
@@ -129,12 +126,12 @@ public class LayerBlock extends FallingBlock implements Waterloggable {
     
     @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
-        builder.add(LayerBlock.LAYERS, LayerBlock.WATERLOGGED);
+        builder.add(LayerBlockFalling.LAYERS, LayerBlockFalling.WATERLOGGED);
     }
 
     @Override
     public FluidState getFluidState(BlockState state) {
-        if (state.<Boolean>get((Property<Boolean>)LayerBlock.WATERLOGGED)) {
+        if (state.<Boolean>get((Property<Boolean>)LayerBlockFalling.WATERLOGGED)) {
             return Fluids.WATER.getStill(false);
         }
         return super.getFluidState(state);

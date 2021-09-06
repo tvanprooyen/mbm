@@ -1,0 +1,15 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "#"
+    ],
+    "key": {
+        "#": {
+            "item": "moreblocksmod:stone_pillar"
+        }
+    },
+    "result": {
+        "item": "moreblocksmod:thin_stone_pillar",
+        "count": 4
+    }
+}

@@ -47,7 +47,7 @@ public class RopeBlock extends Block implements Waterloggable {
     public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
         if(entity instanceof ArrowEntity){
 
-            if(state.<Boolean>get((Property<Boolean>)LayerBlock.WATERLOGGED)) {
+            if(state.<Boolean>get((Property<Boolean>)LayerBlockFalling.WATERLOGGED)) {
                 world.setBlockState(pos, Blocks.AIR.getDefaultState());
                 world.setBlockState(pos, Blocks.WATER.getDefaultState());
             } else {
@@ -135,7 +135,7 @@ public class RopeBlock extends Block implements Waterloggable {
             return Blocks.AIR.getDefaultState();
         }
 
-        if (state.<Boolean>get((Property<Boolean>)LayerBlock.WATERLOGGED)) {
+        if (state.<Boolean>get((Property<Boolean>)LayerBlockFalling.WATERLOGGED)) {
             world.getFluidTickScheduler().schedule(pos, Fluids.WATER, Fluids.WATER.getTickRate(world));
         }
         return super.getStateForNeighborUpdate(state, direction, newState, world, pos, posFrom);

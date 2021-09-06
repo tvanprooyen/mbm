@@ -1,0 +1,12 @@
+﻿{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:dirt"
+        }
+    ],
+    "result": {
+        "item": "moreblocksmod:dirt_layer",
+        "count": 8
+    }
+}

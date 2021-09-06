@@ -1,15 +1,9 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "pattern": [
-      "###"
-  ],
-  "key": {
-      "#": {
-          "item": "moreblocksmod:black_terracotta_bricks"
-      }
-  },
-  "result": {
-      "item": "moreblocksmod:black_terracotta_bricks_slab",
-      "count": 6
+    "type": "minecraft:smelting",
+    "ingredient": {
+      "item": "moreblocksmod:iron_block"
+    },
+    "result": "moreblocksmod:hardened_iron",
+    "experience": 0.1,
+    "cookingtime": 600
   }
-}

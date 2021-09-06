@@ -12,7 +12,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
 
 import com.tylervp.block.MBMBlocks;
-import com.tylervp.block.ThinPillarBlock;
+import com.tylervp.block.ThinLogBlock;
 
 import org.spongepowered.asm.mixin.Mixin;
 
@@ -39,27 +39,27 @@ public abstract class LeavesBlockMixin extends Block {
         BlockState state = world.getBlockState(pos);
 
         if(state.isOf(MBMBlocks.THIN_OAK_LOG)){
-            return (BlockState)MBMBlocks.THIN_OAK_LOG.getDefaultState().with(ThinPillarBlock.LEAVES, true).with(ThinPillarBlock.PRESISTANT, true).with(ThinPillarBlock.AXIS, state.get(ThinPillarBlock.AXIS)).with(ThinPillarBlock.CHAIN, state.get(ThinPillarBlock.CHAIN)).with(ThinPillarBlock.ROPE, state.get(ThinPillarBlock.ROPE));
+            return (BlockState)MBMBlocks.THIN_OAK_LOG.getDefaultState().with(ThinLogBlock.LEAVES, true).with(ThinLogBlock.PRESISTANT, true).with(ThinLogBlock.AXIS, state.get(ThinLogBlock.AXIS)).with(ThinLogBlock.CHAIN, state.get(ThinLogBlock.CHAIN)).with(ThinLogBlock.ROPE, state.get(ThinLogBlock.ROPE));
         }
 
         if(state.isOf(MBMBlocks.THIN_SPRUCE_LOG)){
-            return (BlockState)MBMBlocks.THIN_SPRUCE_LOG.getDefaultState().with(ThinPillarBlock.LEAVES, true).with(ThinPillarBlock.PRESISTANT, true).with(ThinPillarBlock.AXIS, state.get(ThinPillarBlock.AXIS)).with(ThinPillarBlock.CHAIN, state.get(ThinPillarBlock.CHAIN)).with(ThinPillarBlock.ROPE, state.get(ThinPillarBlock.ROPE));
+            return (BlockState)MBMBlocks.THIN_SPRUCE_LOG.getDefaultState().with(ThinLogBlock.LEAVES, true).with(ThinLogBlock.PRESISTANT, true).with(ThinLogBlock.AXIS, state.get(ThinLogBlock.AXIS)).with(ThinLogBlock.CHAIN, state.get(ThinLogBlock.CHAIN)).with(ThinLogBlock.ROPE, state.get(ThinLogBlock.ROPE));
         }
 
         if(state.isOf(MBMBlocks.THIN_ACACIA_LOG)){
-            return (BlockState)MBMBlocks.THIN_ACACIA_LOG.getDefaultState().with(ThinPillarBlock.LEAVES, true).with(ThinPillarBlock.PRESISTANT, true).with(ThinPillarBlock.AXIS, state.get(ThinPillarBlock.AXIS)).with(ThinPillarBlock.CHAIN, state.get(ThinPillarBlock.CHAIN)).with(ThinPillarBlock.ROPE, state.get(ThinPillarBlock.ROPE));
+            return (BlockState)MBMBlocks.THIN_ACACIA_LOG.getDefaultState().with(ThinLogBlock.LEAVES, true).with(ThinLogBlock.PRESISTANT, true).with(ThinLogBlock.AXIS, state.get(ThinLogBlock.AXIS)).with(ThinLogBlock.CHAIN, state.get(ThinLogBlock.CHAIN)).with(ThinLogBlock.ROPE, state.get(ThinLogBlock.ROPE));
         }
 
         if(state.isOf(MBMBlocks.THIN_BIRCH_LOG)){
-            return (BlockState)MBMBlocks.THIN_BIRCH_LOG.getDefaultState().with(ThinPillarBlock.LEAVES, true).with(ThinPillarBlock.PRESISTANT, true).with(ThinPillarBlock.AXIS, state.get(ThinPillarBlock.AXIS)).with(ThinPillarBlock.CHAIN, state.get(ThinPillarBlock.CHAIN)).with(ThinPillarBlock.ROPE, state.get(ThinPillarBlock.ROPE));
+            return (BlockState)MBMBlocks.THIN_BIRCH_LOG.getDefaultState().with(ThinLogBlock.LEAVES, true).with(ThinLogBlock.PRESISTANT, true).with(ThinLogBlock.AXIS, state.get(ThinLogBlock.AXIS)).with(ThinLogBlock.CHAIN, state.get(ThinLogBlock.CHAIN)).with(ThinLogBlock.ROPE, state.get(ThinLogBlock.ROPE));
         }
 
         if(state.isOf(MBMBlocks.THIN_DARK_OAK_LOG)){
-            return (BlockState)MBMBlocks.THIN_DARK_OAK_LOG.getDefaultState().with(ThinPillarBlock.LEAVES, true).with(ThinPillarBlock.PRESISTANT, true).with(ThinPillarBlock.AXIS, state.get(ThinPillarBlock.AXIS)).with(ThinPillarBlock.CHAIN, state.get(ThinPillarBlock.CHAIN)).with(ThinPillarBlock.ROPE, state.get(ThinPillarBlock.ROPE));
+            return (BlockState)MBMBlocks.THIN_DARK_OAK_LOG.getDefaultState().with(ThinLogBlock.LEAVES, true).with(ThinLogBlock.PRESISTANT, true).with(ThinLogBlock.AXIS, state.get(ThinLogBlock.AXIS)).with(ThinLogBlock.CHAIN, state.get(ThinLogBlock.CHAIN)).with(ThinLogBlock.ROPE, state.get(ThinLogBlock.ROPE));
         }
 
         if(state.isOf(MBMBlocks.THIN_JUNGLE_LOG)){
-            return (BlockState)MBMBlocks.THIN_JUNGLE_LOG.getDefaultState().with(ThinPillarBlock.LEAVES, true).with(ThinPillarBlock.PRESISTANT, true).with(ThinPillarBlock.AXIS, state.get(ThinPillarBlock.AXIS)).with(ThinPillarBlock.CHAIN, state.get(ThinPillarBlock.CHAIN)).with(ThinPillarBlock.ROPE, state.get(ThinPillarBlock.ROPE));
+            return (BlockState)MBMBlocks.THIN_JUNGLE_LOG.getDefaultState().with(ThinLogBlock.LEAVES, true).with(ThinLogBlock.PRESISTANT, true).with(ThinLogBlock.AXIS, state.get(ThinLogBlock.AXIS)).with(ThinLogBlock.CHAIN, state.get(ThinLogBlock.CHAIN)).with(ThinLogBlock.ROPE, state.get(ThinLogBlock.ROPE));
         }
         
         return updateDistanceFromLogs(((BlockState)this.getDefaultState()).with(LeavesBlock.PERSISTENT, true), ctx.getWorld(), ctx.getBlockPos());

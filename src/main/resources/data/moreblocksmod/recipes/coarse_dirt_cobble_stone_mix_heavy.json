@@ -1,0 +1,18 @@
+﻿{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "#s#"
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:coarse_dirt"
+        },
+	"s": {
+            "item": "minecraft:cobblestone"
+        }
+    },
+    "result": {
+        "item": "moreblocksmod:coarse_dirt_cobble_stone_mix_heavy",
+        "count": 3
+    }
+}

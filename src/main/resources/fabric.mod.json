@@ -1,12 +1,13 @@
 {
   "schemaVersion": 1,
   "id": "moreblocksmod",
-  "version": "0.1.4",
+  "version": "0.1.5",
 
   "name": "More Blocks Mod",
   "description": "This Mod adds blocks that should be in vanilla minecraft",
   "authors": [
-    "Tyler VanProoyen"
+    "Modder: Tyler VanProoyen",
+    "Texture Artist: "
   ],
   "contact": {
     "homepage": "http://tylervp.com/mbm",

@@ -1,0 +1,15 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "#"
+    ],
+    "key": {
+        "#": {
+            "item": "moreblocksmod:diorite_pillar"
+        }
+    },
+    "result": {
+        "item": "moreblocksmod:thin_diorite_pillar",
+        "count": 4
+    }
+}

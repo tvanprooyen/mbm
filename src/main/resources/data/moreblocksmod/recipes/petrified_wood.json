@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:quartz"
+        },
+        {
+            "item": "minecraft:stripped_birch_log"
+        }
+    ],
+    "result": {
+        "item": "moreblocksmod:petrified_wood"
+    }
+}

@@ -1,0 +1,19 @@
+﻿{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "#s#"
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:dirt"
+        },
+	"s": {
+            "item": "moreblocksmod:dark_stone_bricks"
+        }
+    },
+    "result": {
+        "item": "moreblocksmod:dirt_dark_stone_bricks_heavy",
+        "count": 3
+    }
+}
+

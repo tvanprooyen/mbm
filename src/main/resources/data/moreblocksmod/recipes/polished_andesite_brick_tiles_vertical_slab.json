@@ -1,0 +1,17 @@
+﻿{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+      " # ",
+      " # ",
+      " # "
+  ],
+  "key": {
+      "#": {
+          "item": "moreblocksmod:polished_andesite_brick_tiles"
+      }
+  },
+  "result": {
+      "item": "moreblocksmod:polished_andesite_brick_tiles_vertical_slab",
+      "count": 6
+  }
+}

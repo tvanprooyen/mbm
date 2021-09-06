@@ -9,7 +9,11 @@
     "CauldronBlockMixin",
     "LanternBlockMixin",
     "DeadBushMixin",
-    "AxeItemMixin"
+    "AxeItemMixin",
+    "DefaultBiomeFeaturesMixin",
+    "BlockMixin",
+    "ShovelMixin",
+    "PlantBlockMixin"
   ],
   "client": [
   ],

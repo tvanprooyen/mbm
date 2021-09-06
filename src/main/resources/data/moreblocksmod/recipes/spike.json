@@ -1,0 +1,17 @@
+﻿{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "n n",
+        " n ",
+        "n n"
+    ],
+    "key": {
+	"n": {
+            "item": "minecraft:iron_nugget"
+        }
+    },
+    "result": {
+        "item": "moreblocksmod:spike",
+        "count": 1
+    }
+}

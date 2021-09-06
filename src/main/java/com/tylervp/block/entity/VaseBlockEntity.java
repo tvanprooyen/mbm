@@ -13,7 +13,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.screen.HopperScreenHandler;
 import net.minecraft.screen.ScreenHandler;
-//import net.minecraft.sound.SoundEvent;
 import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableText;
 import net.minecraft.util.collection.DefaultedList;
@@ -22,13 +21,13 @@ public class VaseBlockEntity extends LootableContainerBlockEntity {
    private DefaultedList<ItemStack> inventory;
    private int viewerCount;
 
-   private VaseBlockEntity(BlockEntityType<?> type) {
+   public VaseBlockEntity(BlockEntityType<?> type) {
       super(type);
       this.inventory = DefaultedList.ofSize(5, ItemStack.EMPTY);
    }
 
    public VaseBlockEntity() {
-         this(MBMBlocks.TERRACOTTA_VASE_BLOCK_ENTITY);
+         this(MBMBlocks.VASE_BLOCK_ENTITY);
    }
 
    public CompoundTag toTag(CompoundTag tag) {
@@ -101,7 +100,7 @@ public class VaseBlockEntity extends LootableContainerBlockEntity {
          this.scheduleUpdate();
       } else {
          BlockState blockState = this.getCachedState();
-         if (!blockState.isOf(MBMBlocks.TERRACOTTA_VASE)) {
+         if (!blockState.isOf(blockState.getBlock())) {
             this.markRemoved();
             return;
          }

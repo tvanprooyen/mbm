@@ -52,7 +52,7 @@ public class RopeBlockMid extends Block {
     public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
         if(entity instanceof ArrowEntity){
 
-            if(state.<Boolean>get((Property<Boolean>)LayerBlock.WATERLOGGED)) {
+            if(state.<Boolean>get((Property<Boolean>)LayerBlockFalling.WATERLOGGED)) {
                 world.setBlockState(pos, Blocks.AIR.getDefaultState());
                 world.setBlockState(pos, Blocks.WATER.getDefaultState());
             } else {
@@ -104,7 +104,7 @@ public class RopeBlockMid extends Block {
         
         BlockState blockStateDown = world.getBlockState(pos.down());
         if (!state.canPlaceAt(world, pos)) {
-            if(state.<Boolean>get((Property<Boolean>)LayerBlock.WATERLOGGED)) {
+            if(state.<Boolean>get((Property<Boolean>)LayerBlockFalling.WATERLOGGED)) {
                 return Blocks.AIR.getDefaultState();
             } else {
                 return Blocks.AIR.getDefaultState();
@@ -114,7 +114,7 @@ public class RopeBlockMid extends Block {
             return MBMBlocks.ROPE.getDefaultState().with(Properties.WATERLOGGED, fluidState5.getFluid() == Fluids.WATER);
     }
 
-    if (state.<Boolean>get((Property<Boolean>)LayerBlock.WATERLOGGED)) {
+    if (state.<Boolean>get((Property<Boolean>)LayerBlockFalling.WATERLOGGED)) {
         world.getFluidTickScheduler().schedule(pos, Fluids.WATER, Fluids.WATER.getTickRate(world));
     }
         return super.getStateForNeighborUpdate(state, direction, newState, world, pos, posFrom);

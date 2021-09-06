@@ -1,0 +1,17 @@
+﻿{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+      " # ",
+      " # ",
+      " # "
+  ],
+  "key": {
+      "#": {
+          "item": "moreblocksmod:purple_terracotta_bricks"
+      }
+  },
+  "result": {
+      "item": "moreblocksmod:purple_terracotta_bricks_vertical_slab",
+      "count": 6
+  }
+}

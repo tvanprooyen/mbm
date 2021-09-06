@@ -76,6 +76,8 @@ public class ClientInit implements ClientModInitializer
         
         BlockRenderLayerMap.INSTANCE.putBlock(MBMBlocks.VERTICAL_GLASS_PANE, RenderLayer.getCutout());
 
+		BlockRenderLayerMap.INSTANCE.putBlock(MBMBlocks.SPIKE, RenderLayer.getCutout());
+
         //Colours
         ColorProviderRegistry.BLOCK.register((state,view,pos,tintIndex) -> BiomeColors.getFoliageColor(view, pos), MBMBlocks.THIN_ACACIA_LOG);
         ColorProviderRegistry.BLOCK.register((state,view,pos,tintIndex) -> FoliageColors.getSpruceColor(), MBMBlocks.THIN_SPRUCE_LOG);//0x619961
