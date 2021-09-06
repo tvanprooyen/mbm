@@ -12,6 +12,7 @@
   "contact": {
     "homepage": "http://tylervp.com/mbm",
     "sources": "https://github.com/tvanprooyen/mbm",
+    "issues": "https://github.com/tvanprooyen/mbm/issues",
     "curseforge": "https://www.curseforge.com/minecraft/mc-mods/mbm-more-blocks-mod",
     "modrinth": "https://modrinth.com/mod/mbm"
   },
@@ -36,8 +37,5 @@
     "fabricloader": ">=0.7.4",
     "fabric": "*",
     "minecraft": "1.17.x"
-  },
-  "suggests": {
-    "flamingo": "*"
   }
 }
