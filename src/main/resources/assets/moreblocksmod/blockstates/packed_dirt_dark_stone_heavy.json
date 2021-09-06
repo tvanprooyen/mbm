@@ -1,0 +1,21 @@
+﻿{
+  "variants": {
+    "": [
+      {
+        "model": "moreblocksmod:block/packed_dirt_dark_stone_heavy"
+      },
+      {
+        "model": "moreblocksmod:block/packed_dirt_dark_stone_heavy",
+        "y": 90
+      },
+      {
+        "model": "moreblocksmod:block/packed_dirt_dark_stone_heavy",
+        "y": 180
+      },
+      {
+        "model": "moreblocksmod:block/packed_dirt_dark_stone_heavy",
+        "y": 270
+      }
+    ]
+  }
+}

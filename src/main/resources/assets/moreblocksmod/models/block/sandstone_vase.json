@@ -1,0 +1,6 @@
+{
+	"parent": "moreblocksmod:block/vase",
+	"textures": {
+		"vase":"moreblocksmod:block/sandstone_vase"
+	}
+}

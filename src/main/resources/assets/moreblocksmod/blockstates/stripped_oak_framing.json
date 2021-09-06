@@ -1,0 +1,6 @@
+﻿{
+    "variants": {
+      "centerblock=0": { "model": "moreblocksmod:block/stripped_oak_framing" },
+      "centerblock=1": { "model": "moreblocksmod:block/stripped_oak_framing_cobblestone" }
+    }
+  }

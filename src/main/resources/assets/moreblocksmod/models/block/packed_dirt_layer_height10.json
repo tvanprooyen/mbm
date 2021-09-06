@@ -1,0 +1,7 @@
+﻿{
+	"parent": "moreblocksmod:block/layerheight10",
+	"textures": {
+		"particle": "moreblocksmod:block/packed_dirt",
+        	"texture": "moreblocksmod:block/packed_dirt"
+	}
+}

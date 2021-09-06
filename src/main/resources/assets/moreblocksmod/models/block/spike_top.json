@@ -1,0 +1,27 @@
+{
+	"parent": "block/block",
+	"textures": {
+		"0": "moreblocksmod:block/spike_top",
+		"particle": "moreblocksmod:block/spike_top"
+	},
+	"elements": [
+		{
+			"from": [8, 0, 6],
+			"to": [8, 11, 10],
+			"rotation": {"angle": 45, "axis": "y", "origin": [8, 5, 8]},
+			"faces": {
+				"east": {"uv": [3, 5, 7, 16], "texture": "#0"},
+				"west": {"uv": [9, 5, 13, 16], "texture": "#0"}
+			}
+		},
+		{
+			"from": [8, 0, 6],
+			"to": [8, 11, 10],
+			"rotation": {"angle": -45, "axis": "y", "origin": [8, 5, 8]},
+			"faces": {
+				"east": {"uv": [9, 5, 13, 16], "texture": "#0"},
+				"west": {"uv": [3, 5, 7, 16], "texture": "#0"}
+			}
+		}
+	]
+}

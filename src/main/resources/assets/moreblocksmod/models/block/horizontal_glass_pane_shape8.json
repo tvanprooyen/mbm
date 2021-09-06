@@ -1,0 +1,7 @@
+{
+	"parent": "moreblocksmod:block/template_horizontal_glass_pane_shape8",
+	"textures": {
+		"0":"block/glass",
+        "1":"block/glass_pane_top"
+	}
+}

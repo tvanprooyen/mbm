@@ -1,0 +1,8 @@
+﻿{
+	"parent": "moreblocksmod:block/layerheight8",
+	"textures": {
+		"particle": "block/dirt",
+        	"texture": "block/dirt"
+	}
+}
+

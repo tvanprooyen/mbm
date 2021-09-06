@@ -1,0 +1,8 @@
+﻿{
+  "variants": {
+    "facing=north": { "model": "moreblocksmod:block/cobblestone_side_stairs_0deg" },
+    "facing=east":  { "model": "moreblocksmod:block/cobblestone_side_stairs_90deg"},
+    "facing=south": { "model": "moreblocksmod:block/cobblestone_side_stairs_180deg"},
+    "facing=west":  { "model": "moreblocksmod:block/cobblestone_side_stairs_270deg"}
+  }
+}

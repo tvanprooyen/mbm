@@ -1,0 +1,8 @@
+﻿{
+    "parent": "block/stairs",
+    "textures": {
+        "bottom": "moreblocksmod:block/polished_diorite_brick_tiles",
+        "top": "moreblocksmod:block/polished_diorite_brick_tiles",
+        "side": "moreblocksmod:block/polished_diorite_brick_tiles"
+    }
+}

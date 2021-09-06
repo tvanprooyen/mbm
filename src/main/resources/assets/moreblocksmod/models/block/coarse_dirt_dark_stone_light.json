@@ -1,0 +1,6 @@
+﻿{
+    "parent": "block/cube_all",
+    "textures": {
+      "all": "moreblocksmod:block/coarse_dirt_dark_stone_light"
+    }
+  }

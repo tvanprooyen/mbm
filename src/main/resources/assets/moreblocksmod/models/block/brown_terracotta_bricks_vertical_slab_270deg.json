@@ -1,0 +1,6 @@
+﻿{
+	"parent": "moreblocksmod:block/sideblock270deg",
+	"textures": {
+		"side":"moreblocksmod:block/brown_terracotta_bricks"
+	}
+}

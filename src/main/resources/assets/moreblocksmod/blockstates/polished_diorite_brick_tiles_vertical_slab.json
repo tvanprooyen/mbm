@@ -1,0 +1,9 @@
+﻿{
+  "variants": {
+    "facing=north,half=true": { "model": "moreblocksmod:block/polished_diorite_brick_tiles_vertical_slab_0deg" },
+    "facing=east,half=true":  { "model": "moreblocksmod:block/polished_diorite_brick_tiles_vertical_slab_90deg", "y": 90 },
+    "facing=south,half=true": { "model": "moreblocksmod:block/polished_diorite_brick_tiles_vertical_slab_180deg", "y": 180 },
+    "facing=west,half=true":  { "model": "moreblocksmod:block/polished_diorite_brick_tiles_vertical_slab_270deg", "y": 270 },
+    "half=false": { "model": "moreblocksmod:block/polished_diorite_brick_tiles" }
+  }
+}

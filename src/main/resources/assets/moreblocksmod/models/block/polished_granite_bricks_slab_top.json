@@ -1,0 +1,9 @@
+﻿{
+    "parent": "block/slab_top",
+    "textures": {
+        "bottom": "moreblocksmod:block/polished_granite_bricks",
+        "top": "moreblocksmod:block/polished_granite_bricks",
+        "side": "moreblocksmod:block/polished_granite_bricks"
+    }
+}
+

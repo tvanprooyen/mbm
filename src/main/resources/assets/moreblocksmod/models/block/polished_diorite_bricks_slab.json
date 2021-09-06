@@ -1,0 +1,9 @@
+﻿{
+    "parent": "block/slab",
+    "textures": {
+        "bottom": "moreblocksmod:block/polished_diorite_bricks",
+        "top": "moreblocksmod:block/polished_diorite_bricks",
+        "side": "moreblocksmod:block/polished_diorite_bricks"
+    }
+}
+

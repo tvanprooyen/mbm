@@ -1,0 +1,9 @@
+﻿{
+    "parent": "block/slab",
+    "textures": {
+        "bottom": "moreblocksmod:block/polished_blackstone_brick_tiles",
+        "top": "moreblocksmod:block/polished_blackstone_brick_tiles",
+        "side": "moreblocksmod:block/polished_blackstone_brick_tiles"
+    }
+}
+

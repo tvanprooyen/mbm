@@ -1,0 +1,6 @@
+{
+	"parent": "moreblocksmod:block/sidestairs180deg",
+	"textures": {
+		"0":"block/cobblestone"
+	}
+}

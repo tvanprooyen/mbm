@@ -1,0 +1,7 @@
+{
+    "parent": "moreblocksmod:block/template_glass_pane_noside_alt_z",
+    "textures": {
+      "pane": "block/glass",
+      "edge": "block/glass_pane_top"
+    }
+  }

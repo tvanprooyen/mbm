@@ -115,7 +115,7 @@
     "block.moreblocksmod.cobblestone_chimney": "Cobblestone Chimney",
     "block.moreblocksmod.granite_chimney": "Granite Chimney",
     "block.moreblocksmod.bricks_chimney": "Bricks Chimney",
-    "block.moreblocksmod.vertical_glass_pane": "Vertical Glass Pane",
+    "block.moreblocksmod.vertical_glass_pane": "MBM Glass Pane (Bata)",
     "item.moreblocksmod.netherite_hammer": "Netherite Hammer",
     "block.moreblocksmod.acacia_planks_horizontal_slab": "Acacia Planks Vertical Slab",
     "block.moreblocksmod.andesite_horizontal_slab": "Andesite Vertical Slab",
@@ -433,5 +433,6 @@
     "block.moreblocksmod.packed_dirt": "Packed Dirt",
     "block.moreblocksmod.pib": "Potion Infused Block (Bata)",
     "item.moreblocksmod.ruby": "Ruby",
-    "block.moreblocksmod.spike": "Spike"
+    "block.moreblocksmod.spike": "Spike",
+    "block.moreblocksmod.cobblestone_side_stairs" : "Cobblestone Side Stairs (Bata)"
 }

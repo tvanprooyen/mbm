@@ -1,0 +1,6 @@
+﻿{
+	"parent": "moreblocksmod:block/sideblock180deg",
+	"textures": {
+		"side":"moreblocksmod:block/polished_granite_brick_tiles"
+	}
+}

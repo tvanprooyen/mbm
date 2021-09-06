@@ -1,0 +1,7 @@
+﻿{
+    "parent": "block/cube_column",
+    "textures": {
+        "side": "moreblocksmod:block/diorite_pillar_side",
+        "end": "moreblocksmod:block/diorite_pillar_top"
+    }
+}

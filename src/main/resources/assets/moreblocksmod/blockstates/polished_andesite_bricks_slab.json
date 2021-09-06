@@ -1,0 +1,7 @@
+﻿{
+  "variants": {
+      "type=bottom": { "model": "moreblocksmod:block/polished_andesite_bricks_slab" },
+      "type=top": { "model": "moreblocksmod:block/polished_andesite_bricks_slab_top" },
+      "type=double": { "model": "moreblocksmod:block/polished_andesite_bricks"}
+  }
+}

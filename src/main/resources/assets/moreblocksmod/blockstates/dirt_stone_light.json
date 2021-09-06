@@ -1,0 +1,21 @@
+﻿{
+  "variants": {
+    "": [
+      {
+        "model": "moreblocksmod:block/dirt_stone_light"
+      },
+      {
+        "model": "moreblocksmod:block/dirt_stone_light",
+        "y": 90
+      },
+      {
+        "model": "moreblocksmod:block/dirt_stone_light",
+        "y": 180
+      },
+      {
+        "model": "moreblocksmod:block/dirt_stone_light",
+        "y": 270
+      }
+    ]
+  }
+}

@@ -1,0 +1,7 @@
+﻿{
+    "parent": "block/cube_column",
+    "textures": {
+        "side": "moreblocksmod:block/stone_pillar_side",
+        "end": "moreblocksmod:block/stone_pillar_top"
+    }
+}

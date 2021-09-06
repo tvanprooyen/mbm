@@ -1,0 +1,7 @@
+﻿{
+  "variants": {
+      "axis=y":  { "model": "moreblocksmod:block/thin_stone_pillar" },
+      "axis=z":   { "model": "moreblocksmod:block/thin_stone_pillar", "x": 90 },
+      "axis=x":   { "model": "moreblocksmod:block/thin_stone_pillar", "x": 90, "y": 90 }
+  }
+}

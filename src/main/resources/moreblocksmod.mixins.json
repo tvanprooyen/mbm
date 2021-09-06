@@ -13,7 +13,9 @@
     "DefaultBiomeFeaturesMixin",
     "BlockMixin",
     "ShovelMixin",
-    "PlantBlockMixin"
+    "PlantBlockMixin",
+    "WallBlockMixin",
+    "PaneBlockMixin"
   ],
   "client": [
   ],

@@ -3,16 +3,12 @@ package com.tylervp.mixin;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
-import net.minecraft.block.Material;
 import net.minecraft.block.PillarBlock;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.AxeItem;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUsageContext;
-import net.minecraft.item.MiningToolItem;
-import net.minecraft.item.ToolMaterial;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
@@ -24,31 +20,20 @@ import net.minecraft.world.World;
 import java.util.Random;
 
 import com.google.common.collect.ImmutableMap;
-import com.google.common.collect.Sets;
 import com.tylervp.block.MBMBlocks;
 import com.tylervp.item.MBMItems;
 
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(AxeItem.class)
-public class AxeItemMixin extends MiningToolItem {
-    
-    protected AxeItemMixin(ToolMaterial material, float attackDamage, float attackSpeed, Item.Settings settings) {
-        super(attackDamage, attackSpeed, material, Sets.<Block>newHashSet(Blocks.LADDER, Blocks.SCAFFOLDING, Blocks.OAK_BUTTON, Blocks.SPRUCE_BUTTON, Blocks.BIRCH_BUTTON, Blocks.JUNGLE_BUTTON, Blocks.DARK_OAK_BUTTON, Blocks.ACACIA_BUTTON, Blocks.CRIMSON_BUTTON, Blocks.WARPED_BUTTON), settings);
-    }
+public class AxeItemMixin {
 
 
-    @Override
-    public float getMiningSpeedMultiplier(ItemStack stack, BlockState state) {
-        Material material4 = state.getMaterial();
-        if (Sets.<Material>newHashSet(Material.WOOD, Material.NETHER_WOOD, Material.PLANT, Material.REPLACEABLE_PLANT, Material.BAMBOO, Material.GOURD).contains(material4)) {
-            return this.miningSpeed;
-        }
-        return super.getMiningSpeedMultiplier(stack, state);
-    }
-    
-    @Override
-    public ActionResult useOnBlock(ItemUsageContext context) {
+    @Inject(method = "useOnBlock(Lnet/minecraft/item/ItemUsageContext;)Lnet/minecraft/util/ActionResult;", at = @At("HEAD"), cancellable = true)
+    void useOnBlock(ItemUsageContext context,  CallbackInfoReturnable<ActionResult> ci){
         World world3 = context.getWorld();
         BlockPos blockPos4 = context.getBlockPos();
         BlockState blockState5 = world3.getBlockState(blockPos4);
@@ -71,15 +56,14 @@ public class AxeItemMixin extends MiningToolItem {
             if (world3.isClient) {
                spawnParticlesStrip(world3, blockPos4);
             }
-            return ActionResult.success(world3.isClient);
+            ci.setReturnValue(ActionResult.success(world3.isClient));
         } else if (block6 != null) {
             PlayerEntity playerEntity7 = context.getPlayer();
             world3.playSound(playerEntity7, blockPos4, SoundEvents.ITEM_AXE_STRIP, SoundCategory.BLOCKS, 1.0f, 1.0f);
             if (!world3.isClient) {
                 world3.setBlockState(blockPos4, ((BlockState)block6.getDefaultState()).with(PillarBlock.AXIS, blockState5.get(PillarBlock.AXIS)), 11);
-                //world3.setBlockState(blockPos4, ((BlockState)block6.getDefaultState()).<Direction.Axis>with(PillarBlock.AXIS, (Comparable)blockState5.<V>get((Property<V>)PillarBlock.AXIS)), 11);
 
-                ItemConvertible bark_item = this.asItem();
+                ItemConvertible bark_item = MBMItems.ACACIA_BARK_FRAGMENT.asItem();
                 Boolean pass = false;
 
                 if(blockState5.isOf(Blocks.ACACIA_LOG)) {
@@ -109,7 +93,7 @@ public class AxeItemMixin extends MiningToolItem {
                     }
                 }
             }
-            return ActionResult.success(world3.isClient);
+            ci.setReturnValue(ActionResult.success(world3.isClient));
         } else if (oxidized != null) {
             PlayerEntity playerEntity7 = context.getPlayer();
             world3.playSound(playerEntity7, blockPos4, SoundEvents.ITEM_AXE_STRIP, SoundCategory.BLOCKS, 1.0f, 1.0f);
@@ -124,14 +108,12 @@ public class AxeItemMixin extends MiningToolItem {
             if (world3.isClient) {
                spawnParticlesStrip(world3, blockPos4);
             }
-            return ActionResult.success(world3.isClient);
+            ci.setReturnValue(ActionResult.success(world3.isClient));
         }
-        return ActionResult.PASS;
+        ci.setReturnValue(ActionResult.PASS);
     }
 
-
     private static void spawnParticlesStrip(World world, BlockPos pos) {
-        //double double3 = 0.5625;
         for (int i = 0; i < 4; i++) {
             Random random5 = world.random;
             for (final Direction lv : Direction.values()) {
@@ -141,12 +123,10 @@ public class AxeItemMixin extends MiningToolItem {
                     double double12 = (axis11 == Direction.Axis.X) ? (0.5 + 0.5625 * lv.getOffsetX()) : random5.nextFloat();
                     double double14 = (axis11 == Direction.Axis.Y) ? (0.5 + 0.5625 * lv.getOffsetY()) : random5.nextFloat();
                     double double16 = (axis11 == Direction.Axis.Z) ? (0.5 + 0.5625 * lv.getOffsetZ()) : random5.nextFloat();
-                    //DustParticleEffect dirtPartical = new DustParticleEffect(0.93f, 0.63f, 0.45f, 1.0f);
                     
                     world.addParticle(ParticleTypes.CRIT, pos.getX() + double12, pos.getY() + double14, pos.getZ() + double16, 0.0, 0.0, 0.0);
                 }
             }   
         }
-        
     }
 }

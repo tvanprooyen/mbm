@@ -1,0 +1,7 @@
+﻿{
+  "variants": {
+      "type=bottom": { "model": "moreblocksmod:block/polished_granite_brick_tiles_slab" },
+      "type=top": { "model": "moreblocksmod:block/polished_granite_brick_tiles_slab_top" },
+      "type=double": { "model": "moreblocksmod:block/polished_granite_brick_tiles"}
+  }
+}

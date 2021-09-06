@@ -1,0 +1,16 @@
+{
+  "variants": {
+      "direction=up,top=true":  { "model": "moreblocksmod:block/spike_top" },
+      "direction=up,top=false":  { "model": "moreblocksmod:block/spike" },
+      "direction=down,top=true":  { "model": "moreblocksmod:block/spike_top",  "x": 180 },
+      "direction=down,top=false":  { "model": "moreblocksmod:block/spike" ,  "x": 180 },
+      "direction=north,top=true":   { "model": "moreblocksmod:block/spike_top", "x": 90 },
+      "direction=north,top=false":   { "model": "moreblocksmod:block/spike", "x": 90 },
+      "direction=south,top=true":   { "model": "moreblocksmod:block/spike_top", "x": 90, "y": 180  },
+      "direction=south,top=false":   { "model": "moreblocksmod:block/spike", "x": 90, "y": 180  },
+      "direction=east,top=true":   { "model": "moreblocksmod:block/spike_top", "x": 90, "y": 90 },
+      "direction=east,top=false":   { "model": "moreblocksmod:block/spike", "x": 90, "y": 90 },
+      "direction=west,top=true":   { "model": "moreblocksmod:block/spike_top", "x": 90, "y": 270 },
+      "direction=west,top=false":   { "model": "moreblocksmod:block/spike", "x": 90, "y": 270  }
+  }
+}

@@ -1,0 +1,7 @@
+{
+    "parent": "moreblocksmod:block/template_glass_pane_wing_down_h",
+    "textures": {
+      "pane": "block/glass",
+      "edge": "block/glass_pane_top"
+    }
+  }

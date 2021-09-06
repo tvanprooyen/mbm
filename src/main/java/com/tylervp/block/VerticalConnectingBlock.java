@@ -78,10 +78,7 @@ public class VerticalConnectingBlock extends Block implements Waterloggable {
     }
     
     private static int getDirectionMask(Direction dir) {
-        //return 1 << dir.getHorizontal();
-        if(dir.getDirection(). == Direction.UP) {
-
-        }
+        return 1 << dir.getHorizontal();
     }
     
     protected int getShapeIndex(BlockState state) {
@@ -112,15 +109,17 @@ public class VerticalConnectingBlock extends Block implements Waterloggable {
     
     @Override
     public BlockState mirror(BlockState state, BlockMirror mirror) {
-        //switch (mirror) {
-            //case LEFT_RIGHT: {
-            //}
-            //case FRONT_BACK: {
-            //}
-            //default: {
+        switch (mirror) {
+            case LEFT_RIGHT: {
+                return (((State<O, BlockState>)state).with((Property<Comparable>)HorizontalConnectingBlock.NORTH, (Comparable)state.<V>get((Property<V>)HorizontalConnectingBlock.SOUTH))).<Comparable, Comparable>with((Property<Comparable>)HorizontalConnectingBlock.SOUTH, (Comparable)state.<V>get((Property<V>)HorizontalConnectingBlock.NORTH));
+            }
+            case FRONT_BACK: {
+                return (((State<O, BlockState>)state).with((Property<Comparable>)HorizontalConnectingBlock.EAST, (Comparable)state.<V>get((Property<V>)HorizontalConnectingBlock.WEST))).<Comparable, Comparable>with((Property<Comparable>)HorizontalConnectingBlock.WEST, (Comparable)state.<V>get((Property<V>)HorizontalConnectingBlock.EAST));
+            }
+            default: {
                 return super.mirror(state, mirror);
-            //}
-        //}
+            }
+        }
     }
     
     static {
@@ -129,4 +128,5 @@ public class VerticalConnectingBlock extends Block implements Waterloggable {
         WATERLOGGED = Properties.WATERLOGGED;
         FACING_PROPERTIES = ConnectingBlock.FACING_PROPERTIES.entrySet().stream().filter(entry -> entry.getKey().getAxis().isHorizontal()).collect(Util.<Direction, BooleanProperty>toMap());
     }
-} */
+}
+ */
