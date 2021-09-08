@@ -18,6 +18,8 @@ public class PlantBlockMixin {
 
     @Inject(method = "canPlantOnTop(Lnet/minecraft/block/BlockState;Lnet/minecraft/world/BlockView;Lnet/minecraft/util/math/BlockPos;)Z", at = @At("HEAD"), cancellable = true)
     protected void canPlantOnTop(BlockState floor, BlockView world, BlockPos pos, CallbackInfoReturnable<Boolean> ci) {
-        ci.setReturnValue(floor.isOf(Blocks.SAND) || floor.isOf(Blocks.GRASS_BLOCK) || floor.isOf(Blocks.DIRT) || floor.isOf(Blocks.COARSE_DIRT) || floor.isOf(Blocks.PODZOL) || floor.isOf(Blocks.FARMLAND) || floor.isOf(MBMBlocks.DEAD_GRASS_BLOCK));
+        if (floor.isOf(MBMBlocks.DEAD_GRASS_BLOCK)) {
+            ci.setReturnValue(true);
+        }
     }
 }
