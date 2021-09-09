@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "minecraft:dark_stone"
+  },
+  "result": "moreblocksmod:emblemed_dark_stone",
+  "count": 1
+}

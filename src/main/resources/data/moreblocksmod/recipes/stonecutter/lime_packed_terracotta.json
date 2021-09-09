@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "minecraft:lime_terracotta"
+  },
+  "result": "moreblocksmod:lime_packed_terracotta",
+  "count": 1
+}

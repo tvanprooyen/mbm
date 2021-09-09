@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "moreblocksmod:polished_andesite_bricks"
+  },
+  "result": "moreblocksmod:polished_andesite_brick_tiles",
+  "count": 1
+}

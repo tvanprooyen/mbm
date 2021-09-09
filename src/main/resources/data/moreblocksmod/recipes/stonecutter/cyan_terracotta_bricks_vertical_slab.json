@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "moreblocksmod:cyan_terracotta_bricks"
+  },
+  "result": "moreblocksmod:cyan_terracotta_bricks_vertical_slab",
+  "count": 2
+}

@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "moreblocksmod:stone_pillar"
+  },
+  "result": "moreblocksmod:thin_stone_pillar",
+  "count": 4
+}

@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "moreblocksmod:white_terracotta_bricks"
+  },
+  "result": "moreblocksmod:white_terracotta_bricks_vertical_slab",
+  "count": 2
+}

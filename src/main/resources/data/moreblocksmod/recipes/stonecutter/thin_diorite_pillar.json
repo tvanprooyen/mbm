@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "moreblocksmod:diorite_pillar"
+  },
+  "result": "moreblocksmod:thin_diorite_pillar",
+  "count": 4
+}

@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "minecraft:dark_stone_tiles"
+  },
+  "result": "moreblocksmod:dark_stone_tiles_slab",
+  "count": 2
+}
