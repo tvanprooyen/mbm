@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "minecraft:bricks"
+  },
+  "result": "moreblocksmod:bricks_horizontal_slab",
+  "count": 2
+}

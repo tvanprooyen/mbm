@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "minecraft:andesite"
+  },
+  "result": "moreblocksmod:andesite_horizontal_slab",
+  "count": 2
+}

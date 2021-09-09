@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "minecraft:smooth_stone"
+  },
+  "result": "moreblocksmod:smooth_stone_horizontal_slab",
+  "count": 2
+}

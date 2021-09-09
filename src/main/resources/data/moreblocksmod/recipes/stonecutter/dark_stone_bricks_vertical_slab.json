@@ -1,7 +1,7 @@
 {
   "type": "minecraft:stonecutting",
   "ingredient": {
-    "item": "minecraft:dark_stone_bricks"
+    "item": "moreblocksmod:dark_stone_bricks"
   },
   "result": "moreblocksmod:dark_stone_bricks_vertical_slab",
   "count": 2

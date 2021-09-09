@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "minecraft:mossy_cobblestone"
+  },
+  "result": "moreblocksmod:mossy_cobblestone_horizontal_slab",
+  "count": 2
+}
