@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "moreblocksmod:polished_granite_bricks"
+  },
+  "result": "moreblocksmod:polished_granite_bricks_vertical_slab",
+  "count": 2
+}
