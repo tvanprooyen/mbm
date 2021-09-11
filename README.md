@@ -25,7 +25,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="images/MBM Header.jpg" alt="Logo" width="100%">
+    <img src="images/MBM Header.jpg" alt="Logo" width="75%">
   </a>
 
   <!--<h3 align="center">More Blocks Mod</h3>-->
