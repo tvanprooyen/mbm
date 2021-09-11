@@ -28,7 +28,7 @@
     <img src="images/MBM Header.jpg" alt="Logo" height="300">
   </a>
 
-  <h3 align="center">More Blocks Mod</h3>
+  <!--<h3 align="center">More Blocks Mod</h3>-->
 
   <p align="center">
     More Blocks Mod adds vanilla like blocks to give builders a better experience. This has a few additions like terracotta brick blocks, petrified wood, and select variations     of slabs and stairs that are already in game.<br />
