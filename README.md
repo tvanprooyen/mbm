@@ -24,7 +24,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
+  <a href="https://github.com/tvanprooyen/mbm">
     <img src="images/MBM Header.jpg" alt="Logo" width="75%">
   </a>
 
