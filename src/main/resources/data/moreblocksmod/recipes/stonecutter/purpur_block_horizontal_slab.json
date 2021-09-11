@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "minecraft:purpur_block"
+  },
+  "result": "moreblocksmod:purpur_block_horizontal_slab",
+  "count": 2
+}

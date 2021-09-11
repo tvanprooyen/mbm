@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "minecraft:polished_granite"
+  },
+  "result": "moreblocksmod:polished_granite_horizontal_slab",
+  "count": 2
+}

@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "moreblocksmod:andesite_pillar"
+  },
+  "result": "moreblocksmod:thin_andesite_pillar",
+  "count": 4
+}

@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "moreblocksmod:stone_brick_tiles"
+  },
+  "result": "moreblocksmod:stone_brick_tiles_slab",
+  "count": 2
+}

@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "moreblocksmod:polished_diorite_bricks"
+  },
+  "result": "moreblocksmod:polished_diorite_brick_tiles",
+  "count": 1
+}

@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "moreblocksmod:dark_cobblestone"
+  },
+  "result": "moreblocksmod:dark_cobblestone_vertical_slab",
+  "count": 2
+}

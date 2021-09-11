@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "minecraft:prismarine"
+  },
+  "result": "moreblocksmod:prismarine_horizontal_slab",
+  "count": 2
+}

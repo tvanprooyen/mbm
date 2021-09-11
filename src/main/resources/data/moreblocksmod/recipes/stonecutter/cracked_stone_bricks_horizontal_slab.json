@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "minecraft:cracked_stone_bricks"
+  },
+  "result": "moreblocksmod:cracked_stone_bricks_horizontal_slab",
+  "count": 2
+}

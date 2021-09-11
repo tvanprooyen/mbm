@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "minecraft:orange_terracotta"
+  },
+  "result": "moreblocksmod:orange_terracotta_horizontal_slab",
+  "count": 2
+}
