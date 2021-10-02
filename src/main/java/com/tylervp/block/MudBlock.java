@@ -9,6 +9,7 @@ import java.util.Optional;
 import java.util.Random;
 
 import com.google.common.collect.Lists;
+import com.tylervp.item.MBMItems;
 
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.BlockState;
@@ -23,6 +24,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.fluid.FlowableFluid;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.loot.context.LootContext;
 //import net.minecraft.particle.ParticleTypes;
 import net.minecraft.server.world.ServerWorld;
@@ -344,9 +346,10 @@ public class MudBlock extends Block implements FluidDrainable {
     public ItemStack tryDrainFluid(WorldAccess world, BlockPos pos, BlockState state) {
         if (state.<Integer>get((Property<Integer>)FluidBlock.LEVEL) == 0) {
             world.setBlockState(pos, Blocks.AIR.getDefaultState(), 11);
-            return this.asItem().getDefaultStack();
+            //return this.asItem().getDefaultStack();
+            return MBMItems.MUD_BUCKET.getDefaultStack();
         }
-        return Blocks.AIR.asItem().getDefaultStack();
+        return Items.BUCKET.getDefaultStack();
     }
 
     @Override

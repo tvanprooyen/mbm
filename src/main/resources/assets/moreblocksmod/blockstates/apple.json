@@ -1,0 +1,10 @@
+﻿{
+    "variants": {
+      "facing=up": { "model": "moreblocksmod:block/apple_up" },
+      "facing=down": { "model": "moreblocksmod:block/apple_down"},
+      "facing=north": { "model": "moreblocksmod:block/apple_north"},
+      "facing=east": { "model": "moreblocksmod:block/apple_east" },
+      "facing=south": { "model": "moreblocksmod:block/apple_south"},
+      "facing=west": { "model": "moreblocksmod:block/apple_west"}
+    }
+  }

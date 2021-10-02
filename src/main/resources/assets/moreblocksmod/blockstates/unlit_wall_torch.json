@@ -1,0 +1,19 @@
+﻿{
+  "variants": {
+    "facing=east": {
+      "model": "moreblocksmod:block/unlit_wall_torch"
+    },
+    "facing=north": {
+      "model": "moreblocksmod:block/unlit_wall_torch",
+      "y": 270
+    },
+    "facing=south": {
+      "model": "moreblocksmod:block/unlit_wall_torch",
+      "y": 90
+    },
+    "facing=west": {
+      "model": "moreblocksmod:block/unlit_wall_torch",
+      "y": 180
+    }
+  }
+}

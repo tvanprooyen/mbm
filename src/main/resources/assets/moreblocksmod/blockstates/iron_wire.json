@@ -1,0 +1,13 @@
+﻿{
+  "variants": {
+      "axis=y":  { "model": "moreblocksmod:block/iron_wire", "x": 90  },
+      "axis=z,side=top":   { "model": "moreblocksmod:block/iron_wire_top" },
+      "axis=x,side=top":   { "model": "moreblocksmod:block/iron_wire_top", "y": 90 },
+
+      "axis=z,side=middle":   { "model": "moreblocksmod:block/iron_wire"},
+      "axis=x,side=middle":   { "model": "moreblocksmod:block/iron_wire", "y": 90 },
+
+      "axis=z,side=bottom":   { "model": "moreblocksmod:block/iron_wire_bottom" },
+      "axis=x,side=bottom":   { "model": "moreblocksmod:block/iron_wire_bottom", "y": 90 }
+  }
+}

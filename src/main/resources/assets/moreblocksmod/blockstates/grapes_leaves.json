@@ -1,0 +1,33 @@
+﻿{
+  "variants": {
+      "showbottom=true,copperwire=false,facing=north": { "model": "moreblocksmod:block/grapes_leaves" },
+      "showbottom=false,copperwire=false,facing=north": { "model": "moreblocksmod:block/grapes_leaves_middle" },
+      "showbottom=true,copperwire=true,facing=north": { "model": "moreblocksmod:block/grapes_leaves_with_copper_wire" },
+      "showbottom=false,copperwire=true,facing=north": { "model": "moreblocksmod:block/grapes_leaves_middle_with_copper_wire" },
+
+      "showbottom=true,copperwire=false,facing=east": { "model": "moreblocksmod:block/grapes_leaves", "y": 90  },
+      "showbottom=false,copperwire=false,facing=east": { "model": "moreblocksmod:block/grapes_leaves_middle", "y": 90  },
+      "showbottom=true,copperwire=true,facing=east": { "model": "moreblocksmod:block/grapes_leaves_with_copper_wire", "y": 90  },
+      "showbottom=false,copperwire=true,facing=east": { "model": "moreblocksmod:block/grapes_leaves_middle_with_copper_wire", "y": 90  },
+
+      "showbottom=true,copperwire=false,facing=south": { "model": "moreblocksmod:block/grapes_leaves" },
+      "showbottom=false,copperwire=false,facing=south": { "model": "moreblocksmod:block/grapes_leaves_middle" },
+      "showbottom=true,copperwire=true,facing=south": { "model": "moreblocksmod:block/grapes_leaves_with_copper_wire" },
+      "showbottom=false,copperwire=true,facing=south": { "model": "moreblocksmod:block/grapes_leaves_middle_with_copper_wire" },
+
+      "showbottom=true,copperwire=false,facing=west": { "model": "moreblocksmod:block/grapes_leaves", "y": 90  },
+      "showbottom=false,copperwire=false,facing=west": { "model": "moreblocksmod:block/grapes_leaves_middle", "y": 90  },
+      "showbottom=true,copperwire=true,facing=west": { "model": "moreblocksmod:block/grapes_leaves_with_copper_wire", "y": 90  },
+      "showbottom=false,copperwire=true,facing=west": { "model": "moreblocksmod:block/grapes_leaves_middle_with_copper_wire", "y": 90  },
+
+      "showbottom=true,copperwire=false,facing=up": { "model": "moreblocksmod:block/grapes_leaves" },
+      "showbottom=false,copperwire=false,facing=up": { "model": "moreblocksmod:block/grapes_leaves_middle" },
+      "showbottom=true,copperwire=true,facing=up": { "model": "moreblocksmod:block/grapes_leaves_with_copper_wire" },
+      "showbottom=false,copperwire=true,facing=up": { "model": "moreblocksmod:block/grapes_leaves_middle_with_copper_wire" },
+
+      "showbottom=true,copperwire=false,facing=down": { "model": "moreblocksmod:block/grapes_leaves" },
+      "showbottom=false,copperwire=false,facing=down": { "model": "moreblocksmod:block/grapes_leaves_middle" },
+      "showbottom=true,copperwire=true,facing=down": { "model": "moreblocksmod:block/grapes_leaves_with_copper_wire" },
+      "showbottom=false,copperwire=true,facing=down": { "model": "moreblocksmod:block/grapes_leaves_middle_with_copper_wire" }
+  }
+}

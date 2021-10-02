@@ -1,0 +1,15 @@
+﻿{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+      "###"
+  ],
+  "key": {
+      "#": {
+          "item": "moreblocksmod:dead_grass_block"
+      }
+  },
+  "result": {
+      "item": "moreblocksmod:dead_grass_block_slab",
+      "count": 6
+  }
+}

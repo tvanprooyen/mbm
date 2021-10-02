@@ -1,0 +1,27 @@
+{
+	"parent": "block/block",
+	"textures": {
+		"0": "moreblocksmod:block/iron_wire",
+		"particle": "moreblocksmod:block/iron_wire"
+	},
+	"elements": [
+		{
+			"from": [8, 0, 0],
+			"to": [8, 2, 16],
+			"rotation": {"angle": 45, "axis": "z", "origin": [8, 1, 8]},
+			"faces": {
+				"east": {"uv": [7, 0, 9, 16], "rotation": 90, "texture": "#0"},
+				"west": {"uv": [9, 0, 11, 16], "rotation": 90, "texture": "#0"}
+			}
+		},
+		{
+			"from": [8, 0, 0],
+			"to": [8, 2, 16],
+			"rotation": {"angle": -45, "axis": "z", "origin": [8, 1, 8]},
+			"faces": {
+				"east": {"uv": [7, 0, 9, 16], "rotation": 90, "texture": "#0"},
+				"west": {"uv": [9, 0, 11, 16], "rotation": 90, "texture": "#0"}
+			}
+		}
+	]
+}

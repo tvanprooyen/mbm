@@ -1,0 +1,11 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "moreblocksmod:green_grapes"
+        }
+    ],
+    "result": {
+        "item": "moreblocksmod:grape_seeds"
+    }
+}

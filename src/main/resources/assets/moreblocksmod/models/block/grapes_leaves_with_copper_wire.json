@@ -1,0 +1,50 @@
+{
+	"parent": "block/block",
+	"texture_size": [16, 20],
+	"textures": {
+		"0": "moreblocksmod:block/copper_wire",
+		"1": "moreblocksmod:block/grapes_leaves",
+		"particle": "moreblocksmod:block/grapes_leaves"
+	},
+	"elements": [
+		{
+			"from": [0, -4, 0],
+			"to": [16, 16, 16],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, 0, 0]},
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#1", "tintindex": 0},
+				"east": {"uv": [0, 0, 16, 16], "texture": "#1", "tintindex": 0},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#1", "tintindex": 0},
+				"west": {"uv": [0, 0, 16, 16], "texture": "#1", "tintindex": 0},
+				"up": {"uv": [0, 0, 16, 12.8], "texture": "#1", "tintindex": 0}
+			}
+		},
+		{
+			"from": [0, 0, 0],
+			"to": [16, 0, 16],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, 0, 0]},
+			"faces": {
+				"up": {"uv": [0, 0, 16, 12.8], "texture": "#1", "tintindex": 0},
+				"down": {"uv": [0, 0, 16, 12.8], "texture": "#1", "tintindex": 0}
+			}
+		},
+		{
+			"from": [8, 7, 0],
+			"to": [8, 9, 16],
+			"rotation": {"angle": 45, "axis": "z", "origin": [8, 8, 8]},
+			"faces": {
+				"east": {"uv": [7, 0, 9, 16], "rotation": 90, "texture": "#0"},
+				"west": {"uv": [9, 0, 11, 16], "rotation": 90, "texture": "#0"}
+			}
+		},
+		{
+			"from": [8, 7, 0],
+			"to": [8, 9, 16],
+			"rotation": {"angle": -45, "axis": "z", "origin": [8, 8, 8]},
+			"faces": {
+				"east": {"uv": [7, 0, 9, 16], "rotation": 90, "texture": "#0"},
+				"west": {"uv": [9, 0, 11, 16], "rotation": 90, "texture": "#0"}
+			}
+		}
+	]
+}

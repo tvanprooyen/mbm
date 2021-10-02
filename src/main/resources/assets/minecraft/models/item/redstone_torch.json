@@ -1,0 +1,6 @@
+{
+    "parent": "moreblocksmod:item/item_torch",
+    "textures": {
+      "torch": "minecraft:block/redstone_torch"
+    }
+  }

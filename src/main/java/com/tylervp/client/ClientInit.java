@@ -62,6 +62,12 @@ public class ClientInit implements ClientModInitializer
         BlockRenderLayerMap.INSTANCE.putBlock(MBMBlocks.THIN_STRIPPED_SPRUCE_LOG, RenderLayer.getCutout());
 
 		BlockRenderLayerMap.INSTANCE.putBlock(MBMBlocks.DEAD_GRASS_BLOCK, RenderLayer.getCutout());
+
+		BlockRenderLayerMap.INSTANCE.putBlock(MBMBlocks.BURNT_GRASS_BLOCK, RenderLayer.getCutout());
+
+		BlockRenderLayerMap.INSTANCE.putBlock(MBMBlocks.DEAD_GRASS_BLOCK_SLAB, RenderLayer.getCutout());
+
+		BlockRenderLayerMap.INSTANCE.putBlock(MBMBlocks.BURNT_GRASS_BLOCK_SLAB, RenderLayer.getCutout());
 		
 		BlockRenderLayerMap.INSTANCE.putBlock(MBMBlocks.GRASS_SLAB, RenderLayer.getCutout());
 
@@ -74,6 +80,33 @@ public class ClientInit implements ClientModInitializer
 
 		BlockRenderLayerMap.INSTANCE.putBlock(MBMBlocks.SPIKE, RenderLayer.getCutout());
 
+		BlockRenderLayerMap.INSTANCE.putBlock(MBMBlocks.DEAD_GRASS, RenderLayer.getCutout());
+		BlockRenderLayerMap.INSTANCE.putBlock(MBMBlocks.BURNT_GRASS, RenderLayer.getCutout());
+
+		BlockRenderLayerMap.INSTANCE.putBlock(MBMBlocks.DEAD_TALL_GRASS, RenderLayer.getCutout());
+		BlockRenderLayerMap.INSTANCE.putBlock(MBMBlocks.BURNT_TALL_GRASS, RenderLayer.getCutout());
+
+		BlockRenderLayerMap.INSTANCE.putBlock(MBMBlocks.UNLIT_TORCH, RenderLayer.getCutout());
+		BlockRenderLayerMap.INSTANCE.putBlock(MBMBlocks.UNLIT_WALL_TORCH, RenderLayer.getCutout());
+		
+		BlockRenderLayerMap.INSTANCE.putBlock(MBMBlocks.PURPLE_GRAPES, RenderLayer.getCutout());
+		BlockRenderLayerMap.INSTANCE.putBlock(MBMBlocks.GREEN_GRAPES, RenderLayer.getCutout());
+		BlockRenderLayerMap.INSTANCE.putBlock(MBMBlocks.GRAPE_LEAVES, RenderLayer.getCutout());
+		BlockRenderLayerMap.INSTANCE.putBlock(MBMBlocks.GRAPE_LOG, RenderLayer.getCutout());
+		BlockRenderLayerMap.INSTANCE.putBlock(MBMBlocks.GRAPE_SPUR, RenderLayer.getCutout());
+		BlockRenderLayerMap.INSTANCE.putBlock(MBMBlocks.GRAPE_LEAVES_HANGING, RenderLayer.getCutout());
+
+		BlockRenderLayerMap.INSTANCE.putBlock(MBMBlocks.APPLE, RenderLayer.getCutout());
+
+		BlockRenderLayerMap.INSTANCE.putBlock(MBMBlocks.CABBAGE, RenderLayer.getCutout());
+		BlockRenderLayerMap.INSTANCE.putBlock(MBMBlocks.RED_CABBAGE, RenderLayer.getCutout());
+
+		BlockRenderLayerMap.INSTANCE.putBlock(MBMBlocks.WATER_BUCKET_BLOCK, RenderLayer.getCutout());
+		BlockRenderLayerMap.INSTANCE.putBlock(MBMBlocks.LAVA_BUCKET_BLOCK, RenderLayer.getCutout());
+		BlockRenderLayerMap.INSTANCE.putBlock(MBMBlocks.BUCKET_BLOCK, RenderLayer.getCutout());
+		BlockRenderLayerMap.INSTANCE.putBlock(MBMBlocks.MUD_BUCKET_BLOCK, RenderLayer.getCutout());
+		
+
         //Colours
         ColorProviderRegistry.BLOCK.register((state,view,pos,tintIndex) -> BiomeColors.getFoliageColor(view, pos), MBMBlocks.THIN_ACACIA_LOG);
         ColorProviderRegistry.BLOCK.register((state,view,pos,tintIndex) -> FoliageColors.getSpruceColor(), MBMBlocks.THIN_SPRUCE_LOG);//0x619961
@@ -84,7 +117,32 @@ public class ClientInit implements ClientModInitializer
 		
 		ColorProviderRegistry.BLOCK.register((state,view,pos,tintIndex) -> BiomeColors.getGrassColor(view, pos), MBMBlocks.GRASS_SLAB);
 
-		ColorProviderRegistry.BLOCK.register((state,view,pos,tintIndex) -> 0Xffaf4d, MBMBlocks.DEAD_GRASS_BLOCK); //Original 0Xffab44 Lighter 0Xffb75f Now 0Xffaf4d
+		ColorProviderRegistry.BLOCK.register((state,view,pos,tintIndex) -> 0Xffaf4d, MBMBlocks.DEAD_GRASS_BLOCK);
+
+		ColorProviderRegistry.BLOCK.register((state,view,pos,tintIndex) -> 0X383838, MBMBlocks.BURNT_GRASS_BLOCK);
+
+		ColorProviderRegistry.BLOCK.register((state,view,pos,tintIndex) -> 0Xffaf4d, MBMBlocks.DEAD_GRASS_BLOCK_SLAB);
+
+		ColorProviderRegistry.BLOCK.register((state,view,pos,tintIndex) -> 0X383838, MBMBlocks.BURNT_GRASS_BLOCK_SLAB);
+
+		ColorProviderRegistry.BLOCK.register((state,view,pos,tintIndex) -> 0Xffaf4d, MBMBlocks.DEAD_GRASS);
+
+		ColorProviderRegistry.BLOCK.register((state,view,pos,tintIndex) -> 0X383838, MBMBlocks.BURNT_GRASS);
+
+		ColorProviderRegistry.BLOCK.register((state,view,pos,tintIndex) -> 0Xffaf4d, MBMBlocks.DEAD_TALL_GRASS);
+
+		ColorProviderRegistry.BLOCK.register((state,view,pos,tintIndex) -> 0X383838, MBMBlocks.BURNT_TALL_GRASS);
+
+		ColorProviderRegistry.BLOCK.register((state,view,pos,tintIndex) -> 0X759c40, MBMBlocks.GRAPE_LEAVES);
+		ColorProviderRegistry.BLOCK.register((state,view,pos,tintIndex) -> 0X759c40, MBMBlocks.GRAPE_LOG);
+
+		ColorProviderRegistry.BLOCK.register((state,view,pos,tintIndex) -> 0X759c40, MBMBlocks.GRAPE_SPUR); //67502c
+		ColorProviderRegistry.BLOCK.register((state,view,pos,tintIndex) -> 0X759c40, MBMBlocks.GRAPE_LEAVES_HANGING);
+
+
+		ColorProviderRegistry.BLOCK.register((state,view,pos,tintIndex) -> 0Xa7c899, MBMBlocks.CABBAGE);
+		ColorProviderRegistry.BLOCK.register((state,view,pos,tintIndex) -> 0Xc580b9, MBMBlocks.RED_CABBAGE);
+
 		
 		ColorProviderRegistry.ITEM.register((stack, tintIndex) -> {
             return 0X91BD59;
@@ -93,6 +151,59 @@ public class ClientInit implements ClientModInitializer
 		ColorProviderRegistry.ITEM.register((stack, tintIndex) -> {
             return 0Xffaf4d;
         }, MBMBlocks.DEAD_GRASS_BLOCK);
+
+		ColorProviderRegistry.ITEM.register((stack, tintIndex) -> {
+            return 0X383838;
+        }, MBMBlocks.BURNT_GRASS_BLOCK);
+
+		ColorProviderRegistry.ITEM.register((stack, tintIndex) -> {
+            return 0Xffaf4d;
+        }, MBMBlocks.DEAD_GRASS_BLOCK_SLAB);
+
+		ColorProviderRegistry.ITEM.register((stack, tintIndex) -> {
+            return 0X383838;
+        }, MBMBlocks.BURNT_GRASS_BLOCK_SLAB);
+
+		ColorProviderRegistry.ITEM.register((stack, tintIndex) -> {
+            return 0Xffaf4d;
+        }, MBMBlocks.DEAD_GRASS);
+
+		ColorProviderRegistry.ITEM.register((stack, tintIndex) -> {
+            return 0X383838;
+        }, MBMBlocks.BURNT_GRASS);
+
+		ColorProviderRegistry.ITEM.register((stack, tintIndex) -> {
+            return 0Xffaf4d;
+        }, MBMBlocks.DEAD_TALL_GRASS);
+
+		ColorProviderRegistry.ITEM.register((stack, tintIndex) -> {
+            return 0X383838;
+        }, MBMBlocks.BURNT_TALL_GRASS);
+
+		ColorProviderRegistry.ITEM.register((stack, tintIndex) -> {
+            return 0X759c40;
+        }, MBMBlocks.GRAPE_LEAVES);
+
+		ColorProviderRegistry.ITEM.register((stack, tintIndex) -> {
+            return 0X759c40;
+        }, MBMBlocks.GRAPE_LOG);
+
+		/* ColorProviderRegistry.ITEM.register((stack, tintIndex) -> {
+            return 0X759c40;
+        }, MBMBlocks.GRAPE_SPUR); */
+
+		ColorProviderRegistry.ITEM.register((stack, tintIndex) -> {
+            return 0X759c40;
+        }, MBMBlocks.GRAPE_LEAVES_HANGING);
+
+
+		ColorProviderRegistry.ITEM.register((stack, tintIndex) -> {
+            return 0Xa7c899;
+        }, MBMBlocks.CABBAGE);
+
+		ColorProviderRegistry.ITEM.register((stack, tintIndex) -> {
+            return 0Xc580b9;
+        }, MBMBlocks.RED_CABBAGE);
  
 	}
 

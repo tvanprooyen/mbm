@@ -1,7 +1,9 @@
 package com.tylervp.block;
 
 import net.minecraft.util.Identifier;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.registry.Registry;
+import net.minecraft.world.BlockView;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -15,10 +17,12 @@ import net.minecraft.block.Material;
 import net.minecraft.block.OreBlock;
 import net.minecraft.block.PillarBlock;
 import net.minecraft.block.SlabBlock;
+import net.minecraft.block.TallPlantBlock;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.fluid.FlowableFluid;
 import net.minecraft.item.BlockItem;
+import net.minecraft.item.WallStandingBlockItem;
 import net.minecraft.item.Item.Settings;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.state.property.Properties;
@@ -46,8 +50,8 @@ public class MBMBlocks {
     public static final FabricBlockSettings GLASS_SETTINGS = FabricBlockSettings.of(Material.GLASS).breakByTool(FabricToolTags.PICKAXES).breakByHand(false).sounds(BlockSoundGroup.GLASS).resistance(0.3f).hardness(0.3f);
     public static final FabricBlockSettings PLANKS_SETTINGS = FabricBlockSettings.of(Material.WOOD).breakByTool(FabricToolTags.AXES).breakByHand(true).sounds(BlockSoundGroup.WOOD).resistance(3.0f).hardness(2.0f);
     public static final FabricBlockSettings NETHER_PLANKS_SETTINGS = FabricBlockSettings.of(Material.NETHER_WOOD).breakByTool(FabricToolTags.AXES).breakByHand(true).sounds(BlockSoundGroup.WOOD).resistance(3.0f).hardness(2.0f);
-    public static final FabricBlockSettings SAND_STONE = FabricBlockSettings.of(Material.STONE).requiresTool().breakByHand(false).breakByTool(FabricToolTags.PICKAXES).resistance(0.8f).hardness(0.8f).sounds(BlockSoundGroup.STONE);
-    public static final FabricBlockSettings IRON_SETTINGS = FabricBlockSettings.of(Material.STONE, MapColor.RED).requiresTool().strength(2.0f, 6.0f);
+    public static final FabricBlockSettings SAND_STONE = FabricBlockSettings.of(Material.STONE).breakByHand(false).breakByTool(FabricToolTags.PICKAXES).resistance(0.8f).hardness(0.8f).sounds(BlockSoundGroup.STONE);
+    public static final FabricBlockSettings IRON_SETTINGS = FabricBlockSettings.of(Material.METAL).requiresTool().breakByTool(FabricToolTags.PICKAXES).strength(2.0f, 6.0f);
     public static final FabricBlockSettings JEWEL_BLOCK_SETTINGS = FabricBlockSettings.of(Material.METAL).requiresTool().strength(5.0f, 6.0f);
     public static final FabricBlockSettings DIRT_SETTINGS = FabricBlockSettings.of(Material.SOIL, MapColor.DIRT_BROWN).strength(0.5f).sounds(BlockSoundGroup.GRAVEL);
     public static final FabricBlockSettings LOG_SETTINGS = FabricBlockSettings.of(Material.WOOD).sounds(BlockSoundGroup.WOOD).breakByTool(FabricToolTags.AXES).breakByHand(true).hardness(2f).resistance(2f);
@@ -299,13 +303,27 @@ public class MBMBlocks {
     public static final Block PACKED_DIRT_STONE_LIGHT = new Block(STONE_SETTINGS);
 
     //Dead Blocks
-    public static final DeadGrassBlock DEAD_GRASS_BLOCK = new DeadGrassBlock(FabricBlockSettings.of(Material.SOIL).sounds(BlockSoundGroup.GRASS).breakByHand(true).hardness(0.6f).resistance(0.6f).ticksRandomly());
-    
-    public static final PillarBlock BURNT_ACACIA_LOG = new PillarBlock(LOG_SETTINGS);
+    public static final DeadGrassBlock DEAD_GRASS_BLOCK = new DeadGrassBlock(FabricBlockSettings.copyOf(Blocks.GRASS_BLOCK));
+    public static final MBMFernBlock DEAD_GRASS = new MBMFernBlock(FabricBlockSettings.copyOf(Blocks.GRASS));
+    public static final TallPlantBlock DEAD_TALL_GRASS = new TallPlantBlock(FabricBlockSettings.copyOf(Blocks.TALL_GRASS));
+    public static final DeadGrassBlockSlab DEAD_GRASS_BLOCK_SLAB = new DeadGrassBlockSlab(FabricBlockSettings.copyOf(Blocks.GRASS_BLOCK));
 
-    public static final Block BURNT_PLANKS = new Block(FabricBlockSettings.of(Material.WOOD).sounds(BlockSoundGroup.WOOD).breakByTool(FabricToolTags.AXES).breakByHand(true).hardness(2f).resistance(3f));
-    public static final SlabBlock BURNT_PLANKS_SLAB = new SlabBlock(FabricBlockSettings.of(Material.WOOD).sounds(BlockSoundGroup.WOOD).breakByTool(FabricToolTags.AXES).breakByHand(true).hardness(2f).resistance(3f));
-    public static final StairsBlockExtend BURNT_PLANKS_STAIRS = new StairsBlockExtend(BURNT_PLANKS.getDefaultState(), FabricBlockSettings.of(Material.WOOD).sounds(BlockSoundGroup.WOOD).breakByTool(FabricToolTags.AXES).breakByHand(true).hardness(2f).resistance(3f));
+    //Burnt Blocks
+    public static final BurntGrassBlock BURNT_GRASS_BLOCK = new BurntGrassBlock(FabricBlockSettings.copyOf(Blocks.GRASS_BLOCK));
+    public static final MBMFernBlock BURNT_GRASS = new MBMFernBlock(FabricBlockSettings.copyOf(Blocks.GRASS));
+    public static final TallPlantBlock BURNT_TALL_GRASS = new TallPlantBlock(FabricBlockSettings.copyOf(Blocks.TALL_GRASS));
+    public static final BurntSlabBlock BURNT_GRASS_BLOCK_SLAB = new BurntSlabBlock(FabricBlockSettings.copyOf(Blocks.GRASS_BLOCK));
+
+    public static final BurntPillarBlock BURNT_ACACIA_LOG = new BurntPillarBlock(LOG_SETTINGS.ticksRandomly());
+    public static final BurntPillarBlock BURNT_BIRCH_LOG = new BurntPillarBlock(LOG_SETTINGS.ticksRandomly());
+    public static final BurntPillarBlock BURNT_DARK_OAK_LOG = new BurntPillarBlock(LOG_SETTINGS.ticksRandomly());
+    public static final BurntPillarBlock BURNT_OAK_LOG = new BurntPillarBlock(LOG_SETTINGS.ticksRandomly());
+    public static final BurntPillarBlock BURNT_JUNGLE_LOG = new BurntPillarBlock(LOG_SETTINGS.ticksRandomly());
+    public static final BurntPillarBlock BURNT_SPRUCE_LOG = new BurntPillarBlock(LOG_SETTINGS.ticksRandomly());
+
+    public static final BurntBlock BURNT_PLANKS = new BurntBlock(FabricBlockSettings.of(Material.WOOD).sounds(BlockSoundGroup.WOOD).breakByTool(FabricToolTags.AXES).breakByHand(true).hardness(2f).resistance(3f).ticksRandomly());
+    public static final BurntSlabBlock BURNT_PLANKS_SLAB = new BurntSlabBlock(FabricBlockSettings.of(Material.WOOD).sounds(BlockSoundGroup.WOOD).breakByTool(FabricToolTags.AXES).breakByHand(true).hardness(2f).resistance(3f).ticksRandomly());
+    public static final BurntStairsBlock BURNT_PLANKS_STAIRS = new BurntStairsBlock(BURNT_PLANKS.getDefaultState(), FabricBlockSettings.of(Material.WOOD).sounds(BlockSoundGroup.WOOD).breakByTool(FabricToolTags.AXES).breakByHand(true).hardness(2f).resistance(3f).ticksRandomly());
 
     //Layer Block
     public static final LayerBlockFalling SAND_LAYER = new LayerBlockFalling(FabricBlockSettings.of(Material.AGGREGATE).sounds(BlockSoundGroup.SAND).hardness(0.5f).resistance(0.5f));
@@ -504,7 +522,7 @@ public class MBMBlocks {
     //Minecraft Stairs and Slabs
     public static final SlabBlock DIRT_SLAB = new SlabBlock(FabricBlockSettings.of(Material.SOIL).sounds(BlockSoundGroup.STONE).breakByTool(FabricToolTags.SHOVELS).breakByHand(true).hardness(0.5f).resistance(0.5f));
     public static final SlabBlock COARSE_DIRT_SLAB = new SlabBlock(FabricBlockSettings.of(Material.SOIL).sounds(BlockSoundGroup.STONE).breakByTool(FabricToolTags.SHOVELS).breakByHand(true).hardness(0.5f).resistance(0.5f));  
-    public static final SlabBlock GRASS_SLAB = new SlabBlock(FabricBlockSettings.of(Material.SOIL).sounds(BlockSoundGroup.STONE).breakByTool(FabricToolTags.SHOVELS).breakByHand(true).hardness(0.5f).resistance(0.5f));  
+    public static final GrassBlockSlab GRASS_SLAB = new GrassBlockSlab(FabricBlockSettings.copy(Blocks.GRASS_BLOCK));  
     public static final SlabBlock SNOW_GRASS_SLAB = new SlabBlock(FabricBlockSettings.of(Material.SOIL).sounds(BlockSoundGroup.STONE).breakByTool(FabricToolTags.SHOVELS).breakByHand(true).hardness(0.5f).resistance(0.5f));  
     //public static final SlabBlock CRACKED_STONE_BRICK_SLAB = new SlabBlock(FabricBlockSettings.of(Material.SOIL).sounds(BlockSoundGroup.STONE).breakByTool(FabricToolTags.SHOVELS).breakByHand(true).hardness(0.5f).resistance(0.5f));  
     //public static final SlabBlock CRACKED_NETHER_BRICK_SLAB = new SlabBlock(FabricBlockSettings.of(Material.SOIL).sounds(BlockSoundGroup.STONE).breakByTool(FabricToolTags.SHOVELS).breakByHand(true).hardness(0.5f).resistance(0.5f));  
@@ -609,8 +627,50 @@ public class MBMBlocks {
 
     public static final Block PACKED_DIRT = new Block(DIRT_SETTINGS);
 
-    //
+    //Wire
+    public static final Wire COPPER_WIRE = new Wire(FabricBlockSettings.copy(Blocks.COPPER_BLOCK));
+    public static final Wire IRON_WIRE = new Wire(FabricBlockSettings.copy(Blocks.IRON_BLOCK));
+
+    //Apple
+    public static final Apple APPLE = new Apple(FabricBlockSettings.of(Material.ORGANIC_PRODUCT).breakByHand(true).sounds(BlockSoundGroup.HONEY).strength(0.2F));
+
+    //Cabbage
+    public static final Cabbage CABBAGE = new Cabbage(FabricBlockSettings.of(Material.ORGANIC_PRODUCT).breakByHand(true).sounds(BlockSoundGroup.HONEY).strength(0.2F).nonOpaque());
+    public static final Cabbage RED_CABBAGE = new Cabbage(FabricBlockSettings.of(Material.ORGANIC_PRODUCT).breakByHand(true).sounds(BlockSoundGroup.HONEY).strength(0.2F).nonOpaque());
+
+    //Mini Blocks
+    public static final MiniBlock BUCKET_BLOCK = new MiniBlock(FabricBlockSettings.of(Material.METAL).breakByHand(true).sounds(BlockSoundGroup.METAL).strength(0.2F).nonOpaque());
+
+    public static final MiniBlock WATER_BUCKET_BLOCK = new MiniBlock(FabricBlockSettings.of(Material.METAL).breakByHand(true).sounds(BlockSoundGroup.METAL).strength(0.2F).nonOpaque());
+
+    public static final MiniBlock LAVA_BUCKET_BLOCK = new MiniBlock(FabricBlockSettings.of(Material.METAL).breakByHand(true).sounds(BlockSoundGroup.METAL).strength(0.2F).nonOpaque());
+
+    public static final MiniBlock MUD_BUCKET_BLOCK = new MiniBlock(FabricBlockSettings.of(Material.METAL).breakByHand(true).sounds(BlockSoundGroup.METAL).strength(0.2F).nonOpaque());
+
+    //Grapes
+
+    /* private static Boolean never(BlockState state, BlockView world, BlockPos pos, EntityType<?> type) {
+		return false;
+	} */
+
+    private static boolean never(BlockState state, BlockView world, BlockPos pos) {
+		return false;
+	}
+
+    public static final Grapes PURPLE_GRAPES = new Grapes(FabricBlockSettings.of(Material.ORGANIC_PRODUCT).breakByHand(true).sounds(BlockSoundGroup.HONEY).strength(0.2F));
+    public static final Grapes GREEN_GRAPES = new Grapes(FabricBlockSettings.of(Material.ORGANIC_PRODUCT).breakByHand(true).sounds(BlockSoundGroup.HONEY).strength(0.2F));
+
+    public static final GrapeLeaves GRAPE_LEAVES = new GrapeLeaves(FabricBlockSettings.of(Material.LEAVES).breakByHand(true).strength(0.2F).ticksRandomly().sounds(BlockSoundGroup.GRASS).suffocates(MBMBlocks::never).blockVision(MBMBlocks::never));
+    public static final GrapeLog GRAPE_LOG = new GrapeLog(FabricBlockSettings.of(Material.WOOD).breakByHand(true).strength(2.0F).sounds(BlockSoundGroup.WOOD).ticksRandomly());
+    public static final GrapeSpur GRAPE_SPUR = new GrapeSpur(FabricBlockSettings.of(Material.ORGANIC_PRODUCT).breakByHand(true).breakInstantly().ticksRandomly().sounds(BlockSoundGroup.GRASS));
+    public static final GrapeLeavesHanging GRAPE_LEAVES_HANGING = new GrapeLeavesHanging(FabricBlockSettings.of(Material.LEAVES).breakByHand(true).strength(0.2F).ticksRandomly().sounds(BlockSoundGroup.GRASS));
+    
+    //Side Stairs
     public static final SideStairs COBBLESTONE_SIDE_STAIRS = new SideStairs(STONE_SETTINGS);
+
+    //Unlit blcok
+    public static final UnlitTorch UNLIT_TORCH = new UnlitTorch(FabricBlockSettings.of(Material.DECORATION).noCollision().breakInstantly());
+    public static final UnlitWallTorch UNLIT_WALL_TORCH = new UnlitWallTorch(FabricBlockSettings.copy(UNLIT_TORCH));
 
     //PotionInfusedBlocks
     public static final PotionInfusedBlock PIB = new PotionInfusedBlock(StatusEffects.JUMP_BOOST,STONE_SETTINGS.luminance(createLightLevelFromBlockState(12)));
@@ -618,12 +678,6 @@ public class MBMBlocks {
     //Block Entity
     public static BlockEntityType<VaseBlockEntity> VASE_BLOCK_ENTITY;
     //public static BlockEntityType<VaseBlockEntity> BLACK_TERRACOTTA_VASE_BLOCK_ENTITY;/* , BLACK_TERRACOTTA_VASE_BLOCK_ENTITY */
-
-    public static final PillarBlock BURNT_BIRCH_LOG = new PillarBlock(LOG_SETTINGS);
-    public static final PillarBlock BURNT_DARK_OAK_LOG = new PillarBlock(LOG_SETTINGS);
-    public static final PillarBlock BURNT_OAK_LOG = new PillarBlock(LOG_SETTINGS);
-    public static final PillarBlock BURNT_JUNGLE_LOG = new PillarBlock(LOG_SETTINGS);
-    public static final PillarBlock BURNT_SPRUCE_LOG = new PillarBlock(LOG_SETTINGS);
 
 //##blockinit##//
 
@@ -672,6 +726,13 @@ public class MBMBlocks {
         registerBlock("chopped_stripped_spruce_log", CHOPPED_STRIPPED_SPRUCE_LOG);
         //Dead Grass Block
         registerBlock("dead_grass_block", DEAD_GRASS_BLOCK);
+        registerBlock("burnt_grass_block", BURNT_GRASS_BLOCK);
+        registerBlock("dead_grass_block_slab", DEAD_GRASS_BLOCK_SLAB);
+        registerBlock("burnt_grass_block_slab", BURNT_GRASS_BLOCK_SLAB);
+        registerBlock("dead_grass", DEAD_GRASS);
+        registerBlock("burnt_grass", BURNT_GRASS);
+        registerBlock("dead_tall_grass", DEAD_TALL_GRASS);
+        registerBlock("burnt_tall_grass", BURNT_TALL_GRASS);
         //Carved Melon
         registerBlock("carved_melon", CARVEDMELON);
         //Crop Block
@@ -956,6 +1017,11 @@ public class MBMBlocks {
         registerBlock("orange_terracotta_bricks_vertical_slab", ORANGE_TERRACOTTA_BRICKS_VERTICAL_SLAB);
         registerBlock("white_terracotta_bricks_vertical_slab", WHITE_TERRACOTTA_BRICKS_VERTICAL_SLAB);
         registerBlock("burnt_acacia_log", BURNT_ACACIA_LOG);
+        registerBlock("burnt_birch_log", BURNT_BIRCH_LOG);
+        registerBlock("burnt_dark_oak_log", BURNT_DARK_OAK_LOG);
+        registerBlock("burnt_oak_log", BURNT_OAK_LOG);
+        registerBlock("burnt_jungle_log", BURNT_JUNGLE_LOG);
+        registerBlock("burnt_spruce_log", BURNT_SPRUCE_LOG);
         registerBlock("burnt_planks", BURNT_PLANKS);
         registerBlock("burnt_planks_slab", BURNT_PLANKS_SLAB);
         registerBlock("burnt_planks_stairs", BURNT_PLANKS_STAIRS);
@@ -1065,11 +1131,6 @@ public class MBMBlocks {
         registerBlock("ruby_ore", RUBY_ORE);
         registerBlock("packed_dirt", PACKED_DIRT);
         registerBlock("spike", SPIKE);
-        registerBlock("burnt_birch_log", BURNT_BIRCH_LOG);
-        registerBlock("burnt_dark_oak_log", BURNT_DARK_OAK_LOG);
-        registerBlock("burnt_oak_log", BURNT_OAK_LOG);
-        registerBlock("burnt_jungle_log", BURNT_JUNGLE_LOG);
-        registerBlock("burnt_spruce_log", BURNT_SPRUCE_LOG);
         registerBlock("coarse_dirt_dark_stone_heavy", COARSE_DIRT_DARK_STONE_HEAVY);
         registerBlock("coarse_dirt_dark_stone_light", COARSE_DIRT_DARK_STONE_LIGHT);
         registerBlock("coarse_dirt_stone_heavy", COARSE_DIRT_STONE_HEAVY);
@@ -1083,6 +1144,29 @@ public class MBMBlocks {
         registerBlock("packed_dirt_stone_heavy", PACKED_DIRT_STONE_HEAVY);
         registerBlock("packed_dirt_stone_light", PACKED_DIRT_STONE_LIGHT);
         registerBlock("cobblestone_side_stairs", COBBLESTONE_SIDE_STAIRS, MBMItems.BATA);
+        registerBlockNoItem("unlit_wall_torch", UNLIT_WALL_TORCH);
+        registerBlock("unlit_torch", UNLIT_TORCH, new WallStandingBlockItem(UNLIT_TORCH, UNLIT_WALL_TORCH, MBMItems.BUILDING_BLOCKS));
+        //Wire
+        registerBlock("copper_wire", COPPER_WIRE);
+        registerBlock("iron_wire", IRON_WIRE);
+        //Grapes
+        registerBlock("purple_grapes", PURPLE_GRAPES);
+        registerBlock("green_grapes", GREEN_GRAPES);
+        registerBlock("grapes_leaves", GRAPE_LEAVES);
+        registerBlock("grapes_log", GRAPE_LOG);
+        registerBlockNoItem("grapes_spur", GRAPE_SPUR);
+        registerBlock("grapes_leaves_hanging", GRAPE_LEAVES_HANGING);
+        //Apple
+        registerBlock("apple", APPLE);
+        //Veggies
+        registerBlock("cabbage", CABBAGE, MBMItems.BATA);
+        registerBlock("red_cabbage", RED_CABBAGE, MBMItems.BATA);
+        //Buckets
+        registerBlock("bucket_block", BUCKET_BLOCK);
+        registerBlock("water_bucket_block", WATER_BUCKET_BLOCK);
+        registerBlock("lava_bucket_block", LAVA_BUCKET_BLOCK);
+        registerBlock("mud_bucket_block", MUD_BUCKET_BLOCK);
+        
 
         /* for (final Identifier id : Registry.BLOCK.getIds()){
             final Block entry = Registry.BLOCK.get(id);
@@ -1102,6 +1186,11 @@ public class MBMBlocks {
 
     private static void registerBlockNoItem(String blockName, Block block){
         Registry.register(Registry.BLOCK, new Identifier(moreblocksmod.ModName, blockName), block);
+    }
+
+    private static void registerBlock(String blockName, Block block, BlockItem item){
+        registerBlockNoItem(blockName, block);
+        Registry.register(Registry.ITEM, new Identifier(moreblocksmod.ModName, blockName), item);
     }
 
     private static void registerBlock(String blockName, Block block, Settings settings){

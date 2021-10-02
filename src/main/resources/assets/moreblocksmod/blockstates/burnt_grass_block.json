@@ -1,0 +1,10 @@
+{
+    "variants": {
+        "": [
+            { "model": "moreblocksmod:block/burnt_grass_block" },
+            { "model": "moreblocksmod:block/burnt_grass_block", "y": 90 },
+            { "model": "moreblocksmod:block/burnt_grass_block", "y": 180 },
+            { "model": "moreblocksmod:block/burnt_grass_block", "y": 270 }
+        ]
+    }
+}

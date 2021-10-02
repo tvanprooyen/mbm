@@ -41,12 +41,15 @@ public class MBMItems extends moreblocksmod {
     public static final Item.Settings BATA = new Item.Settings().group(MBM_BATA);
 
     //Custom Tools
-    public static final NetheriteHammer NETHERITE_HAMMER = new NetheriteHammer(ToolMaterials.NETHERITE, TOOLS.fireproof());
+    public static final NetheriteHammer NETHERITE_HAMMER = new NetheriteHammer(ToolMaterials.NETHERITE, new Item.Settings().group(MBM_TOOLS).fireproof());
 
     //Rice
     public static final Item RICE_SEEDS = new AliasedBlockItem(MBMBlocks.RICE, MISC);
     public static final Item RICE_LEAF_SHEATH = new Item(MISC);
-    
+
+    public static final Item GRAPE_SEEDS = new AliasedBlockItem(MBMBlocks.GRAPE_SPUR, MISC);
+
+
     //Bucket
     public static Item MUD_BUCKET;
 
@@ -67,7 +70,7 @@ public class MBMItems extends moreblocksmod {
 
         //----------ITEMS----------
         //Buckets
-        MUD_BUCKET = Registry.register(Registry.ITEM, new Identifier(ModName, "mud_bucket"), new BucketItem(MBMBlocks.STILL_MUD, MISC));
+        MUD_BUCKET = Registry.register(Registry.ITEM, new Identifier(ModName, "mud_bucket"), new BucketItem(MBMBlocks.STILL_MUD, new Item.Settings().group(MBM_MISC).maxCount(1)));
 
         //Custom Tools
         Registry.register(Registry.ITEM, new Identifier(ModName, "netherite_hammer"), NETHERITE_HAMMER);
@@ -83,6 +86,8 @@ public class MBMItems extends moreblocksmod {
         //Rice
         Registry.register(Registry.ITEM, new Identifier(ModName, "rice_seeds"), RICE_SEEDS);
         Registry.register(Registry.ITEM, new Identifier(ModName, "rice_leaf_sheath"), RICE_LEAF_SHEATH);
+
+        Registry.register(Registry.ITEM, new Identifier(ModName, "grape_seeds"), GRAPE_SEEDS);
 
         //Meterial
         Registry.register(Registry.ITEM, new Identifier(ModName, "ruby"), RUBY);

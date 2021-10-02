@@ -1,0 +1,6 @@
+﻿{
+    "variants": {
+      "leaves=true": { "model": "moreblocksmod:block/grapes_log" },
+      "leaves=false": { "model": "moreblocksmod:block/grapes_log_no_leaves" }
+    }
+  }

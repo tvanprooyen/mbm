@@ -1,0 +1,10 @@
+﻿{
+    "variants": {
+      "facing=up": { "model": "moreblocksmod:block/green_grapes_up" },
+      "facing=down": { "model": "moreblocksmod:block/green_grapes_down"},
+      "facing=north": { "model": "moreblocksmod:block/green_grapes_north"},
+      "facing=east": { "model": "moreblocksmod:block/green_grapes_east" },
+      "facing=south": { "model": "moreblocksmod:block/green_grapes_south"},
+      "facing=west": { "model": "moreblocksmod:block/green_grapes_west"}
+    }
+  }

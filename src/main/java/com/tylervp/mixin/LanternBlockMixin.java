@@ -15,6 +15,7 @@ import net.minecraft.world.WorldView;
 
 import com.tylervp.block.MBMBlocks;
 
+import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
 
 @Mixin(LanternBlock.class)
@@ -30,10 +31,28 @@ public abstract class LanternBlockMixin extends Block {
         Direction attachedDirection = state.<Boolean>get(LanternBlock.HANGING) ? Direction.DOWN : Direction.UP;
 
         Direction direction5 = attachedDirection.getOpposite();
-        return (Block.sideCoversSmallSquare(world, pos.offset(direction5), direction5.getOpposite()) || (world.getBlockState(pos.up()).isOf(MBMBlocks.THIN_OAK_LOG) || world.getBlockState(pos.up()).isOf(MBMBlocks.THIN_ACACIA_LOG)) || world.getBlockState(pos.up()).isOf(MBMBlocks.THIN_BIRCH_LOG) || world.getBlockState(pos.up()).isOf(MBMBlocks.THIN_DARK_OAK_LOG) || world.getBlockState(pos.up()).isOf(MBMBlocks.THIN_JUNGLE_LOG) || world.getBlockState(pos.up()).isOf(MBMBlocks.THIN_SPRUCE_LOG) || world.getBlockState(pos.up()).isOf(MBMBlocks.THIN_STRIPPED_ACACIA_LOG) || world.getBlockState(pos.up()).isOf(MBMBlocks.THIN_STRIPPED_BIRCH_LOG)  || world.getBlockState(pos.up()).isOf(MBMBlocks.THIN_STRIPPED_DARK_OAK_LOG) || world.getBlockState(pos.up()).isOf(MBMBlocks.THIN_STRIPPED_JUNGLE_LOG) || world.getBlockState(pos.up()).isOf(MBMBlocks.THIN_STRIPPED_OAK_LOG) || world.getBlockState(pos.up()).isOf(MBMBlocks.THIN_STRIPPED_SPRUCE_LOG) || world.getBlockState(pos.up()).isOf(MBMBlocks.ROPE)  || world.getBlockState(pos.up()).isOf(MBMBlocks.ROPEMID));
+        return (
+            Block.sideCoversSmallSquare(world, pos.offset(direction5), direction5.getOpposite()) || 
+            (
+                world.getBlockState(pos.up()).isOf(MBMBlocks.THIN_OAK_LOG) || 
+                world.getBlockState(pos.up()).isOf(MBMBlocks.THIN_ACACIA_LOG)) || 
+                world.getBlockState(pos.up()).isOf(MBMBlocks.THIN_BIRCH_LOG) || 
+                world.getBlockState(pos.up()).isOf(MBMBlocks.THIN_DARK_OAK_LOG) || 
+                world.getBlockState(pos.up()).isOf(MBMBlocks.THIN_JUNGLE_LOG) || 
+                world.getBlockState(pos.up()).isOf(MBMBlocks.THIN_SPRUCE_LOG) || 
+                world.getBlockState(pos.up()).isOf(MBMBlocks.THIN_STRIPPED_ACACIA_LOG) || 
+                world.getBlockState(pos.up()).isOf(MBMBlocks.THIN_STRIPPED_BIRCH_LOG)  || 
+                world.getBlockState(pos.up()).isOf(MBMBlocks.THIN_STRIPPED_DARK_OAK_LOG) || 
+                world.getBlockState(pos.up()).isOf(MBMBlocks.THIN_STRIPPED_JUNGLE_LOG) || 
+                world.getBlockState(pos.up()).isOf(MBMBlocks.THIN_STRIPPED_OAK_LOG) || 
+                world.getBlockState(pos.up()).isOf(MBMBlocks.THIN_STRIPPED_SPRUCE_LOG) || 
+                world.getBlockState(pos.up()).isOf(MBMBlocks.ROPE)  || 
+                world.getBlockState(pos.up()).isOf(MBMBlocks.ROPEMID
+            )
+        );
     }
 
-    
+    @Nullable
     @Override
     public BlockState getPlacementState(ItemPlacementContext ctx) {
         FluidState fluidState3 = ctx.getWorld().getFluidState(ctx.getBlockPos());
@@ -42,10 +61,10 @@ public abstract class LanternBlockMixin extends Block {
                 BlockState blockState8 = (BlockState)this.getDefaultState().with(LanternBlock.HANGING, lv2 == Direction.UP);
                 if((ctx.getWorld().getBlockState(ctx.getBlockPos().up()).isOf(MBMBlocks.ROPEMID) || ctx.getWorld().getBlockState(ctx.getBlockPos().up()).isOf(MBMBlocks.ROPE)) && lv2 == Direction.UP){
                     ctx.getWorld().setBlockState(ctx.getBlockPos().up(), MBMBlocks.ROPEMID.getDefaultState());
-                    blockState8 = (BlockState)MBMBlocks.LANTERN_ROPE.getDefaultState().with(LanternBlock.HANGING, lv2 == Direction.UP);
+                    blockState8 = (BlockState)MBMBlocks.LANTERN_ROPE.getDefaultState().with(LanternBlock.HANGING, lv2 == Direction.UP).with(LanternBlock.WATERLOGGED, fluidState3.getFluid() == Fluids.WATER);
                 }
                 if (blockState8.canPlaceAt(ctx.getWorld(), ctx.getBlockPos())) {
-                    return (BlockState)blockState8.with(LanternBlock.HANGING, fluidState3.getFluid() == Fluids.WATER);
+                    return (BlockState)blockState8.with(LanternBlock.HANGING, lv2 == Direction.UP).with(LanternBlock.WATERLOGGED, fluidState3.getFluid() == Fluids.WATER);
                 }
             }
         }

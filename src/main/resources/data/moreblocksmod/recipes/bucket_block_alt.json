@@ -1,0 +1,11 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "moreblocksmod:bucket_block"
+        }
+    ],
+    "result": {
+        "item": "minecraft:bucket"
+    }
+}

@@ -1,0 +1,7 @@
+{
+	"parent": "moreblocksmod:block/miniblock_north",
+	"textures": {
+		"particle": "moreblocksmod:block/water_bucket_block",
+        	"texture": "moreblocksmod:block/water_bucket_block"
+	}
+}

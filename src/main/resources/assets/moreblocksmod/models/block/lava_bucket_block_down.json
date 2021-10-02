@@ -1,0 +1,7 @@
+{
+	"parent": "moreblocksmod:block/miniblock_down",
+	"textures": {
+		"particle": "moreblocksmod:block/lava_bucket_block",
+        	"texture": "moreblocksmod:block/lava_bucket_block"
+	}
+}
