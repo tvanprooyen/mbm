@@ -1,0 +1,6 @@
+﻿{
+	"parent": "moreblocksmod:block/sideblock180deg",
+	"textures": {
+		"side":"moreblocksmod:block/cobbled_mossy_speckled_hengill_stone"
+	}
+}

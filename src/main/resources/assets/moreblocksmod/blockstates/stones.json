@@ -1,0 +1,34 @@
+﻿{
+  "variants": {
+    "": [
+      {
+        "model": "moreblocksmod:block/stones_1"
+      },
+      {
+        "model": "moreblocksmod:block/stones_1",
+        "y": 180
+      },
+      {
+        "model": "moreblocksmod:block/stones_2"
+      },
+      {
+        "model": "moreblocksmod:block/stones_2",
+        "y": 180
+      },
+      {
+        "model": "moreblocksmod:block/stones_3"
+      },
+      {
+        "model": "moreblocksmod:block/stones_3",
+        "y": 180
+      },
+      {
+        "model": "moreblocksmod:block/stones_4"
+      },
+      {
+        "model": "moreblocksmod:block/stones_4",
+        "y": 180
+      }
+    ]
+  }
+}

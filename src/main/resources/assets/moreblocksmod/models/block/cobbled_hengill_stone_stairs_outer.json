@@ -1,0 +1,8 @@
+﻿{
+    "parent": "block/outer_stairs",
+    "textures": {
+        "bottom": "moreblocksmod:block/cobbled_hengill_stone",
+        "top": "moreblocksmod:block/cobbled_hengill_stone",
+        "side": "moreblocksmod:block/cobbled_hengill_stone"
+    }
+}

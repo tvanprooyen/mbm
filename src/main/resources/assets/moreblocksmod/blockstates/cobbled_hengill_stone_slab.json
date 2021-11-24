@@ -1,0 +1,7 @@
+﻿{
+  "variants": {
+      "type=bottom": { "model": "moreblocksmod:block/cobbled_hengill_stone_slab" },
+      "type=top": { "model": "moreblocksmod:block/cobbled_hengill_stone_slab_top" },
+      "type=double": { "model": "moreblocksmod:block/cobbled_hengill_stone"}
+  }
+}

@@ -1,0 +1,15 @@
+﻿{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+      {
+        "item": "moreblocksmod:cobbled_hengill_stone"
+      },
+      {
+        "item": "minecraft:diorite"
+      }
+    ],
+    "result": {
+      "item": "moreblocksmod:cobbled_speckled_hengill_stone",
+      "count": 2
+    }
+  }

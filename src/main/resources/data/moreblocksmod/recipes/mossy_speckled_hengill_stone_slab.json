@@ -1,0 +1,15 @@
+﻿{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+      "###"
+  ],
+  "key": {
+      "#": {
+          "item": "moreblocksmod:mossy_speckled_hengill_stone"
+      }
+  },
+  "result": {
+      "item": "moreblocksmod:mossy_speckled_hengill_stone_slab",
+      "count": 6
+  }
+}

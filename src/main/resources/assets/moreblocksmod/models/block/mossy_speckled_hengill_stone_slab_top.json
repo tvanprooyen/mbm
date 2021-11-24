@@ -1,0 +1,9 @@
+﻿{
+    "parent": "block/slab_top",
+    "textures": {
+        "bottom": "moreblocksmod:block/mossy_speckled_hengill_stone",
+        "top": "moreblocksmod:block/mossy_speckled_hengill_stone",
+        "side": "moreblocksmod:block/mossy_speckled_hengill_stone"
+    }
+}
+

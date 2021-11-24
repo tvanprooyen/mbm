@@ -1,0 +1,7 @@
+﻿{
+	"parent": "moreblocksmod:block/layerheight8",
+	"textures": {
+		"particle": "moreblocksmod:block/black_sand",
+        	"texture": "moreblocksmod:block/black_sand"
+	}
+}

@@ -1,0 +1,9 @@
+﻿{
+    "parent": "block/slab",
+    "textures": {
+        "bottom": "moreblocksmod:block/red_sandstone_bricks",
+        "top": "moreblocksmod:block/red_sandstone_bricks",
+        "side": "moreblocksmod:block/red_sandstone_bricks"
+    }
+}
+

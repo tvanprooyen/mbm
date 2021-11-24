@@ -1,0 +1,15 @@
+﻿{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+      {
+        "item": "moreblocksmod:speckled_hengill_stone"
+      },
+      {
+        "item": "minecraft:moss_carpet"
+      }
+    ],
+    "result": {
+      "item": "moreblocksmod:mossy_speckled_hengill_stone",
+      "count": 1
+    }
+  }

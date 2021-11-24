@@ -1,0 +1,12 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:red_sandstone"
+        }
+    ],
+    "result": {
+        "item": "moreblocksmod:cobbled_red_sandstone",
+        "count": 1
+    }
+}

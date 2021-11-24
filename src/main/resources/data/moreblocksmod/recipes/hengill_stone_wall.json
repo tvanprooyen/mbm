@@ -1,0 +1,16 @@
+﻿{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "moreblocksmod:hengill_stone"
+    }
+  },
+  "result": {
+    "item": "moreblocksmod:hengill_stone_wall",
+    "count": 6
+  }
+}

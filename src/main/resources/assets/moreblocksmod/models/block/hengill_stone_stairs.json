@@ -1,0 +1,8 @@
+﻿{
+    "parent": "block/stairs",
+    "textures": {
+        "bottom": "moreblocksmod:block/hengill_stone",
+        "top": "moreblocksmod:block/hengill_stone",
+        "side": "moreblocksmod:block/hengill_stone"
+    }
+}

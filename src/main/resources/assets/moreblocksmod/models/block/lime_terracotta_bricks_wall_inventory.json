@@ -1,0 +1,6 @@
+﻿{
+  "parent": "minecraft:block/wall_inventory",
+  "textures": {
+    "wall": "moreblocksmod:block/lime_terracotta_bricks"
+  }
+}

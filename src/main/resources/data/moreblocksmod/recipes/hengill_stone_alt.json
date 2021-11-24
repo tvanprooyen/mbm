@@ -1,0 +1,12 @@
+﻿{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+      {
+        "item": "moreblocksmod:cobbled_hengill_stone"
+      }
+    ],
+    "result": {
+      "item": "moreblocksmod:hengill_stone",
+      "count": 1
+    }
+  }

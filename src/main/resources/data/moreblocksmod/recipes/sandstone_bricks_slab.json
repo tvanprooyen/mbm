@@ -1,0 +1,15 @@
+﻿{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+      "###"
+  ],
+  "key": {
+      "#": {
+          "item": "moreblocksmod:sandstone_bricks"
+      }
+  },
+  "result": {
+      "item": "moreblocksmod:sandstone_bricks_slab",
+      "count": 6
+  }
+}

@@ -1,0 +1,16 @@
+﻿{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "moreblocksmod:terracotta_bricks"
+    }
+  },
+  "result": {
+    "item": "moreblocksmod:terracotta_bricks_wall",
+    "count": 6
+  }
+}

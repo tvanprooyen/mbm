@@ -1,0 +1,19 @@
+﻿{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+      "s#",
+      "#s"
+  ],
+  "key": {
+    "#": {
+        "item": "minecraft:andesite"
+    },
+      "s": {
+        "item": "minecraft:stone"
+    }
+  },
+  "result": {
+      "item": "moreblocksmod:hengill_stone",
+      "count": 4
+  }
+}

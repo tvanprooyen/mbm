@@ -1,0 +1,12 @@
+﻿{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "moreblocksmod:black_sand"
+        }
+    ],
+    "result": {
+        "item": "moreblocksmod:black_sand_layer",
+        "count": 8
+    }
+}

@@ -1,0 +1,6 @@
+﻿{
+  "parent": "minecraft:block/template_wall_side_tall",
+  "textures": {
+    "wall": "moreblocksmod:block/light_blue_terracotta_bricks"
+  }
+}

@@ -1,0 +1,15 @@
+﻿{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+      {
+        "item": "minecraft:white_dye"
+      },
+      {
+        "item": "minecraft:sand"
+      }
+    ],
+    "result": {
+      "item": "moreblocksmod:white_sand",
+      "count": 1
+    }
+  }
