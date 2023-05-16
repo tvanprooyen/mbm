@@ -2,9 +2,11 @@ package com.tylervp.mixin;
 
 import com.google.common.collect.ImmutableMap;
 import com.tylervp.block.BurntBlock;
+import com.tylervp.block.BurntHollowLog;
 import com.tylervp.block.BurntPillarBlock;
 import com.tylervp.block.BurntSlabBlock;
 import com.tylervp.block.BurntStairsBlock;
+import com.tylervp.block.ChimneyBlock;
 import com.tylervp.block.MBMBlocks;
 
 import org.spongepowered.asm.mixin.Mixin;
@@ -38,18 +40,46 @@ public class ShovelMixin {
         BlockState blockState = world.getBlockState(blockPos);
         PlayerEntity playerEntity = context.getPlayer();
 
-        if(blockState.isOf(MBMBlocks.BURNT_GRASS_BLOCK) || blockState.getBlock().getClass() == BurntBlock.class || blockState.getBlock().getClass() == BurntPillarBlock.class || blockState.getBlock().getClass() == BurntStairsBlock.class || blockState.getBlock().getClass() == BurntSlabBlock.class){
+        if(blockState.isOf(MBMBlocks.BURNT_GRASS_BLOCK) || blockState.getBlock() instanceof BurntHollowLog || blockState.getBlock() instanceof BurntBlock || blockState.getBlock() instanceof BurntPillarBlock || blockState.getBlock() instanceof BurntStairsBlock || blockState.getBlock() instanceof BurntSlabBlock){
             if(world.getBlockState(blockPos).get(BurntBlock.AGE) < 3) {
                 world.playSound(playerEntity, blockPos, SoundEvents.ITEM_SHOVEL_FLATTEN, SoundCategory.BLOCKS, 1.0f, 1.0f);
                 world.playSound(playerEntity, blockPos, SoundEvents.BLOCK_FIRE_EXTINGUISH, SoundCategory.BLOCKS, 1.0f, 1.0f);
                 world.syncWorldEvent(1501, blockPos, 0);
 
-                if(blockState.getBlock().getClass() == BurntSlabBlock.class){
-                    world.setBlockState(blockPos, blockState.with(BurntSlabBlock.AGE, 3).with(BurntSlabBlock.PERSISTENT, false).with(SlabBlock.TYPE, blockState.get(SlabBlock.TYPE)).with(SlabBlock.WATERLOGGED, blockState.get(SlabBlock.WATERLOGGED)));
-                } else if(blockState.getBlock().getClass() == BurntStairsBlock.class){
-                    world.setBlockState(blockPos, blockState.with(BurntStairsBlock.AGE, 3).with(BurntStairsBlock.PERSISTENT, false).with(StairsBlock.FACING, blockState.get(StairsBlock.FACING)).with(StairsBlock.HALF, blockState.get(StairsBlock.HALF)).with(StairsBlock.WATERLOGGED, blockState.get(StairsBlock.WATERLOGGED)));
-                } else if(blockState.getBlock().getClass() == BurntPillarBlock.class){
-                    world.setBlockState(blockPos, blockState.with(Properties.AXIS, blockState.get(Properties.AXIS)).with(BurntPillarBlock.AGE, 3).with(BurntPillarBlock.PERSISTENT, false));
+                if(blockState.getBlock() instanceof BurntSlabBlock){
+                    world.setBlockState(
+                        blockPos,
+                        blockState.with(BurntSlabBlock.AGE, 3)
+                        .with(BurntSlabBlock.PERSISTENT, false)
+                        .with(SlabBlock.TYPE, blockState.get(SlabBlock.TYPE))
+                        .with(SlabBlock.WATERLOGGED, blockState.get(SlabBlock.WATERLOGGED))
+                    );
+                } else if(blockState.getBlock() instanceof BurntStairsBlock){
+                    world.setBlockState(
+                        blockPos,
+                        blockState.with(BurntStairsBlock.AGE, 3)
+                        .with(BurntStairsBlock.PERSISTENT, false)
+                        .with(StairsBlock.FACING, blockState.get(StairsBlock.FACING))
+                        .with(StairsBlock.HALF, blockState.get(StairsBlock.HALF))
+                        .with(StairsBlock.WATERLOGGED, blockState.get(StairsBlock.WATERLOGGED))
+                    );
+                } else if(blockState.getBlock() instanceof BurntPillarBlock){
+                    world.setBlockState(
+                        blockPos,
+                        blockState.with(Properties.AXIS, blockState.get(Properties.AXIS))
+                        .with(BurntPillarBlock.AGE, 3)
+                        .with(BurntPillarBlock.PERSISTENT, false)
+                    );
+                } else if(blockState.getBlock() instanceof BurntHollowLog){
+                    world.setBlockState(
+                        blockPos,
+                        blockState
+                        .with(Properties.AXIS, blockState.get(Properties.AXIS))
+                        .with(BurntHollowLog.AGE, 3)
+                        .with(BurntHollowLog.PERSISTENT, false)
+                        .with(ChimneyBlock.LARGE, blockState.get(ChimneyBlock.LARGE))
+                        .with(ChimneyBlock.WATERLOGGED, blockState.get(ChimneyBlock.WATERLOGGED))
+                    );
                 } else {
                     world.setBlockState(blockPos, blockState.with(BurntBlock.AGE, 3).with(BurntBlock.PERSISTENT, false));
                 }

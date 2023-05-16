@@ -1,0 +1,17 @@
+  {
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+      {
+        "item": "moreblocksmod:brown_mushroom"
+      },
+      {
+        "item": "moreblocksmod:red_mushroom"
+      },
+      {
+        "item": "minecraft:bowl"
+      }
+    ],
+    "result": {
+      "item": "minecraft:mushroom_stew"
+    }
+  }

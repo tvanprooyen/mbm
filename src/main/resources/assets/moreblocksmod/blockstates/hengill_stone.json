@@ -1,5 +1,20 @@
 ﻿{
-    "variants": {
-      "": { "model": "moreblocksmod:block/hengill_stone" }
-    }
+  "variants": {
+    "": [
+      {
+        "model": "moreblocksmod:block/hengill_stone"
+      },
+      {
+        "model": "moreblocksmod:block/hengill_stone_mirrored"
+      },
+      {
+        "model": "moreblocksmod:block/hengill_stone",
+        "y": 90
+      },
+      {
+        "model": "moreblocksmod:block/hengill_stone_mirrored",
+        "y": 90
+      }
+    ]
   }
+}

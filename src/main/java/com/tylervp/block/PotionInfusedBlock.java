@@ -3,7 +3,10 @@ package com.tylervp.block;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
-import java.util.Random;
+
+import org.joml.Vector3f;
+
+import net.minecraft.util.math.random.Random;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
@@ -39,7 +42,6 @@ import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.Vec3d;
-import net.minecraft.util.math.Vec3f;
 import net.minecraft.world.World;
 
 public class PotionInfusedBlock extends Block {
@@ -243,37 +245,37 @@ public class PotionInfusedBlock extends Block {
     private static void spawnParticles(World world, BlockPos pos, StatusEffect effect) {
         //double double3 = 0.5625;
         Random random5 = world.random;
-        Vec3f partical;
+        Vector3f partical;
 
-        Vec3f RED = DustParticleEffect.RED;
-        Vec3f GREEN = new Vec3f(Vec3d.unpackRgb(16777215)); //(0.01f, 1f, 0f, 1.0F);
-        Vec3f BLUE = new Vec3f(Vec3d.unpackRgb(16777215)); //(0.01f, 0f, 1f, 1.0F);
-        //ParticleEffect CYAN = new Vec3f(Vec3d.unpackRgb(16777215)); //(0.01f, 1f, 1f, 1.0F);
-        Vec3f YELLOW = new Vec3f(Vec3d.unpackRgb(16777215)); //(1f, 1f, 0f, 1.0F);
-        //ParticleEffect MAGENTA = new Vec3f(Vec3d.unpackRgb(16777215)); //(1f, 0f, 1f, 1.0F);
-        Vec3f BLACK = new Vec3f(Vec3d.unpackRgb(16777215)); //(0.01f, 0f, 0f, 1.0F);
-        Vec3f WHITE = new Vec3f(Vec3d.unpackRgb(16777215)); //(1f, 1f, 1f, 1.0F);
-        Vec3f AZURE = new Vec3f(Vec3d.unpackRgb(16777215)); //(0.145f, 0.322f, 0.647f, 1.0F);
-        Vec3f KHAKI = new Vec3f(Vec3d.unpackRgb(16777215)); //(0.75f,0.64f,0.3f, 1.0F);
-        //ParticleEffect DARK_GRAY = new Vec3f(Vec3d.unpackRgb(16777215)); //(0.12f,0.12f,0.14f, 1.0F);
-        Vec3f AMBER = new Vec3f(Vec3d.unpackRgb(16777215)); //(0.89f,0.6f,0.23f, 1.0F);
-        Vec3f OLIVE = new Vec3f(Vec3d.unpackRgb(16777215)); //(0.58f,0.63f,0.38f, 1.0F);
-        Vec3f ORANGE = new Vec3f(Vec3d.unpackRgb(16777215)); //(0.97f,0.49f,0.14f, 1.0F);
-        Vec3f DULL_GREEN = new Vec3f(Vec3d.unpackRgb(16777215)); //(0.35f,0.46f,0.33f, 1.0F);
-        Vec3f LIGHT_GRAY = new Vec3f(Vec3d.unpackRgb(16777215)); //(0.5f,0.51f,0.57f, 1.0F);
-        Vec3f SKY_BLUE = new Vec3f(Vec3d.unpackRgb(16777215)); //(0.81f,1f,1f, 1.0F);
-        Vec3f AVOCADO_GREEN = new Vec3f(Vec3d.unpackRgb(16777215)); //(0.2f,0.6f,0.01f, 1.0F);
-        Vec3f DARK_KHAKI = new Vec3f(Vec3d.unpackRgb(16777215)); //(0.29f,0.26f,0.09f, 1.0F);
-        Vec3f PURPLE = new Vec3f(Vec3d.unpackRgb(16777215)); //(0.33f,0.11f,0.29f, 1.0F);
-        Vec3f MEDIUM_BLUE = new Vec3f(Vec3d.unpackRgb(16777215)); //(0.12f,0.12f,0.63f, 1.0F);
-        Vec3f PINK = new Vec3f(Vec3d.unpackRgb(16777215)); //(0.8f,0.36f,0.67f, 1.0F);
-        Vec3f MAHOGANY = new Vec3f(Vec3d.unpackRgb(16777215)); //(0.6f,0.27f,0.23f, 1.0F);
-        Vec3f GRAY_BLUE = new Vec3f(Vec3d.unpackRgb(16777215)); //(0.35f,0.42f,0.51f, 1.0F);
-        Vec3f ELECTRIC_BLUE = new Vec3f(Vec3d.unpackRgb(16777215)); //(0.49f,0.69f,0.78f, 1.0F);
-        Vec3f DARK_RED = new Vec3f(Vec3d.unpackRgb(16777215)); //(0.58f,0.14f,0.14f, 1.0F);
-        Vec3f GRAY = new Vec3f(Vec3d.unpackRgb(16777215)); //(0.28f,0.3f,0.28f, 1.0F);
-        Vec3f BISTRE = new Vec3f(Vec3d.unpackRgb(16777215)); //(0.21f,0.16f,0.15f, 1.0F);
-        Vec3f MAROON = new Vec3f(Vec3d.unpackRgb(16777215)); //(0.26f,0.04f,0.04f, 1.0F);
+        Vector3f RED = DustParticleEffect.RED;
+        Vector3f GREEN = new Vector3f(Vec3d.unpackRgb(16777215).toVector3f()); //(0.01f, 1f, 0f, 1.0F);
+        Vector3f BLUE = new Vector3f(Vec3d.unpackRgb(16777215).toVector3f()); //(0.01f, 0f, 1f, 1.0F);
+        //ParticleEffect CYAN = new Vector3f(Vec3d.unpackRgb(16777215).toVector3f()); //(0.01f, 1f, 1f, 1.0F);
+        Vector3f YELLOW = new Vector3f(Vec3d.unpackRgb(16777215).toVector3f()); //(1f, 1f, 0f, 1.0F);
+        //ParticleEffect MAGENTA = new Vector3f(Vec3d.unpackRgb(16777215).toVector3f()); //(1f, 0f, 1f, 1.0F);
+        Vector3f BLACK = new Vector3f(Vec3d.unpackRgb(16777215).toVector3f()); //(0.01f, 0f, 0f, 1.0F);
+        Vector3f WHITE = new Vector3f(Vec3d.unpackRgb(16777215).toVector3f()); //(1f, 1f, 1f, 1.0F);
+        Vector3f AZURE = new Vector3f(Vec3d.unpackRgb(16777215).toVector3f()); //(0.145f, 0.322f, 0.647f, 1.0F);
+        Vector3f KHAKI = new Vector3f(Vec3d.unpackRgb(16777215).toVector3f()); //(0.75f,0.64f,0.3f, 1.0F);
+        //ParticleEffect DARK_GRAY = new Vector3f(Vec3d.unpackRgb(16777215).toVector3f()); //(0.12f,0.12f,0.14f, 1.0F);
+        Vector3f AMBER = new Vector3f(Vec3d.unpackRgb(16777215).toVector3f()); //(0.89f,0.6f,0.23f, 1.0F);
+        Vector3f OLIVE = new Vector3f(Vec3d.unpackRgb(16777215).toVector3f()); //(0.58f,0.63f,0.38f, 1.0F);
+        Vector3f ORANGE = new Vector3f(Vec3d.unpackRgb(16777215).toVector3f()); //(0.97f,0.49f,0.14f, 1.0F);
+        Vector3f DULL_GREEN = new Vector3f(Vec3d.unpackRgb(16777215).toVector3f()); //(0.35f,0.46f,0.33f, 1.0F);
+        Vector3f LIGHT_GRAY = new Vector3f(Vec3d.unpackRgb(16777215).toVector3f()); //(0.5f,0.51f,0.57f, 1.0F);
+        Vector3f SKY_BLUE = new Vector3f(Vec3d.unpackRgb(16777215).toVector3f()); //(0.81f,1f,1f, 1.0F);
+        Vector3f AVOCADO_GREEN = new Vector3f(Vec3d.unpackRgb(16777215).toVector3f()); //(0.2f,0.6f,0.01f, 1.0F);
+        Vector3f DARK_KHAKI = new Vector3f(Vec3d.unpackRgb(16777215).toVector3f()); //(0.29f,0.26f,0.09f, 1.0F);
+        Vector3f PURPLE = new Vector3f(Vec3d.unpackRgb(16777215).toVector3f()); //(0.33f,0.11f,0.29f, 1.0F);
+        Vector3f MEDIUM_BLUE = new Vector3f(Vec3d.unpackRgb(16777215).toVector3f()); //(0.12f,0.12f,0.63f, 1.0F);
+        Vector3f PINK = new Vector3f(Vec3d.unpackRgb(16777215).toVector3f()); //(0.8f,0.36f,0.67f, 1.0F);
+        Vector3f MAHOGANY = new Vector3f(Vec3d.unpackRgb(16777215).toVector3f()); //(0.6f,0.27f,0.23f, 1.0F);
+        Vector3f GRAY_BLUE = new Vector3f(Vec3d.unpackRgb(16777215).toVector3f()); //(0.35f,0.42f,0.51f, 1.0F);
+        Vector3f ELECTRIC_BLUE = new Vector3f(Vec3d.unpackRgb(16777215).toVector3f()); //(0.49f,0.69f,0.78f, 1.0F);
+        Vector3f DARK_RED = new Vector3f(Vec3d.unpackRgb(16777215).toVector3f()); //(0.58f,0.14f,0.14f, 1.0F);
+        Vector3f GRAY = new Vector3f(Vec3d.unpackRgb(16777215).toVector3f()); //(0.28f,0.3f,0.28f, 1.0F);
+        Vector3f BISTRE = new Vector3f(Vec3d.unpackRgb(16777215).toVector3f()); //(0.21f,0.16f,0.15f, 1.0F);
+        Vector3f MAROON = new Vector3f(Vec3d.unpackRgb(16777215).toVector3f()); //(0.26f,0.04f,0.04f, 1.0F);
 
 
 

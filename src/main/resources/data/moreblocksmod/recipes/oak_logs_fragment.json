@@ -1,0 +1,19 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "FF ",
+      "PPF",
+      "PPF"
+    ],
+    "key": {
+      "P": {
+        "item": "minecraft:oak_planks"
+      },
+      "F": {
+        "item": "moreblocksmod:oak_bark_fragment"
+      }
+    },
+    "result": {
+      "item": "minecraft:oak_log"
+    }
+}

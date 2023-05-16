@@ -13,7 +13,7 @@ import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.Properties;
 import net.minecraft.state.property.Property;
-import net.minecraft.tag.FluidTags;
+import net.minecraft.registry.tag.FluidTags;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.shape.VoxelShape;
@@ -74,7 +74,7 @@ public class SideSlab extends HorizontalFacingBlock implements Waterloggable{
 	@Override
     public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState newState, WorldAccess world, BlockPos pos, BlockPos posFrom) {
         if (state.<Boolean>get((Property<Boolean>)SideSlab.WATERLOGGED)) {
-            world.getFluidTickScheduler().schedule(pos, Fluids.WATER, Fluids.WATER.getTickRate(world));
+            world.scheduleFluidTick(pos, Fluids.WATER, Fluids.WATER.getTickRate(world));
         }
         
         return super.getStateForNeighborUpdate(state, direction, newState, world, pos, posFrom);
@@ -95,21 +95,21 @@ public class SideSlab extends HorizontalFacingBlock implements Waterloggable{
 		//player.sendMessage(new LiteralText("Z Top Hit:" + Boolean.toString((ctx.getHitPos().z - pos.getZ() > 0.5))), false);
 		//player.sendMessage(new LiteralText("Player Facing:" + ctx.getPlayerFacing()), false);
 
-		if(ctx.getPlayerFacing() == Direction.EAST && !(ctx.getHitPos().x - pos.getX() > 0.5)){
+		if(ctx.getHorizontalPlayerFacing() == Direction.EAST && !(ctx.getHitPos().x - pos.getX() > 0.5)){
 			return (BlockState)this.getDefaultState().with(FACING, Direction.WEST).with(HALF, true).with(Properties.WATERLOGGED, fluidState5.getFluid() == Fluids.WATER);
 		}
-		if(ctx.getPlayerFacing() == Direction.WEST && (ctx.getHitPos().x - pos.getX() > 0.5)){
+		if(ctx.getHorizontalPlayerFacing() == Direction.WEST && (ctx.getHitPos().x - pos.getX() > 0.5)){
 			return (BlockState)this.getDefaultState().with(FACING, Direction.EAST).with(HALF, true).with(Properties.WATERLOGGED, fluidState5.getFluid() == Fluids.WATER);
 		}
 
-		if(ctx.getPlayerFacing() == Direction.SOUTH && !(ctx.getHitPos().z - pos.getZ() > 0.5)){
+		if(ctx.getHorizontalPlayerFacing() == Direction.SOUTH && !(ctx.getHitPos().z - pos.getZ() > 0.5)){
 			return (BlockState)this.getDefaultState().with(FACING, Direction.NORTH).with(HALF, true).with(Properties.WATERLOGGED, fluidState5.getFluid() == Fluids.WATER);
 		}
-		if(ctx.getPlayerFacing() == Direction.NORTH && (ctx.getHitPos().z - pos.getZ() > 0.5)){
+		if(ctx.getHorizontalPlayerFacing() == Direction.NORTH && (ctx.getHitPos().z - pos.getZ() > 0.5)){
 			return (BlockState)this.getDefaultState().with(FACING, Direction.SOUTH).with(HALF, true).with(Properties.WATERLOGGED, fluidState5.getFluid() == Fluids.WATER);
 		}
 
-		return (BlockState)this.getDefaultState().with(FACING, ctx.getPlayerFacing()).with(HALF, true).with(Properties.WATERLOGGED, fluidState5.getFluid() == Fluids.WATER);
+		return (BlockState)this.getDefaultState().with(FACING, ctx.getHorizontalPlayerFacing()).with(HALF, true).with(Properties.WATERLOGGED, fluidState5.getFluid() == Fluids.WATER);
 	}
 
 	private boolean isHalf(BlockState state){
@@ -119,7 +119,7 @@ public class SideSlab extends HorizontalFacingBlock implements Waterloggable{
 	@Override
 	public boolean canReplace(BlockState state, ItemPlacementContext context) {
 		if(isHalf(state) && context.getStack().getItem() == this.asItem()) {
-			if(state.get(FACING) == context.getSide().getOpposite() && (context.getPlayerFacing() != Direction.DOWN || context.getPlayerFacing() != Direction.UP)){
+			if(state.get(FACING) == context.getSide().getOpposite() && (context.getHorizontalPlayerFacing() != Direction.DOWN || context.getHorizontalPlayerFacing() != Direction.UP)){
 				return context.canReplaceExisting();
 			}
 		}

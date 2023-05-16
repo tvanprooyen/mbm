@@ -1,6 +1,6 @@
 package com.tylervp.block;
 
-import java.util.Random;
+import net.minecraft.util.math.random.Random;
 
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
@@ -100,7 +100,7 @@ public class HeatedBlock extends Block {
     public void onSteppedOn(World world, BlockPos pos, BlockState state, Entity entity) {
         if (world.random.nextInt(10) == 0) {
             if (!entity.isFireImmune() && entity instanceof LivingEntity && !EnchantmentHelper.hasFrostWalker((LivingEntity)entity)) {
-                entity.damage(DamageSource.HOT_FLOOR, 1.0f);
+                entity.damage(world.getDamageSources().hotFloor(), 1.0f);
             }
         }
         super.onSteppedOn(world, pos, state, entity);

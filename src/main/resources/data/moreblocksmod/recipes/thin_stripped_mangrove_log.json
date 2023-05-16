@@ -1,0 +1,16 @@
+﻿{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "#",
+        "#"
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:stripped_mangrove_log"
+        }
+    },
+    "result": {
+        "item": "moreblocksmod:thin_stripped_mangrove_log",
+        "count": 8
+    }
+}

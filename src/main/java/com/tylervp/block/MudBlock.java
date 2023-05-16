@@ -6,11 +6,13 @@ import net.minecraft.block.BlockRenderType;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
-import java.util.Random;
+import net.minecraft.util.math.random.Random;
 
 import com.google.common.collect.Lists;
 import com.tylervp.item.MBMItems;
 
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -33,7 +35,7 @@ import net.minecraft.sound.SoundEvents;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.IntProperty;
 import net.minecraft.state.property.Property;
-import net.minecraft.tag.FluidTags;
+import net.minecraft.registry.tag.FluidTags;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Box;
 import net.minecraft.util.math.Direction;
@@ -69,7 +71,7 @@ public class MudBlock extends Block implements FluidDrainable {
     
     @Override
     public VoxelShape getCollisionShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
-        if (context.isAbove(FluidBlock.COLLISION_SHAPE, pos, true) && state.<Integer>get((Property<Integer>)FluidBlock.LEVEL) == 0 && context.canWalkOnFluid(world.getFluidState(pos.up()), this.fluid)) {
+        if (context.isAbove(FluidBlock.COLLISION_SHAPE, pos, true) && state.<Integer>get((Property<Integer>)FluidBlock.LEVEL) == 0 && context.canWalkOnFluid(world.getFluidState(pos.up()), this.fluid.getDefaultState())) {
             return FluidBlock.COLLISION_SHAPE;
         }
         return VoxelShapes.empty();
@@ -84,9 +86,9 @@ public class MudBlock extends Block implements FluidDrainable {
     public void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
         state.getFluidState().onRandomTick(world, pos, random);
     }
-    
+
     @Override
-    public boolean isTranslucent(BlockState state, BlockView world, BlockPos pos) {
+    public boolean isTransparent(BlockState state, BlockView world, BlockPos pos) {
         return false;
     }
     
@@ -101,7 +103,7 @@ public class MudBlock extends Block implements FluidDrainable {
         return this.statesByLevel.get(Math.min(integer3, 8));
     }
     
-    //@Environment(EnvType.CLIENT)
+    @Environment(EnvType.CLIENT)
     @Override
     public boolean isSideInvisible(BlockState state, BlockState stateFrom, Direction direction) {
         return stateFrom.getFluidState().getFluid().matchesType(this.fluid);
@@ -125,10 +127,10 @@ public class MudBlock extends Block implements FluidDrainable {
     @Override
     public void onBlockAdded(BlockState state, World world, BlockPos pos, BlockState oldState, boolean notify) {
         if (this.receiveNeighborFluids(world, pos, state)) {
-            world.getFluidTickScheduler().schedule(pos, state.getFluidState().getFluid(), this.fluid.getTickRate(world));
+            world.scheduleFluidTick(pos, state.getFluidState().getFluid(), this.fluid.getTickRate(world));
         }
 
-        if (world.getDimension().isUltrawarm()) {
+        if (world.getDimension().ultrawarm()) {
             world.setBlockState(pos, Blocks.DIRT.getDefaultState());
             this.playExtinguishEvent(world, pos);
         }
@@ -141,7 +143,7 @@ public class MudBlock extends Block implements FluidDrainable {
     @Override
     public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState newState, WorldAccess world, BlockPos pos, BlockPos posFrom) {
         if (state.getFluidState().isStill() || newState.getFluidState().isStill()) {
-            world.getFluidTickScheduler().schedule(pos, state.getFluidState().getFluid(), this.fluid.getTickRate(world));
+            world.scheduleFluidTick(pos, state.getFluidState().getFluid(), this.fluid.getTickRate(world));
         }
         return super.getStateForNeighborUpdate(state, direction, newState, world, pos, posFrom);
     }
@@ -149,7 +151,7 @@ public class MudBlock extends Block implements FluidDrainable {
     @Override
     public void neighborUpdate(BlockState state, World world, BlockPos pos, Block block, BlockPos fromPos, boolean notify) {
         if (this.receiveNeighborFluids(world, pos, state)) {
-            world.getFluidTickScheduler().schedule(pos, state.getFluidState().getFluid(), this.fluid.getTickRate(world));
+            world.scheduleFluidTick(pos, state.getFluidState().getFluid(), this.fluid.getTickRate(world));
         }
         
         BlockState blockstatedown = world.getBlockState(pos.down());

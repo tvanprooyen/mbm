@@ -1,5 +1,21 @@
 ﻿{
-    "variants": {
-      "": { "model": "moreblocksmod:block/black_sand" }
-    }
+  "variants": {
+    "": [
+      {
+        "model": "moreblocksmod:block/black_sand"
+      },
+      {
+        "model": "moreblocksmod:block/black_sand",
+        "y": 90
+      },
+      {
+        "model": "moreblocksmod:block/black_sand",
+        "y": 180
+      },
+      {
+        "model": "moreblocksmod:block/black_sand",
+        "y": 270
+      }
+    ]
   }
+}

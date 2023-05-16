@@ -1,6 +1,6 @@
 package com.tylervp.block;
 
-import java.util.Random;
+import net.minecraft.util.math.random.Random;
 
 import com.tylervp.item.MBMItems;
 
@@ -40,7 +40,7 @@ public class RiceCropBlock extends Block implements Fertilizable {
     public static final BooleanProperty FLIP;
     
     protected RiceCropBlock(AbstractBlock.Settings settings) {
-        super(settings);
+        super(settings.offset(OffsetType.XZ));
         this.setDefaultState(((BlockState)this.stateManager.getDefaultState()).with(this.getAgeProperty(), 0).with(RiceCropBlock.FLIP,false));
     }
     
@@ -50,17 +50,12 @@ public class RiceCropBlock extends Block implements Fertilizable {
     }
 
     @Override
-    public AbstractBlock.OffsetType getOffsetType() {
-        return AbstractBlock.OffsetType.XZ;
-    }
-
-    @Override
     public BlockState getPlacementState(ItemPlacementContext ctx) {
         World world = ctx.getWorld();
         Random flipRandom = world.random;
 
         if(ctx.getPlayer().isSneaking()){
-            return (BlockState)MBMBlocks.RICE_NO_OFF_SET.getDefaultState().with(RiceCropBlock.FLIP, (ctx.getPlayerFacing() == Direction.NORTH || ctx.getPlayerFacing() == Direction.EAST));
+            return (BlockState)MBMBlocks.RICE_NO_OFF_SET.getDefaultState().with(RiceCropBlock.FLIP, (ctx.getHorizontalPlayerFacing() == Direction.NORTH || ctx.getHorizontalPlayerFacing() == Direction.EAST));
         }
 
         return (BlockState)this.getDefaultState().with(RiceCropBlock.FLIP, (!world.isClient && flipRandom.nextInt(2) == 0));
@@ -82,9 +77,9 @@ public class RiceCropBlock extends Block implements Fertilizable {
         }
         return super.getStateForNeighborUpdate(state, direction, newState, world, pos, posFrom);
     }
-    
+
     @Override
-    public boolean isTranslucent(BlockState state, BlockView world, BlockPos pos) {
+    public boolean isTransparent(BlockState state, BlockView world, BlockPos pos) {
         return state.getFluidState().isEmpty();
     }
     
@@ -186,7 +181,7 @@ public class RiceCropBlock extends Block implements Fertilizable {
     }
     
     @Override
-    public boolean isFertilizable(BlockView world, BlockPos pos, BlockState state, boolean isClient) {
+    public boolean isFertilizable(WorldView world, BlockPos pos, BlockState state, boolean isClient) {
         return !this.isMature(state);
     }
     

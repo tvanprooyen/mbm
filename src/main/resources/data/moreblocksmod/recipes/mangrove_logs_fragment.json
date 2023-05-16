@@ -1,0 +1,19 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "FF ",
+      "PPF",
+      "PPF"
+    ],
+    "key": {
+      "P": {
+        "item": "minecraft:mangrove_planks"
+      },
+      "F": {
+        "item": "moreblocksmod:mangrove_bark_fragment"
+      }
+    },
+    "result": {
+      "item": "minecraft:mangrove_log"
+    }
+}

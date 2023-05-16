@@ -136,7 +136,7 @@ public class RopeBlock extends Block implements Waterloggable {
         }
 
         if (state.<Boolean>get((Property<Boolean>)LayerBlockFalling.WATERLOGGED)) {
-            world.getFluidTickScheduler().schedule(pos, Fluids.WATER, Fluids.WATER.getTickRate(world));
+            world.scheduleFluidTick(pos, Fluids.WATER, Fluids.WATER.getTickRate(world));
         }
         return super.getStateForNeighborUpdate(state, direction, newState, world, pos, posFrom);
     }

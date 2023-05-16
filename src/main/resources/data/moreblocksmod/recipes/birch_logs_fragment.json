@@ -1,0 +1,19 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "FF ",
+      "PPF",
+      "PPF"
+    ],
+    "key": {
+      "P": {
+        "item": "minecraft:birch_planks"
+      },
+      "F": {
+        "item": "moreblocksmod:birch_bark_fragment"
+      }
+    },
+    "result": {
+      "item": "minecraft:birch_log"
+    }
+}

@@ -48,7 +48,7 @@ public class SpikeBlock extends Block {
     public void onLandedUpon(World world, BlockState state, BlockPos pos, Entity entity, float fallDistance) {
        if(!entity.isSneaking() && world.getBlockState(pos).get(SpikeBlock.DIRECTION) == Direction.UP) {
            float landingMutiplyer = (fallDistance * 2);
-            entity.damage(DamageSource.FALL, landingMutiplyer);
+            entity.damage(world.getDamageSources().fall(), landingMutiplyer);
        } else {
            super.onLandedUpon(world, state, pos, entity, fallDistance);
        }
@@ -111,7 +111,7 @@ public class SpikeBlock extends Block {
         
         if(state.get(SpikeBlock.INTI_HIT) && state.get(SpikeBlock.DIRECTION) != Direction.UP){
             world.setBlockState(pos, this.getDefaultState().with(SpikeBlock.TOP, state.get(SpikeBlock.TOP)).with(SpikeBlock.DIRECTION, state.get(SpikeBlock.DIRECTION)).with(SpikeBlock.INTI_HIT, false));
-            entity.damage(DamageSource.GENERIC, 4f);
+            entity.damage(world.getDamageSources().generic(), 4f);
         }
 
 

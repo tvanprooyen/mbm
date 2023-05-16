@@ -1,6 +1,8 @@
 package com.tylervp.block;
 
-import java.util.Random;
+import net.minecraft.util.math.random.Random;
+
+import org.joml.Vector3f;
 
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
@@ -16,14 +18,13 @@ import net.minecraft.particle.ParticleTypes;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.state.StateManager.Builder;
 import net.minecraft.state.property.BooleanProperty;
-import net.minecraft.tag.FluidTags;
+import net.minecraft.registry.tag.FluidTags;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.Vec3d;
-import net.minecraft.util.math.Vec3f;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 //import net.minecraft.world.WorldAccess;
@@ -43,11 +44,11 @@ public class OxidizedBlock extends Block {
 
     /* private boolean allowOxidize(ServerWorld world, BlockPos pos, Block block){
         return (
-                    world.getBlockState(pos.north()).isOf(block) || 
-                    world.getBlockState(pos.east()).isOf(block) || 
-                    world.getBlockState(pos.south()).isOf(block) ||
-                    world.getBlockState(pos.west()).isOf(block) || 
-                    world.getBlockState(pos.up()).isOf(block) || 
+                    world.getBlockState(pos.north()).isOf(block) ||
+                    world.getBlockState(pos.east()).isOf(block) ||
+                    world.getBlockState(pos.south()).isOf(block) |
+                    world.getBlockState(pos.west()).isOf(block) ||
+                    world.getBlockState(pos.up()).isOf(block) ||
                     world.getBlockState(pos.down()).isOf(block)
                 );
     } */
@@ -244,12 +245,10 @@ public class OxidizedBlock extends Block {
                     double double14 = (axis11 == Direction.Axis.Y) ? (0.5 + 0.5625 * lv.getOffsetY()) : random5.nextFloat();
                     double double16 = (axis11 == Direction.Axis.Z) ? (0.5 + 0.5625 * lv.getOffsetZ()) : random5.nextFloat();
                     //DustParticleEffect dirtPartical = new DustParticleEffect(0.93f, 0.63f, 0.45f, 1.0f);
-                    
                     world.addParticle(ParticleTypes.HAPPY_VILLAGER, pos.getX() + double12, pos.getY() + double14, pos.getZ() + double16, 0.0, 0.0, 0.0);
                 }
-            }   
+            }
         }
-        
     }
 
     private static void spawnParticles(World world, BlockPos pos) {
@@ -262,7 +261,7 @@ public class OxidizedBlock extends Block {
                 double double12 = (axis11 == Direction.Axis.X) ? (0.5 + 0.5625 * lv.getOffsetX()) : random5.nextFloat();
                 double double14 = (axis11 == Direction.Axis.Y) ? (0.5 + 0.5625 * lv.getOffsetY()) : random5.nextFloat();
                 double double16 = (axis11 == Direction.Axis.Z) ? (0.5 + 0.5625 * lv.getOffsetZ()) : random5.nextFloat();
-                DustParticleEffect dirtPartical = new DustParticleEffect(new Vec3f(Vec3d.unpackRgb(15573363)), 1.0f);
+                DustParticleEffect dirtPartical = new DustParticleEffect(new Vector3f(Vec3d.unpackRgb(0x56402A).toVector3f()), 1.0f);
                 world.addParticle(dirtPartical, pos.getX() + double12, pos.getY() + double14, pos.getZ() + double16, 0.0, 0.0, 0.0);
             }
         }

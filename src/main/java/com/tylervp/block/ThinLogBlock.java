@@ -1,7 +1,5 @@
 package com.tylervp.block;
 
-import java.util.Random;
-
 import com.tylervp.item.MBMItems;
 
 import net.minecraft.block.AbstractBlock;
@@ -36,9 +34,10 @@ import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
 import net.minecraft.state.property.Properties;
 import net.minecraft.state.property.Property;
-import net.minecraft.tag.FluidTags;
+import net.minecraft.registry.tag.FluidTags;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.Direction.Axis;
+import net.minecraft.util.math.random.Random;
 
 public class ThinLogBlock extends PillarBlock implements Waterloggable {
     protected static final VoxelShape SHAPEX,SHAPEY,SHAPEZ;
@@ -98,7 +97,7 @@ public class ThinLogBlock extends PillarBlock implements Waterloggable {
     @Override
     public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState newState, WorldAccess world, BlockPos pos, BlockPos posFrom) {
         if (state.<Boolean>get((Property<Boolean>)ThinLogBlock.WATERLOGGED)) {
-            world.getFluidTickScheduler().schedule(pos, Fluids.WATER, Fluids.WATER.getTickRate(world));
+            world.scheduleFluidTick(pos, Fluids.WATER, Fluids.WATER.getTickRate(world));
         }
         
         if(state.get(ThinLogBlock.AXIS) != Axis.Y && (world.getBlockState(pos.down()).isOf(Blocks.CHAIN) || world.getBlockState(pos.down()).isOf(Blocks.LANTERN))){
@@ -173,7 +172,7 @@ public class ThinLogBlock extends PillarBlock implements Waterloggable {
                 //Damage shears as it was used
                 playerItem.<PlayerEntity>damage(1, player, (p) -> p.sendToolBreakStatus(hand));
                 finished = true;
-            } else if ((playerItem.getItem() == Items.WOODEN_AXE || playerItem.getItem() == Items.STONE_AXE || playerItem.getItem() == Items.GOLDEN_AXE || playerItem.getItem() == Items.IRON_AXE || playerItem.getItem() == Items.DIAMOND_AXE || playerItem.getItem() == Items.NETHERITE_AXE) && !state.get(LEAVES)) {
+            } /* else if ((playerItem.getItem() == Items.WOODEN_AXE || playerItem.getItem() == Items.STONE_AXE || playerItem.getItem() == Items.GOLDEN_AXE || playerItem.getItem() == Items.IRON_AXE || playerItem.getItem() == Items.DIAMOND_AXE || playerItem.getItem() == Items.NETHERITE_AXE) && !state.get(LEAVES)) {
                 //Strip Log
                 world.playSound(player, player.getX(), player.getY(), player.getZ(), SoundEvents.ITEM_AXE_STRIP, SoundCategory.NEUTRAL, 1.0f, 1.0f);
 
@@ -195,31 +194,36 @@ public class ThinLogBlock extends PillarBlock implements Waterloggable {
                 } else if(state.isOf(MBMBlocks.THIN_JUNGLE_LOG)){
                     world.setBlockState(pos, MBMBlocks.THIN_STRIPPED_JUNGLE_LOG.getDefaultState().with(ThinLogBlock.AXIS, state.get(ThinLogBlock.AXIS)).with(ThinLogBlock.LEAVES, false).with(ThinLogBlock.PRESISTANT, false).with(ThinLogBlock.CHAIN, state.get(ThinLogBlock.CHAIN)).with(ThinLogBlock.ROPE, state.get(ThinLogBlock.ROPE)).with(ThinLogBlock.WATERLOGGED, state.get(ThinLogBlock.WATERLOGGED)));
                     Block.dropStack(world, pos, new ItemStack(MBMItems.JUNGLE_BARK_FRAGMENT.asItem(), 2));
+                } else if(state.isOf(MBMBlocks.THIN_MANGROVE_LOG)){
+                    world.setBlockState(pos, MBMBlocks.THIN_STRIPPED_MANGROVE_LOG.getDefaultState().with(ThinLogBlock.AXIS, state.get(ThinLogBlock.AXIS)).with(ThinLogBlock.LEAVES, false).with(ThinLogBlock.PRESISTANT, false).with(ThinLogBlock.CHAIN, state.get(ThinLogBlock.CHAIN)).with(ThinLogBlock.ROPE, state.get(ThinLogBlock.ROPE)).with(ThinLogBlock.WATERLOGGED, state.get(ThinLogBlock.WATERLOGGED)));
+                    Block.dropStack(world, pos, new ItemStack(MBMItems.MANGROVE_BARK_FRAGMENT.asItem(), 2));
                 }
-                
+
                 //Damage Tool as it was used
                 if(
-                    !state.isOf(MBMBlocks.THIN_STRIPPED_OAK_LOG) || 
-                    !state.isOf(MBMBlocks.THIN_STRIPPED_SPRUCE_LOG) || 
-                    !state.isOf(MBMBlocks.THIN_STRIPPED_ACACIA_LOG) || 
-                    !state.isOf(MBMBlocks.THIN_STRIPPED_BIRCH_LOG) || 
-                    !state.isOf(MBMBlocks.THIN_STRIPPED_DARK_OAK_LOG) || 
-                    !state.isOf(MBMBlocks.THIN_STRIPPED_JUNGLE_LOG)
-                ){
+                    !state.isOf(MBMBlocks.THIN_STRIPPED_OAK_LOG) &&
+                    !state.isOf(MBMBlocks.THIN_STRIPPED_SPRUCE_LOG) &&
+                    !state.isOf(MBMBlocks.THIN_STRIPPED_ACACIA_LOG) &&
+                    !state.isOf(MBMBlocks.THIN_STRIPPED_BIRCH_LOG) &&
+                    !state.isOf(MBMBlocks.THIN_STRIPPED_DARK_OAK_LOG) &&
+                    !state.isOf(MBMBlocks.THIN_STRIPPED_JUNGLE_LOG) &&
+                    !state.isOf(MBMBlocks.THIN_STRIPPED_MANGROVE_LOG)
+                ) {
                     playerItem.<PlayerEntity>damage(1, player, (p) -> p.sendToolBreakStatus(hand));
+
+                    finished = true;
                 }
-                finished = true;
-            }
+            } */
         }
 
         //This means that the player should swing there arm.
         if(finished){
-            return ActionResult.success(true);
+            return ActionResult.success(world.isClient);
         }
-        
-        return super.onUse(state, world, pos, player, hand, hit);
+
+        return ActionResult.PASS;
     }
-    
+
 
     @Override
     public BlockState getPlacementState(ItemPlacementContext ctx) {
@@ -245,7 +249,7 @@ public class ThinLogBlock extends PillarBlock implements Waterloggable {
         }
 
         //world.playSound(player, player.getX(), player.getY(), player.getZ(), SoundEvents.BLOCK_WOOD_PLACE, SoundCategory.NEUTRAL, 1.0f, 1.0f);
-        return (BlockState)this.getDefaultState().with(LEAVES, false).with(AXIS, ctx.getSide().getAxis()).with(Properties.WATERLOGGED, fuildstate.getFluid() == Fluids.WATER).with(CHAIN, (ctx.getPlayerFacing().getAxis() != Axis.Y && lHanging)).with(ROPE, ctx.getPlayerFacing().getAxis() != Axis.Y && (world.getBlockState(pos.down()).isOf(MBMBlocks.ROPE) || world.getBlockState(pos.down()).isOf(MBMBlocks.ROPEMID)));
+        return (BlockState)this.getDefaultState().with(LEAVES, false).with(AXIS, ctx.getSide().getAxis()).with(Properties.WATERLOGGED, fuildstate.getFluid() == Fluids.WATER).with(CHAIN, (ctx.getHorizontalPlayerFacing().getAxis() != Axis.Y && lHanging)).with(ROPE, ctx.getHorizontalPlayerFacing().getAxis() != Axis.Y && (world.getBlockState(pos.down()).isOf(MBMBlocks.ROPE) || world.getBlockState(pos.down()).isOf(MBMBlocks.ROPEMID)));
     }
 
     @Override
@@ -352,7 +356,7 @@ public class ThinLogBlock extends PillarBlock implements Waterloggable {
     }
 
     @Override
-    public void onStacksDropped(BlockState state, ServerWorld world, BlockPos pos, ItemStack stack) {
+    public void onStacksDropped(BlockState state, ServerWorld world, BlockPos pos, ItemStack stack, boolean dropExperience) {
         Boolean hasLeaves = state.<Boolean>get((Property<Boolean>)ThinLogBlock.LEAVES);
         if(hasLeaves){
             if(state.isOf(MBMBlocks.THIN_OAK_LOG)){
@@ -369,7 +373,7 @@ public class ThinLogBlock extends PillarBlock implements Waterloggable {
                 Block.dropStack(world, pos, new ItemStack(Blocks.JUNGLE_LEAVES.asItem(), 1));
             }
         }
-        super.onStacksDropped(state, world, pos, stack);
+        super.onStacksDropped(state, world, pos, stack, dropExperience);
     }
 
     

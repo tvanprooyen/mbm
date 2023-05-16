@@ -2,9 +2,9 @@ package com.tylervp.block;
 
 import java.util.Random;
 
-import com.tylervp.block.entity.VaseBlockEntity;
-
 import org.jetbrains.annotations.Nullable;
+
+import com.tylervp.block.entity.VaseBlockEntity;
 
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;

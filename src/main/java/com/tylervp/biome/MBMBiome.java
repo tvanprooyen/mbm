@@ -1,34 +1,21 @@
 package com.tylervp.biome;
 
 import com.tylervp.moreblocksmod;
-import com.tylervp.block.MBMBlocks;
 
+import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
+import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
+import net.minecraft.registry.RegistryKey;
+import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.BuiltinRegistries;
-import net.minecraft.util.registry.Registry;
-import net.minecraft.world.gen.YOffset;
-import net.minecraft.world.gen.decorator.RangeDecoratorConfig;
-import net.minecraft.world.gen.feature.ConfiguredFeature;
-import net.minecraft.world.gen.feature.Feature;
-import net.minecraft.world.gen.feature.OreFeatureConfig;
-import net.minecraft.world.gen.heightprovider.UniformHeightProvider;
+import net.minecraft.world.gen.GenerationStep;
+import net.minecraft.world.gen.feature.PlacedFeature;
 
 public class MBMBiome {
-    public static ConfiguredFeature<?, ?> RUBY_ORE_OVERWORLD = Feature.ORE
-    .configure(new OreFeatureConfig(
-      OreFeatureConfig.Rules.BASE_STONE_OVERWORLD,
-      MBMBlocks.RUBY_ORE.getDefaultState(),
-      9)) // Vein size
-    .range(new RangeDecoratorConfig(
-      UniformHeightProvider.create(YOffset.aboveBottom(0), YOffset.fixed(40)))) //Allowed Hight
-    .spreadHorizontally()
-    .repeat(2);
 
-    
-
+    public static final RegistryKey<PlacedFeature> RUBY_ORE_KEY = RegistryKey.of(RegistryKeys.PLACED_FEATURE, new Identifier(moreblocksmod.ModName,"ore_ruby"));
 
     public static final void biome(){
-        String ModName = moreblocksmod.ModName;
-        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, new Identifier(ModName, "ruby_ore_overworld"), RUBY_ORE_OVERWORLD);
+
+        BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, RUBY_ORE_KEY);
     }
 }

@@ -1,0 +1,7 @@
+﻿{
+    "parent": "block/cube_column",
+    "textures": {
+        "side": "moreblocksmod:block/tree_poison_trunk_04",
+        "end": "moreblocksmod:block/tree_poison_trunk_top_02"
+    }
+}

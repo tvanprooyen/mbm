@@ -1,0 +1,26 @@
+﻿
+{
+    "type": "minecraft:block",
+    "pools": [
+        {
+            "bonus_rolls": 0.0,
+                "conditions": [
+                    {
+                        "condition": "minecraft:match_tool",
+                        "predicate": {
+                            "items": [
+                            "minecraft:golden_hoe"
+                            ]
+                        }
+                    }
+                ],
+            "entries": [
+                {
+                "type": "minecraft:item",
+                "name": "moreblocksmod:poison_slime_tree_vines"
+                }
+            ],
+            "rolls": 1.0
+        }
+    ]
+}

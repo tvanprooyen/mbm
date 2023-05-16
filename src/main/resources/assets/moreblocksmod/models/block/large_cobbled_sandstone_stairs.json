@@ -1,0 +1,8 @@
+﻿{
+    "parent": "block/stairs",
+    "textures": {
+        "bottom": "moreblocksmod:block/large_cobbled_sandstone",
+        "top": "moreblocksmod:block/large_cobbled_sandstone",
+        "side": "moreblocksmod:block/large_cobbled_sandstone"
+    }
+}

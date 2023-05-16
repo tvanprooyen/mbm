@@ -1,0 +1,7 @@
+﻿{
+  "variants": {
+      "axis=y":  { "model": "moreblocksmod:block/poison_slime_tree_mid_semi_drip" },
+      "axis=z":   { "model": "moreblocksmod:block/poison_slime_tree_mid_semi_drip", "x": 90 },
+      "axis=x":   { "model": "moreblocksmod:block/poison_slime_tree_mid_semi_drip", "x": 90, "y": 90 }
+  }
+}

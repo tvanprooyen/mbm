@@ -1,0 +1,6 @@
+﻿{
+    "variants": {
+      "up=true": { "model": "moreblocksmod:block/pinecone_top" },
+      "up=false": { "model": "moreblocksmod:block/pinecone"}
+    }
+  }

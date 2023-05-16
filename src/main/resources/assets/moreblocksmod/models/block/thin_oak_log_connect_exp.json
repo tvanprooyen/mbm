@@ -1,0 +1,26 @@
+{
+	"parent": "block/block",
+	"textures": {
+		"4": "block/chain",
+		"5": "moreblocksmod:block/thin_oak_log_top",
+		"6": "block/oak_log",
+		"7": "block/oak_leaves",
+		"8": "moreblocksmod:block/oak_leaves_top",
+		"9": "moreblocksmod:block/rope_mid",
+		"particle": "#6"
+	},
+	"elements": [
+		{
+			"name": "connect",
+			"from": [4, 4, 0],
+			"to": [12, 12, 4],
+			"faces": {
+				"north": {"uv": [4, 4, 12, 12], "rotation": 270, "texture": "#5"},
+				"east": {"uv": [4, 4, 12, 8], "rotation": 90, "texture": "#6"},
+				"west": {"uv": [4, 8, 12, 12], "rotation": 90, "texture": "#6"},
+				"up": {"uv": [4, 8, 12, 12], "rotation": 180, "texture": "#6"},
+				"down": {"uv": [4, 4, 12, 8], "texture": "#6"}
+			}
+		}
+	]
+}

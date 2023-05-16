@@ -1,0 +1,41 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "moreblocksmod:block/poison_slime_tree_vines_base"
+      }
+    },
+    {
+      "apply": {
+        "model": "moreblocksmod:block/poison_slime_tree_vines_covered_north"
+      },
+      "when": {
+        "closeddirectionnorth": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "moreblocksmod:block/poison_slime_tree_vines_covered_east"
+      },
+      "when": {
+        "closeddirectioneast": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "moreblocksmod:block/poison_slime_tree_vines_covered_south"
+      },
+      "when": {
+        "closeddirectionsouth": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "moreblocksmod:block/poison_slime_tree_vines_covered_west"
+      },
+      "when": {
+        "closeddirectionwest": "true"
+      }
+    }
+  ]
+}

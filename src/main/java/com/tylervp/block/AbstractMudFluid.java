@@ -8,9 +8,11 @@ import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.fluid.FlowableFluid;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.fluid.FluidState;
-import net.minecraft.tag.FluidTags;
+//import net.minecraft.tag.FluidTags;
+import net.minecraft.registry.tag.FluidTags;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.BlockView;
+import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
 import net.minecraft.world.WorldView;
 import net.minecraft.util.math.Direction;
@@ -28,7 +30,7 @@ public abstract class AbstractMudFluid extends FlowableFluid {
 	 * @return is the fluid infinite like water?
 	 */
 	@Override
-	protected boolean isInfinite() {
+	protected boolean isInfinite(World world) {
 		return true;
 	}
 	

@@ -1,5 +1,21 @@
-﻿{
+﻿  {
     "variants": {
-      "": { "model": "moreblocksmod:block/white_sand" }
+      "": [
+        {
+          "model": "moreblocksmod:block/white_sand"
+        },
+        {
+          "model": "moreblocksmod:block/white_sand",
+          "y": 90
+        },
+        {
+          "model": "moreblocksmod:block/white_sand",
+          "y": 180
+        },
+        {
+          "model": "moreblocksmod:block/white_sand",
+          "y": 270
+        }
+      ]
     }
   }

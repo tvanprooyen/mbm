@@ -1,0 +1,19 @@
+﻿{
+  "variants": {
+    "facing=east": {
+      "model": "moreblocksmod:block/hardened_anvil",
+      "y": 270
+    },
+    "facing=north": {
+      "model": "moreblocksmod:block/hardened_anvil",
+      "y": 180
+    },
+    "facing=south": {
+      "model": "moreblocksmod:block/hardened_anvil"
+    },
+    "facing=west": {
+      "model": "moreblocksmod:block/hardened_anvil",
+      "y": 90
+    }
+  }
+}

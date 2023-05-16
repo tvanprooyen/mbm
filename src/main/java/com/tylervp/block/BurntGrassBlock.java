@@ -1,14 +1,14 @@
 package com.tylervp.block;
 
-import java.util.Random;
+import net.minecraft.util.math.random.Random;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.Fertilizable;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
+import net.minecraft.world.WorldView;
 
 public class BurntGrassBlock extends BurntBlock implements Fertilizable {
 
@@ -16,7 +16,8 @@ public class BurntGrassBlock extends BurntBlock implements Fertilizable {
         super(settings);
     }
 
-   public boolean isFertilizable(BlockView world, BlockPos pos, BlockState state, boolean isClient) {
+   @Override
+   public boolean isFertilizable(WorldView world, BlockPos pos, BlockState state, boolean isClient) {
       return world.getBlockState(pos.up()).isAir();
    }
 

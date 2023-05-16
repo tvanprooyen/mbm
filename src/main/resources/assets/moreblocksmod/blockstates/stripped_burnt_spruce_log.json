@@ -1,0 +1,7 @@
+﻿{
+    "variants": {
+      "axis=y": { "model": "moreblocksmod:block/stripped_burnt_spruce_log" },
+      "axis=z": { "model": "moreblocksmod:block/stripped_burnt_spruce_log", "x": 90  },
+      "axis=x": { "model": "moreblocksmod:block/stripped_burnt_spruce_log", "x": 90, "y": 90  }
+    }
+}

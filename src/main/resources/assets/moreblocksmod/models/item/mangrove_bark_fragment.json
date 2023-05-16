@@ -1,0 +1,6 @@
+{
+    "parent": "minecraft:item/generated",
+    "textures": {
+      "layer0": "moreblocksmod:item/mangrove_bark_fragment"
+    }
+  }

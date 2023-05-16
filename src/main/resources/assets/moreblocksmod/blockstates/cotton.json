@@ -1,0 +1,31 @@
+{
+  "variants": {
+    "age=0": {
+      "model": "moreblocksmod:block/cotton_stage0"
+    },
+    "age=1": {
+      "model": "moreblocksmod:block/cotton_stage1"
+    },
+    "age=2": {
+      "model": "moreblocksmod:block/cotton_stage2"
+    },
+    "age=3": {
+      "model": "moreblocksmod:block/cotton_stage3"
+    },
+    "age=4": {
+      "model": "moreblocksmod:block/cotton_stage4"
+    },
+    "age=5": {
+      "model": "moreblocksmod:block/cotton_stage5"
+    },
+    "age=6": {
+      "model": "moreblocksmod:block/cotton_stage6"
+    },
+    "age=7": {
+      "model": "moreblocksmod:block/cotton_stage7"
+    },
+    "age=8": {
+        "model": "moreblocksmod:block/cotton_stage8"
+      }
+  }
+}

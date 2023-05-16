@@ -1,0 +1,8 @@
+﻿{
+	"parent": "moreblocksmod:block/hollow_log",
+	"textures": {
+		"0":"moreblocksmod:block/burnt_dark_oak_log_chopped_side",
+		"14":"moreblocksmod:block/burnt_dark_oak_log",
+		"15":"moreblocksmod:block/burnt_dark_oak_log_top"
+	}
+}

@@ -3,6 +3,8 @@ package com.tylervp.item;
 import java.util.Collection;
 //import java.util.Set;
 
+import org.jetbrains.annotations.Nullable;
+
 //import com.google.common.collect.ImmutableSet;
 
 import net.minecraft.block.AbstractFurnaceBlock;
@@ -29,22 +31,18 @@ import net.minecraft.nbt.NbtCompound;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.Properties;
 import net.minecraft.state.property.Property;
-import net.minecraft.tag.BlockTags;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.registry.Registry;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
-
-import net.minecraft.network.MessageType;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Text;
-import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Util;
-import org.jetbrains.annotations.Nullable;
 
 public class NetheriteHammer extends MiningToolItem {
     //private static final Set<Block> EFFECTIVE_BLOCKS;
@@ -229,7 +227,7 @@ public class NetheriteHammer extends MiningToolItem {
             Block block = state.getBlock();
             StateManager<Block, BlockState> stateManager = block.getStateManager();
             Collection<Property<?>> collection = stateManager.getProperties();
-            String string = Registry.BLOCK.getId(block).toString();
+            String string = Registries.BLOCK.getId(block).toString();
             if (!collection.isEmpty()) {
                 NbtCompound compoundTag = stack.getOrCreateSubNbt("SaveProperties");
                 String string2 = compoundTag.getString(string);
@@ -275,7 +273,7 @@ public class NetheriteHammer extends MiningToolItem {
         }
 
         if(player.isCreativeLevelTwoOp()){
-            sendMessage(player, new TranslatableText("(" +property.getName().toUpperCase() + ") " + getValueString(state, property).toUpperCase()));
+            sendMessage(player, Text.translatable("(" +property.getName().toUpperCase() + ") " + getValueString(state, property).toUpperCase()));
         }
 
         stack.<PlayerEntity>damage(2, player, player1 -> player1.sendToolBreakStatus(Hand.MAIN_HAND));
@@ -290,8 +288,8 @@ public class NetheriteHammer extends MiningToolItem {
      }
   
      private static void sendMessage(PlayerEntity player, Text message) {
-        ((ServerPlayerEntity)player).sendMessage(message, MessageType.GAME_INFO, Util.NIL_UUID);
-     }
+        ((ServerPlayerEntity)player).sendMessage(message);
+    }
   
      private static <T extends Comparable<T>> String getValueString(BlockState state, Property<T> property) {
         return property.name(state.get(property));

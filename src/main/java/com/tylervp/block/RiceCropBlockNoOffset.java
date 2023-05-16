@@ -11,13 +11,8 @@ public class RiceCropBlockNoOffset extends RiceCropBlock {
     public static final BooleanProperty FLIP;
     
     protected RiceCropBlockNoOffset(AbstractBlock.Settings settings) {
-        super(settings);
+        super(settings.offset(OffsetType.NONE));
         this.setDefaultState(((BlockState)this.stateManager.getDefaultState()).with(this.getAgeProperty(), 0));
-    }
-
-    @Override
-    public AbstractBlock.OffsetType getOffsetType() {
-        return AbstractBlock.OffsetType.NONE;
     }
 
     static {

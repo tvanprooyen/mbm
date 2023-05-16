@@ -1,0 +1,8 @@
+﻿{
+	"parent": "moreblocksmod:block/hollow_log",
+	"textures": {
+		"0":"moreblocksmod:block/spruce_log_chopped_side",
+		"14":"block/spruce_log",
+		"15":"block/spruce_log_top"
+	}
+}

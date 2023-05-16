@@ -1,6 +1,8 @@
 package com.tylervp.block;
 
-import java.util.Random;
+import net.minecraft.util.math.random.Random;
+
+import org.joml.Vector3f;
 
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
@@ -24,7 +26,6 @@ import net.minecraft.state.property.Property;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.Vec3d;
-import net.minecraft.util.math.Vec3f;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
@@ -60,12 +61,12 @@ public class BurntStairsBlock extends StairsBlockExtend {
             }
 
         spawnParticles(ctx.getWorld(), blockPos);
-        return this.getDefaultState().with(BurntPillarBlock.AGE, age).with(BurntPillarBlock.PERSISTENT, ctx.getPlayer().isSneaking()).with(StairsBlock.FACING, ctx.getPlayerFacing()).with(StairsBlock.HALF, direction != Direction.DOWN && (direction == Direction.UP || !(ctx.getHitPos().y - (double)blockPos.getY() > 0.5D)) ? BlockHalf.BOTTOM : BlockHalf.TOP).with(StairsBlock.WATERLOGGED, fluidState.getFluid() == Fluids.WATER);
+        return this.getDefaultState().with(BurntPillarBlock.AGE, age).with(BurntPillarBlock.PERSISTENT, ctx.getPlayer().isSneaking()).with(StairsBlock.FACING, ctx.getHorizontalPlayerFacing()).with(StairsBlock.HALF, direction != Direction.DOWN && (direction == Direction.UP || !(ctx.getHitPos().y - (double)blockPos.getY() > 0.5D)) ? BlockHalf.BOTTOM : BlockHalf.TOP).with(StairsBlock.WATERLOGGED, fluidState.getFluid() == Fluids.WATER);
     }
 
     public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
 		if ((Boolean)state.get(WATERLOGGED)) {
-			world.getFluidTickScheduler().schedule(pos, Fluids.WATER, Fluids.WATER.getTickRate(world));
+			world.scheduleFluidTick(pos, Fluids.WATER, Fluids.WATER.getTickRate(world));
 		}
 
 		return direction.getAxis().isHorizontal() ? (BlockState)state.with(StairsBlock.SHAPE, getStairShape(state, world, pos)).with(BurntPillarBlock.AGE, state.get(BurntPillarBlock.AGE)).with(BurntPillarBlock.PERSISTENT, state.get(BurntPillarBlock.PERSISTENT)) : super.getStateForNeighborUpdate(state, direction, neighborState, world, pos, neighborPos);
@@ -123,18 +124,20 @@ public class BurntStairsBlock extends StairsBlockExtend {
                 double double12 = (axis11 == Direction.Axis.X) ? (0.5 + 0.5625 * lv.getOffsetX()) : random5.nextFloat();
                 double double14 = (axis11 == Direction.Axis.Y) ? (0.5 + 0.5625 * lv.getOffsetY()) : random5.nextFloat();
                 double double16 = (axis11 == Direction.Axis.Z) ? (0.5 + 0.5625 * lv.getOffsetZ()) : random5.nextFloat();
-                DustParticleEffect dirtPartical = new DustParticleEffect(new Vec3f(Vec3d.unpackRgb(3684408)), 1.0f);
+                DustParticleEffect dirtPartical = new DustParticleEffect(new Vector3f(Vec3d.unpackRgb(0x383838).toVector3f()), 1.0f);
                 world.addParticle(dirtPartical, pos.getX() + double12, pos.getY() + double14, pos.getZ() + double16, 0.0, 0.0, 0.0);
             }
         }
     }
 
     @Override
+    public boolean hasRandomTicks(BlockState state) {
+        return state.get(BurntPillarBlock.AGE) < 3 && !state.get(BurntPillarBlock.PERSISTENT);
+    }
+
+    @Override
     public void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
-        if(state.get(BurntPillarBlock.AGE) < 3 && !state.get(BurntPillarBlock.PERSISTENT)){
-            world.setBlockState(pos, state.with(BurntPillarBlock.AGE, state.get(BurntPillarBlock.AGE) + 1).with(BurntPillarBlock.PERSISTENT, state.get(BurntPillarBlock.PERSISTENT)).with(StairsBlock.FACING, state.get(StairsBlock.FACING)).with(StairsBlock.HALF, state.get(StairsBlock.HALF)).with(StairsBlock.WATERLOGGED, state.get(StairsBlock.WATERLOGGED)));
-        }
-        super.randomTick(state, world, pos, random);
+        world.setBlockState(pos, state.with(BurntPillarBlock.AGE, state.get(BurntPillarBlock.AGE) + 1).with(BurntPillarBlock.PERSISTENT, state.get(BurntPillarBlock.PERSISTENT)).with(StairsBlock.FACING, state.get(StairsBlock.FACING)).with(StairsBlock.HALF, state.get(StairsBlock.HALF)).with(StairsBlock.WATERLOGGED, state.get(StairsBlock.WATERLOGGED)));
     }
 
     @Override

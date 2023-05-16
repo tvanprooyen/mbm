@@ -1,0 +1,11 @@
+﻿{	"parent": "moreblocksmod:block/thin_log_rope",
+	"textures": {
+		"4": "block/chain",
+		"5": "moreblocksmod:block/thin_mangrove_log_top",
+		"6": "block/mangrove_log",
+		"7": "block/mangrove_leaves",
+		"8": "moreblocksmod:block/mangrove_leaves_top",
+		"9": "moreblocksmod:block/rope_mid",
+		"particle": "block/mangrove_log"
+	}
+}

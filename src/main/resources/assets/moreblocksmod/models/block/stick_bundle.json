@@ -1,0 +1,7 @@
+﻿{
+    "parent": "block/cube_column",
+    "textures": {
+        "side": "moreblocksmod:block/stick_bundle_side",
+        "end": "moreblocksmod:block/stick_bundle_top"
+    }
+}

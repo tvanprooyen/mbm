@@ -4,6 +4,7 @@ import com.tylervp.block.enums.WireSides;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.PillarBlock;
 import net.minecraft.block.ShapeContext;
 import net.minecraft.block.Waterloggable;
 import net.minecraft.fluid.FluidState;
@@ -114,13 +115,12 @@ public class Wire extends Block implements Waterloggable {
             axis = ctx.getPlayerLookDirection().getAxis();
 
             if(axis == Axis.Y) {
-                axis = ctx.getPlayerFacing().getAxis();
+                axis = ctx.getSide().getAxis();
             }
         }
 
 		return (BlockState)this.getDefaultState().with(AXIS, axis).with(SIDE, side).with(Properties.WATERLOGGED, fluidState.getFluid() == Fluids.WATER);
 	}
-
 
     @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
@@ -130,7 +130,7 @@ public class Wire extends Block implements Waterloggable {
     @Override
     public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState newState, WorldAccess world, BlockPos pos, BlockPos posFrom) {
         if (state.<Boolean>get((Property<Boolean>)WATERLOGGED)) {
-            world.getFluidTickScheduler().schedule(pos, Fluids.WATER, Fluids.WATER.getTickRate(world));
+            world.scheduleFluidTick(pos, Fluids.WATER, Fluids.WATER.getTickRate(world));
         }
         
         return super.getStateForNeighborUpdate(state, direction, newState, world, pos, posFrom);

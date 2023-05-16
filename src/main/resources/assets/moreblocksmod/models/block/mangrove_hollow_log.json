@@ -1,0 +1,8 @@
+﻿{
+	"parent": "moreblocksmod:block/hollow_log",
+	"textures": {
+		"0":"moreblocksmod:block/mangrove_log_chopped_side",
+		"14":"block/mangrove_log",
+		"15":"block/mangrove_log_top"
+	}
+}

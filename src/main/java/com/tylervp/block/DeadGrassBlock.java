@@ -1,7 +1,7 @@
 package com.tylervp.block;
 
 //import java.util.List;
-import java.util.Random;
+import net.minecraft.util.math.random.Random;
 
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.BlockState;
@@ -10,24 +10,22 @@ import net.minecraft.block.Fertilizable;
 import net.minecraft.block.SpreadableBlock;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.block.SlabBlock;
 import net.minecraft.block.enums.SlabType;
 import net.minecraft.util.math.Direction;
 import net.minecraft.world.chunk.light.ChunkLightProvider;
 import net.minecraft.block.SnowBlock;
-import net.minecraft.tag.FluidTags;
+import net.minecraft.registry.tag.FluidTags;
 import net.minecraft.world.WorldView;
-//import net.minecraft.world.gen.feature.ConfiguredFeature;
-//import net.minecraft.world.gen.feature.FlowerFeature;
 
 public class DeadGrassBlock extends SpreadableBlock implements Fertilizable {
    public DeadGrassBlock(AbstractBlock.Settings settings) {
       super(settings);
    }
 
-   public boolean isFertilizable(BlockView world, BlockPos pos, BlockState state, boolean isClient) {
+   @Override
+   public boolean isFertilizable(WorldView world, BlockPos pos, BlockState state, boolean isClient) {
       return world.getBlockState(pos.up()).isAir();
    }
 

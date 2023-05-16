@@ -1,6 +1,6 @@
 package com.tylervp.mixin;
 
-import java.util.Random;
+import net.minecraft.util.math.random.Random;
 
 import com.tylervp.block.MBMBlocks;
 
@@ -15,7 +15,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.world.chunk.light.ChunkLightProvider;
 import net.minecraft.block.SnowBlock;
-import net.minecraft.tag.FluidTags;
+import net.minecraft.registry.tag.FluidTags;
 import net.minecraft.world.WorldView;
 
 import org.spongepowered.asm.mixin.Mixin;

@@ -23,7 +23,7 @@ import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.EnumProperty;
 import net.minecraft.state.property.Properties;
 import net.minecraft.state.property.Property;
-import net.minecraft.tag.FluidTags;
+import net.minecraft.registry.tag.FluidTags;
 
 public class ChimneyBlock extends PillarBlock implements Waterloggable {
     protected static final VoxelShape OUTLINE_SHAPE_X, RAY_TRACE_SHAPE_X, OUTLINE_SHAPE_Y, RAY_TRACE_SHAPE_Y, OUTLINE_SHAPE_Z, RAY_TRACE_SHAPE_Z, RAY_TRACE_SHAPE_X_CONNECTED, OUTLINE_SHAPE_X_CONNECTED, RAY_TRACE_SHAPE_Y_CONNECTED, OUTLINE_SHAPE_Y_CONNECTED, RAY_TRACE_SHAPE_Z_CONNECTED, OUTLINE_SHAPE_Z_CONNECTED;
@@ -120,10 +120,10 @@ public class ChimneyBlock extends PillarBlock implements Waterloggable {
 
     @Override
     public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState newState, WorldAccess world, BlockPos pos, BlockPos posFrom) {
-        if (state.<Boolean>get((Property<Boolean>)ChimneyBlock.WATERLOGGED)) {
-            world.getFluidTickScheduler().schedule(pos, Fluids.WATER, Fluids.WATER.getTickRate(world));
+        if (state.get(ChimneyBlock.WATERLOGGED).booleanValue()) {
+            world.scheduleFluidTick(pos, Fluids.WATER, Fluids.WATER.getTickRate(world));
         }
-        
+
         return super.getStateForNeighborUpdate(state, direction, newState, world, pos, posFrom);
     }
 
@@ -132,10 +132,10 @@ public class ChimneyBlock extends PillarBlock implements Waterloggable {
 	public BlockState getPlacementState(ItemPlacementContext ctx) {
 		BlockPos pos = ctx.getBlockPos();
         FluidState fluidState5 = ctx.getWorld().getFluidState(pos);
-        
-		return (BlockState)this.getDefaultState().with(Properties.WATERLOGGED, fluidState5.getFluid() == Fluids.WATER).with(AXIS, ctx.getPlayerLookDirection().getAxis()).with(ChimneyBlock.LARGE, ctx.getPlayer().isSneaking());
+
+		return (BlockState)this.getDefaultState().with(Properties.WATERLOGGED, fluidState5.getFluid() == Fluids.WATER).with(AXIS, ctx.getSide().getAxis()).with(ChimneyBlock.LARGE, ctx.getPlayer().isSneaking());
     }
-    
+
     @Override
     public FluidState getFluidState(BlockState state) {
         if (state.<Boolean>get((Property<Boolean>)ChimneyBlock.WATERLOGGED)) {

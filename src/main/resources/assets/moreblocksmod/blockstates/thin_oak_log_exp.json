@@ -1,0 +1,31 @@
+{
+    "multipart": [
+        {   "when": { "axis": "y" },
+            "apply": { "model": "moreblocksmod:block/thin_oak_log_exp" }
+        },
+        {   "when": { "axis": "z" },
+            "apply": { "model": "moreblocksmod:block/thin_oak_log_exp", "x": 90  }
+        },
+        {   "when": { "axis": "x" },
+            "apply": { "model": "moreblocksmod:block/thin_oak_log_exp", "x": 90, "y": 90 }
+        },
+        {   "when": { "northtype": "log" },
+            "apply": { "model": "moreblocksmod:block/thin_oak_log_connect_exp" }
+        },
+        {   "when": { "easttype": "log" },
+            "apply": { "model": "moreblocksmod:block/thin_oak_log_connect_exp", "y": 90 }
+        },
+        {   "when": { "southtype": "log" },
+            "apply": { "model": "moreblocksmod:block/thin_oak_log_connect_exp", "y": 180 }
+        },
+        {   "when": { "westtype": "log" },
+            "apply": { "model": "moreblocksmod:block/thin_oak_log_connect_exp", "y": 270 }
+        },
+        {   "when": { "uptype": "log" },
+            "apply": { "model": "moreblocksmod:block/thin_oak_log_connect_exp", "x": 270 }
+        },
+        {   "when": { "downtype": "log" },
+            "apply": { "model": "moreblocksmod:block/thin_oak_log_connect_exp", "x": 90 }
+        }
+    ]
+}

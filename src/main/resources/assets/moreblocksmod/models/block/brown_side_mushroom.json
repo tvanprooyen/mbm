@@ -1,0 +1,23 @@
+{
+	"parent": "block/block",
+	"textures": {
+		"1": "minecraft:block/brown_mushroom_block",
+		"2": "minecraft:block/mushroom_stem",
+		"particle": "minecraft:block/brown_mushroom_block"
+	},
+	"elements": [
+		{
+			"from": [5, 0, 0],
+			"to": [11, 1, 6],
+			"rotation": {"angle": 0, "axis": "y", "origin": [16, 8, 8]},
+			"faces": {
+				"north": {"uv": [1, 6, 7, 7], "texture": "#2"},
+				"east": {"uv": [2, 13, 8, 14], "texture": "#1"},
+				"south": {"uv": [9, 2, 15, 3], "texture": "#1"},
+				"west": {"uv": [7, 11, 13, 12], "texture": "#1"},
+				"up": {"uv": [8, 8, 14, 14], "texture": "#1"},
+				"down": {"uv": [9, 7, 15, 13], "texture": "#2"}
+			}
+		}
+	]
+}

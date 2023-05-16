@@ -1,0 +1,16 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "m",
+      "m",
+      "m"
+    ],
+    "key": {
+      "m": {
+        "item": "moreblocksmod:brown_mushroom"
+      }
+    },
+    "result": {
+      "item": "moreblocksmod:brown_side_mushroom"
+    }
+  }

@@ -1,0 +1,26 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "gyg",
+        "srs",
+        "gyg"
+    ],
+    "key": {
+        "s": {
+            "item": "minecraft:stone"
+        },
+        "r": {
+            "item": "minecraft:redstone"
+        },
+        "g": {
+            "item": "minecraft:gold_nugget"
+        },
+        "y": {
+            "item": "moreblocksmod:ruby"
+        }
+    },
+    "result": {
+        "item": "moreblocksmod:constructor",
+        "count": 1
+    }
+}

@@ -1,0 +1,16 @@
+﻿{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "moreblocksmod:large_cobbled_sandstone"
+    }
+  },
+  "result": {
+    "item": "moreblocksmod:large_cobbled_sandstone_wall",
+    "count": 6
+  }
+}

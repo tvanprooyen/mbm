@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "sd "
+  ],
+  "key": {
+    "s": {
+      "item": "minecraft:sand"
+    },
+    "d": {
+      "item": "minecraft:dirt"
+    }
+  },
+  "result": {
+    "item": "moreblocksmod:loose_dirt",
+    "count": 2
+  }
+}

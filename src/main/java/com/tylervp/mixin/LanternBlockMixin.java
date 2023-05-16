@@ -32,21 +32,21 @@ public abstract class LanternBlockMixin extends Block {
 
         Direction direction5 = attachedDirection.getOpposite();
         return (
-            Block.sideCoversSmallSquare(world, pos.offset(direction5), direction5.getOpposite()) || 
+            Block.sideCoversSmallSquare(world, pos.offset(direction5), direction5.getOpposite()) ||
             (
-                world.getBlockState(pos.up()).isOf(MBMBlocks.THIN_OAK_LOG) || 
-                world.getBlockState(pos.up()).isOf(MBMBlocks.THIN_ACACIA_LOG)) || 
-                world.getBlockState(pos.up()).isOf(MBMBlocks.THIN_BIRCH_LOG) || 
-                world.getBlockState(pos.up()).isOf(MBMBlocks.THIN_DARK_OAK_LOG) || 
-                world.getBlockState(pos.up()).isOf(MBMBlocks.THIN_JUNGLE_LOG) || 
-                world.getBlockState(pos.up()).isOf(MBMBlocks.THIN_SPRUCE_LOG) || 
-                world.getBlockState(pos.up()).isOf(MBMBlocks.THIN_STRIPPED_ACACIA_LOG) || 
-                world.getBlockState(pos.up()).isOf(MBMBlocks.THIN_STRIPPED_BIRCH_LOG)  || 
-                world.getBlockState(pos.up()).isOf(MBMBlocks.THIN_STRIPPED_DARK_OAK_LOG) || 
-                world.getBlockState(pos.up()).isOf(MBMBlocks.THIN_STRIPPED_JUNGLE_LOG) || 
-                world.getBlockState(pos.up()).isOf(MBMBlocks.THIN_STRIPPED_OAK_LOG) || 
-                world.getBlockState(pos.up()).isOf(MBMBlocks.THIN_STRIPPED_SPRUCE_LOG) || 
-                world.getBlockState(pos.up()).isOf(MBMBlocks.ROPE)  || 
+                world.getBlockState(pos.up()).isOf(MBMBlocks.THIN_OAK_LOG) ||
+                world.getBlockState(pos.up()).isOf(MBMBlocks.THIN_ACACIA_LOG)) ||
+                world.getBlockState(pos.up()).isOf(MBMBlocks.THIN_BIRCH_LOG) ||
+                world.getBlockState(pos.up()).isOf(MBMBlocks.THIN_DARK_OAK_LOG) ||
+                world.getBlockState(pos.up()).isOf(MBMBlocks.THIN_JUNGLE_LOG) ||
+                world.getBlockState(pos.up()).isOf(MBMBlocks.THIN_SPRUCE_LOG) ||
+                world.getBlockState(pos.up()).isOf(MBMBlocks.THIN_STRIPPED_ACACIA_LOG) ||
+                world.getBlockState(pos.up()).isOf(MBMBlocks.THIN_STRIPPED_BIRCH_LOG)  ||
+                world.getBlockState(pos.up()).isOf(MBMBlocks.THIN_STRIPPED_DARK_OAK_LOG) ||
+                world.getBlockState(pos.up()).isOf(MBMBlocks.THIN_STRIPPED_JUNGLE_LOG) ||
+                world.getBlockState(pos.up()).isOf(MBMBlocks.THIN_STRIPPED_OAK_LOG) ||
+                world.getBlockState(pos.up()).isOf(MBMBlocks.THIN_STRIPPED_SPRUCE_LOG) ||
+                world.getBlockState(pos.up()).isOf(MBMBlocks.ROPE)  ||
                 world.getBlockState(pos.up()).isOf(MBMBlocks.ROPEMID
             )
         );

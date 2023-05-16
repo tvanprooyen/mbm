@@ -2,7 +2,7 @@
   "required": true,
   "minVersion": "0.8",
   "package": "com.tylervp.mixin",
-  "compatibilityLevel": "JAVA_16",
+  "compatibilityLevel": "JAVA_17",
   "mixins": [
     "LeavesBlockMixin",
     "MelonBlockMixin",
@@ -10,13 +10,20 @@
     "LanternBlockMixin",
     "DeadBushMixin",
     "AxeItemMixin",
-    "DefaultBiomeFeaturesMixin",
     "BlockMixin",
     "ShovelMixin",
     "WallBlockMixin",
     "PaneBlockMixin",
     "PlantBlockMixin",
-    "GrassBlockMixin"
+    "GrassBlockMixin",
+    "SuspiciousStewRecipeMixin",
+    "MushroomBlockMixin",
+    "AnvilBlockMixin",
+    "CarvedPumkinMixin",
+    "FallingBlockMixin",
+    "HopperBlockEntityMixin",
+    "HopperBlockMixin",
+    "DispenserBlockMixin"
   ],
   "client": [
   ],

@@ -1,0 +1,19 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "FF ",
+      "PPF",
+      "PPF"
+    ],
+    "key": {
+      "P": {
+        "item": "minecraft:jungle_planks"
+      },
+      "F": {
+        "item": "moreblocksmod:jungle_bark_fragment"
+      }
+    },
+    "result": {
+      "item": "minecraft:jungle_log"
+    }
+}

@@ -1,0 +1,6 @@
+﻿{
+    "variants": {
+      "up=true": { "model": "moreblocksmod:block/birch_catkin_up" },
+      "up=false": { "model": "moreblocksmod:block/birch_catkin"}
+    }
+  }

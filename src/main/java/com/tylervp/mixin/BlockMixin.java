@@ -1,6 +1,6 @@
 package com.tylervp.mixin;
 
-import java.util.Random;
+import net.minecraft.util.math.random.Random;
 
 import com.google.common.collect.ImmutableMap;
 import com.tylervp.block.MBMBlocks;
@@ -52,18 +52,31 @@ public abstract class BlockMixin extends AbstractBlock {
 				.put(Blocks.JUNGLE_PLANKS, MBMBlocks.BURNT_PLANKS)
 				.put(Blocks.OAK_PLANKS, MBMBlocks.BURNT_PLANKS)
 				.put(Blocks.SPRUCE_PLANKS, MBMBlocks.BURNT_PLANKS)
+				.put(Blocks.MANGROVE_PLANKS, MBMBlocks.BURNT_PLANKS)
 				.put(Blocks.ACACIA_STAIRS, MBMBlocks.BURNT_PLANKS_STAIRS)
 				.put(Blocks.BIRCH_STAIRS, MBMBlocks.BURNT_PLANKS_STAIRS)
 				.put(Blocks.DARK_OAK_STAIRS, MBMBlocks.BURNT_PLANKS_STAIRS)
 				.put(Blocks.JUNGLE_STAIRS, MBMBlocks.BURNT_PLANKS_STAIRS)
 				.put(Blocks.OAK_STAIRS, MBMBlocks.BURNT_PLANKS_STAIRS)
 				.put(Blocks.SPRUCE_STAIRS, MBMBlocks.BURNT_PLANKS_STAIRS)
+				.put(Blocks.MANGROVE_STAIRS, MBMBlocks.BURNT_PLANKS_STAIRS)
 				.put(Blocks.ACACIA_SLAB, MBMBlocks.BURNT_PLANKS_SLAB)
 				.put(Blocks.BIRCH_SLAB, MBMBlocks.BURNT_PLANKS_SLAB)
 				.put(Blocks.DARK_OAK_SLAB, MBMBlocks.BURNT_PLANKS_SLAB)
 				.put(Blocks.JUNGLE_SLAB, MBMBlocks.BURNT_PLANKS_SLAB)
 				.put(Blocks.OAK_SLAB, MBMBlocks.BURNT_PLANKS_SLAB)
-				.put(Blocks.SPRUCE_SLAB, MBMBlocks.BURNT_PLANKS_SLAB).build();
+				.put(Blocks.SPRUCE_SLAB, MBMBlocks.BURNT_PLANKS_SLAB)
+				.put(Blocks.MANGROVE_SLAB, MBMBlocks.BURNT_PLANKS_SLAB).build();
+
+				/* 
+ACACIA
+DARK_OAK
+BIRCH
+OAK
+JUNGLE
+MANGROVE
+SPRUCE
+				 */
 
 				BlockPos.Mutable mutable3 = pos.mutableCopy();
 				for (final Direction lv3 : Direction.values()) {
@@ -90,7 +103,29 @@ public abstract class BlockMixin extends AbstractBlock {
 				.put(Blocks.DARK_OAK_LOG, MBMBlocks.BURNT_DARK_OAK_LOG)
 				.put(Blocks.JUNGLE_LOG, MBMBlocks.BURNT_JUNGLE_LOG)
 				.put(Blocks.OAK_LOG, MBMBlocks.BURNT_OAK_LOG)
-				.put(Blocks.SPRUCE_LOG, MBMBlocks.BURNT_SPRUCE_LOG).build();
+				.put(Blocks.MANGROVE_LOG, MBMBlocks.BURNT_MANGROVE_LOG)
+				.put(Blocks.SPRUCE_LOG, MBMBlocks.BURNT_SPRUCE_LOG)
+				.put(MBMBlocks.ACACIA_HOLLOW_LOG, MBMBlocks.BURNT_ACACIA_HOLLOW_LOG)
+				.put(MBMBlocks.DARK_OAK_HOLLOW_LOG, MBMBlocks.BURNT_DARK_OAK_HOLLOW_LOG)
+				.put(MBMBlocks.BIRCH_HOLLOW_LOG, MBMBlocks.BURNT_BIRCH_HOLLOW_LOG)
+				.put(MBMBlocks.OAK_HOLLOW_LOG, MBMBlocks.BURNT_OAK_HOLLOW_LOG)
+				.put(MBMBlocks.JUNGLE_HOLLOW_LOG, MBMBlocks.BURNT_JUNGLE_HOLLOW_LOG)
+				.put(MBMBlocks.MANGROVE_HOLLOW_LOG, MBMBlocks.BURNT_MANGROVE_HOLLOW_LOG)
+				.put(MBMBlocks.SPRUCE_HOLLOW_LOG, MBMBlocks.BURNT_SPRUCE_HOLLOW_LOG)
+				.put(Blocks.STRIPPED_ACACIA_LOG, MBMBlocks.STRIPPED_BURNT_ACACIA_LOG)
+				.put(Blocks.STRIPPED_DARK_OAK_LOG, MBMBlocks.STRIPPED_BURNT_DARK_OAK_LOG)
+				.put(Blocks.STRIPPED_BIRCH_LOG, MBMBlocks.STRIPPED_BURNT_BIRCH_LOG)
+				.put(Blocks.STRIPPED_OAK_LOG, MBMBlocks.STRIPPED_BURNT_OAK_LOG)
+				.put(Blocks.STRIPPED_JUNGLE_LOG, MBMBlocks.STRIPPED_BURNT_JUNGLE_LOG)
+				.put(Blocks.STRIPPED_MANGROVE_LOG, MBMBlocks.STRIPPED_BURNT_MANGROVE_LOG)
+				.put(Blocks.STRIPPED_SPRUCE_LOG, MBMBlocks.STRIPPED_BURNT_SPRUCE_LOG)
+				.put(MBMBlocks.STRIPPED_ACACIA_HOLLOW_LOG, MBMBlocks.BURNT_STRIPPED_ACACIA_HOLLOW_LOG)
+				.put(MBMBlocks.STRIPPED_DARK_OAK_HOLLOW_LOG, MBMBlocks.BURNT_STRIPPED_DARK_OAK_HOLLOW_LOG)
+				.put(MBMBlocks.STRIPPED_BIRCH_HOLLOW_LOG, MBMBlocks.BURNT_STRIPPED_BIRCH_HOLLOW_LOG)
+				.put(MBMBlocks.STRIPPED_OAK_HOLLOW_LOG, MBMBlocks.BURNT_STRIPPED_OAK_HOLLOW_LOG)
+				.put(MBMBlocks.STRIPPED_JUNGLE_HOLLOW_LOG, MBMBlocks.BURNT_STRIPPED_JUNGLE_HOLLOW_LOG)
+				.put(MBMBlocks.STRIPPED_MANGROVE_HOLLOW_LOG, MBMBlocks.BURNT_STRIPPED_MANGROVE_HOLLOW_LOG)
+				.put(MBMBlocks.STRIPPED_SPRUCE_HOLLOW_LOG, MBMBlocks.BURNT_STRIPPED_SPRUCE_HOLLOW_LOG).build();
 
 				BlockPos.Mutable mutable3 = pos.mutableCopy();
 				for (final Direction lv3 : Direction.values()) {

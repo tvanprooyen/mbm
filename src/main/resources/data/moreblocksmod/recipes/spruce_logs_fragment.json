@@ -1,0 +1,19 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "FF ",
+      "PPF",
+      "PPF"
+    ],
+    "key": {
+      "P": {
+        "item": "minecraft:spruce_planks"
+      },
+      "F": {
+        "item": "moreblocksmod:spruce_bark_fragment"
+      }
+    },
+    "result": {
+      "item": "minecraft:spruce_log"
+    }
+}

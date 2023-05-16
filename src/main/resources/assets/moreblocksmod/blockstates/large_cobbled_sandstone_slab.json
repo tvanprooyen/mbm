@@ -1,0 +1,7 @@
+﻿{
+  "variants": {
+      "type=bottom": { "model": "moreblocksmod:block/large_cobbled_sandstone_slab" },
+      "type=top": { "model": "moreblocksmod:block/large_cobbled_sandstone_slab_top" },
+      "type=double": { "model": "moreblocksmod:block/large_cobbled_sandstone"}
+  }
+}

@@ -16,5 +16,13 @@ public class CompostingRegistry {
         compostRegistry.add(MBMItems.GRAPE_SEEDS, 0.3f);
         compostRegistry.add(MBMBlocks.GRAPE_LEAVES.asItem(), 0.4f);
         compostRegistry.add(MBMBlocks.GRAPE_LEAVES_HANGING.asItem(), 0.3f);
+        compostRegistry.add(MBMBlocks.BROWN_MUSHROOM.asItem(), 0.65f);
+        compostRegistry.add(MBMBlocks.RED_MUSHROOM.asItem(), 0.65f);
+        compostRegistry.add(MBMBlocks.BROWN_SIDE_MUSHROOM.asItem(), 0.65f);
+        compostRegistry.add(MBMBlocks.RED_SIDE_MUSHROOM.asItem(), 0.65f);
+        compostRegistry.add(MBMBlocks.PINECONE.asItem(), 0.3f);
+        compostRegistry.add(MBMBlocks.OAK_ACORN.asItem(), 0.3f);
+        compostRegistry.add(MBMBlocks.DARK_OAK_ACORN.asItem(), 0.3f);
+        compostRegistry.add(MBMBlocks.BIRCH_CATKIN.asItem(), 0.3f);
     }
 }

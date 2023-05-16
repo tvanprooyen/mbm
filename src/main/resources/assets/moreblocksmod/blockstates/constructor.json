@@ -1,0 +1,26 @@
+﻿{
+    "variants": {
+      "level=0,facing=north": { "model": "moreblocksmod:block/constructor_empty"},
+      "level=1,facing=north": { "model": "moreblocksmod:block/constructor_level1"},
+      "level=2,facing=north": { "model": "moreblocksmod:block/constructor_level2"},
+      "level=3,facing=north": { "model": "moreblocksmod:block/constructor_level3"},
+      "level=4,facing=north": { "model": "moreblocksmod:block/constructor_level4"},
+      "level=5,facing=north": { "model": "moreblocksmod:block/constructor_level5"},
+      "level=6,facing=north": { "model": "moreblocksmod:block/constructor_level6"},
+      "level=7,facing=north": { "model": "moreblocksmod:block/constructor_level7"},
+      "level=8,facing=north": { "model": "moreblocksmod:block/constructor_level8"},
+      "level=9,facing=north": { "model": "moreblocksmod:block/constructor_level9"},
+      "level=10,facing=north": { "model": "moreblocksmod:block/constructor_level9"},
+      "level=0,facing=east": { "model": "moreblocksmod:block/constructor_empty", "y": 90 },
+      "level=1,facing=east": { "model": "moreblocksmod:block/constructor_level1", "y": 90 },
+      "level=2,facing=east": { "model": "moreblocksmod:block/constructor_level2", "y": 90 },
+      "level=3,facing=east": { "model": "moreblocksmod:block/constructor_level3", "y": 90 },
+      "level=4,facing=east": { "model": "moreblocksmod:block/constructor_level4", "y": 90 },
+      "level=5,facing=east": { "model": "moreblocksmod:block/constructor_level5", "y": 90 },
+      "level=6,facing=east": { "model": "moreblocksmod:block/constructor_level6", "y": 90 },
+      "level=7,facing=east": { "model": "moreblocksmod:block/constructor_level7", "y": 90 },
+      "level=8,facing=east": { "model": "moreblocksmod:block/constructor_level8", "y": 90 },
+      "level=9,facing=east": { "model": "moreblocksmod:block/constructor_level9", "y": 90 },
+      "level=10,facing=east": { "model": "moreblocksmod:block/constructor_level9", "y": 90 }
+    }
+  }

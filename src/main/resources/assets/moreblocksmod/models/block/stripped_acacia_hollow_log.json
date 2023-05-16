@@ -1,0 +1,8 @@
+﻿{
+	"parent": "moreblocksmod:block/hollow_log",
+	"textures": {
+		"0":"moreblocksmod:block/stripped_acacia_log_chopped_side",
+		"14":"block/stripped_acacia_log",
+		"15":"block/stripped_acacia_log_top"
+	}
+}

@@ -1,0 +1,15 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "minecraft:planks"
+        },
+        {
+            "item": "moreblocksmod:mangrove_bark_fragment"
+        }
+    ],
+    "result": {
+        "item": "minecraft:mangrove_planks",
+        "count": 1
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "replace": true,
+    "values": [
+      "moreblocksmod:hardened_anvil",
+      "minecraft:anvil",
+      "minecraft:chipped_anvil",
+      "minecraft:damaged_anvil"
+    ]
+  }

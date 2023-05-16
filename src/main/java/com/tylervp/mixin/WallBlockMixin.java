@@ -5,7 +5,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.FenceGateBlock;
 import net.minecraft.block.PaneBlock;
 import net.minecraft.block.WallBlock;
-import net.minecraft.tag.BlockTags;
+import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.util.math.Direction;
 
 import com.tylervp.block.HorizontalPaneBlock;

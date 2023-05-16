@@ -17,7 +17,6 @@ import net.minecraft.screen.GenericContainerScreenHandler;
 import net.minecraft.screen.HopperScreenHandler;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.text.Text;
-import net.minecraft.text.TranslatableText;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.BlockView;
@@ -26,7 +25,6 @@ import net.minecraft.world.World;
 public class VaseBlockEntity extends LootableContainerBlockEntity {
    private DefaultedList<ItemStack> inventory;
    private final ViewerCountManager stateManager;
-   private int viewerCount;
 
    public VaseBlockEntity(BlockEntityType<?> blockEntityType, BlockPos blockPos, BlockState blockState) {
       super(blockEntityType, blockPos, blockState);
@@ -59,13 +57,27 @@ public class VaseBlockEntity extends LootableContainerBlockEntity {
       this(MBMBlocks.VASE_BLOCK_ENTITY, pos, state);
    }
 
-   public NbtCompound writeNbt(NbtCompound tag) {
+   /* public NbtCompound writeNbt(NbtCompound tag) {
       super.writeNbt(tag);
       if (!this.serializeLootTable(tag)) {
          Inventories.writeNbt(tag, this.inventory);
       }
 
       return tag;
+   } */
+
+   @Override
+    public void writeNbt(NbtCompound tag) {
+        if (!this.serializeLootTable(tag)) {
+            Inventories.writeNbt(tag, this.inventory);
+         }
+ 
+        super.writeNbt(tag);
+    }
+
+   @Override
+   public NbtCompound toInitialChunkDataNbt() {
+      return createNbt();
    }
 
    public void readNbt(NbtCompound nbt) {
@@ -90,35 +102,23 @@ public class VaseBlockEntity extends LootableContainerBlockEntity {
    }
 
    protected Text getContainerName() {
-      return new TranslatableText("Vase");
+      return Text.translatable("Vase");
    }
 
    protected ScreenHandler createScreenHandler(int syncId, PlayerInventory playerInventory) {
       return new HopperScreenHandler(syncId, playerInventory, this);
    }
 
-   public void onOpen(PlayerEntity player) {
-      if (!player.isSpectator()) {
-         if (this.viewerCount < 0) {
-            this.viewerCount = 0;
-         }
+   @Override
+    public void onOpen(PlayerEntity player) {
+        if (!this.removed && !player.isSpectator()) {
+            this.stateManager.openContainer(player, this.getWorld(), this.getPos(), this.getCachedState());
+        }
+    }
 
-         ++this.viewerCount;
-         //BlockState blockState = this.getCachedState();
-         /* boolean bl = (Boolean)blockState.get(BarrelBlock.OPEN);
-         if (!bl) {
-            this.playSound(blockState, SoundEvents.BLOCK_BARREL_OPEN);
-            this.setOpen(blockState, true);
-         } */
-
-         this.scheduleUpdate();
-      }
-
-   }
-
-   private void scheduleUpdate() {
+   /* private void scheduleUpdate() {
       this.world.getBlockTickScheduler().schedule(this.getPos(), this.getCachedState().getBlock(), 5);
-   }
+   } */
 
    public static int getPlayersLookingInChestCount(BlockView world, BlockPos pos) {
       BlockState blockState = world.getBlockState(pos);
@@ -132,8 +132,11 @@ public class VaseBlockEntity extends LootableContainerBlockEntity {
    }
 
    public void tick() {
-      this.viewerCount = VaseBlockEntity.getPlayersLookingInChestCount(this.world, this.pos);
-      if (this.viewerCount > 0) {
+      //this.viewerCount = VaseBlockEntity.getPlayersLookingInChestCount(this.world, this.pos);
+      if (!this.removed) {
+         this.stateManager.updateViewerCount(this.getWorld(), this.getPos(), this.getCachedState());
+     }
+      /* if (this.viewerCount > 0) {
          this.scheduleUpdate();
       } else {
          BlockState blockState = this.getCachedState();
@@ -141,22 +144,21 @@ public class VaseBlockEntity extends LootableContainerBlockEntity {
             this.markRemoved();
             return;
          }
-
-         /* boolean bl = (Boolean)blockState.get(BarrelBlock.OPEN);
-         if (bl) {
-            this.playSound(blockState, SoundEvents.BLOCK_BARREL_CLOSE);
-            this.setOpen(blockState, false);
-         } */
-      }
-
+      } */
+   }
+   
+   @Override
+   public void onClose(PlayerEntity player) {
+       if (!this.removed && !player.isSpectator()) {
+           this.stateManager.closeContainer(player, this.getWorld(), this.getPos(), this.getCachedState());
+       }
    }
 
-   public void onClose(PlayerEntity player) {
+   /* public void onClose(PlayerEntity player) {
       if (!player.isSpectator()) {
          --this.viewerCount;
       }
-
-   }
+   } */
 
    //private void setOpen(BlockState state, boolean open) {
       //this.world.setBlockState(this.getPos(), (BlockState)state.with(BarrelBlock.OPEN, open), 3);

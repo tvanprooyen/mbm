@@ -1,0 +1,9 @@
+﻿{
+    "parent": "block/slab_top",
+    "textures": {
+        "bottom": "moreblocksmod:block/large_cobbled_sandstone",
+        "top": "moreblocksmod:block/large_cobbled_sandstone",
+        "side": "moreblocksmod:block/large_cobbled_sandstone"
+    }
+}
+

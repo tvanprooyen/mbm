@@ -1,0 +1,14 @@
+﻿{
+  "variants": {
+      "": [
+          { "model": "moreblocksmod:block/redstone_crystal_1" },
+          { "model": "moreblocksmod:block/redstone_crystal_1", "y": 90 },
+          { "model": "moreblocksmod:block/redstone_crystal_1", "y": 180 },
+          { "model": "moreblocksmod:block/redstone_crystal_1", "y": 270 },
+          { "model": "moreblocksmod:block/redstone_crystal_2" },
+          { "model": "moreblocksmod:block/redstone_crystal_2", "y": 90 },
+          { "model": "moreblocksmod:block/redstone_crystal_2", "y": 180 },
+          { "model": "moreblocksmod:block/redstone_crystal_2", "y": 270 }
+      ]
+  }
+}

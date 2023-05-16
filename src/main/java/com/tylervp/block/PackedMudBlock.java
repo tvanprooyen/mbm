@@ -70,7 +70,7 @@ public class PackedMudBlock extends Block {
         super.afterBreak(world, player, pos, state, blockEntity, stack);
         
        if (EnchantmentHelper.getLevel(Enchantments.SILK_TOUCH, stack) == 0) {
-            if (world.getDimension().isUltrawarm()) {
+            if (world.getDimension().ultrawarm()) {
                 world.setBlockState(pos, Blocks.DIRT.getDefaultState());  
                 return;
             }

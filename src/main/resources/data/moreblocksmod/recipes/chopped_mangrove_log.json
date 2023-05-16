@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "# #",
+        "   ",
+        "# #"
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:mangrove_log"
+        }
+    },
+    "result": {
+        "item": "moreblocksmod:chopped_mangrove_log",
+        "count": 16
+    }
+}

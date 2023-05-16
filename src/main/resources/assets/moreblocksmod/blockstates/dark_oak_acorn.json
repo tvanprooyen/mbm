@@ -1,0 +1,6 @@
+﻿{
+    "variants": {
+      "up=true": { "model": "moreblocksmod:block/dark_oak_acorn_up" },
+      "up=false": { "model": "moreblocksmod:block/dark_oak_acorn"}
+    }
+  }

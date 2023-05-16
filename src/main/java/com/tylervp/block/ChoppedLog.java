@@ -94,6 +94,9 @@ public class ChoppedLog extends Block {
                     } else if(state.isOf(MBMBlocks.CHOPPED_SPRUCE_LOG)) {
                         ChangeState = MBMBlocks.CHOPPED_STRIPPED_SPRUCE_LOG.getDefaultState();
                         bark_item = MBMItems.SPRUCE_BARK_FRAGMENT.asItem();
+                    } else if(state.isOf(MBMBlocks.CHOPPED_MANGROVE_LOG)) {
+                        ChangeState = MBMBlocks.CHOPPED_STRIPPED_MANGROVE_LOG.getDefaultState();
+                        bark_item = MBMItems.MANGROVE_BARK_FRAGMENT.asItem();
                     }
 
                     Block.dropStack(world, pos, new ItemStack(bark_item, state.get(ChoppedLog.CHOPPEDSTATE)));
@@ -309,7 +312,7 @@ public class ChoppedLog extends Block {
             return state.with(ChoppedLog.CHOPPEDSTATE, Math.min(4, choppedstate + 1)).with(ChoppedLog.FACING, facing);
         }
 
-        facing = ctx.getPlayerFacing();
+        facing = ctx.getHorizontalPlayerFacing();
         Boolean upFacing = false;
         Boolean downFacing = false;
 
@@ -328,7 +331,7 @@ public class ChoppedLog extends Block {
                 }
             }
         } else {
-            facing = ctx.getPlayerFacing();
+            facing = ctx.getHorizontalPlayerFacing();
             
             if(ctx.getPlayerLookDirection() == Direction.DOWN){
                 downFacing = true;

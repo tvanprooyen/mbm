@@ -1,0 +1,22 @@
+{
+	"parent": "block/block",
+	"textures": {
+		"4": "block/chain",
+		"5": "moreblocksmod:block/thin_oak_log_top",
+		"6": "block/oak_log",
+		"7": "block/oak_leaves",
+		"8": "moreblocksmod:block/oak_leaves_top",
+		"9": "moreblocksmod:block/rope_mid",
+		"particle": "#6"
+	},
+	"elements": [
+		{
+			"name": "leavesfull",
+			"from": [0, 0, 0],
+			"to": [16, 16, 0],
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#7", "cullface": "north", "tintindex": 0}
+			}
+		}
+	]
+}

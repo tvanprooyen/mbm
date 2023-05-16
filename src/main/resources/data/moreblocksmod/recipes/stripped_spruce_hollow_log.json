@@ -1,0 +1,17 @@
+﻿{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "# #",
+        "# #",
+        "# #"
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:stripped_spruce_log"
+        }
+    },
+    "result": {
+        "item": "moreblocksmod:stripped_spruce_hollow_log",
+        "count": 9
+    }
+}

@@ -14,6 +14,6 @@ public class ItemFuelRegistry {
         FuelRegistry.INSTANCE.add(MBMBlocks.BURNT_PLANKS, 200);
         FuelRegistry.INSTANCE.add(MBMBlocks.BURNT_PLANKS_SLAB, 100);
         FuelRegistry.INSTANCE.add(MBMBlocks.BURNT_PLANKS_STAIRS, 200);
-
+        FuelRegistry.INSTANCE.add(MBMBlocks.STICK_BUNDLE, 900);
     }
 }

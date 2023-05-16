@@ -1,0 +1,23 @@
+﻿{
+	"parent": "block/block",
+	"textures": {
+		"0": "moreblocksmod:block/constructor_level6",
+		"1": "moreblocksmod:block/constructor_sides",
+		"2": "moreblocksmod:block/constructor_top_bottom",
+		"particle": "moreblocksmod:block/constructor_sides"
+	},
+	"elements": [
+		{
+			"from": [0, 0, 0],
+			"to": [16, 16, 16],
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#0"},
+				"east": {"uv": [0, 0, 16, 16], "texture": "#1"},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#0"},
+				"west": {"uv": [0, 0, 16, 16], "texture": "#1"},
+				"up": {"uv": [0, 0, 16, 16], "texture": "#2"},
+				"down": {"uv": [0, 0, 16, 16], "texture": "#2"}
+			}
+		}
+	]
+}
