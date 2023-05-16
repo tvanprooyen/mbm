@@ -177,8 +177,8 @@ Contributions are what make the open source community such an amazing place to b
 [issues-url]: https://github.com/tvanprooyen/mbm/issues
 [license-shield]: https://img.shields.io/badge/LICENSE-CC--BY--NC--4.0-green?style=for-the-badge
 [license-url]: https://github.com/tvanprooyen/mbm/blob/master/LICENS
-[minecraft-ver-shield]: https://img.shields.io/badge/Minecraft-1.17.1-orange?style=for-the-badge
-[minecraft-ver-url]: https://minecraft.gamepedia.com/Java_Edition_1.17.1
+[minecraft-ver-shield]: https://img.shields.io/badge/Minecraft-1.19.4-orange?style=for-the-badge
+[minecraft-ver-url]: https://minecraft.gamepedia.com/Java_Edition_1.19.4
 [git-ver-shield]: https://img.shields.io/github/v/release/tvanprooyen/mbm?include_prereleases&style=for-the-badge
 [git-ver-url]: https://github.com/tvanprooyen/mbm/releases
 [product-screenshot]: images/screenshot.png
