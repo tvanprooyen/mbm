@@ -421,6 +421,7 @@
         "moreblocksmod:sandstone_vase",
         "moreblocksmod:hardened_anvil",
         "moreblocksmod:redstone_crystal",
-        "moreblocksmod:constructor"
+        "moreblocksmod:constructor",
+        "moreblocksmod:blue_ice_slab"
     ]
 }

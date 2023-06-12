@@ -1,0 +1,17 @@
+{
+    "replace": false,
+    "values": [
+      "moreblocksmod:iron_block",
+      "moreblocksmod:exposed_iron",
+      "moreblocksmod:degraded_iron",
+      "moreblocksmod:weathered_iron",
+      "moreblocksmod:rusted_iron",
+      "moreblocksmod:waxed_exposed_iron",
+      "moreblocksmod:waxed_degraded_iron",
+      "moreblocksmod:waxed_weathered_iron",
+      "moreblocksmod:weathered_iron",
+      "moreblocksmod:waxed_rusted_iron",
+      "moreblocksmod:heated_iron",
+      "moreblocksmod:hardened_iron"
+    ]
+  }

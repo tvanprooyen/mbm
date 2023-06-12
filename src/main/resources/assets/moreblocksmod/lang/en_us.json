@@ -594,7 +594,12 @@
     "block.moreblocksmod.pinecone": "Pinecone",
     "block.moreblocksmod.dark_oak_acorn": "Dark Oak Acorn",
     "block.moreblocksmod.oak_acorn": "Oak Acorn",
-    "block.moreblocksmod.birch_catkin": "Birch Catkin"
+    "block.moreblocksmod.birch_catkin": "Birch Catkin",
+    "block.moreblocksmod.stick_bundle": "Stick Bundle",
+    "block.moreblocksmod.blue_ice_slab": "Blue Ice Slab",
+    "block.moreblocksmod.loose_dirt": "Loose Dirt",
+    "block.moreblocksmod.hardened_anvil": "Hardened Anvil",
+    "block.moreblocksmod.thin_stripped_mangrove_log": "Thin Stripped Mangrove Log"
 }
 
 

@@ -882,6 +882,8 @@ public class MBMBlocks {
 
     public static final PillarBlock STICK_BUNDLE = new PillarBlock(FabricBlockSettings.copy(Blocks.OAK_PLANKS));
 
+    public static final IceSlabBlock BLUE_ICE_SLAB = new IceSlabBlock(FabricBlockSettings.copyOf(Blocks.BLUE_ICE)); //.of(Material.DENSE_ICE).strength(2.8f).slipperiness(0.989f).sounds(BlockSoundGroup.GLASS)
+
     public static final ItemPassableBlock PASSABLE_DIRT = new ItemPassableBlock(FabricBlockSettings.copy(Blocks.DIRT));
 
     public static final ConfigFileReader CFR = new ConfigFileReader();
@@ -1546,6 +1548,8 @@ public class MBMBlocks {
         registerBlock("dark_oak_acorn", DARK_OAK_ACORN);
         registerBlock("oak_acorn", OAK_ACORN);
         registerBlock("birch_catkin", BIRCH_CATKIN);
+
+        registerBlock("blue_ice_slab", BLUE_ICE_SLAB);
 
         System.out.println("[More Blocks Mod] Block Registry: Finised");
 

@@ -1,0 +1,15 @@
+﻿{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+      "###"
+  ],
+  "key": {
+      "#": {
+          "item": "minecraft:blue_ice"
+      }
+  },
+  "result": {
+      "item": "moreblocksmod:blue_ice_slab",
+      "count": 6
+  }
+}
